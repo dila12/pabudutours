@@ -32,7 +32,7 @@ export const routes: Routes = [
         path: '',
         component: HomePageComponent,
         data: {
-          title: 'Sundown Tours Sri Lanka | Private & Tailor Made Sri Lanka Tours',
+          title: 'Pabudu Tours Sri Lanka | Private & Tailor Made Sri Lanka Tours',
           description: 'Explore Sri Lanka with private tours, tailor-made holiday packages and experienced local driver guides. Discover beaches, wildlife and cultural heritage.',
           keywords: 'Sri Lanka private tours, Sri Lanka tour packages, tailor made Sri Lanka tours'
         }
@@ -41,8 +41,8 @@ export const routes: Routes = [
         path: 'about-us',
         component: AboutComponent,
         data: {
-          title: 'About Sundown Tours | Trusted Sri Lanka Travel Agency',
-          description: 'Learn about Sundown Tours Sri Lanka, your trusted local tour operator providing customized and private Sri Lanka tours.',
+          title: 'About Pabudu Tours | Trusted Sri Lanka Travel Agency',
+          description: 'Learn about Pabudu Tours Sri Lanka, your trusted local tour operator providing customized and private Sri Lanka tours.',
           keywords: 'Sri Lanka travel agency, Sri Lanka tour operator'
         }
       },
@@ -50,7 +50,7 @@ export const routes: Routes = [
         path: 'our-services',
         component: ServiceComponent,
         data: {
-          title: 'Our Services | Sundown Tours Sri Lanka',
+          title: 'Our Services | Pabudu Tours Sri Lanka',
           description: 'Explore our range of services including private tours, tailor-made holiday packages, chauffeur driven round tours and day trips.',
           keywords: 'Sri Lanka private tours, Sri Lanka tour packages, tailor made Sri Lanka tours'
         }
@@ -155,8 +155,8 @@ export const routes: Routes = [
         path: 'contact-us',
         component: ContactUsComponent,
         data: {
-          title: 'Contact Sundown Tours Sri Lanka',
-          description: 'Get in touch with Sundown Tours for customized Sri Lanka tour packages and private travel services.',
+          title: 'Contact Pabudu Tours Sri Lanka',
+          description: 'Get in touch with Pabudu Tours for customized Sri Lanka tour packages and private travel services.',
           keywords: 'contact Sri Lanka tour company'
         }
       },
@@ -182,7 +182,7 @@ export const routes: Routes = [
         path: 'customer-testimonials',
         component: Testimonial,
         data: {
-          title: 'Customer Testimonials | Sundown Tours Sri Lanka',
+          title: 'Customer Testimonials | Pabudu Tours Sri Lanka',
           description: 'Read testimonials from our satisfied customers who have experienced our private Sri Lanka tours.',
           keywords: 'Sri Lanka tour testimonials, customer reviews'
         }

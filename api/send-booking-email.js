@@ -1,7 +1,7 @@
 import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
-  res.setHeader("Access-Control-Allow-Origin", "https://sundowntours.com");
+  res.setHeader("Access-Control-Allow-Origin", "https://Pabudutours.com");
   res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
@@ -39,7 +39,7 @@ export default async function handler(req, res) {
     });
 
     const adminEmails = [
-      "sundowntoursrilanka@gmail.com",
+      "Pabudutoursrilanka@gmail.com",
       "dilanlakshitha194@gmail.com",
       "shanikamadushani468@gmail.com",
     ];
@@ -58,7 +58,7 @@ export default async function handler(req, res) {
               New Booking Notification
             </h1>
             <p style="color: #cbd5e1; margin: 5px 0 0; font-size: 14px;">
-              Sundown Tours - Booking System
+              Pabudu Tours - Booking System
             </p>
           </div>
 
@@ -144,7 +144,7 @@ export default async function handler(req, res) {
 
           <!-- Footer -->
           <div style="background-color: #f1f5f9; padding: 15px; text-align: center; font-size: 12px; color: #6b7280;">
-            © ${new Date().getFullYear()} Sundown Tours. All rights reserved.
+            © ${new Date().getFullYear()} Pabudu Tours. All rights reserved.
           </div>
 
         </div>
@@ -155,7 +155,7 @@ export default async function handler(req, res) {
     await transporter.sendMail(mailOptions);
 
     const customerMailOptions = {
-      from: '"Sundown Tours"',
+      from: '"Pabudu Tours"',
       to: email,
       subject: `Thank you for your booking! - ${tour.title}`,
       html: `
@@ -168,7 +168,7 @@ export default async function handler(req, res) {
               Booking Confirmation
             </h1>
             <p style="color:#cbd5e1;margin:5px 0 0;font-size:14px;">
-              Sundown Tours – Sri Lanka
+              Pabudu Tours – Sri Lanka
             </p>
           </div>
 
@@ -180,7 +180,7 @@ export default async function handler(req, res) {
             </p>
 
             <p style="font-size:15px;line-height:1.6;">
-              Thank you for choosing <strong>Sundown Tours</strong>. 
+              Thank you for choosing <strong>Pabudu Tours</strong>. 
               Your booking has been successfully received and confirmed. 
               Below are your booking details for your reference.
             </p>
@@ -228,7 +228,7 @@ export default async function handler(req, res) {
 
             <p style="margin-top:30px;font-size:15px;line-height:1.6;">
               Kind regards,<br/>
-              <strong>Sundown Tours Team</strong><br/>
+              <strong>Pabudu Tours Team</strong><br/>
               No 302, Mahawaskaduwa,<br/>
               Waskaduwa, Kalutara North,<br/>
               Sri Lanka
@@ -244,16 +244,16 @@ export default async function handler(req, res) {
               </a><br/>
               
               📧 Email: 
-              <a href="mailto:sundowntoursrilanka@gmail.com" 
+              <a href="mailto:Pabudutoursrilanka@gmail.com" 
                 style="color:#1e3a8a;text-decoration:none;">
-                sundowntoursrilanka@gmail.com
+                Pabudutoursrilanka@gmail.com
               </a>
             </p>
           </div>
 
           <!-- Footer -->
           <div style="background:#f1f5f9;padding:15px;text-align:center;font-size:12px;color:#6b7280;">
-            © ${new Date().getFullYear()} Sundown Tours. All rights reserved.
+            © ${new Date().getFullYear()} Pabudu Tours. All rights reserved.
           </div>
 
         </div>
