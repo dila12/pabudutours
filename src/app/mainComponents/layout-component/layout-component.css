@@ -17,7 +17,7 @@ body { top: 0px !important; }
     position: sticky;
     top: 0;
     z-index: 9999;
-    background: linear-gradient(90deg,#022d41, #c05305);
+    background:#012c13;
 }
 
 .navbar-color .nav-link,
@@ -31,16 +31,16 @@ body { top: 0px !important; }
 }
 
 .navbar-color .dropdown-menu {
-    background-color:#c96929; /* Match navbar background */
+    background-color:#012c13; /* Match navbar background */
 }
 
 .navbar-color .dropdown-item {
-    color: #c96929; /* Text color */
+    color: #012c13; /* Text color */
 }
 
 .navbar-color .dropdown-item:hover {
     background-color: #ffffff; /* Lighter hover effect */
-    color: #c96929; /* Text color on hover */
+    color: #012c13; /* Text color on hover */
 }
 @media (max-width: 768px) {
 
@@ -116,7 +116,7 @@ body { top: 0px !important; }
   display: flex;
   align-items: center;
   gap: 6px;
-  background: #b34c02;        /* dark pill */
+  background: #012c13;        /* dark pill */
   padding: 4px 8px;
   border-radius: 999px;
   margin-right: 12px;
