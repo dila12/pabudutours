@@ -39,7 +39,7 @@ export default async function handler(req, res) {
     });
 
     const adminEmails = [
-      "Pabudutoursrilanka@gmail.com",
+      "Pabudutour@gmail.com",
       "dilanlakshitha194@gmail.com",
       "shanikamadushani468@gmail.com",
     ];
@@ -244,9 +244,9 @@ export default async function handler(req, res) {
               </a><br/>
               
               📧 Email: 
-              <a href="mailto:Pabudutoursrilanka@gmail.com" 
+              <a href="mailto:Pabudutour@gmail.com" 
                 style="color:#1e3a8a;text-decoration:none;">
-                Pabudutoursrilanka@gmail.com
+                Pabudutour@gmail.com
               </a>
             </p>
           </div>

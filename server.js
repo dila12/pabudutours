@@ -28,18 +28,18 @@ app.post("/send-booking-email", async (req, res) => {
       port: 587,
       secure: false,
       auth: {
-        user: "Pabudutoursrilanka@gmail.com",
+        user: "Pabudutour@gmail.com",
         pass: "pmezvyeireljwlbw",
       },
     });
 
     const adminEmails = [
-      "Pabudutoursrilanka@gmail.com",
+      "Pabudutour@gmail.com",
       "dilanlakshitha194@gmail.com",
       "shanikamadushani468@gmail.com"
     ];
     const mailOptions = {
-      from: '"Tour Booking" <Pabudutoursrilanka@gmail.com>',
+      from: '"Tour Booking" <Pabudutour@gmail.com>',
       to: adminEmails,
       subject: `New Booking Received - ${orderNumber}`,
       html: `
@@ -140,14 +140,14 @@ app.post("/send-contact-email", async (req, res) => {
       port: 587,
       secure: true,
       auth: {
-        user: "Pabudutoursrilanka@gmail.com",
+        user: "Pabudutour@gmail.com",
         pass: "pmezvyeireljwlbw",
       },
     });
 
     await transporter.sendMail({
       from: `"Contact Form" <${email}>`,
-      to: "Pabudutoursrilanka@gmail.com",
+      to: "Pabudutour@gmail.com",
       subject: `📩 New Contact Form Submission from ${name}`,
       html: `
         <div style="font-family: Arial;">

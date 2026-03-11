@@ -36,7 +36,7 @@ res.setHeader("Access-Control-Allow-Headers", "Content-Type");
       },
     });
     const adminEmails = [
-      "Pabudutoursrilanka@gmail.com",
+      "Pabudutour@gmail.com",
       "dilanlakshitha194@gmail.com",
       "shanikamadushani468@gmail.com"
     ];
