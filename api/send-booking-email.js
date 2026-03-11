@@ -240,7 +240,7 @@ export default async function handler(req, res) {
               📞 WhatsApp: 
               <a href="https://wa.me/94763610738" 
                 style="color:#1e3a8a;text-decoration:none;font-weight:bold;">
-                +94 76 361 07 38
+                +94 77 900 88 03
               </a><br/>
               
               📧 Email: 

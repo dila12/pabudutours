@@ -2,6 +2,50 @@
   <div class="container-fluid">
     <div class="row align-items-center">
 
+        <div class="col-12 col-lg-6 d-flex justify-content-between justify-content-lg-end align-items-center">
+            <div class="lang-pill d-flex flex-wrap">
+                <button class="lang-flag" [class.active]="activeLang === 'en'" (click)="changeLang('en')" title="English">
+                    <img src="https://flagcdn.com/w20/us.png" alt="EN">
+                </button>
+                <button class="lang-flag" [class.active]="activeLang === 'de'" (click)="changeLang('de')" title="Deutsch">
+                    <img src="https://flagcdn.com/w20/de.png" alt="DE">
+                </button>
+                <button class="lang-flag" [class.active]="activeLang === 'it'" (click)="changeLang('it')" title="Italiano">
+                    <img src="https://flagcdn.com/w20/it.png" alt="IT">
+                </button>
+                <button class="lang-flag" [class.active]="activeLang === 'fr'" (click)="changeLang('fr')" title="Français">
+                    <img src="https://flagcdn.com/w20/fr.png" alt="FR">
+                </button>
+                <button class="lang-flag" [class.active]="activeLang === 'es'" (click)="changeLang('es')" title="spanish">
+                    <img src="https://flagcdn.com/w20/es.png" alt="es">
+                </button>
+                <button class="lang-flag" [class.active]="activeLang === 'ru'" (click)="changeLang('ru')" title="Русский">
+                    <img src="https://flagcdn.com/w20/ru.png" alt="RU">
+                </button>
+                <button class="lang-flag" [class.active]="activeLang === 'pl'" (click)="changeLang('pl')" title="Polski">
+                    <img src="https://flagcdn.com/w20/pl.png" alt="PL">
+                </button>
+                <button class="lang-flag" [class.active]="activeLang === 'zh-CN'" (click)="changeLang('zh-CN')" title="中文">
+                    <img src="https://flagcdn.com/w20/cn.png" alt="cn">
+                </button>
+    <!-- 
+                <button class="lang-flag" [class.active]="activeLang === 'si'" (click)="changeLang('si')" title="සිංහල">
+                    <img src="https://flagcdn.com/w20/lk.png" alt="SI">
+                </button> -->
+            </div>
+            <div class="d-flex ml-2">
+              <a class="btn btn-sm btn-square text-white mr-2" href="https://www.facebook.com/profile.php?id=61563992655756">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a class="btn btn-sm btn-square text-white mr-2" href="https://www.instagram.com/Pabudutourssr?igsh=djF2YXB2aDV6bjc4">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a class="btn btn-sm btn-square text-white" href="https://www.tripadvisor.com/Attraction_Review-g304134-d34227309-Reviews-Sun_Down_Tours_Sri_Lanka-Hikkaduwa_Galle_District_Southern_Province.html"
+                target="_blank">
+                <i class="fab fa-tripadvisor"></i>
+              </a>
+            </div>
+        </div>
     <!-- Left side: email & phone -->
       <div class="col-lg-6 d-none d-lg-flex align-items-center">
         <p class="mb-0 text-white small">
@@ -9,55 +53,11 @@
         </p>
         <span class="mx-3 text-white">|</span>
         <p class="mb-0 text-white small">
-          <i class="fa fa-phone-alt mr-2"></i> +94 76 361 07 38
+          <i class="fa fa-phone-alt mr-2"></i> +94 77 900 88 03
         </p>
       </div>
 
     <!-- Right side: social icons -->
-    <div class="col-12 col-lg-6 d-flex justify-content-between justify-content-lg-end align-items-center">
-        <div class="lang-pill d-flex flex-wrap">
-            <button class="lang-flag" [class.active]="activeLang === 'en'" (click)="changeLang('en')" title="English">
-                <img src="https://flagcdn.com/w20/us.png" alt="EN">
-            </button>
-            <button class="lang-flag" [class.active]="activeLang === 'de'" (click)="changeLang('de')" title="Deutsch">
-                <img src="https://flagcdn.com/w20/de.png" alt="DE">
-            </button>
-            <button class="lang-flag" [class.active]="activeLang === 'it'" (click)="changeLang('it')" title="Italiano">
-                <img src="https://flagcdn.com/w20/it.png" alt="IT">
-            </button>
-            <button class="lang-flag" [class.active]="activeLang === 'fr'" (click)="changeLang('fr')" title="Français">
-                <img src="https://flagcdn.com/w20/fr.png" alt="FR">
-            </button>
-            <button class="lang-flag" [class.active]="activeLang === 'es'" (click)="changeLang('es')" title="spanish">
-                <img src="https://flagcdn.com/w20/es.png" alt="es">
-            </button>
-            <button class="lang-flag" [class.active]="activeLang === 'ru'" (click)="changeLang('ru')" title="Русский">
-                <img src="https://flagcdn.com/w20/ru.png" alt="RU">
-            </button>
-            <button class="lang-flag" [class.active]="activeLang === 'pl'" (click)="changeLang('pl')" title="Polski">
-                <img src="https://flagcdn.com/w20/pl.png" alt="PL">
-            </button>
-            <button class="lang-flag" [class.active]="activeLang === 'zh-CN'" (click)="changeLang('zh-CN')" title="中文">
-                <img src="https://flagcdn.com/w20/cn.png" alt="cn">
-            </button>
-<!-- 
-            <button class="lang-flag" [class.active]="activeLang === 'si'" (click)="changeLang('si')" title="සිංහල">
-                <img src="https://flagcdn.com/w20/lk.png" alt="SI">
-            </button> -->
-        </div>
-        <div class="d-flex ml-2">
-          <a class="btn btn-sm btn-square text-white mr-2" href="https://www.facebook.com/profile.php?id=61563992655756">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a class="btn btn-sm btn-square text-white mr-2" href="https://www.instagram.com/Pabudutourssr?igsh=djF2YXB2aDV6bjc4">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a class="btn btn-sm btn-square text-white" href="https://www.tripadvisor.com/Attraction_Review-g304134-d34227309-Reviews-Sun_Down_Tours_Sri_Lanka-Hikkaduwa_Galle_District_Southern_Province.html"
-            target="_blank">
-            <i class="fab fa-tripadvisor"></i>
-          </a>
-        </div>
-    </div>
     </div>
   </div>
 </div>
@@ -153,7 +153,7 @@
         <div class="col-lg-3 col-md-6 mb-5">
             <h5 class="text-white text-uppercase mb-4" style="letter-spacing: 5px;">Contact Us</h5>
             <p><i class="fa fa-map-marker-alt mr-2"></i> No 302 ,Mahawaskaduwa,Waskaduwa, Kalutara North, Sri Lanka</p>
-            <p><i class="fa fa-phone-alt mr-2"></i>+94 76 361 07 38</p>
+            <p><i class="fa fa-phone-alt mr-2"></i>+94 77 900 88 03</p>
             <p><i class="fa fa-envelope mr-2"></i>Pabudutour@gmail.com</p>
             <h6 class="text-white text-uppercase mt-4 mb-3" style="letter-spacing: 5px;">Newsletter</h6>
             <div class="w-100">

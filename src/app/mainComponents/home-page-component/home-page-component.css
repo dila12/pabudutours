@@ -3,9 +3,9 @@
   font-weight: 600;
   font-size: 1.1rem;
   background: transparent;
-  border: 2px solid #c05305; /* primary outline */
+  border: 2px solid #012c13; /* primary outline */
   border-radius: 50px;
-  color: #c05305;
+  color: #012c13;
   cursor: pointer;
   margin:10px 10px 10px 10px;
   transition: all 0.4s ease;
@@ -13,12 +13,12 @@
 }
 
 .tab-btn-outline:hover {
-  background-color: #c05305;
+  background-color: #012c13;
   color: white;
 }
 
 .tab-btn-outline.active {
-  background-color: #c05305;
+  background-color: #012c13;
   color: white;
   box-shadow: 0 8px 20px rgba(79, 29, 110, 0.3);
 }
