@@ -83,8 +83,8 @@
 </div>
 <!-- Carousel End -->
 
-<!-- Destination Start -->
-<div class="container-fluid py-5">
+<!-- Destination Start - Simple Card Layout -->
+<div class="container-fluid py-5 destination-section">
     <div class="container">
 
         <div class="text-center mb-5">
@@ -94,173 +94,123 @@
 
         <div class="row g-4">
             <!-- Sigiriya -->
-            <div class="col-lg-4 col-md-6 pb-2">
-                <div class="card border-0 shadow-sm h-100 destination-card" (click)="scrollToSection('packages')">
-                    <div class="row g-0 align-items-center">
-                        <div class="col-5">
-                            <img src="assets/img/destination-1.jpg" class="img-fluid rounded-start"
-                                alt="Sigiriya Lion Rock Sri Lanka Tour">
-                        </div>
-                        <div class="col-7 p-3">
-                            <h5 class="mb-1">Sigiriya</h5>
-
-                            <p class="mb-1 small text-muted">
-                                Explore the famous Sigiriya Lion Rock and ancient royal gardens.
-                            </p>
-                            <small class="text-primary fw-bold">
-                                Included in: Sigiriya Day Tour, 5 Day Sri Lanka Tour, 6 Day Sri Lanka Tour, 7 Day Tour,
-                                8 Day Tour & 10 Day Tour
-                            </small>
-                        </div>
-
+            <div class="col-lg-4 col-md-6  mb-2">
+                <div class="destination-card" (click)="scrollToSection('packages')">
+                    <div class="card-image">
+                        <img src="assets/img/destination-1.jpg" alt="Sigiriya Lion Rock Sri Lanka Tour">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Sigiriya</h3>
+                        <p class="card-description">Explore the famous Sigiriya Lion Rock and ancient royal gardens.</p>
+                        <p class="card-packages">
+                            <strong>Included in:</strong> Sigiriya Day Tour, 5 Day Tour, 6 Day Tour, 7 Day Tour, 8 Day Tour & 10 Day Tour
+                        </p>
+                        <a href="#packages" class="card-link">
+                            View Tours <i class="fa fa-arrow-right ms-2"></i>
+                        </a>
                     </div>
                 </div>
             </div>
 
             <!-- Ella -->
-            <div class="col-lg-4 col-md-6 pb-2">
-                <div class="card border-0 shadow-sm h-100 destination-card" (click)="scrollToSection('packages')">
-                    <div class="row g-0 align-items-center">
-
-                        <div class="col-5">
-                            <img src="assets/img/destination-2.jpg" class="img-fluid rounded-start"
-                                alt="Ella Sri Lanka Nine Arches Bridge Tour">
-                        </div>
-
-                        <div class="col-7 p-3">
-                            <h5 class="mb-1">Ella</h5>
-
-                            <p class="mb-1 small text-muted">
-                                Visit Nine Arches Bridge, Little Adam's Peak and Ravana Falls.
-                            </p>
-
-                            <small class="text-primary fw-bold">
-                                Included in: Ella Day Tour, 2 Day Tour, 4 Day Tour, 5 Day Tour, 7 Day Tour, 8 Day Tour &
-                                10 Day Tour
-                            </small>
-
-                        </div>
-
+            <div class="col-lg-4 col-md-6  mb-2">
+                <div class="destination-card" (click)="scrollToSection('packages')">
+                    <div class="card-image">
+                        <img src="assets/img/destination-2.jpg" alt="Ella Sri Lanka Nine Arches Bridge Tour">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Ella</h3>
+                        <p class="card-description">Visit Nine Arches Bridge, Little Adam's Peak and Ravana Falls.</p>
+                        <p class="card-packages">
+                            <strong>Included in:</strong> Ella Day Tour, 2 Day Tour, 4 Day Tour, 5 Day Tour, 7 Day Tour, 8 Day Tour & 10 Day Tour
+                        </p>
+                        <a href="#packages" class="card-link">
+                            View Tours <i class="fa fa-arrow-right ms-2"></i>
+                        </a>
                     </div>
                 </div>
             </div>
 
-            <!-- Yala -->
-            <div class="col-lg-4 col-md-6 pb-2">
-                <div class="card border-0 shadow-sm h-100 destination-card" (click)="scrollToSection('packages')">
-                    <div class="row g-0 align-items-center">
-
-                        <div class="col-5">
-                            <img src="assets/img/destination-3.jpg" class="img-fluid rounded-start"
-                                alt="Yala National Park Safari Sri Lanka">
-                        </div>
-
-                        <div class="col-7 p-3">
-                            <h5 class="mb-1">Yala Safari</h5>
-
-                            <p class="mb-1 small text-muted">
-                                Experience wildlife safari and see leopards and elephants.
-                            </p>
-
-                            <small class="text-primary fw-bold">
-                                Included in: Yala Safari 2 Day Tour, 4 Day Tour, 6 Day Tour & 7 Day Tour
-                            </small>
-
-                        </div>
-
+            <!-- Yala Safari -->
+            <div class="col-lg-4 col-md-6 mb-2">
+                <div class="destination-card" (click)="scrollToSection('packages')">
+                    <div class="card-image">
+                        <img src="assets/img/destination-3.jpg" alt="Yala National Park Safari Sri Lanka">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Yala Safari</h3>
+                        <p class="card-description">Experience wildlife safari and see leopards and elephants.</p>
+                        <p class="card-packages">
+                            <strong>Included in:</strong> Yala Safari 2 Day Tour, 4 Day Tour, 6 Day Tour & 7 Day Tour
+                        </p>
+                        <a href="#packages" class="card-link">
+                            View Tours <i class="fa fa-arrow-right ms-2"></i>
+                        </a>
                     </div>
                 </div>
             </div>
 
             <!-- Kandy -->
             <div class="col-lg-4 col-md-6">
-                <div class="card border-0 shadow-sm h-100 destination-card" (click)="scrollToSection('packages')">
-                    <div class="row g-0 align-items-center">
-
-                        <div class="col-5">
-                            <img src="assets/img/destination-4.jpg" class="img-fluid rounded-start"
-                                alt="Kandy Temple of the Tooth Sri Lanka Tour">
-                        </div>
-
-                        <div class="col-7 p-3">
-                            <h5 class="mb-1">Kandy</h5>
-
-                            <p class="mb-1 small text-muted">
-                                Discover the Temple of the Tooth and scenic Kandy city.
-                            </p>
-
-                            <small class="text-primary fw-bold">
-                                Included in: Kandy Day Tour, 2 Day Tour, 4 Day Tour, 5 Day Tour, 6 Day Tour, 7 Day Tour,
-                                8 Day Tour & 10 Day Tour
-                            </small>
-
-                        </div>
-
+                <div class="destination-card" (click)="scrollToSection('packages')">
+                    <div class="card-image">
+                        <img src="assets/img/destination-4.jpg" alt="Kandy Temple of the Tooth Sri Lanka Tour">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Kandy</h3>
+                        <p class="card-description">Discover the Temple of the Tooth and scenic Kandy city.</p>
+                        <p class="card-packages">
+                            <strong>Included in:</strong> Kandy Day Tour, 2 Day Tour, 4 Day Tour, 5 Day Tour, 6 Day Tour, 7 Day Tour, 8 Day Tour & 10 Day Tour
+                        </p>
+                        <a href="#packages" class="card-link">
+                            View Tours <i class="fa fa-arrow-right ms-2"></i>
+                        </a>
                     </div>
                 </div>
             </div>
 
             <!-- Dambulla -->
             <div class="col-lg-4 col-md-6">
-                <div class="card border-0 shadow-sm h-100 destination-card" (click)="scrollToSection('packages')">
-                    <div class="row g-0 align-items-center">
-
-                        <div class="col-5">
-                            <img src="assets/img/destination-5.jpg" class="img-fluid rounded-start"
-                                alt="Dambulla Cave Temple Sri Lanka">
-                        </div>
-
-                        <div class="col-7 p-3">
-                            <h5 class="mb-1">Dambulla</h5>
-
-                            <p class="mb-1 small text-muted">
-                                Visit the famous Golden Cave Temple and cultural heritage sites.
-                            </p>
-
-                            <small class="text-primary fw-bold">
-                                Included in: Sigiriya & Dambulla Day Tour, 5 Day Sri Lanka Tour, 6 Day Sri Lanka Tour, 7
-                                Day Tour, 8 Day Tour & 10 Day Tour
-                            </small>
-
-                        </div>
-
+                <div class="destination-card" (click)="scrollToSection('packages')">
+                    <div class="card-image">
+                        <img src="assets/img/destination-5.jpg" alt="Dambulla Cave Temple Sri Lanka">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Dambulla</h3>
+                        <p class="card-description">Visit the famous Golden Cave Temple and cultural heritage sites.</p>
+                        <p class="card-packages">
+                            <strong>Included in:</strong> Sigiriya & Dambulla Day Tour, 5 Day Tour, 6 Day Tour, 7 Day Tour, 8 Day Tour & 10 Day Tour
+                        </p>
+                        <a href="#packages" class="card-link">
+                            View Tours <i class="fa fa-arrow-right ms-2"></i>
+                        </a>
                     </div>
                 </div>
             </div>
 
             <!-- Galle -->
             <div class="col-lg-4 col-md-6">
-                <div class="card border-0 shadow-sm h-100 destination-card" (click)="scrollToSection('packages')">
-                    <div class="row g-0 align-items-center">
-
-                        <div class="col-5">
-                            <img src="assets/img/destination-6.jpg" class="img-fluid rounded-start"
-                                alt="Galle Fort Sri Lanka Beach Tour">
-                        </div>
-
-                        <div class="col-7 p-3">
-                            <h5 class="mb-1">Galle</h5>
-
-                            <p class="mb-1 small text-muted">
-                                Explore the historic Galle Fort and beautiful southern beaches.
-                            </p>
-
-                            <small class="text-primary fw-bold">
-                                Included in: Galle Day Tour, 4 Day Tour, 5 Day Tour, 6 Day Tour, 7 Day Tour, 8 Day Tour
-                                & 10 Day Tour
-                            </small>
-
-                        </div>
-
+                <div class="destination-card" (click)="scrollToSection('packages')">
+                    <div class="card-image">
+                        <img src="assets/img/destination-6.jpg" alt="Galle Fort Sri Lanka Beach Tour">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Galle</h3>
+                        <p class="card-description">Explore the historic Galle Fort and beautiful southern beaches.</p>
+                        <p class="card-packages">
+                            <strong>Included in:</strong> Galle Day Tour, 4 Day Tour, 5 Day Tour, 6 Day Tour, 7 Day Tour, 8 Day Tour & 10 Day Tour
+                        </p>
+                        <a href="#packages" class="card-link">
+                            View Tours <i class="fa fa-arrow-right ms-2"></i>
+                        </a>
                     </div>
                 </div>
             </div>
-
         </div>
 
     </div>
 </div>
-<!-- Destination Start -->
+<!-- Destination End -->
 
 <!-- Packages Start -->
 <div id="packages" class="container-fluid bg-light">
