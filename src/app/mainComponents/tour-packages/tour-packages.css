@@ -30,57 +30,41 @@
   margin: 0;
 }
 
-/* Modern Tab Navigation */
+/* Tab Navigation */
 .tabs-container {
   display: flex;
   justify-content: center;
+  gap: 0;
   margin-bottom: 50px;
   position: relative;
+  background: white;
+  border-radius: 12px;
+  padding: 0;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.tabs-wrapper {
-  display: flex;
-  background: white;
-  border-radius: 30px;
-  padding: 6px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+.tab-button {
+  padding: 14px 32px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  color: #666;
+  transition: color 0.3s ease;
   position: relative;
   z-index: 2;
 }
 
-.tab-button {
-  padding: 12px 24px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 600;
-  color: #666;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  border-radius: 24px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  z-index: 3;
-  white-space: nowrap;
+.tab-button:first-child {
+  border-radius: 12px 0 0 12px;
 }
 
-.tab-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  color: #007bff;
-}
-
-.tab-count {
-  background: #f0f0f0;
-  padding: 2px 8px;
-  border-radius: 12px;
-  font-size: 12px;
-  color: #555;
-  margin-left: 4px;
+.tab-button:last-child {
+  border-radius: 0 12px 12px 0;
 }
 
 .tab-button:hover {
@@ -91,129 +75,167 @@
   color: white;
 }
 
-.tab-button.active .tab-icon {
-  color: white;
-}
-
-.tab-button.active .tab-count {
-  background: rgba(255, 255, 255, 0.3);
-  color: white;
-}
-
-/* Tab Indicator */
-.tab-indicator {
+/* Tab Slider */
+.tab-slider {
   position: absolute;
-  bottom: 6px;
-  left: 6px;
-  height: 44px;
+  height: 100%;
   background: linear-gradient(135deg, #007bff, #0056b3);
-  border-radius: 24px;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
-  z-index: 1;
-}
-
-.tab-indicator.multi {
-  width: 170px;
-  left: 6px;
-}
-
-.tab-indicator.day {
-  width: 140px;
-  left: 176px;
-}
-
-/* Carousel Container */
-.carousel-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 30px;
-}
-
-.carousel-wrapper {
-  flex: 1;
-  overflow: hidden;
   border-radius: 12px;
-}
-
-.carousel-track {
-  display: flex;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  gap: 20px;
-  padding: 0;
-}
-
-.carousel-slide {
-  min-width: calc(33.333% - 14px);
-  animation: slideIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-/* Carousel Buttons */
-.carousel-btn {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  border: 2px solid #ddd;
-  background: white;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  color: #666;
-  flex-shrink: 0;
-  font-size: 18px;
-}
-
-.carousel-btn:hover:not(:disabled) {
-  background: #007bff;
-  color: white;
-  border-color: #007bff;
-  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
-  transform: scale(1.05);
-}
-
-.carousel-btn:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
-/* Carousel Indicators */
-.carousel-indicators {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.indicator {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #ddd;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.indicator.active {
-  background: #007bff;
-  width: 28px;
-  border-radius: 5px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+  width: 50%;
+  left: 0;
   box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
 }
 
-.indicator:hover {
-  background: #ccc;
+.tab-slider.day {
+  left: 50%;
 }
 
-.indicator.active:hover {
+/* Card Stack Container */
+.card-stack-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.featured-card-section {
+  min-height: 500px;
+  animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.featured-card {
+  height: 100%;
+}
+
+/* Preview Cards Grid */
+.preview-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.preview-cards-grid::-webkit-scrollbar {
+  width: 6px;
+}
+
+.preview-cards-grid::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.preview-cards-grid::-webkit-scrollbar-thumb {
   background: #007bff;
+  border-radius: 10px;
+}
+
+.preview-cards-grid::-webkit-scrollbar-thumb:hover {
+  background: #0056b3;
+}
+
+/* Preview Card */
+.preview-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid transparent;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.preview-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.preview-card.active {
+  border-color: #007bff;
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.1), 0 8px 20px rgba(0, 123, 255, 0.2);
+}
+
+.preview-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+}
+
+.preview-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.preview-card:hover .preview-image {
+  transform: scale(1.08);
+}
+
+.preview-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 123, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.preview-overlay i {
+  color: white;
+  font-size: 32px;
+}
+
+.preview-info {
+  padding: 12px;
+}
+
+.preview-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.preview-meta {
+  display: flex;
+  gap: 8px;
+  font-size: 11px;
+  color: #999;
+  margin-bottom: 8px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.meta-item i {
+  font-size: 10px;
+  color: #007bff;
+}
+
+.preview-price {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #007bff;
 }
 
 /* Animations */
-@keyframes slideIn {
+@keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(20px);
@@ -224,24 +246,29 @@
   }
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .carousel-slide {
-    min-width: calc(50% - 10px);
+  .card-stack-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .preview-cards-grid {
+    max-height: none;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   }
 
   .packages-header h1 {
     font-size: 36px;
-  }
-
-  .tab-button {
-    padding: 10px 16px;
-    font-size: 13px;
-  }
-
-  .tab-indicator.day {
-    left: 160px;
-    width: 120px;
   }
 }
 
@@ -258,56 +285,34 @@
     font-size: 28px;
   }
 
-  .carousel-slide {
-    min-width: 100%;
-  }
-
-  .carousel-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 16px;
-  }
-
-  .tabs-wrapper {
-    width: 100%;
-  }
-
   .tab-button {
-    flex: 1;
-    justify-content: center;
-    padding: 10px 12px;
+    padding: 12px 20px;
+    font-size: 14px;
   }
 
-  .tab-text {
-    display: none;
+  .tab-slider {
+    width: 50%;
   }
 
-  .tab-icon {
-    font-size: 18px;
+  .preview-cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 12px;
   }
 
-  .tab-indicator.multi,
-  .tab-indicator.day {
-    width: calc(50% - 6px);
-    height: 40px;
-    left: 6px;
+  .featured-card-section {
+    min-height: auto;
   }
 
-  .tab-indicator.day {
-    left: calc(50% + 6px);
+  .preview-image-wrapper {
+    height: 100px;
   }
 
-  .carousel-indicators {
-    gap: 8px;
+  .preview-title {
+    font-size: 12px;
   }
 
-  .indicator {
-    width: 8px;
-    height: 8px;
-  }
-
-  .indicator.active {
-    width: 24px;
+  .preview-meta {
+    font-size: 10px;
   }
 }
 
@@ -316,18 +321,17 @@
     font-size: 22px;
   }
 
-  .carousel-container {
-    gap: 8px;
+  .card-stack-container {
+    gap: 20px;
   }
 
-  .carousel-btn {
-    width: 36px;
-    height: 36px;
-    font-size: 14px;
+  .tab-button {
+    padding: 10px 16px;
+    font-size: 13px;
   }
 
-  .carousel-track {
-    gap: 12px;
+  .preview-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .header-subtitle {

@@ -24,70 +24,67 @@
             <p class="header-subtitle">Choose from our curated selection of unforgettable journeys</p>
         </div>
 
-        <!-- Modern Tab Navigation -->
+        <!-- Tab Navigation -->
         <div class="tabs-container">
-            <div class="tabs-wrapper">
-                <button 
-                    class="tab-button" 
-                    [class.active]="activeTab==='multi'" 
-                    (click)="setTab('multi')">
-                    <span class="tab-icon">
-                        <i class="fa fa-calendar"></i>
-                    </span>
-                    <span class="tab-text">Multi-Day Tours</span>
-                    <span class="tab-count">{{ multiDayTours.length }}</span>
-                </button>
-                <button 
-                    class="tab-button" 
-                    [class.active]="activeTab==='day'" 
-                    (click)="setTab('day')">
-                    <span class="tab-icon">
-                        <i class="fa fa-sun-o"></i>
-                    </span>
-                    <span class="tab-text">Day Tours</span>
-                    <span class="tab-count">{{ dayTours.length }}</span>
-                </button>
-            </div>
-            <div class="tab-indicator" [class.multi]="activeTab==='multi'" [class.day]="activeTab==='day'"></div>
+            <button 
+                class="tab-button" 
+                [class.active]="activeTab==='multi'" 
+                (click)="setTab('multi')">
+                Multi-Day Tours
+            </button>
+            <button 
+                class="tab-button" 
+                [class.active]="activeTab==='day'" 
+                (click)="setTab('day')">
+                Day Tours
+            </button>
+            <div class="tab-slider" [class.day]="activeTab==='day'"></div>
         </div>
 
-        <!-- Carousel Container -->
-        <div class="carousel-container">
-            <button class="carousel-btn carousel-btn-prev" (click)="slideCarousel(-1)" [disabled]="currentSlide === 0">
-                <i class="fa fa-chevron-left"></i>
-            </button>
+        <!-- Card Stack Layout -->
+        <div class="card-stack-container">
+            <!-- Featured Large Card -->
+            <div class="featured-card-section">
+                <app-package-item-component 
+                    *ngIf="featuredTour"
+                    [image]="featuredTour.image" 
+                    [days]="featuredTour.days" 
+                    [persons]="featuredTour.persons"
+                    [rating]="featuredTour.rating" 
+                    [price]="featuredTour.price" 
+                    [title]="featuredTour.title" 
+                    [routerLink]="featuredTour.routerLink"
+                    class="featured-card">
+                </app-package-item-component>
+            </div>
 
-            <div class="carousel-wrapper">
-                <div class="carousel-track" [style.transform]="'translateX(-' + (currentSlide * 100) + '%)'">
-                    <div *ngFor="let tour of activeTab==='day' ? dayTours : multiDayTours; let i = index"
-                        class="carousel-slide">
-                        <app-package-item-component 
-                            [image]="tour.image" 
-                            [days]="tour.days" 
-                            [persons]="tour.persons"
-                            [rating]="tour.rating" 
-                            [price]="tour.price" 
-                            [title]="tour.title" 
-                            [routerLink]="tour.routerLink"
-                            class="package-card">
-                        </app-package-item-component>
+            <!-- Preview Cards Grid -->
+            <div class="preview-cards-grid">
+                <div 
+                    *ngFor="let tour of activeTab==='day' ? dayTours : multiDayTours"
+                    class="preview-card"
+                    [class.active]="tour === featuredTour"
+                    (click)="setFeaturedTour(tour)">
+                    <div class="preview-image-wrapper">
+                        <img [src]="tour.image" [alt]="tour.title" class="preview-image">
+                        <div class="preview-overlay" *ngIf="tour === featuredTour">
+                            <i class="fa fa-check-circle"></i>
+                        </div>
+                    </div>
+                    <div class="preview-info">
+                        <h4 class="preview-title">{{ tour.title }}</h4>
+                        <div class="preview-meta">
+                            <span class="meta-item">
+                                <i class="fa fa-calendar-alt"></i> {{ tour.days }}
+                            </span>
+                            <span class="meta-item">
+                                <i class="fa fa-star"></i> {{ tour.rating }}
+                            </span>
+                        </div>
+                        <span class="preview-price">$ {{ (tour.price/2) | number:'1.0-0' }}</span>
                     </div>
                 </div>
             </div>
-
-            <button class="carousel-btn carousel-btn-next" (click)="slideCarousel(1)" [disabled]="currentSlide >= maxSlides">
-                <i class="fa fa-chevron-right"></i>
-            </button>
-        </div>
-
-        <!-- Carousel Indicators -->
-        <div class="carousel-indicators">
-            <span 
-                *ngFor="let i of [0,1,2]; let idx = index"
-                class="indicator" 
-                [class.active]="currentSlide === idx"
-                (click)="currentSlide = idx">
-            </span>
         </div>
 
     </div>
