@@ -19,6 +19,8 @@ export class TourPackages {
   userCountry = 'US';
 
   activeTab: 'multi' | 'day' = 'multi';
+  currentSlide: number = 0;
+  maxSlides: number = 0;
 
   constructor(
     private http: HttpClient,
@@ -30,6 +32,7 @@ export class TourPackages {
     this.userCountry = await this.countryService.detectCountry();
     this.dayTours = await this.loadToursWithPrices(toursData.dayTours);
     this.multiDayTours = await this.loadToursWithPrices(toursData.multiDayTours);
+    this.updateMaxSlides();
   }
 
   async loadToursWithPrices(tours: any[]) {
@@ -82,5 +85,18 @@ export class TourPackages {
 
   setTab(tab: 'multi' | 'day') {
     this.activeTab = tab;
+    this.currentSlide = 0;
+    this.updateMaxSlides();
+  }
+
+  slideCarousel(direction: number) {
+    const tours = this.activeTab === 'day' ? this.dayTours : this.multiDayTours;
+    const maxIndex = Math.max(0, tours.length - 3);
+    this.currentSlide = Math.max(0, Math.min(this.currentSlide + direction, maxIndex));
+  }
+
+  updateMaxSlides() {
+    const tours = this.activeTab === 'day' ? this.dayTours : this.multiDayTours;
+    this.maxSlides = Math.max(0, tours.length - 3);
   }
 }

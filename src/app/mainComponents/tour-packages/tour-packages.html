@@ -15,40 +15,83 @@
 
 
 <!-- Packages Start -->
-<div class="container-fluid  bg-light">
-    <div class="container pt-5 pb-3">
-        <div class="text-center ">
-            <h6 class="text-primary text-uppercase tracking-widest">Packages</h6>
-            <h1 class="font-bold text-4xl">Perfect Tour Packages</h1>
+<div class="container-fluid packages-section">
+    <div class="container">
+        <!-- Header -->
+        <div class="packages-header">
+            <h6 class="text-primary text-uppercase">Packages</h6>
+            <h1>Perfect Tour Packages</h1>
+            <p class="header-subtitle">Choose from our curated selection of unforgettable journeys</p>
         </div>
 
-        <div class="flex text-center mb-4 relative">
-            <button class="tab-btn-outline" [class.active]="activeTab==='multi'" (click)="setTab('multi')">
-                Multi-Day Tours
-            </button>
-            <button class="tab-btn-outline" [class.active]="activeTab==='day'" (click)="setTab('day')">
-                Day Tours
-            </button>
-
-        </div>
-
-
-        <!-- Tab Content -->
-        <div class="row">
-            <div *ngFor="let tour of activeTab==='day' ? dayTours : multiDayTours; let i = index"
-                class="col-lg-4 col-md-6 mb-4 package-card-wrapper" [style.--i]="i">
-                <app-package-item-component [image]="tour.image" [days]="tour.days" [persons]="tour.persons"
-                    [rating]="tour.rating" [price]="tour.price" [title]="tour.title" [routerLink]="tour.routerLink"
-                    class="package-card">
-                </app-package-item-component>
+        <!-- Modern Tab Navigation -->
+        <div class="tabs-container">
+            <div class="tabs-wrapper">
+                <button 
+                    class="tab-button" 
+                    [class.active]="activeTab==='multi'" 
+                    (click)="setTab('multi')">
+                    <span class="tab-icon">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+                    <span class="tab-text">Multi-Day Tours</span>
+                    <span class="tab-count">{{ multiDayTours.length }}</span>
+                </button>
+                <button 
+                    class="tab-button" 
+                    [class.active]="activeTab==='day'" 
+                    (click)="setTab('day')">
+                    <span class="tab-icon">
+                        <i class="fa fa-sun-o"></i>
+                    </span>
+                    <span class="tab-text">Day Tours</span>
+                    <span class="tab-count">{{ dayTours.length }}</span>
+                </button>
             </div>
+            <div class="tab-indicator" [class.multi]="activeTab==='multi'" [class.day]="activeTab==='day'"></div>
+        </div>
+
+        <!-- Carousel Container -->
+        <div class="carousel-container">
+            <button class="carousel-btn carousel-btn-prev" (click)="slideCarousel(-1)" [disabled]="currentSlide === 0">
+                <i class="fa fa-chevron-left"></i>
+            </button>
+
+            <div class="carousel-wrapper">
+                <div class="carousel-track" [style.transform]="'translateX(-' + (currentSlide * 100) + '%)'">
+                    <div *ngFor="let tour of activeTab==='day' ? dayTours : multiDayTours; let i = index"
+                        class="carousel-slide">
+                        <app-package-item-component 
+                            [image]="tour.image" 
+                            [days]="tour.days" 
+                            [persons]="tour.persons"
+                            [rating]="tour.rating" 
+                            [price]="tour.price" 
+                            [title]="tour.title" 
+                            [routerLink]="tour.routerLink"
+                            class="package-card">
+                        </app-package-item-component>
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-btn carousel-btn-next" (click)="slideCarousel(1)" [disabled]="currentSlide >= maxSlides">
+                <i class="fa fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <!-- Carousel Indicators -->
+        <div class="carousel-indicators">
+            <span 
+                *ngFor="let i of [0,1,2]; let idx = index"
+                class="indicator" 
+                [class.active]="currentSlide === idx"
+                (click)="currentSlide = idx">
+            </span>
         </div>
 
     </div>
 </div>
-
-
-
 <!-- Packages End -->
 
 <router-outlet></router-outlet>
