@@ -13,26 +13,35 @@
   ],
 
   "multiDayTours": [
-
     {
-      "id": 4,
-      "title": "7 Day Sri Lanka Tour with 4 Star Hotels, Safari & Beach Stay",
-      "days": "7 days",
+      "id": 3,
+      "title": "Ella & Kandy 2 Day Excursion Yala Safari, Train Ride & Hill Country",
+      "days": "2 days",
       "persons": "1-20 Persons",
       "rating": 5,
-      "filecode": "7-day-sri-lanka-tour",
-      "image": "assets/img/package-1.jpeg",
-      "routerLink": "/7-day-sri-lanka-tour"
+      "filecode": "2-day-ella-kandy-private-tour-sri-lanka",
+      "image": "assets/img/2daysTours/1.jpeg",
+      "routerLink": "/2-day-ella-kandy-private-tour-sri-lanka"
     },
     {
-      "id": 5,
-      "title": "10 Day Sri Lanka Tour with 4 Star Hotels and Private Transportation",
-      "days": "10 days",
+      "id": 6,
+      "title": "Sigiriya & Kandy 2 Day Excursion Cultural Tour & Elephant Safari",
+      "days": "2 days",
       "persons": "1-20 Persons",
       "rating": 5,
-      "filecode": "10-day-sri-lanka-tour",
-      "image": "assets/img/package-2.jpg",
-      "routerLink": "/10-day-sri-lanka-tour"
+      "filecode": "2-day-sigiriya-kandy-private-tour-sri-lanka",
+      "image": "assets/img/mainpage/6.jpeg",
+      "routerLink": "/2-day-sigiriya-kandy-private-tour-sri-lanka"
+    },
+    {
+      "id": 7,
+      "title": "3 Day Sri Lanka Tour Sigiriya, Kandy, Ella & Yala Safari",
+      "days": "3 days",
+      "persons": "1-20 Persons",
+      "rating": 5,
+      "filecode": "3-day-sigiriya-kandy-ella-yala-tour",
+      "image": "assets/img/mainpage/2.jpeg",
+      "routerLink": "/3-day-sigiriya-kandy-ella-yala-tour"
     }
   ]
 }

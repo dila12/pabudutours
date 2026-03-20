@@ -1,0 +1,24 @@
+{
+  "name": "3-day-ella-yala-private-tour-sri-lanka",
+  "title": "3 Day Ella, Yala Safari & Hill Country Private Tour Sri Lanka",
+  "duration": "Three Days",
+  "tourType": "Round Tour",
+  "overview": "Experience the best of Sri Lanka’s hill country and wildlife in this 3 day private tour. Explore Ella’s iconic attractions including Nine Arch Bridge, Little Adam’s Peak and Ravana Falls, enjoy a scenic train ride, and relax in the cool climate of Nuwara Eliya. End your journey with an exciting safari in Yala National Park where you may spot leopards, elephants and other wildlife.",
+  
+  "images": [
+    "assets/img/2daysTours/1.jpeg",
+    "assets/img/2daysTours/2.jpeg",
+    "assets/img/2daysTours/3.jpeg",
+    "assets/img/2daysTours/5.jpg",
+    "assets/img/2daysTours/11.jpg"
+  ],
+
+  "price": {
+    "1": 550.00,
+    "2": 750.00,
+    "3": 880.00,
+    "4": 990.00,
+    "5": 1150.00,
+    "6": 1300.00
+  }
+}
