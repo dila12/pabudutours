@@ -5,7 +5,11 @@
   z-index: 9999;
   cursor: pointer;
   border-radius: 50%;
-  padding: 10px 12px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  display: grid;
+  place-items: center;
   font-size: 18px;
   transition: opacity 0.3s;
 }

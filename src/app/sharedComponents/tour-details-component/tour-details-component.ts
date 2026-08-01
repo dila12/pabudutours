@@ -1,13 +1,23 @@
-import { CommonModule } from '@angular/common';
-import { Component, Input, Type } from '@angular/core';
+import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
+import {
+  Component,
+  Inject,
+  Input,
+  OnChanges,
+  OnDestroy,
+  PLATFORM_ID,
+  SimpleChanges,
+  Type,
+} from '@angular/core';
+import { Router } from '@angular/router';
 
 export interface Activity {
-  type: string;          // e.g. "Guided tour", "Accommodation", "Dinner"
-  title: title;        // e.g. "Pidurangala Rock", "Fresco Water Villa"
-  description?: string;  // e.g. "Little hike to Pidurangala Rock..."
-  icon?: string;         // e.g. "fa-hotel", "fa-hiking", "fa-utensils"
-  image?: string;        // optional image path
-  extra?: string[];      // optional extra details (e.g. "Private bathroom")
+  type: string;
+  title: title;
+  description?: string;
+  icon?: string;
+  image?: string;
+  extra?: string[];
 }
 
 export interface title {
@@ -21,6 +31,7 @@ export interface ItineraryDay {
   title: string;
   activities: Activity[];
 }
+
 export interface TourDetails {
   title: string;
   description: string;
@@ -41,33 +52,95 @@ export interface TourDetails {
   templateUrl: './tour-details-component.html',
   styleUrl: './tour-details-component.css',
 })
-export class TourDetailsComponent {
+export class TourDetailsComponent implements OnChanges, OnDestroy {
   @Input() tour!: TourDetails;
 
   expandedDays: { [key: number]: boolean } = {};
   static PackageItemComponent: readonly any[] | Type<any>;
 
+  selectedImage: string | null = null;
+  private jsonLdEl: HTMLScriptElement | null = null;
+  private readonly isBrowser: boolean;
+
+  constructor(
+    private readonly router: Router,
+    @Inject(DOCUMENT) private readonly document: Document,
+    @Inject(PLATFORM_ID) platformId: Object,
+  ) {
+    this.isBrowser = isPlatformBrowser(platformId);
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['tour'] && this.tour) {
+      this.upsertTourJsonLd();
+    }
+  }
+
+  ngOnDestroy(): void {
+    this.removeTourJsonLd();
+  }
+
   toggleDay(day: number) {
     const isAlreadyOpen = this.expandedDays[day];
-
     this.expandedDays = {};
-
     if (!isAlreadyOpen) {
       this.expandedDays[day] = true;
     }
   }
 
-  constructor() {}
+  openImage(img: string) {
+    this.selectedImage = img;
+  }
 
-  selectedImage: string | null = null;
+  closeImage() {
+    this.selectedImage = null;
+  }
 
-openImage(img: string) {
-  this.selectedImage = img;
-}
+  private upsertTourJsonLd(): void {
+    if (!this.isBrowser || !this.tour?.title) return;
 
-closeImage() {
-  this.selectedImage = null;
-}
-  ngOnInit(): void {
+    const path = this.router.url.split('?')[0] || '/';
+    const pageUrl = `https://www.pabudutours.com${path}`;
+    const price = Number(this.tour.price) || 0;
+
+    const schema = {
+      '@context': 'https://schema.org',
+      '@type': 'Product',
+      name: this.tour.title,
+      description:
+        this.tour.overview ||
+        this.tour.description ||
+        `${this.tour.title} with Pabudu Tours Sri Lanka`,
+      brand: {
+        '@type': 'TravelAgency',
+        name: 'Pabudu Tours Sri Lanka',
+        url: 'https://www.pabudutours.com/',
+      },
+      category: this.tour.tourType || 'Tour',
+      url: pageUrl,
+      offers: {
+        '@type': 'Offer',
+        url: pageUrl,
+        priceCurrency: 'USD',
+        price: price > 0 ? String(price) : undefined,
+        availability: 'https://schema.org/InStock',
+        category: this.tour.duration || undefined,
+      },
+    };
+
+    if (!this.jsonLdEl) {
+      this.jsonLdEl = this.document.createElement('script');
+      this.jsonLdEl.type = 'application/ld+json';
+      this.jsonLdEl.setAttribute('data-tour-jsonld', 'true');
+      this.document.head.appendChild(this.jsonLdEl);
+    }
+    this.jsonLdEl.text = JSON.stringify(schema);
+  }
+
+  private removeTourJsonLd(): void {
+    if (this.jsonLdEl?.parentNode) {
+      this.jsonLdEl.parentNode.removeChild(this.jsonLdEl);
+    }
+    this.jsonLdEl = null;
   }
 }

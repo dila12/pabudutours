@@ -2,62 +2,98 @@ import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { RouterModule, Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { Title, Meta } from '@angular/platform-browser';
 import { filter, map, mergeMap } from 'rxjs/operators';
-import { isPlatformBrowser } from '@angular/common';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+
+const SITE_ORIGIN = 'https://www.pabudutours.com';
+const DEFAULT_OG_IMAGE = `${SITE_ORIGIN}/assets/img/mainpage/hero.webp`;
 
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.html',
   styleUrls: ['./app.css'],
-  imports: [RouterModule]
+  imports: [RouterModule],
 })
 export class AppComponent {
-
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private titleService: Title,
     private metaService: Meta,
-    @Inject(PLATFORM_ID) private platformId: Object
+    @Inject(PLATFORM_ID) private platformId: Object,
+    @Inject(DOCUMENT) private document: Document,
   ) {
-
     this.router.events
       .pipe(
-        filter(event => event instanceof NavigationEnd),
+        filter((event) => event instanceof NavigationEnd),
         map(() => this.route),
-        map(route => {
+        map((route) => {
           while (route.firstChild) route = route.firstChild;
           return route;
         }),
-        mergeMap(route => route.data)
+        mergeMap((route) => route.data),
       )
-      .subscribe(data => {
+      .subscribe((data) => {
+        const title =
+          data['title'] ||
+          'Pabudu Tours Sri Lanka | Private & Tailor Made Sri Lanka Tours';
+        const description =
+          data['description'] ||
+          'Explore Sri Lanka with private tours, tailor-made holiday packages and experienced local driver guides.';
+        const ogImage = data['ogImage'] || DEFAULT_OG_IMAGE;
+        const robots = data['robots'] || 'index, follow, max-image-preview:large';
 
-        if (data['title']) {
-          this.titleService.setTitle(data['title']);
-        }
+        this.titleService.setTitle(title);
 
-        if (data['description']) {
-          this.metaService.updateTag({
-            name: 'description',
-            content: data['description']
-          });
-        }
+        this.metaService.updateTag({ name: 'description', content: description });
+        this.metaService.updateTag({ name: 'robots', content: robots });
 
         if (data['keywords']) {
           this.metaService.updateTag({
             name: 'keywords',
-            content: data['keywords']
+            content: data['keywords'],
           });
         }
 
-        const url = this.router.url;
+        const url = this.router.url.split('?')[0] || '/';
+        const canonicalUrl = `${SITE_ORIGIN}${url === '/' ? '/' : url}`;
+
         if (isPlatformBrowser(this.platformId)) {
-          const canonical = document.querySelector("link[rel='canonical']") || document.createElement('link');
-          canonical.setAttribute('rel', 'canonical');
-          canonical.setAttribute('href', 'https://yourdomain.com' + url);
-          document.head.appendChild(canonical);
+          let canonical = this.document.querySelector(
+            "link[rel='canonical']",
+          ) as HTMLLinkElement | null;
+          if (!canonical) {
+            canonical = this.document.createElement('link');
+            canonical.setAttribute('rel', 'canonical');
+            this.document.head.appendChild(canonical);
+          }
+          canonical.setAttribute('href', canonicalUrl);
         }
+
+        this.metaService.updateTag({ property: 'og:url', content: canonicalUrl });
+        this.metaService.updateTag({ property: 'og:title', content: title });
+        this.metaService.updateTag({
+          property: 'og:description',
+          content: description,
+        });
+        this.metaService.updateTag({ property: 'og:image', content: ogImage });
+        this.metaService.updateTag({
+          property: 'og:image:alt',
+          content: title,
+        });
+        this.metaService.updateTag({ property: 'og:type', content: 'website' });
+        this.metaService.updateTag({
+          property: 'og:site_name',
+          content: 'Pabudu Tours Sri Lanka',
+        });
+
+        this.metaService.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
+        this.metaService.updateTag({ name: 'twitter:title', content: title });
+        this.metaService.updateTag({
+          name: 'twitter:description',
+          content: description,
+        });
+        this.metaService.updateTag({ name: 'twitter:image', content: ogImage });
       });
   }
 }

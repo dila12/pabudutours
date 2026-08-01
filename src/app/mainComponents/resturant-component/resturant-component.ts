@@ -57,11 +57,19 @@ export class ResturantComponent {
       script.type = 'application/ld+json';
       script.text = JSON.stringify({
         '@context': 'https://schema.org',
-        '@type': 'Event',
-        name: 'Private Event Packages - Pabudu Tours',
-        location: {
-          '@type': 'Place',
-          name: 'Sri Lanka',
+        '@type': 'Restaurant',
+        name: 'Pabudu Beach Restaurant',
+        url: 'https://www.pabudutours.com/restaurants-in-sri-lanka',
+        servesCuisine: ['Sri Lankan', 'Seafood'],
+        address: {
+          '@type': 'PostalAddress',
+          addressCountry: 'LK',
+          addressRegion: 'Western Province',
+        },
+        parentOrganization: {
+          '@type': 'TravelAgency',
+          name: 'Pabudu Tours Sri Lanka',
+          url: 'https://www.pabudutours.com/',
         },
       });
 

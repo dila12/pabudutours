@@ -17,7 +17,6 @@ export class PackageItemComponent {
   @Input() price!: number;
   @Input() title!: string;
   @Input() routerLink!: string;
-
-  ngOnInit() {
-  }
+  /** Heading level so card titles stay sequential under their section (h3/h4). */
+  @Input() titleLevel: 3 | 4 = 4;
 }

@@ -2,6 +2,7 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, Inject, Input, PLATFORM_ID } from '@angular/core';
 import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { environment } from '../../../../environment';
 import { ToastrService } from 'ngx-toastr';
 import countryCode from './../../../assets/data/countryCode.json';
@@ -9,7 +10,7 @@ import countryCode from './../../../assets/data/countryCode.json';
 @Component({
   selector: 'app-contact-us-component',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule],
   templateUrl: './contact-us-component.html',
   styleUrls: ['./contact-us-component.css'],
 })

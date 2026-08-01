@@ -27,17 +27,11 @@
               "src/favicon.ico"
             ],
             "styles": [
-              "src/styles.scss",
-              "src/assets/lib/owlcarousel/assets/owl.carousel.min.css",
-              "src/assets/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css"
+              "src/styles.scss"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
-              "src/assets/lib/owlcarousel/owl.carousel.min.js",
-              "src/assets/lib/tempusdominus/js/moment.min.js",
-              "src/assets/lib/tempusdominus/js/moment-timezone.min.js",
-              "src/assets/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js",
               "src/assets/js/main.js"
             ]
           },
@@ -51,11 +45,12 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
+                  "maximumWarning": "12kB",
+                  "maximumError": "20kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "sourceMap": true
             },
             "development": {
               "optimization": false,

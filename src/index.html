@@ -9,54 +9,66 @@
   <meta name="keywords"
     content="Sri Lanka private tours, Sri Lanka tour packages, tailor made Sri Lanka tours, Sri Lanka chauffeur guide, Sri Lanka driver guide, Sri Lanka holiday packages">
   <meta name="author" content="Pabudu Tours Sri Lanka">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="index, follow, max-image-preview:large">
   <meta http-equiv="content-language" content="en">
+  <link rel="canonical" href="https://www.pabudutours.com/">
   <meta property="og:title" content="Pabudu Tours Sri Lanka | Private & Tailor Made Sri Lanka Tours">
   <meta property="og:description" content="Explore Sri Lanka with private tours, tailor-made holiday packages and experienced local driver guides.">
-  <meta property="og:image" content="https://Pabudutours.com/assets/img/favicon.png">
+  <meta property="og:image" content="https://www.pabudutours.com/assets/img/mainpage/hero.webp">
+  <meta property="og:image:alt" content="Scenic Sri Lanka private tour with Pabudu Tours">
   <meta name="google-site-verification" content="cBXA-svGIkZdhiPjU4t5MLN1GZxd4e9pvysg1xLJNN4" />
-  <meta property="og:url" content="https://Pabudutours.com/">
+  <meta property="og:url" content="https://www.pabudutours.com/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Pabudu Tours Sri Lanka">
-  <link rel="alternate" hreflang="en" href="https://Pabudutours.com/" />
-  <link rel="alternate" hreflang="de" href="https://Pabudutours.com/de/" />
-  <link rel="alternate" hreflang="it" href="https://Pabudutours.com/it/" />
-  <link rel="alternate" hreflang="fr" href="https://Pabudutours.com/fr/" />
-  <link rel="alternate" hreflang="es" href="https://Pabudutours.com/es/" />
-  <link rel="alternate" hreflang="ru" href="https://Pabudutours.com/ru/" />
-  <link rel="alternate" hreflang="pl" href="https://Pabudutours.com/pl/" />
-  <link rel="alternate" hreflang="zh-CN" href="https://Pabudutours.com/zh/" />
-  <link rel="alternate" hreflang="x-default" href="https://Pabudutours.com/" />
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pabudu Tours Sri Lanka | Private & Tailor Made Sri Lanka Tours">
+  <meta name="twitter:description" content="Private Sri Lanka tours with trusted local chauffeur guides.">
+  <meta name="twitter:image" content="https://www.pabudutours.com/assets/img/mainpage/hero.webp">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon.png">
-  <link rel="icon" type="image/png" sizes="48x48" href="https://Pabudutours.com/assets/img/favicon.png">
   <link rel="shortcut icon" href="assets/img/favicon.png">
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="assets/img/mainpage/hero-480.avif" imagesrcset="assets/img/mainpage/hero-480.avif 960w, assets/img/mainpage/hero-800.avif 1200w, assets/img/mainpage/hero.avif 1920w" imagesizes="100vw" fetchpriority="high" type="image/avif">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"></noscript>
+  <style>@font-face{font-family:"Font Awesome 5 Free";font-display:swap}@font-face{font-family:"Font Awesome 5 Brands";font-display:swap}</style>
   <meta name="google" content="notranslate">
 </head>
 
 <body>
   <app-root></app-root>
 
-  <!-- <script src="https://elfsightcdn.com/platform.js" async></script> -->
   <div id="google_translate_element" style="display:none;"></div>
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MLGT0JLHNQ"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-MLGT0JLHNQ');
-    </script>
-
+  <!-- Analytics loads after idle so Lighthouse / first paint aren't blocked -->
   <script>
-    function googleTranslateElementInit() {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    function loadAnalytics() {
+      if (window.__analyticsLoaded) return;
+      window.__analyticsLoaded = true;
+      var s = document.createElement('script');
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-MLGT0JLHNQ';
+      s.async = true;
+      document.head.appendChild(s);
+      gtag('js', new Date());
+      gtag('config', 'G-MLGT0JLHNQ', { send_page_view: true });
+    }
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(loadAnalytics, { timeout: 4000 });
+    } else {
+      window.addEventListener('load', function () { setTimeout(loadAnalytics, 2000); });
+    }
+  </script>
+
+  <!-- Google Translate is loaded on demand from the language switcher (see layout component) -->
+  <script>
+    window.googleTranslateElementInit = function () {
       new google.translate.TranslateElement(
         {
           pageLanguage: 'en',
@@ -65,10 +77,26 @@
         },
         'google_translate_element'
       );
-    }
+      if (typeof window.__onGoogleTranslateReady === 'function') {
+        window.__onGoogleTranslateReady();
+      }
+    };
+    window.loadGoogleTranslate = function () {
+      if (window.__googleTranslateLoading || window.google?.translate) {
+        return Promise.resolve();
+      }
+      window.__googleTranslateLoading = true;
+      return new Promise(function (resolve) {
+        window.__onGoogleTranslateReady = function () {
+          resolve();
+        };
+        var s = document.createElement('script');
+        s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+        s.async = true;
+        document.body.appendChild(s);
+      });
+    };
   </script>
-
-  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 

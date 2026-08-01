@@ -1,49 +1,49 @@
 <div *ngIf="!homecontact" class="container-fluid page-header">
   <div class="container">
     <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
-      <h3 class="display-4 text-white text-uppercase">Contact</h3>
+      <p class="display-4 text-white text-uppercase mb-0">Contact</p>
       <div class="d-inline-flex text-white">
-        <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
+        <p class="m-0 text-uppercase"><a class="text-white" routerLink="/">Home</a></p>
         <i class="fa fa-angle-double-right pt-1 px-3"></i>
         <p class="m-0 text-uppercase">Contact</p>
       </div>
     </div>
   </div>
 </div>
-<!-- Header End -->
-
 
 <div class="container my-5" [ngClass]="{'white-text': homecontact}">
   <div class="text-center mb-5 pb-3">
-    <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Contact</h6>
-    <h1>Contact For Any Query</h1>
+    <p class="text-primary text-uppercase mb-2" style="letter-spacing: 5px;">Contact</p>
+    <h1 *ngIf="!homecontact">Contact For Any Query</h1>
+    <h2 *ngIf="homecontact" id="home-contact-heading">Contact For Any Query</h2>
   </div>
   <div class="row">
-    <!-- Contact Details -->
     <div class="col-md-5 mb-4">
-      <h3>Contact Information</h3>
+      <h2 *ngIf="!homecontact">Contact Information</h2>
+      <h3 *ngIf="homecontact">Contact Information</h3>
       <p><strong>Address:</strong> No: 439/2
 Managala Rd,
 kuda waskaduwa
 waskaduwa
-kalutara 
+kalutara
 srilanka</p>
       <p><strong>WhatsApp / Voice:</strong> +94 77 900 88 03</p>
       <p><strong>Email:</strong> Pabudutour@gmail.com</p>
       <p><strong>Business Hours:</strong> Open 24 Hours | 7 Days</p>
       <hr>
-      <h5>Get in Touch With Us</h5>
+      <h3 *ngIf="!homecontact">Get in Touch With Us</h3>
+      <h4 *ngIf="homecontact">Get in Touch With Us</h4>
       <p>
         Everything you need is at your fingertips. For any questions or queries please use the form below or
-        alternatively email us at <a href="mailto:info@driversinsrilanka.com">Pabudutour@gmail.com</a>, talk to
+        alternatively email us at <a href="mailto:Pabudutour@gmail.com">Pabudutour@gmail.com</a>, talk to
         us
-        via <a href="tel:+94773531693">+94 77 900 88 03</a>. We are always here for your assistance.
+        via <a href="tel:+94779008803">+94 77 900 88 03</a>. We are always here for your assistance.
       </p>
     </div>
 
-    <!-- Contact Form -->
     <div class="col-md-7">
-      <h3>Send a Message</h3>
+      <h2 *ngIf="!homecontact">Send a Message</h2>
+      <h3 *ngIf="homecontact">Send a Message</h3>
       <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
         <div class="mb-3">
           <label for="name" class="form-label">Your Name *</label>
@@ -62,18 +62,32 @@ srilanka</p>
         </div>
 
         <div class="mb-3">
-          <label class="form-label">Contact Phone *</label>
+          <span class="form-label" id="contact-phone-label">Contact Phone *</span>
           <div class="d-flex">
-
-            <select class="w-50 me-2" [(ngModel)]="selectedCountryCode" name="countryCode" [ngModelOptions]="{standalone: true}" required>
+            <label class="sr-only" for="contact-country-code">Country calling code</label>
+            <select
+              id="contact-country-code"
+              class="w-50 me-2"
+              [(ngModel)]="selectedCountryCode"
+              name="countryCode"
+              [ngModelOptions]="{standalone: true}"
+              aria-label="Country calling code"
+              required>
               <option *ngFor="let country of countriesList" [value]="country.code">
                 {{country.name}} ({{country.dial_code}})
               </option>
             </select>
 
-
-            <input type="tel" class="form-control" placeholder="712345678" formControlName="contactPhone" required
-              pattern="^\d{7,15}$" />
+            <label class="sr-only" for="contact-phone-input">Phone number</label>
+            <input
+              id="contact-phone-input"
+              type="tel"
+              class="form-control"
+              placeholder="712345678"
+              formControlName="contactPhone"
+              required
+              pattern="^\d{7,15}$"
+              aria-labelledby="contact-phone-label" />
           </div>
           <small class="text-danger"
             *ngIf="contactForm.get('contactPhone')?.invalid && contactForm.get('contactPhone')?.touched">

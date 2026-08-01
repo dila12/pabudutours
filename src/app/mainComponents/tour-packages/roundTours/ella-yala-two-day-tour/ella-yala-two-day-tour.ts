@@ -9,6 +9,7 @@ import {
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import toursData from '../../../../databaseJson/tours.json';
 import { PackageItemComponent } from '../../../../sharedComponents/package-item-component/package-item-component';
+import { TourBookingSidebarComponent } from '../../../../sharedComponents/tour-booking-sidebar/tour-booking-sidebar';
 
 @Component({
   selector: 'app-ella-yala-two-day-tour',
@@ -18,6 +19,7 @@ import { PackageItemComponent } from '../../../../sharedComponents/package-item-
     RouterModule,
     TourDetailsComponent,
     PackageItemComponent,
+    TourBookingSidebarComponent,
   ],
   templateUrl: './ella-yala-two-day-tour.html',
   styleUrl: './ella-yala-two-day-tour.css',

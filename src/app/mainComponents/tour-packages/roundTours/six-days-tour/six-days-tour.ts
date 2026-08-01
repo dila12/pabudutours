@@ -6,6 +6,7 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import toursData from '../../../../databaseJson/tours.json';
 import { Router, RouterModule } from '@angular/router';
 import { PackageItemComponent } from '../../../../sharedComponents/package-item-component/package-item-component';
+import { TourBookingSidebarComponent } from '../../../../sharedComponents/tour-booking-sidebar/tour-booking-sidebar';
 
 @Component({
   selector: 'app-six-days-tour',
@@ -15,6 +16,7 @@ import { PackageItemComponent } from '../../../../sharedComponents/package-item-
     RouterModule,
     TourDetailsComponent,
     PackageItemComponent,
+    TourBookingSidebarComponent,
   ],
   templateUrl: './six-days-tour.html',
   styleUrl: './six-days-tour.css'

@@ -21,9 +21,9 @@ import { TwoDaysTourPlus } from './mainComponents/tour-packages/roundTours/two-d
 import { SixDaysTour } from './mainComponents/tour-packages/roundTours/six-days-tour/six-days-tour';
 import { EightdaysComponent } from './mainComponents/tour-packages/roundTours/eightdays-component/eightdays-component';
 import { FourdaysTourComponent } from './mainComponents/tour-packages/roundTours/fourdays-tour-component/fourdays-tour-component';
-import { EllaYalaTwoDayTour } from './mainComponents/tour-packages/roundTours/ella-yala-two-day-tour/ella-yala-two-day-tour';
 import { TwoDayTourComponent } from './mainComponents/tour-packages/roundTours/two-days-tour/two-day-tour-component';
 import { ThreeDaysTours } from './mainComponents/tour-packages/roundTours/three-days-tours/three-days-tours';
+import { NotFoundComponent } from './sharedComponents/not-found-component/not-found-component';
 
 export const routes: Routes = [
   {
@@ -235,11 +235,12 @@ export const routes: Routes = [
         component: TwoDayTourComponent,
         data: {
           title:
-            '2 Day Ella & Yala Safari Private Tour | Sri Lanka Wildlife Experience',
+            '2 Day Sigiriya & Kandy Private Tour | Cultural Triangle Sri Lanka',
           description:
-            'Enjoy a 2 day private tour covering Ella highlights including Nine Arch Bridge, Little Adam’s Peak and Ravana Falls, followed by an exciting Yala National Park jeep safari to see leopards, elephants and wildlife.',
+            'Book a 2 day private Sri Lanka tour covering Sigiriya Rock Fortress, Dambulla Cave Temple, Kandy Temple of the Tooth and scenic Cultural Triangle highlights with a local chauffeur guide.',
           keywords:
-            'Ella Yala safari tour, 2 day Sri Lanka safari tour, Ella Yala private tour, Yala national park safari tour Sri Lanka',
+            '2 day Sigiriya Kandy tour, Sigiriya Kandy private tour, Sri Lanka cultural triangle tour, 2 day Sri Lanka tour',
+          ogImage: 'https://www.pabudutours.com/assets/img/mainpage/6.jpeg',
         },
       },
       {
@@ -285,6 +286,16 @@ export const routes: Routes = [
             'Discover Sri Lanka in 8 days with a private guided tour covering Wilpattu National Park safari, Anuradhapura ancient city, Sigiriya Rock Fortress, Kandy Temple of the Tooth, Ella hill country and relaxing beach stay in Hikkaduwa.',
           keywords:
             '8 day Sri Lanka tour, Sri Lanka 8 day itinerary, Sri Lanka private tour 8 days, Wilpattu safari tour, Sigiriya Kandy Ella beach tour',
+        },
+      },
+      {
+        path: '**',
+        component: NotFoundComponent,
+        data: {
+          title: 'Page Not Found | Pabudu Tours Sri Lanka',
+          description:
+            'This page could not be found. Browse private Sri Lanka tours and holiday packages with Pabudu Tours.',
+          robots: 'noindex, follow',
         },
       },
     ],

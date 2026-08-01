@@ -2,6 +2,14 @@
 @import './styles/bootstrap/scss/bootstrap';
 @import 'ngx-toastr/toastr';
 
+/* Package card price meta — global so contrast isn't lost to link/inherit styles */
+a.package-item .price-per,
+a.package-item .price-currency,
+.package-item .price-per,
+.package-item .price-currency {
+  color: #404040 !important;
+}
+
 .goog-te-banner-frame,
 .goog-te-banner-frame.skiptranslate {
   display: none !important;
@@ -10,6 +18,98 @@
 
 html, body {
   top: 0 !important;
+  max-width: 100%;
+  /* clip (not hidden) — overflow-x:hidden on body breaks position:sticky */
+  overflow-x: clip;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+/* Viator-style tour detail + sticky booking card.
+   Aside column stretches with tour details so the card unsticks
+   before the "High rated Tour" section below. */
+.tour-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 340px);
+  gap: 2rem;
+  align-items: stretch;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.tour-split__main .container-fluid,
+.tour-split__main .container {
+  max-width: none;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.tour-split__gallery {
+  margin-bottom: 1.25rem;
+}
+
+.tour-split__gallery .row,
+.tour-split__gallery [class*='col-'] {
+  margin: 0;
+  padding: 0;
+  max-width: none;
+  flex: 0 0 100%;
+  width: 100%;
+}
+
+.tour-split__gallery .main-img {
+  margin-left: 0 !important;
+  width: 100%;
+}
+
+.tour-split__aside {
+  position: relative;
+  min-width: 0;
+}
+
+@media (max-width: 991.98px) {
+  .tour-split {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* Booking lives in fixed bottom bar / sheet — don't take page space */
+  .tour-split__aside {
+    height: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    border: 0;
+  }
+
+  /* Room for sticky mobile booking bar */
+  body:has(app-tour-booking-sidebar.has-mobile-bar) {
+    padding-bottom: 84px;
+  }
+
+  body:has(app-tour-booking-sidebar.has-mobile-bar) .whatsapp-float {
+    bottom: 90px;
+  }
+
+  body:has(app-tour-booking-sidebar.has-mobile-bar) #scrollTopBtn,
+  body:has(app-tour-booking-sidebar.has-mobile-bar) app-scroll-to-to-component button {
+    bottom: 90px !important;
+  }
+
+  body.booking-sheet-open {
+    overflow: hidden;
+  }
 }
 
 .goog-tooltip,

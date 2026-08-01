@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://Pabudutours.com/sitemap.xml
+Sitemap: https://www.pabudutours.com/sitemap.xml

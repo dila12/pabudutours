@@ -1,0 +1,64 @@
+<!-- Mobile sticky booking bar -->
+<div class="mobile-book-bar" *ngIf="isMobile && !sheetOpen">
+  <div class="mobile-book-bar__price">
+    <span>From</span>
+    <strong>${{ price }}</strong>
+    <small>per group</small>
+  </div>
+  <button type="button" class="mobile-book-bar__cta" (click)="openSheet()">
+    Check availability
+  </button>
+</div>
+
+<!-- Backdrop for mobile sheet -->
+<div
+  class="mobile-book-backdrop"
+  *ngIf="isMobile && sheetOpen"
+  (click)="closeSheet()"
+  aria-hidden="true">
+</div>
+
+<!-- Desktop card / mobile bottom sheet -->
+<div
+  class="viator-card"
+  id="tour-booking-panel"
+  [class.viator-card--sheet]="isMobile"
+  [class.viator-card--sheet-open]="isMobile && sheetOpen"
+  role="dialog"
+  [attr.aria-modal]="isMobile ? true : null"
+  [attr.aria-hidden]="isMobile && !sheetOpen ? true : null">
+  <div class="viator-card__sheet-head" *ngIf="isMobile">
+    <p class="viator-card__price viator-card__price--sheet">
+      From <strong>${{ price }}</strong>
+      <span>per group</span>
+    </p>
+    <button type="button" class="viator-card__close" (click)="closeSheet()" aria-label="Close booking form">
+      <i class="fa fa-times" aria-hidden="true"></i>
+    </button>
+  </div>
+
+  <p class="viator-card__price" *ngIf="!isMobile">
+    From <strong>${{ price }}</strong>
+    <span>per group</span>
+  </p>
+
+  <app-booking-component
+    [embedMode]="true"
+    [sidebarLayout]="true"
+    [filecodeInput]="filecode"
+    [tourInput]="tour"
+    [imageInput]="image"
+    [displayPrice]="price">
+  </app-booking-component>
+
+  <ul class="viator-card__perks">
+    <li><i class="fa fa-check" aria-hidden="true"></i> Reserve now, pay later at destination</li>
+    <li><i class="fa fa-check" aria-hidden="true"></i> Private tour with local chauffeur guide</li>
+    <li><i class="fa fa-check" aria-hidden="true"></i> Free cancellation support via WhatsApp</li>
+  </ul>
+
+  <div class="viator-card__note">
+    <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+    <p>Book ahead for the best availability on popular Sri Lanka dates.</p>
+  </div>
+</div>

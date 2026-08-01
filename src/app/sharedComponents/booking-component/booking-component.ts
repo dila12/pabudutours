@@ -1,85 +1,122 @@
-import { Component, ElementRef, Inject, PLATFORM_ID, ViewChild } from '@angular/core';
+import {
+  Component,
+  Inject,
+  Input,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  PLATFORM_ID,
+  SimpleChanges,
+} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { CommonModule, isPlatformBrowser, NgTemplateOutlet } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../../environment';
 import countriesData from './../../../assets/data/countries.json';
 import countryCode from './../../../assets/data/countryCode.json';
-import { catchError } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
+import { CountryService } from '../../Services/country.service';
+import { TourPriceService } from '../../Services/tour-price.service';
 
 @Component({
   selector: 'app-booking-component',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, NgTemplateOutlet],
   templateUrl: './booking-component.html',
   styleUrl: './booking-component.css',
 })
-export class BookingComponent {
-  tour: any;
-  travelers: number = 1;
-  amountPaid: number = 0;
-  orderNumber: string = '';
+export class BookingComponent implements OnInit, OnChanges, OnDestroy {
+  /** When true, renders compact form for tour detail sidebars */
+  @Input() embedMode = false;
+  /** Viator-style sticky sidebar card layout */
+  @Input() sidebarLayout = false;
+  @Input() displayPrice: number | string = 0;
+  @Input() filecodeInput = '';
+  @Input() tourInput: any = null;
+  @Input() imageInput = '';
+  showGuestDetails = false;
+
+  tour: any = {
+    title: 'Tour',
+    price: 0,
+    duration: 'N/A',
+    tourType: 'N/A',
+  };
+  travelers = 1;
+  amountPaid = 0;
+  orderNumber = '';
   prices: any = {};
-  subtotal: number = 0;
-  total: number = 0;
-  filecode!: string;
-  image!: string;
+  subtotal = 0;
+  total = 0;
+  filecode = '';
+  image = '';
   bookingCompleted = false;
   bookingDate: Date = new Date();
-  travelDate!: Date;
+  travelDate: Date | null = null;
   firstName = '';
   lastName = '';
   email = '';
-  country: string = '';
+  country = '';
   countries: string[] = [];
   countriesList = countryCode;
   selectedCountry = this.countriesList.find((c) => c.code === 'LK');
   phoneNumber = '';
-  userCountry: string = 'US';
-  private isBrowser: boolean;
+  userCountry = 'US';
   groupNotice = '';
+  dateError = '';
+  agreeTerms = false;
+  private isBrowser: boolean;
+  private initialized = false;
 
   constructor(
     private router: Router,
     private http: HttpClient,
     private toastr: ToastrService,
     private route: ActivatedRoute,
+    private countryService: CountryService,
+    private tourPriceService: TourPriceService,
     @Inject(PLATFORM_ID) private platformId: Object,
   ) {
     this.isBrowser = isPlatformBrowser(this.platformId);
   }
 
   async ngOnInit() {
+    this.countries = countriesData.countries;
+
     if (!this.isBrowser) {
       return;
     }
 
-    this.userCountry = await this.detectCountry();
+    this.userCountry = await this.countryService.detectCountry();
     this.generateOrderNumber();
 
+    if (this.embedMode) {
+      this.applyEmbedInputs();
+      this.initialized = true;
+      return;
+    }
+
     this.route.paramMap.subscribe((params) => {
-      this.filecode = params.get('filecode')!;
-      this.loadTourPrices(this.filecode);
+      const code = params.get('filecode');
+      if (code) {
+        this.filecode = code;
+        this.loadTourPrices(this.filecode);
+      }
     });
 
-    const navState = this.router.getCurrentNavigation()?.extras.state as {
-      tour: any;
-      barcode: string;
-      image: string;
+    const navState = history.state as {
+      tour?: any;
+      barcode?: string;
+      image?: string;
+      Image?: string;
     };
-
-    this.countries = countriesData.countries;
 
     if (navState?.tour) {
       this.tour = navState.tour;
-      this.filecode = navState.barcode;
-      this.image = navState.image;
-
-      localStorage.setItem('tour', JSON.stringify(this.tour));
-      localStorage.setItem('filecode', this.filecode);
-      localStorage.setItem('image', this.image);
+      this.filecode = navState.barcode || this.filecode;
+      this.image = navState.image || navState.Image || '';
+      this.persistBookingState();
     } else {
       const storedTour = localStorage.getItem('tour');
       const storedFilecode = localStorage.getItem('filecode');
@@ -88,18 +125,39 @@ export class BookingComponent {
       if (storedTour && storedFilecode) {
         this.tour = JSON.parse(storedTour);
         this.filecode = storedFilecode;
-        this.image = storedImage!;
-      } else {
-        this.tour = {
-          title: 'Unknown Tour',
-          price: 0,
-          duration: 'N/A',
-          tourType: 'N/A',
-        };
+        this.image = storedImage || '';
       }
     }
 
     if (this.filecode) {
+      this.loadTourPrices(this.filecode);
+    }
+
+    this.initialized = true;
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (!this.embedMode || !this.isBrowser) {
+      return;
+    }
+    if (
+      changes['filecodeInput'] ||
+      changes['tourInput'] ||
+      changes['imageInput']
+    ) {
+      this.applyEmbedInputs();
+    }
+  }
+
+  private applyEmbedInputs() {
+    if (this.tourInput) {
+      this.tour = { ...this.tourInput };
+    }
+    if (this.imageInput) {
+      this.image = this.imageInput;
+    }
+    if (this.filecodeInput) {
+      this.filecode = this.filecodeInput;
       this.loadTourPrices(this.filecode);
     }
   }
@@ -110,44 +168,45 @@ export class BookingComponent {
       : this.phoneNumber;
   }
 
-  async detectCountry(): Promise<string> {
-    try {
-      const res = await fetch('https://ipapi.co/json/');
-      const data = await res.json();
-      return data.country;
-    } catch {
-      return 'US';
+  async loadTourPrices(fileName: string) {
+    if (!fileName || !this.isBrowser) {
+      return;
     }
+
+    const data = await this.tourPriceService.loadTourPriceFile(
+      fileName,
+      this.userCountry,
+    );
+
+    if (!data) {
+      this.toastr.error('Unable to load tour pricing.', 'Pricing Error');
+      return;
+    }
+
+    this.prices = data.price || {};
+    this.tour = {
+      ...this.tour,
+      title: data.title || this.tour.title,
+      duration: data.duration || this.tour.duration,
+      tourType: data.tourType || this.tour.tourType,
+      overview: data.overview || this.tour.overview,
+      price: data.price?.['2'] ?? this.tour.price,
+    };
+    if (data.images?.[0] && !this.embedMode) {
+      this.image = data.images[0];
+    }
+    if (!this.embedMode) {
+      this.persistBookingState();
+    }
+    this.updateAmounts();
   }
 
-  loadTourPrices(fileName: string) {
-    const countryFile = `/assets/data/${this.userCountry}${fileName}.json`;
-    const defaultFile = `/assets/data/US${fileName}.json`;
-    this.http
-      .get(countryFile)
-      .pipe(
-        catchError((err) => {
-          console.warn(
-            `Price file not found for ${this.userCountry}, loading default prices`,
-          );
-          return this.http.get(defaultFile);
-        }),
-      )
-      .subscribe((data: any) => {
-        this.prices = data.price;
-        this.tour.title = data.title;
-        this.tour.duration = data.duration;
-        this.tour.tourType = data.tourType;
-        this.tour.overview = data.overview;
-        this.image = data.images[0];
-        if (this.isBrowser) {
-          localStorage.setItem('tour', JSON.stringify(this.tour));
-          localStorage.setItem('filecode', this.filecode);
-          localStorage.setItem('image', this.image);
-          localStorage.setItem('prices', JSON.stringify(this.prices));
-        }
-        this.updateAmounts();
-      });
+  private persistBookingState() {
+    if (!this.isBrowser) return;
+    localStorage.setItem('tour', JSON.stringify(this.tour));
+    localStorage.setItem('filecode', this.filecode);
+    localStorage.setItem('image', this.image || '');
+    localStorage.setItem('prices', JSON.stringify(this.prices));
   }
 
   generateOrderNumber() {
@@ -165,7 +224,6 @@ export class BookingComponent {
 
     const now = new Date();
     const datePart = now.toISOString().slice(2, 10).replace(/-/g, '');
-
     this.orderNumber = `#${datePart}-${newOrder.toString().padStart(6, '0')}`;
   }
 
@@ -195,7 +253,95 @@ export class BookingComponent {
     return this.total - this.amountPaid;
   }
 
+  /** Day tours may book today; round/multi-day tours start from tomorrow. Past dates never allowed. */
+  get isDayTour(): boolean {
+    const type = String(this.tour?.tourType || '').toLowerCase();
+    const duration = String(this.tour?.duration || '').toLowerCase();
+    return type.includes('day tour') || duration.includes('1 day') || duration === '1 day';
+  }
+
+  get minTravelDate(): string {
+    return this.formatDateInput(this.earliestAllowedDate());
+  }
+
+  get isTravelDateValid(): boolean {
+    return !!this.travelDate && !this.dateError && this.isDateAllowed(this.travelDate);
+  }
+
+  private startOfToday(): Date {
+    const d = new Date();
+    d.setHours(0, 0, 0, 0);
+    return d;
+  }
+
+  private earliestAllowedDate(): Date {
+    const today = this.startOfToday();
+    if (this.isDayTour) {
+      return today;
+    }
+    const tomorrow = new Date(today);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    return tomorrow;
+  }
+
+  private formatDateInput(date: Date): string {
+    const y = date.getFullYear();
+    const m = String(date.getMonth() + 1).padStart(2, '0');
+    const d = String(date.getDate()).padStart(2, '0');
+    return `${y}-${m}-${d}`;
+  }
+
+  private parseDateInput(dateString: string): Date | null {
+    if (!dateString) return null;
+    const parts = dateString.split('-').map(Number);
+    if (parts.length !== 3 || parts.some((n) => Number.isNaN(n))) return null;
+    const [y, m, d] = parts;
+    const date = new Date(y, m - 1, d);
+    date.setHours(0, 0, 0, 0);
+    return date;
+  }
+
+  private isDateAllowed(date: Date): boolean {
+    const selected = new Date(date);
+    selected.setHours(0, 0, 0, 0);
+    return selected.getTime() >= this.earliestAllowedDate().getTime();
+  }
+
+  private validateTravelDate(date: Date | null): boolean {
+    if (!date) {
+      this.dateError = 'Please select a travel date.';
+      return false;
+    }
+
+    const today = this.startOfToday();
+    const selected = new Date(date);
+    selected.setHours(0, 0, 0, 0);
+
+    if (selected.getTime() < today.getTime()) {
+      this.dateError = 'Past dates cannot be booked. Please choose a valid travel date.';
+      return false;
+    }
+
+    if (!this.isDayTour && selected.getTime() === today.getTime()) {
+      this.dateError = 'Same-day booking is only available for day tours. Please choose tomorrow or later.';
+      return false;
+    }
+
+    this.dateError = '';
+    return true;
+  }
+
   completeBooking() {
+    if (!this.agreeTerms) {
+      this.toastr.warning('Please agree to the terms & conditions.', 'Required');
+      return;
+    }
+
+    if (!this.validateTravelDate(this.travelDate)) {
+      this.toastr.warning(this.dateError || 'Please select a valid travel date.', 'Invalid date');
+      return;
+    }
+
     const bookingDetails = {
       firstName: this.firstName,
       lastName: this.lastName,
@@ -214,18 +360,17 @@ export class BookingComponent {
     this.http
       .post(`${environment.backendUrl}/send-booking-email`, bookingDetails)
       .subscribe({
-        next: (res: any) => {
+        next: () => {
           this.toastr.success(
             'Your booking has been completed successfully!',
             'Booking Confirmed',
           );
           setTimeout(() => {
             this.bookingCompleted = true;
-          }, 1500);
+          }, 800);
         },
         error: (err) => {
           console.error('Email error:', err);
-
           this.toastr.error(
             'There was an error processing your booking. Please try again later.',
             'Booking Failed',
@@ -237,34 +382,17 @@ export class BookingComponent {
   printInvoice() {
     if (!this.isBrowser) return;
     const printContents = document.getElementById('invoiceContent')?.innerHTML;
-    const originalContents = document.body.innerHTML;
 
-    if (isPlatformBrowser(this.platformId)) {
-      if (printContents) {
-        const printWindow = window.open('', '', 'height=700,width=900');
-        printWindow!.document.write(`
+    if (printContents) {
+      const printWindow = window.open('', '', 'height=700,width=900');
+      printWindow!.document.write(`
       <html>
         <head>
           <title>Booking Invoice</title>
           <style>
-            body {
-              font-family: Arial, sans-serif;
-              margin: 20px;
-              color: #333;
-            }
-            .card {
-              box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-              padding: 20px;
-              border-radius: 10px;
-            }
-            .list-group-item {
-              border: none;
-              border-bottom: 1px solid #eee;
-              padding: 10px 0;
-            }
-            .list-group-item:last-child {
-              border-bottom: none;
-            }
+            body { font-family: Arial, sans-serif; margin: 20px; color: #333; }
+            .card { box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 20px; border-radius: 10px; }
+            .list-group-item { border: none; border-bottom: 1px solid #eee; padding: 10px 0; }
             .text-center { text-align: center; }
             .fw-bold { font-weight: bold; }
             .text-success { color: green; }
@@ -272,30 +400,35 @@ export class BookingComponent {
             .text-primary { color: #007bff; }
           </style>
         </head>
-        <body>
-          ${printContents}
-        </body>
+        <body>${printContents}</body>
       </html>
     `);
-        printWindow!.document.close();
-        printWindow!.print();
-      }
+      printWindow!.document.close();
+      printWindow!.print();
     }
   }
 
   onTravelDateChange(dateString: string) {
-    this.travelDate = new Date(dateString);
-  }
+    const parsed = this.parseDateInput(dateString);
+    if (!parsed) {
+      this.travelDate = null;
+      this.dateError = 'Please select a travel date.';
+      this.showGuestDetails = false;
+      return;
+    }
 
-  clearLocalStorage() {
-    if (!this.isBrowser) return;
-    localStorage.removeItem('tour');
-    localStorage.removeItem('filecode');
-    localStorage.removeItem('prices');
+    if (!this.validateTravelDate(parsed)) {
+      this.travelDate = null;
+      this.showGuestDetails = false;
+      this.toastr.warning(this.dateError, 'Invalid date');
+      return;
+    }
+
+    this.travelDate = parsed;
   }
 
   ngOnDestroy() {
-    if (!this.isBrowser) return;
+    if (!this.isBrowser || this.embedMode) return;
     localStorage.removeItem('tour');
     localStorage.removeItem('filecode');
     localStorage.removeItem('prices');

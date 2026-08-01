@@ -6,11 +6,12 @@ import toursData from '../../../../databaseJson/tours.json';
 import { CountryService } from '../../../../Services/country.service';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { PackageItemComponent } from '../../../../sharedComponents/package-item-component/package-item-component';
+import { TourBookingSidebarComponent } from '../../../../sharedComponents/tour-booking-sidebar/tour-booking-sidebar';
 
 @Component({
   selector: 'app-sigiriya-day-tour-component',
   standalone: true,
-  imports: [CommonModule, RouterModule, TourDetailsComponent,PackageItemComponent],
+  imports: [CommonModule, RouterModule, TourDetailsComponent, PackageItemComponent, TourBookingSidebarComponent],
   templateUrl: './sigiriya-day-tour-component.html',
   styleUrl: './sigiriya-day-tour-component.css'
 })

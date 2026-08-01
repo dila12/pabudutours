@@ -9,6 +9,7 @@ import toursData from '../../../../databaseJson/tours.json';
 import { CountryService } from '../../../../Services/country.service';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { PackageItemComponent } from '../../../../sharedComponents/package-item-component/package-item-component';
+import { TourBookingSidebarComponent } from '../../../../sharedComponents/tour-booking-sidebar/tour-booking-sidebar';
 
 @Component({
   selector: 'app-kandy-day-tour-component',
@@ -17,6 +18,7 @@ import { PackageItemComponent } from '../../../../sharedComponents/package-item-
     RouterModule,
     TourDetailsComponent,
     PackageItemComponent,
+    TourBookingSidebarComponent,
   ],
   templateUrl: './kandy-day-tour-component.html',
   styleUrl: './kandy-day-tour-component.css',

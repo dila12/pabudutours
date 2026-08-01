@@ -6,11 +6,12 @@ import { CountryService } from '../../../../Services/country.service';
 import toursData from '../../../../databaseJson/tours.json';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { PackageItemComponent } from '../../../../sharedComponents/package-item-component/package-item-component';
+import { TourBookingSidebarComponent } from '../../../../sharedComponents/tour-booking-sidebar/tour-booking-sidebar';
 
 @Component({
   selector: 'app-galle-day-tour',
   standalone: true,
-  imports: [CommonModule, RouterModule, TourDetailsComponent,PackageItemComponent],
+  imports: [CommonModule, RouterModule, TourDetailsComponent, PackageItemComponent, TourBookingSidebarComponent],
   templateUrl: './galle-day-tour.html',
   styleUrl: './galle-day-tour.css'
 })

@@ -1,19 +1,26 @@
-/* Modern Package Card */
 .package-item {
-  background: white;
-  border-radius: 14px;
+  background: #fff;
+  border-radius: 0;
   overflow: hidden;
   cursor: pointer;
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 1px 0 rgba(1, 44, 19, 0.08);
+  border: 1px solid rgba(1, 44, 19, 0.08);
   display: flex;
   flex-direction: column;
   height: 100%;
+  text-decoration: none;
+  color: #1a1a1a;
+}
+
+.package-item:focus-visible {
+  outline: 2px solid #012c13;
+  outline-offset: 3px;
 }
 
 .package-item:hover {
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
-  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(1, 44, 19, 0.12);
+  transform: translateY(-4px);
 }
 
 /* Image Section */
@@ -142,7 +149,7 @@
 
 .price-currency {
   font-size: 14px;
-  color: #666;
+  color: #404040;
   font-weight: 500;
 }
 
@@ -154,7 +161,7 @@
 
 .price-per {
   font-size: 12px;
-  color: #999;
+  color: #404040; /* ~10:1 on white — WCAG AA */
   font-weight: 500;
 }
 
@@ -162,11 +169,15 @@
 .book-btn {
   background: #012c13;
   color: white;
-  padding: 8px 16px;
+  padding: 10px 16px;
   border-radius: 8px;
   font-size: 12px;
   font-weight: 600;
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 44px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   display: inline-flex;

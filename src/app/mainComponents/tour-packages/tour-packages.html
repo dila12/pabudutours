@@ -2,9 +2,9 @@
 <div class="container-fluid page-header">
     <div class="container">
         <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
-            <h3 class="display-4 text-white text-uppercase">Packages</h3>
+            <p class="display-4 text-white text-uppercase mb-0">Packages</p>
             <div class="d-inline-flex text-white">
-                <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
+                <p class="m-0 text-uppercase"><a class="text-white" routerLink="/">Home</a></p>
                 <i class="fa fa-angle-double-right pt-1 px-3"></i>
                 <p class="m-0 text-uppercase">Packages</p>
             </div>
@@ -18,7 +18,7 @@
 <div class="container-fluid  bg-light">
     <div class="container pt-5 pb-3">
         <div class="text-center ">
-            <h6 class="text-primary text-uppercase tracking-widest">Packages</h6>
+            <p class="text-primary text-uppercase tracking-widest mb-2">Packages</p>
             <h1 class="font-bold text-4xl">Perfect Tour Packages</h1>
         </div>
 
@@ -32,6 +32,9 @@
 
         </div>
 
+        <h2 class="h4 text-center mb-4">
+          {{ activeTab === 'day' ? 'Day Tours' : 'Multi-Day Tours' }}
+        </h2>
 
         <!-- Tab Content -->
         <div class="row">
@@ -39,6 +42,7 @@
                 class="col-lg-4 col-md-6 mb-4 package-card-wrapper" [style.--i]="i">
                 <app-package-item-component [image]="tour.image" [days]="tour.days" [persons]="tour.persons"
                     [rating]="tour.rating" [price]="tour.price" [title]="tour.title" [routerLink]="tour.routerLink"
+                    [titleLevel]="3"
                     class="package-card">
                 </app-package-item-component>
             </div>

@@ -1,7 +1,7 @@
 {
   "dayTours": [
     {
-      "id": 2,
+      "id": 1,
       "title": "Ella Day Tour - Departing from Any Location in Sri Lanka",
       "days": "1 day",
       "persons": "1-20 Persons",
@@ -9,12 +9,41 @@
       "filecode": "ella-day-tour",
       "image": "assets/img/onedayTour/ella/7.jpeg",
       "routerLink": "/ella-day-tour"
-    }
-  ],
-
-  "multiDayTours": [
+    },
+    {
+      "id": 2,
+      "title": "Galle Day Tour - South Coast Highlights",
+      "days": "1 day",
+      "persons": "1-20 Persons",
+      "rating": 5,
+      "filecode": "galle-day-tour",
+      "image": "assets/img/mainpage/3.jpeg",
+      "routerLink": "/galle-day-tour"
+    },
     {
       "id": 3,
+      "title": "Kandy Day Tour - Temple of the Tooth & Hill Country",
+      "days": "1 day",
+      "persons": "1-20 Persons",
+      "rating": 5,
+      "filecode": "kandy-day-tour",
+      "image": "assets/img/mainpage/4.jpeg",
+      "routerLink": "/kandy-day-tour"
+    },
+    {
+      "id": 4,
+      "title": "Sigiriya Day Tour - Lion Rock & Cultural Triangle",
+      "days": "1 day",
+      "persons": "1-20 Persons",
+      "rating": 5,
+      "filecode": "sigiriya-day-tour",
+      "image": "assets/img/mainpage/5.jpeg",
+      "routerLink": "/sigiriya-day-tour"
+    }
+  ],
+  "multiDayTours": [
+    {
+      "id": 5,
       "title": "Ella & Kandy 2 Day Excursion Yala Safari, Train Ride & Hill Country",
       "days": "2 days",
       "persons": "1-20 Persons",
@@ -42,6 +71,66 @@
       "filecode": "3-day-sigiriya-kandy-ella-yala-tour",
       "image": "assets/img/mainpage/2.jpeg",
       "routerLink": "/3-day-sigiriya-kandy-ella-yala-tour"
+    },
+    {
+      "id": 8,
+      "title": "4 Day Sri Lanka Tour Cultural & Scenic Highlights",
+      "days": "4 days",
+      "persons": "1-20 Persons",
+      "rating": 5,
+      "filecode": "4-day-sri-lanka-tour",
+      "image": "assets/img/mainpage/1.jpeg",
+      "routerLink": "/4-day-sri-lanka-tour"
+    },
+    {
+      "id": 9,
+      "title": "5 Day Sri Lanka Tour Package",
+      "days": "5 days",
+      "persons": "1-20 Persons",
+      "rating": 5,
+      "filecode": "5-day-sri-lanka-tour",
+      "image": "assets/img/mainpage/2.jpeg",
+      "routerLink": "/5-day-sri-lanka-tour"
+    },
+    {
+      "id": 10,
+      "title": "6 Day Sri Lanka Private Tour Sigiriya, Kandy, Ella & Yala",
+      "days": "6 days",
+      "persons": "1-20 Persons",
+      "rating": 5,
+      "filecode": "6-day-sri-lanka-private-tour",
+      "image": "assets/img/mainpage/3.jpeg",
+      "routerLink": "/6-day-sri-lanka-private-tour"
+    },
+    {
+      "id": 11,
+      "title": "7 Day Sri Lanka Tour Package Cultural & Scenic Round Trip",
+      "days": "7 days",
+      "persons": "1-20 Persons",
+      "rating": 5,
+      "filecode": "7-day-sri-lanka-tour",
+      "image": "assets/img/mainpage/4.jpeg",
+      "routerLink": "/7-day-sri-lanka-tour"
+    },
+    {
+      "id": 12,
+      "title": "8 Day Sri Lanka Private Tour Wilpattu, Sigiriya, Kandy & Beach",
+      "days": "8 days",
+      "persons": "1-20 Persons",
+      "rating": 5,
+      "filecode": "8-day-sri-lanka-private-tour",
+      "image": "assets/img/mainpage/5.jpeg",
+      "routerLink": "/8-day-sri-lanka-private-tour"
+    },
+    {
+      "id": 13,
+      "title": "10 Day Sri Lanka Tour Complete Island Exploration",
+      "days": "10 days",
+      "persons": "1-20 Persons",
+      "rating": 5,
+      "filecode": "10-day-sri-lanka-tour",
+      "image": "assets/img/mainpage/6.jpeg",
+      "routerLink": "/10-day-sri-lanka-tour"
     }
   ]
 }

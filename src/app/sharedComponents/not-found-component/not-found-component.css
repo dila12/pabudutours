@@ -1,0 +1,37 @@
+.not-found {
+  max-width: 640px;
+  margin: 4rem auto;
+  padding: 2rem 1.25rem 4rem;
+  text-align: center;
+}
+
+.not-found__code {
+  margin: 0;
+  color: #b8954a;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.not-found h1 {
+  margin: 0.5rem 0 1rem;
+  color: #012c13;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+}
+
+.not-found p {
+  color: #4b5563;
+  line-height: 1.55;
+  margin-bottom: 1.5rem;
+}
+
+.not-found__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.not-found__actions .btn {
+  min-width: 160px;
+}

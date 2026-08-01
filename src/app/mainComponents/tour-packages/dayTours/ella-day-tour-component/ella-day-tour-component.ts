@@ -4,13 +4,14 @@ import { Router, RouterModule } from '@angular/router';
 import { TourDetails, TourDetailsComponent } from '../../../../sharedComponents/tour-details-component/tour-details-component';
 import toursData from '../../../../databaseJson/tours.json';
 import { PackageItemComponent } from '../../../../sharedComponents/package-item-component/package-item-component';
+import { TourBookingSidebarComponent } from '../../../../sharedComponents/tour-booking-sidebar/tour-booking-sidebar';
 import { HttpClient } from '@angular/common/http';
 import { CountryService } from '../../../../Services/country.service';
 
 @Component({
-  selector: 'app-two-day-tour-component',
+  selector: 'app-ella-day-tour-component',
   standalone: true,
-  imports: [CommonModule, RouterModule, TourDetailsComponent,PackageItemComponent],
+  imports: [CommonModule, RouterModule, TourDetailsComponent, PackageItemComponent, TourBookingSidebarComponent],
   templateUrl: './ella-day-tour-component.html',
   styleUrls: ['./ella-day-tour-component.css'],
 })

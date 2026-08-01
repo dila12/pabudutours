@@ -1,238 +1,247 @@
-<div class="container-fluid page-header">
+<!-- Full page booking (route) -->
+<ng-container *ngIf="!embedMode">
+  <div class="container-fluid page-header">
     <div class="container">
-        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
-            <h3 class="display-4 text-white text-uppercase">Booking</h3>
-            <div class="d-inline-flex text-white">
-                <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
-                <i class="fa fa-angle-double-right pt-1 px-3"></i>
-                <p class="m-0 text-uppercase">Booking</p>
-            </div>
+      <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
+        <h3 class="display-4 text-white text-uppercase">Booking</h3>
+        <div class="d-inline-flex text-white">
+          <p class="m-0 text-uppercase"><a class="text-white" href="/">Home</a></p>
+          <i class="fa fa-angle-double-right pt-1 px-3"></i>
+          <p class="m-0 text-uppercase">Booking</p>
         </div>
+      </div>
     </div>
-</div>
+  </div>
 
-<div class="container my-5">
+  <div class="container my-5">
     <div class="container pt-5 pb-3">
-        <div class="text-center mb-5">
-            <h6 class="text-primary text-uppercase tracking-widest">BOOK NOW</h6>
-            <h1 class="font-bold text-4xl">Book Tour Packages</h1>
-        </div>
+      <div class="text-center mb-5">
+        <h6 class="text-primary text-uppercase tracking-widest">BOOK NOW</h6>
+        <h1 class="font-bold text-4xl">Book Tour Packages</h1>
+      </div>
     </div>
     <div class="row g-4 align-items-stretch">
-        <div class="col-lg-6" *ngIf="!bookingCompleted">
-            <div *ngIf="tour" class="card shadow-lg border-0 overflow-hidden animate__animated animate__slideInLeft h-100 w-100">
-                <img [src]="image" class="card-img-top tour-img" alt="{{ tour.title }}">
-                <div class="card-body">
-                    <h3 class="card-title">{{ tour.title }}</h3>
-                    <p class="text-muted">{{ tour.tourType }} | Duration: {{ tour.duration }}</p>
-                    <div class="d-flex flex-wrap gap-2 my-3">
-                        <span class="badge bg-primary text-white">Price: {{ tour.price }}</span>
-                        <span class="badge ml-2 text-primary" style="background-color: #ada878;">Order : {{ orderNumber
-                            }}</span>
-                    </div>
-                    <hr>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Subtotal
-                            <span>${{ subtotal.toFixed(2) }}</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Total
-                            <span>${{ total.toFixed(2) }}</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Amount Paid
-                            <span>${{ amountPaid.toFixed(2) }}</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Amount Due
-                            <span class="fw-bold text-primary">${{ amountDue.toFixed(2) }}</span>
-                        </li>
-                    </ul>
-                </div>
+      <div class="col-lg-6" *ngIf="!bookingCompleted">
+        <div *ngIf="tour" class="card shadow-lg border-0 overflow-hidden h-100 w-100">
+          <img [src]="image" class="card-img-top tour-img" alt="{{ tour.title }}">
+          <div class="card-body">
+            <h3 class="card-title">{{ tour.title }}</h3>
+            <p class="text-muted">{{ tour.tourType }} | Duration: {{ tour.duration }}</p>
+            <div class="d-flex flex-wrap gap-2 my-3">
+              <span class="badge bg-primary text-white">Price: {{ tour.price }}</span>
+              <span class="badge ml-2 text-primary" style="background-color: #ada878;">Order : {{ orderNumber }}</span>
             </div>
+            <hr>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Subtotal <span>${{ subtotal.toFixed(2) }}</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Total <span>${{ total.toFixed(2) }}</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Amount Paid <span>${{ amountPaid.toFixed(2) }}</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Amount Due <span class="fw-bold text-primary">${{ amountDue.toFixed(2) }}</span>
+              </li>
+            </ul>
+          </div>
         </div>
+      </div>
 
-        <div class="col-lg-6" *ngIf="!bookingCompleted">
-            <div class="card shadow-lg border-0 rounded-3 p-4 animate__animated animate__slideInLeft overflow-hidden h-100 w-100">
-                <h4 class="mb-3 text-center">Book Your Tour</h4>
-                <div *ngIf="groupNotice" class="alert alert-info mt-2">
-                    {{ groupNotice }}
-                </div>
-                <form #bookingForm="ngForm" (ngSubmit)="completeBooking()">
-                    <div class="row g-3 mb-3">
-                        <div class="col-lg-6">
-                            <label class="form-label">Number of Travelers</label>
-                            <input type="number" class="form-control" [(ngModel)]="travelers" name="travelers" min="1"
-                                max="20" (change)="updateTravelers($event)" required #travelersCtrl="ngModel">
-                            <small class="text-danger" *ngIf="travelersCtrl.invalid && travelersCtrl.touched">
-                                Please enter travelers (1–20)
-                            </small>
-                            <small class="text-success">
-                                Infants (0–2 years) travel FREE
-                            </small>
-                        </div>
-                        <div class="col-lg-6">
-                            <label class="form-label">Select Travel Date</label>
-                            <input type="date" class="form-control" [ngModel]="travelDate | date:'yyyy-MM-dd'"
-                                (ngModelChange)="onTravelDateChange($event)" name="travelDate" required
-                                #dateCtrl="ngModel">
-                            <small class="text-danger" *ngIf="dateCtrl.invalid && dateCtrl.touched">
-                                Travel date is required
-                            </small>
-                        </div>
-                    </div>
-
-                    <div class="row g-3 mb-3">
-                        <div class="col-md-6">
-                            <label class="form-label">First Name</label>
-                            <input type="text" class="form-control" placeholder="John" [(ngModel)]="firstName"
-                                name="firstName" required #firstCtrl="ngModel">
-                            <small class="text-danger" *ngIf="firstCtrl.invalid && firstCtrl.touched">
-                                First name is required
-                            </small>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label">Last Name</label>
-                            <input type="text" class="form-control" placeholder="Doe" [(ngModel)]="lastName"
-                                name="lastName" required #lastCtrl="ngModel">
-                            <small class="text-danger" *ngIf="lastCtrl.invalid && lastCtrl.touched">
-                                Last name is required
-                            </small>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Email</label>
-                        <input type="email" class="form-control" placeholder="example@email.com" [(ngModel)]="email"
-                            name="email" required #emailCtrl="ngModel">
-                        <small class="text-danger" *ngIf="emailCtrl.invalid && emailCtrl.touched">
-                            Valid email is required
-                        </small>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Contact Phone</label>
-                        <div class="d-flex">
-                            <select class="w-50" [(ngModel)]="selectedCountry" name="countryCode" required>
-                                <option *ngFor="let country of countriesList" [ngValue]="country"> {{country.name}}
-                                    ({{country.dial_code}})
-                                </option>
-                            </select>
-
-                            <input type="tel" class="form-control" placeholder="712345678" [(ngModel)]="phoneNumber"
-                                name="phoneNumber" required pattern="^\d{7,15}$" #phoneCtrl="ngModel" />
-                        </div>
-
-                        <small class="text-danger" *ngIf="phoneCtrl.invalid && phoneCtrl.touched">
-                            Valid phone number is required
-                        </small>
-                    </div>
-                    <div class="row g-3 mb-3">
-                        <div class="col-lg-6 mt-2">
-                            <label for="country" class="form-label fw-semibold text-primary">Select Your Country
-                                :</label>
-                        </div>
-                        <div class="col-lg-6">
-                            <select id="country" class="form-select border-0 py-2 px-2 rounded-3" [(ngModel)]="country"
-                                name="country" required #countryCtrl="ngModel">
-                                <option value="" disabled selected>Select your country</option>
-                                <option *ngFor="let c of countries" [value]="c">{{ c }}</option>
-                            </select>
-                            <small class="text-danger d-block mt-1" *ngIf="countryCtrl.invalid && countryCtrl.touched">
-                                Please select your country
-                            </small>
-                        </div>
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">Amount to Pay Now</label>
-                        <input type="text" class="form-control fw-bold text-success" [value]="'$' + total" readonly>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Payment Method : Payment Later (Pay at Destination)</label>
-                    </div>
-                    <div class="form-check mb-3">
-                        <input class="form-check-input" type="checkbox" id="terms">
-                        <label class="form-check-label" for="terms">
-                            I agree to the <a href="#">terms & conditions</a>
-                        </label>
-                    </div>
-                    <button type="submit" class="btn btn-primary w-100 rounded fw-bold"
-                        [disabled]="bookingForm.invalid || groupNotice">
-                        Complete Booking
-                    </button>
-                </form>
-            </div>
+      <div class="col-lg-6" *ngIf="!bookingCompleted">
+        <div class="card shadow-lg border-0 rounded-3 p-4 h-100 w-100">
+          <h4 class="mb-3 text-center">Book Your Tour</h4>
+          <ng-container *ngTemplateOutlet="bookingFormTpl"></ng-container>
         </div>
+      </div>
 
-        <div class="col-12" *ngIf="bookingCompleted">
-            <div id="invoiceContent" class="card shadow-lg border-0 p-4 animate__animated animate__fadeInUp"
-                style="border-radius: 1rem; background: linear-gradient(135deg, #f9f9f9, #ffffff);">
-
-                <div class="d-flex align-items-center mb-3">
-                    <i class="bi bi-check-circle-fill text-success me-2" style="font-size: 2rem;"></i>
-                    <h3 class="text-success mb-0">Booking Confirmed!</h3>
-                </div>
-
-                <p class="mb-4 text-muted">Your order has been completed and a confirmation email has been sent. Thank
-                    you for booking with us!</p>
-
-                <div class="d-flex flex-wrap gap-2 mb-3">
-                    <span class="badge bg-primary text-white p-2">Order #: {{ orderNumber }}</span>
-                    <span class="badge text-dark p-2 ml-2" style="background-color: #ada878;">Date: {{ bookingDate |
-                        date:'medium' }}</span>
-                    <span class="badge bg-success text-white p-2 ml-2">Total: ${{ total.toFixed(2) }}</span>
-                    <span class="badge bg-warning text-dark p-2 ml-2">Payment: Payment Later</span>
-                </div>
-
-                <div class="card border shadow-sm mb-3">
-                    <div class="card-header bg-light fw-bold text-primary">Order Details</div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item d-flex justify-content-between">
-                            <span>{{ tour.title }}</span>
-                            <span class="fw-bold">${{ total.toFixed(2) }}</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between">
-                            <span>Duration</span>
-                            <span>{{ tour.duration }}</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between">
-                            <span>Tickets ({{ travelers }} person{{ travelers > 1 ? 's' : '' }})</span>
-                            <span>${{ total.toFixed(2) }}</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="card border shadow-sm">
-                    <div class="card-header bg-light fw-bold text-primary">Payment Summary</div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item d-flex justify-content-between">
-                            <span>Subtotal</span>
-                            <span>${{ subtotal.toFixed(2) }}</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between">
-                            <span>Total</span>
-                            <span>${{ total.toFixed(2) }}</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between">
-                            <span>Amount Paid</span>
-                            <span class="text-success">${{ amountPaid.toFixed(2) }}</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between">
-                            <span>Amount Due</span>
-                            <span class="text-danger fw-bold">${{ amountDue.toFixed(2) }}</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="mt-4 text-center">
-                    <p class="fw-bold text-primary fs-5">We appreciate your booking! Enjoy your trip 🌴✈️</p>
-                </div>
-            </div>
-            <div class="text-center mt-3">
-                <button class="btn btn-outline-primary" (click)="printInvoice()">
-                    <i class="bi bi-printer"></i> Print Invoice
-                </button>
-            </div>
-        </div>
+      <div class="col-12" *ngIf="bookingCompleted">
+        <ng-container *ngTemplateOutlet="successTpl"></ng-container>
+      </div>
     </div>
+  </div>
+</ng-container>
+
+<!-- Compact embed / Viator sticky sidebar -->
+<div class="booking-embed" [class.booking-embed--sidebar]="sidebarLayout" *ngIf="embedMode">
+  <div *ngIf="!bookingCompleted">
+    <div *ngIf="groupNotice" class="alert alert-info py-2 px-3 mb-3">{{ groupNotice }}</div>
+
+    <form #bookingForm="ngForm" (ngSubmit)="completeBooking()" class="booking-form">
+      <div class="sidebar-select-row">
+        <label class="sidebar-field">
+          <span><i class="fa fa-calendar" aria-hidden="true"></i> Date</span>
+          <input type="date" [ngModel]="travelDate | date:'yyyy-MM-dd'"
+            (ngModelChange)="onTravelDateChange($event)" name="travelDate"
+            [min]="minTravelDate" required>
+        </label>
+        <label class="sidebar-field">
+          <span><i class="fa fa-user" aria-hidden="true"></i> Travelers</span>
+          <input type="number" [(ngModel)]="travelers" name="travelers" min="1" max="20"
+            (change)="updateTravelers($event)" required>
+        </label>
+      </div>
+
+      <p class="sidebar-date-error" *ngIf="dateError">{{ dateError }}</p>
+      <p class="sidebar-date-hint" *ngIf="!dateError">
+        {{ isDayTour ? 'Same-day booking available for this day tour.' : 'Please book from tomorrow onwards for multi-day tours.' }}
+      </p>
+
+      <p class="sidebar-total" *ngIf="total">
+        Total <strong>${{ total.toFixed(0) }}</strong>
+        <span>for {{ travelers }} traveler{{ travelers > 1 ? 's' : '' }}</span>
+      </p>
+
+      <button
+        type="button"
+        class="sidebar-cta"
+        *ngIf="!showGuestDetails"
+        (click)="showGuestDetails = true"
+        [disabled]="!isTravelDateValid || !!groupNotice">
+        Check availability
+      </button>
+
+      <div class="sidebar-guest" *ngIf="showGuestDetails">
+        <div class="sidebar-guest__grid">
+          <input type="text" class="form-control" placeholder="First name" [(ngModel)]="firstName" name="firstName" required>
+          <input type="text" class="form-control" placeholder="Last name" [(ngModel)]="lastName" name="lastName" required>
+        </div>
+        <input type="email" class="form-control" placeholder="Email" [(ngModel)]="email" name="email" required>
+        <select class="form-control" [(ngModel)]="country" name="country" required>
+          <option value="" disabled>Country</option>
+          <option *ngFor="let c of countries" [value]="c">{{ c }}</option>
+        </select>
+        <div class="phone-row">
+          <select class="phone-code" [(ngModel)]="selectedCountry" name="countryCode" required>
+            <option *ngFor="let c of countriesList" [ngValue]="c">{{ c.dial_code }}</option>
+          </select>
+          <input type="tel" class="form-control" placeholder="Phone" [(ngModel)]="phoneNumber"
+            name="phoneNumber" required pattern="^\d{7,15}$">
+        </div>
+        <label class="sidebar-terms">
+          <input type="checkbox" name="agreeTerms" [(ngModel)]="agreeTerms" required>
+          I agree to the terms &amp; conditions
+        </label>
+        <button type="submit" class="sidebar-cta" [disabled]="bookingForm.invalid || !!groupNotice || !agreeTerms || !isTravelDateValid">
+          Complete booking
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <div *ngIf="bookingCompleted" class="booking-embed__success">
+    <ng-container *ngTemplateOutlet="successTpl"></ng-container>
+  </div>
 </div>
+
+<!-- Full page form template (route booking page) -->
+<ng-template #bookingFormTpl>
+  <div *ngIf="groupNotice" class="alert alert-info mt-2 mb-3">
+    {{ groupNotice }}
+  </div>
+  <form #bookingFormPage="ngForm" (ngSubmit)="completeBooking()" class="booking-form">
+    <div class="row g-3 mb-3">
+      <div class="col-lg-6">
+        <label class="form-label">Number of Travelers</label>
+        <input type="number" class="form-control" [(ngModel)]="travelers" name="travelers" min="1"
+          max="20" (change)="updateTravelers($event)" required>
+      </div>
+      <div class="col-lg-6">
+        <label class="form-label">Select Travel Date</label>
+        <input type="date" class="form-control" [ngModel]="travelDate | date:'yyyy-MM-dd'"
+          (ngModelChange)="onTravelDateChange($event)" name="travelDate"
+          [min]="minTravelDate" required>
+        <small class="text-danger d-block mt-1" *ngIf="dateError">{{ dateError }}</small>
+        <small class="text-muted d-block mt-1" *ngIf="!dateError">
+          {{ isDayTour ? 'Same-day booking available for day tours.' : 'Multi-day tours: book from tomorrow onwards.' }}
+        </small>
+      </div>
+    </div>
+    <div class="row g-3 mb-3">
+      <div class="col-md-6">
+        <label class="form-label">First Name</label>
+        <input type="text" class="form-control" [(ngModel)]="firstName" name="firstName" required>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Last Name</label>
+        <input type="text" class="form-control" [(ngModel)]="lastName" name="lastName" required>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input type="email" class="form-control" [(ngModel)]="email" name="email" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Contact Phone</label>
+      <div class="d-flex phone-row">
+        <select class="phone-code" [(ngModel)]="selectedCountry" name="countryCode" required>
+          <option *ngFor="let c of countriesList" [ngValue]="c">{{ c.name }} ({{ c.dial_code }})</option>
+        </select>
+        <input type="tel" class="form-control" [(ngModel)]="phoneNumber" name="phoneNumber" required pattern="^\d{7,15}$">
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Country</label>
+      <select class="form-control" [(ngModel)]="country" name="country" required>
+        <option value="" disabled>Select your country</option>
+        <option *ngFor="let c of countries" [value]="c">{{ c }}</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Amount to Pay Now</label>
+      <input type="text" class="form-control fw-bold text-success" [value]="'$' + total" readonly>
+    </div>
+    <div class="form-check mb-3">
+      <input class="form-check-input" type="checkbox" id="terms-page" name="agreeTerms" [(ngModel)]="agreeTerms" required>
+      <label class="form-check-label" for="terms-page">I agree to the terms &amp; conditions</label>
+    </div>
+    <button type="submit" class="btn btn-primary w-100 fw-bold" [disabled]="bookingFormPage.invalid || !!groupNotice || !agreeTerms || !isTravelDateValid">
+      Complete Booking
+    </button>
+  </form>
+</ng-template>
+
+<ng-template #successTpl>
+  <div id="invoiceContent" class="card shadow-lg border-0 p-4"
+    style="border-radius: 1rem; background: linear-gradient(135deg, #f9f9f9, #ffffff);">
+    <div class="d-flex align-items-center mb-3">
+      <i class="fa fa-check-circle text-success me-2" style="font-size: 2rem;"></i>
+      <h3 class="text-success mb-0">Booking Confirmed!</h3>
+    </div>
+    <p class="mb-4 text-muted">
+      Your order has been completed and a confirmation email has been sent. Thank you for booking with us!
+    </p>
+    <div class="d-flex flex-wrap gap-2 mb-3">
+      <span class="badge bg-primary text-white p-2">Order #: {{ orderNumber }}</span>
+      <span class="badge text-dark p-2 ml-2" style="background-color: #ada878;">
+        Date: {{ bookingDate | date:'medium' }}
+      </span>
+      <span class="badge bg-success text-white p-2 ml-2">Total: ${{ total.toFixed(2) }}</span>
+      <span class="badge bg-warning text-dark p-2 ml-2">Payment: Payment Later</span>
+    </div>
+    <div class="card border shadow-sm mb-3">
+      <div class="card-header bg-light fw-bold text-primary">Order Details</div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item d-flex justify-content-between">
+          <span>{{ tour.title }}</span>
+          <span class="fw-bold">${{ total.toFixed(2) }}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between">
+          <span>Duration</span>
+          <span>{{ tour.duration }}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between">
+          <span>Travelers ({{ travelers }})</span>
+          <span>${{ total.toFixed(2) }}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="text-center mt-3" *ngIf="!embedMode">
+    <button class="btn btn-outline-primary" type="button" (click)="printInvoice()">
+      <i class="fa fa-print"></i> Print Invoice
+    </button>
+  </div>
+</ng-template>

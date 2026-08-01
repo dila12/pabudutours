@@ -1,3 +1,6 @@
+<div class="container tour-split mt-4">
+  <div class="tour-split__main">
+    <div class="tour-split__gallery">
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-12 col-md-10 col-lg-7 text-center">
@@ -26,21 +29,31 @@
         </div>
     </div>
 </div>
-
-<div class="mt-4">
+    </div>
     <app-tour-details-component [tour]="tourForDetails"></app-tour-details-component>
+  </div>
+  <aside class="tour-split__aside">
+    <app-tour-booking-sidebar
+      [filecode]="tour.filecode"
+      [tour]="tour"
+      [image]="images[0]"
+      [price]="price"
+      [persons]="tour.persons">
+    </app-tour-booking-sidebar>
+  </aside>
 </div>
 
 <div class="container-fluid py-5">
     <div class="container pt-5 pb-3">
         <div class="text-center mb-3 pb-3">
-            <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">You might also like...</h6>
-            <h1>High rated Tour</h1>
+            <p class="text-primary text-uppercase" style="letter-spacing: 5px;">You might also like...</p>
+            <h2>Related tours</h2>
         </div>
         <div class="row">
             <div class="col-lg-4 col-md-6 mb-4" *ngFor="let tour of selectedTours">
                 <app-package-item-component [image]="tour.image" [days]="tour.days" [persons]="tour.persons"
-                    [rating]="tour.rating" [price]="tour.price" [title]="tour.title" [routerLink]="tour.routerLink">
+                    [rating]="tour.rating" [price]="tour.price" [title]="tour.title" [routerLink]="tour.routerLink"
+                    [titleLevel]="3">
                 </app-package-item-component>
             </div>
         </div>
@@ -48,51 +61,3 @@
     </div>
 </div>
 
-<div class="booking-fixed-card">
-    <!-- Title -->
-    <h5 class="booking-title">
-        {{ tour.title }}
-    </h5>
-
-    <!-- Info Row -->
-    <div class="booking-info">
-        <div class="info-item">
-            <i class="fa fa-clock"></i>
-            <div>
-                <span class="label">Duration</span>
-                <span class="value">{{ tour.duration }}</span>
-            </div>
-        </div>
-        <div class="info-item">
-            <i class="fa fa-users"></i>
-            <div>
-                <span class="label">Group</span>
-
-                <span class="value">
-                    {{ getMainPersons(tour.persons) }}
-                </span>
-
-                <span class="sub-value">
-                    ({{ getSubPersons(tour.persons) }})
-                </span>
-            </div>
-        </div>
-    </div>
-    <!-- Divider -->
-    <div class="divider"></div>
-    <!-- Price -->
-    <div class="booking-price">
-        <span class="from">From</span>
-        <span class="amount">${{ price }}</span>
-        <span class="per">/ per group</span>
-    </div>
-    <!-- Button -->
-    <button class="booking-btn" (click)="bookNow()">
-        <i class="fa fa-calendar-check"></i>
-        Book Now
-    </button>
-</div>
-<button class="mobile-float-btn" (click)="bookNow()">
-  <i class="fa fa-calendar-check"></i>
-  Book Now
-</button>

@@ -8,6 +8,7 @@ import {
 } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { PackageItemComponent } from '../../../../sharedComponents/package-item-component/package-item-component';
+import { TourBookingSidebarComponent } from '../../../../sharedComponents/tour-booking-sidebar/tour-booking-sidebar';
 import {
   TourDetails,
   TourDetailsComponent,
@@ -24,6 +25,7 @@ import toursData from '../../../../databaseJson/tours.json';
     RouterModule,
     TourDetailsComponent,
     PackageItemComponent,
+    TourBookingSidebarComponent,
   ],
   templateUrl: './two-days-tour-plus.html',
   styleUrl: './two-days-tour-plus.css',

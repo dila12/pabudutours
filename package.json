@@ -6,6 +6,7 @@
     "start": "ng serve",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "serve:dist": "node scripts/serve-dist.mjs",
     "serve:ssr:Travelwebsite": "node dist/Travelwebsite/server/server.mjs"
   },
   "prettier": {

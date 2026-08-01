@@ -6,6 +6,7 @@ import {
   TourDetailsComponent,
 } from '../../../../sharedComponents/tour-details-component/tour-details-component';
 import { PackageItemComponent } from '../../../../sharedComponents/package-item-component/package-item-component';
+import { TourBookingSidebarComponent } from '../../../../sharedComponents/tour-booking-sidebar/tour-booking-sidebar';
 import { HttpClient } from '@angular/common/http';
 import { CountryService } from '../../../../Services/country.service';
 import toursData from '../../../../databaseJson/tours.json';
@@ -18,6 +19,7 @@ import toursData from '../../../../databaseJson/tours.json';
     RouterModule,
     TourDetailsComponent,
     PackageItemComponent,
+    TourBookingSidebarComponent,
   ],
   templateUrl: './three-days-tours.html',
   styleUrl: './three-days-tours.css',

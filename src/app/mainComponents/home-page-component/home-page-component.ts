@@ -1,11 +1,12 @@
-import { Component, Inject, Input, PLATFORM_ID } from '@angular/core';
+import { Component, Inject, OnDestroy, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
 import toursData from '../../databaseJson/tours.json';
 import { PackageItemComponent } from '../../sharedComponents/package-item-component/package-item-component';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ContactUsComponent } from '../../sharedComponents/contact-us-component/contact-us-component';
 import { HttpClient } from '@angular/common/http';
 import { CountryService } from '../../Services/country.service';
+import { TourPriceService } from '../../Services/tour-price.service';
 
 @Component({
   selector: 'app-home-page-component',
@@ -19,15 +20,20 @@ import { CountryService } from '../../Services/country.service';
   templateUrl: './home-page-component.html',
   styleUrl: './home-page-component.css',
 })
-export class HomePageComponent {
+export class HomePageComponent implements OnInit, OnDestroy {
   homecontact = true;
   dayTours: any[] = [];
   multiDayTours: any[] = [];
   currentIndex = 0;
-  interval: any;
+  interval: ReturnType<typeof setInterval> | null = null;
   userCountry = 'US';
-
   activeTab: 'multi' | 'day' = 'multi';
+  private jsonLdEl: HTMLScriptElement | null = null;
+
+  /** Public review profile links — replace googleReviewsUrl with your Business Profile link */
+  tripadvisorReviewsUrl =
+    'https://www.tripadvisor.com/Attraction_Review-g304136-d34261425-Reviews-Pabudu_Tours-Kalutara_Western_Province.html';
+  googleReviewsUrl = 'https://share.google/ZUplfSNRQT7GHlgMn';
 
   reviews = [
     {
@@ -71,18 +77,23 @@ export class HomePageComponent {
   constructor(
     private http: HttpClient,
     private countryService: CountryService,
+    private tourPriceService: TourPriceService,
+    private renderer: Renderer2,
+    @Inject(DOCUMENT) private document: Document,
     @Inject(PLATFORM_ID) private platformId: Object,
   ) {}
 
   async ngOnInit() {
+    this.injectStructuredData();
+
     const isBrowser = isPlatformBrowser(this.platformId);
     if (!isBrowser) {
       this.userCountry = 'US';
+      this.dayTours = toursData.dayTours.slice(0, 3);
       this.multiDayTours = toursData.multiDayTours.slice(0, 3);
       return;
     }
-    
-    
+
     try {
       this.userCountry = await this.countryService.detectCountry();
       this.dayTours = await this.loadToursWithPrices(toursData.dayTours);
@@ -93,6 +104,49 @@ export class HomePageComponent {
     } catch (error) {
       console.error('Browser data load failed:', error);
     }
+  }
+
+  ngOnDestroy() {
+    if (this.interval) {
+      clearInterval(this.interval);
+    }
+    if (this.jsonLdEl) {
+      this.renderer.removeChild(this.document.head, this.jsonLdEl);
+      this.jsonLdEl = null;
+    }
+  }
+
+  private injectStructuredData() {
+    const data = {
+      '@context': 'https://schema.org',
+      '@type': 'TravelAgency',
+      name: 'Pabudu Tours Sri Lanka',
+      url: 'https://www.pabudutours.com/',
+      logo: 'https://www.pabudutours.com/assets/img/logos/2.png',
+      image: 'https://www.pabudutours.com/assets/img/mainpage/hero.webp',
+      description:
+        'Private and tailor-made Sri Lanka tours with experienced local chauffeur guides.',
+      telephone: '+94779008803',
+      email: 'Pabudutour@gmail.com',
+      priceRange: '$$',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'No: 439/2 Managala Rd, Kuda Waskaduwa, Waskaduwa',
+        addressLocality: 'Kalutara',
+        addressCountry: 'LK',
+      },
+      areaServed: 'Sri Lanka',
+      sameAs: [
+        'https://www.instagram.com/Pabudutourssr',
+        'https://www.tripadvisor.com/Attraction_Review-g304136-d34261425-Reviews-Pabudu_Tours-Kalutara_Western_Province.html',
+      ],
+    };
+
+    this.jsonLdEl = this.renderer.createElement('script');
+    this.renderer.setAttribute(this.jsonLdEl, 'type', 'application/ld+json');
+    this.renderer.setAttribute(this.jsonLdEl, 'id', 'pabudu-travel-agency-ld');
+    this.renderer.setProperty(this.jsonLdEl, 'text', JSON.stringify(data));
+    this.renderer.appendChild(this.document.head, this.jsonLdEl);
   }
 
   setTab(tab: 'multi' | 'day') {
@@ -109,25 +163,7 @@ export class HomePageComponent {
   }
 
   loadPrice(filecode: string): Promise<number> {
-    if (!isPlatformBrowser(this.platformId)) {
-      return Promise.resolve(0);
-    }
-
-    const countryFile = `assets/data/${this.userCountry}${filecode}.json`;
-    const defaultFile = `assets/data/US${filecode}.json`;
-    console.log(countryFile,'default',defaultFile)
-
-    return new Promise((resolve) => {
-      this.http.get(countryFile).subscribe({
-        next: (data: any) => resolve(data?.price?.['2'] ?? 0),
-        error: () => {
-          this.http.get(defaultFile).subscribe({
-            next: (data: any) => resolve(data?.price?.['2'] ?? 0),
-            error: () => resolve(0)
-          });
-        }
-      });
-    });
+    return this.tourPriceService.loadPrice(filecode, this.userCountry);
   }
 
   prev() {
@@ -146,8 +182,9 @@ export class HomePageComponent {
   autoSlide() {
     this.interval = setInterval(() => {
       this.next();
-    }, 5000);
+    }, 6000);
   }
+
   scrollToSection(sectionId: string) {
     if (isPlatformBrowser(this.platformId)) {
       const section = document.getElementById(sectionId);
