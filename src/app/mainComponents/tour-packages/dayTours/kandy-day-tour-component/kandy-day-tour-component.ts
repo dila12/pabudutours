@@ -40,104 +40,98 @@ export class KandyDayTourComponent implements OnInit, OnDestroy {
   price = 0;
 
   tour = {
-    title: 'Sri Lanka Kandy One Day Tour',
+    title: '1 Day Kandy Excursion',
     description:
-      'Experience the cultural heart of Sri Lanka with a full-day guided tour to Kandy, including elephants, temples, tea, and scenic views.',
-    duration: 'One Day',
+      'Full-day private Kandy excursion covering the Temple of the Tooth or Nelligala, Peradeniya Botanical Garden, tea, elephants, Ayurveda garden and batik factory.',
+    duration: '1 Day',
     persons: '20 Persons',
     filecode: 'kandy-day-tour',
-    overview: `
-            This one-day trip to Kandy takes you through Sri Lanka’s cultural capital.
-            Visit the Millennium Elephant Foundation or Pinnawala Elephant Orphanage,
-            explore the sacred Temple of the Tooth Relic, enjoy a tea factory and plantation visit,
-            relax by Kandy Lake and View Point, and optionally stop at a herbal and spice garden.
-            Perfect for travelers seeking culture, nature, and tradition in a single day.
-              `,
+    overview: `1 Day Kandy Excursion with Pabudu Tours — private air-conditioned vehicle, pickup and drop-off, multilingual local driver/guide, and special site guides for Kandy Temple and the Botanical Garden.`,
     tourType: 'Day Tour',
 
     itinerary: [
       {
         day: 1,
-        title: 'Kandy Day Tour Itinerary',
+        title: '1 Day Kandy Excursion',
         activities: [
           {
             type: 'Guided tour',
             title: {
-              title: 'Kandy Day Tour Itinerary',
-              icon: 'fa-car',
-              color: '#f39c12',
-            },
-            description:
-              'Observe elephants up close and learn about elephant care and conservation.',
-            image: 'assets/img/onedayTour/kandy/3.jpg',
-          },
-          {
-            type: 'Guided tour',
-            title: {
-              title:
-                'Millennium Elephant Foundation / Pinnawala Elephant Orphanage',
-              icon: 'fa-elephant',
-              color: '#8e44ad',
-            },
-            description:
-              'Observe elephants up close and learn about elephant care and conservation.',
-            image: 'assets/img/onedayTour/kandy/1.jpg',
-          },
-          {
-            type: 'Activity',
-            title: {
-              title: 'Temple of the Sacred Tooth Relic',
-              icon: 'fa-gopuram',
+              title: 'Temple of the Tooth or Nelligala Temple',
+              icon: 'fa-place-of-worship',
               color: '#c0392b',
             },
             description:
-              'Visit the most sacred Buddhist temple in Sri Lanka, located in the heart of Kandy.',
+              'Kandy Temple of the Sacred Tooth Relic or Nelligala Temple.',
             image: 'assets/img/onedayTour/kandy/3.jpg',
+          },
+          {
+            type: 'Nature',
+            title: {
+              title: 'Peradeniya Botanical Garden',
+              icon: 'fa-tree',
+              color: '#27ae60',
+            },
+            description: 'National Botanical Garden at Peradeniya.',
+            image: 'assets/img/onedayTour/kandy/2.jpg',
+          },
+          {
+            type: 'Tea Experience',
+            title: {
+              title: 'Tea Plantation & Factory',
+              icon: 'fa-coffee',
+              color: '#8B4513',
+            },
+            description: 'Tea plantation and factory visit.',
+            image: 'assets/img/onedayTour/kandy/5.jpg',
+          },
+          {
+            type: 'Wildlife Experience',
+            title: {
+              title: 'Pinnawala Elephant Orphanage',
+              icon: 'fa-paw',
+              color: '#8e44ad',
+            },
+            description:
+              'Pinnawala Elephant Orphanage or do activities with elephants in park.',
+            image: 'assets/img/onedayTour/kandy/1.jpg',
           },
           {
             type: 'Guided tour',
             title: {
-              title: 'Tea Factory & Tea Plantation',
+              title: 'Ceylon Ayurveda Herbal & Spice Garden',
               icon: 'fa-leaf',
-              color: '#27ae60',
-            },
-            description:
-              'Explore a tea factory and plantation and learn how world-famous Ceylon tea is produced.',
-            image: 'assets/img/onedayTour/kandy/5.jpg',
-          },
-          {
-            type: 'Sightseeing',
-            title: {
-              title: 'Kandy Lake & View Point',
-              icon: 'fa-water',
-              color: '#2980b9',
-            },
-            description:
-              'Enjoy scenic views of Kandy city and relax by the picturesque Kandy Lake.',
-            image: 'assets/img/onedayTour/kandy/6.jpg',
-          },
-          {
-            type: 'Optional visit',
-            title: {
-              title: 'Herbal & Spice Garden',
-              icon: 'fa-seedling',
               color: '#16a085',
             },
-            description:
-              'Optional visit to a herbal and spice garden to learn about Sri Lankan spices and herbs.',
+            description: 'Ceylon Ayurveda herbal and spice garden.',
             image: 'assets/img/onedayTour/kandy/7.jpg',
+          },
+          {
+            type: 'Shopping',
+            title: {
+              title: 'Ceylon Batik & Saree Factory',
+              icon: 'fa-store',
+              color: '#e67e22',
+            },
+            description: 'Ceylon batik and saree factory.',
+            image: 'assets/img/onedayTour/kandy/4.jpg',
           },
         ],
       },
     ],
 
     includes: [
-    'All attraction entrance fees',
-    'Highway tickets and parking fees',
-    'English speaking professional driver',
-    'Private air-conditioned vehicle',
+      'Air condition private vehicle with parking fee',
+      'Pickup and drop off',
+      'Professional and friendly local driver/guide (English / Russian / German / French / Hindi)',
+      'Special site guide for Kandy Temple and Botanical Garden',
+      'Unlimited mineral water',
+      '24 hour good service',
     ],
-    excludes: ['Food & Drinks', 'Entrance & Activities Fees'],
+    excludes: [
+      'Entrance and activities fees',
+      'Food and drinks (alcohol / soft drinks)',
+    ],
   };
 
   get currentImage() {

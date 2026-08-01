@@ -9,19 +9,19 @@ import { PackageItemComponent } from '../../../../sharedComponents/package-item-
 import { TourBookingSidebarComponent } from '../../../../sharedComponents/tour-booking-sidebar/tour-booking-sidebar';
 
 @Component({
-  selector: 'app-sigiriya-day-tour-component',
+  selector: 'app-udawalawa-day-tour-component',
   standalone: true,
   imports: [CommonModule, RouterModule, TourDetailsComponent, PackageItemComponent, TourBookingSidebarComponent],
-  templateUrl: './sigiriya-day-tour-component.html',
-  styleUrl: './sigiriya-day-tour-component.css'
+  templateUrl: './udawalawa-day-tour-component.html',
+  styleUrl: './udawalawa-day-tour-component.css'
 })
-export class SigiriyaDayTourComponent implements OnInit, OnDestroy {
+export class UdawalawaDayTourComponent implements OnInit, OnDestroy {
   images: string[] = [
-    'assets/img/onedayTour/Sigiriya/1.jpg',
-    'assets/img/onedayTour/Sigiriya/2.jpg',
-    'assets/img/onedayTour/Sigiriya/3.jpg',
-    'assets/img/onedayTour/Sigiriya/4.jpg',
-    'assets/img/onedayTour/Sigiriya/5.jpg',
+    'assets/img/5daysTours/24.jpg',
+    'assets/img/5daysTours/7.jpg',
+    'assets/img/5daysTours/30.jpg',
+    'assets/img/5daysTours/beqnuxidbmckapjcag2m.jpg',
+    'assets/img/5daysTours/fozjxf01vl9yehvucwn2.jpg',
   ];
 
   currentIndex = 0;
@@ -32,59 +32,39 @@ export class SigiriyaDayTourComponent implements OnInit, OnDestroy {
   price = 0;
 
   tour = {
-    title: '1 Day Sigiriya Excursion',
+    title: '1 Day Udawalawa Safari',
     description:
-      'Private full-day Sigiriya excursion covering Lion Rock, Dambulla Cave Temple, Habarana village safari and Habarana elephant eco park safari.',
+      'Private Udawalawa day tour safari with a 4–5 hour jeep safari and a visit to the Udawalawa baby elephant transit home.',
     duration: '1 Day',
     persons: '20 Persons',
-    filecode: 'sigiriya-day-tour',
-    overview: `1 Day Sigiriya Excursion with Pabudu Tours — private air-conditioned vehicle, pickup and drop-off, multilingual local driver/guide, and a special site guide for Sigiriya.`,
+    filecode: 'udawalawa-day-tour',
+    overview: `1 Day Udawalawa Safari with Pabudu Tours — private air-conditioned vehicle, pickup and drop-off, multilingual local driver/guide, a 4–5 hour Udawalawa National Park safari, and the Udawalawa baby elephant transit home.`,
     tourType: 'Day Tour',
 
     itinerary: [
       {
         day: 1,
-        title: '1 Day Sigiriya Excursion',
+        title: '1 Day Udawalawa Safari',
         activities: [
-          {
-            type: 'Adventure',
-            title: {
-              title: 'Sigiriya Lion Rock',
-              icon: 'fa-mountain',
-              color: '#e74c3c',
-            },
-            description: 'Climb Sigiriya Lion Rock.',
-            image: 'assets/img/onedayTour/Sigiriya/8.jpg',
-          },
-          {
-            type: 'Guided tour',
-            title: {
-              title: 'Dambulla Cave Temple & Golden Buddha',
-              icon: 'fa-place-of-worship',
-              color: '#c0392b',
-            },
-            description: 'Dambulla Cave Temple and Golden Buddha statue.',
-            image: 'assets/img/onedayTour/Sigiriya/6.jpg',
-          },
-          {
-            type: 'Village Experience',
-            title: {
-              title: 'Habarana Village Safari',
-              icon: 'fa-leaf',
-              color: '#8e44ad',
-            },
-            description: 'Habarana village safari.',
-            image: 'assets/img/onedayTour/Sigiriya/1.jpg',
-          },
           {
             type: 'Safari',
             title: {
-              title: 'Habarana Elephant Safari (Eco Park)',
+              title: 'Udawalawa Safari',
               icon: 'fa-paw',
               color: '#27ae60',
             },
-            description: 'Habarana elephant safari at the eco park.',
-            image: 'assets/img/onedayTour/Sigiriya/9.jpg',
+            description: '4–5 hour Udawalawa National Park jeep safari to see wild elephants and other wildlife.',
+            image: 'assets/img/5daysTours/24.jpg',
+          },
+          {
+            type: 'Wildlife',
+            title: {
+              title: 'Udawalawa Baby Elephant Transit',
+              icon: 'fa-heart',
+              color: '#e67e22',
+            },
+            description: 'Visit the Udawalawa baby elephant transit home and watch orphaned calves being cared for before release.',
+            image: 'assets/img/5daysTours/7.jpg',
           },
         ],
       },
@@ -94,7 +74,6 @@ export class SigiriyaDayTourComponent implements OnInit, OnDestroy {
       'Air condition private vehicle with parking fee',
       'Pickup and drop off',
       'Professional and friendly local driver/guide (English / Russian / German / French / Hindi)',
-      'Special site guide for Sigiriya',
       'Unlimited mineral water',
       '24 hour good service',
     ],
@@ -224,7 +203,7 @@ export class SigiriyaDayTourComponent implements OnInit, OnDestroy {
 
   bookNow() {
     if (!isPlatformBrowser(this.platformId)) return;
-    const barcode = 'sigiriya-day-tour';
+    const barcode = 'udawalawa-day-tour';
     localStorage.setItem('tour', JSON.stringify(this.tour));
     localStorage.setItem('filecode', barcode);
     localStorage.setItem('image', this.images[0]);

@@ -34,30 +34,29 @@ video {
   max-width: 100%;
 }
 
-/* Viator-style tour detail + sticky booking card.
-   Aside column stretches with tour details so the card unsticks
-   before the "High rated Tour" section below. */
+/* Tour page shell: full-width gallery, then details (booking lives inside details) */
 .tour-split {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 340px);
-  gap: 2rem;
-  align-items: stretch;
+  display: block;
   padding-left: 15px;
   padding-right: 15px;
 }
 
-.tour-split__main .container-fluid,
-.tour-split__main .container {
-  max-width: none;
-  width: 100%;
-  padding-left: 0;
-  padding-right: 0;
-}
-
 .tour-split__gallery {
+  width: 100%;
+  min-width: 0;
   margin-bottom: 1.25rem;
 }
 
+.tour-split__main {
+  width: 100%;
+  min-width: 0;
+}
+
+.tour-split .booking {
+  margin-top: 0 !important;
+}
+
+.tour-split__gallery .container-fluid,
 .tour-split__gallery .row,
 .tour-split__gallery [class*='col-'] {
   margin: 0;
@@ -67,30 +66,60 @@ video {
   width: 100%;
 }
 
-.tour-split__gallery .main-img {
-  margin-left: 0 !important;
+.tour-split__gallery .d-flex.align-items-start {
+  gap: 0.75rem;
+  width: 100%;
+  flex-direction: column;
+}
+
+.tour-split__gallery .main-image-container {
+  flex: 1 1 auto;
+  min-width: 0;
   width: 100%;
 }
 
-.tour-split__aside {
-  position: relative;
-  min-width: 0;
+.tour-split__gallery .main-img {
+  margin-left: 0 !important;
+  width: 100%;
+  max-height: min(480px, 56vh);
+  height: min(480px, 56vh);
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+.tour-split__gallery .thumbs,
+.tour-split__gallery .thumbs-bottom {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  width: 100%;
+  max-height: none;
+  overflow: visible;
+}
+
+.tour-split__gallery .thumbs .thumb-img,
+.tour-split__gallery .thumbs-bottom .thumb-img {
+  width: 96px;
+  height: 64px;
+  margin: 0;
+}
+
+.tour-split__gallery .thumbs .thumb-img img,
+.tour-split__gallery .thumbs-bottom .thumb-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @media (max-width: 991.98px) {
-  .tour-split {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  /* Booking lives in fixed bottom bar / sheet — don't take page space */
-  .tour-split__aside {
-    height: 0;
-    min-height: 0;
-    margin: 0;
-    padding: 0;
-    overflow: visible;
-    border: 0;
+  .tour-split__gallery .main-img {
+    height: min(280px, 42vh);
+    max-height: min(280px, 42vh);
   }
 
   /* Room for sticky mobile booking bar */

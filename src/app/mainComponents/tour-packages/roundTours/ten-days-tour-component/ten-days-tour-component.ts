@@ -24,7 +24,7 @@ import { CountryService } from '../../../../Services/country.service';
   templateUrl: './ten-days-tour-component.html',
   styleUrl: './ten-days-tour-component.css',
 })
-export class TenDaysTourComponent implements OnInit , OnDestroy {
+export class TenDaysTourComponent implements OnInit, OnDestroy {
   images: string[] = [
     'assets/img/7daystour/lzurk0uk82qqjh6soonh.jpg',
     'assets/img/7daystour/u19dmfbuae46dhzpqctu.jpg',
@@ -41,363 +41,506 @@ export class TenDaysTourComponent implements OnInit , OnDestroy {
   price = 0;
 
   tour = {
-    title: '10 Day Sri Lanka Private Tour | Safari, Culture, Hill Country & Beach',
+    title: '10 Days / 9 Nights Excursion in Sri Lanka',
     description:
-      'An unforgettable 10 day private Sri Lanka tour covering Wilpattu Safari, Anuradhapura, Sigiriya, Kandy, Ella adventures and a relaxing southern beach stay.',
-    duration: '10 Days',
+      'A private 10-day Sri Lanka excursion covering Sigiriya, Polonnaruwa, Kandy, Nuwara Eliya, Ella, safari, Mirissa, Galle and Colombo.',
+    duration: '10 Days / 9 Nights',
     persons: '1-20 Persons',
     filecode: '10-day-sri-lanka-tour',
-    overview: `Discover Sri Lanka’s wildlife, ancient kingdoms, scenic mountains and golden beaches in one perfectly balanced 8 day journey. 
-  This tour combines safari adventure, UNESCO heritage sites, hill country landscapes, tea plantations, waterfalls and relaxing coastal experiences with half board accommodation and private transportation.`,
+    overview: `10 Days / 9 Nights Excursion in Sri Lanka with Pabudu Tours — from airport arrival at Sigiriya through Polonnaruwa, Kandy, hill country, Ella, wildlife safari, Mirissa beaches, Galle and Colombo city highlights.`,
 
     tourType: 'Round Tour',
 
     itinerary: [
-
       {
         day: 1,
-        title: 'Airport / Hotel – Wilpattu',
+        title: 'Airport to Sigiriya',
         activities: [
+          {
+            type: 'Arrival',
+            title: { title: 'Airport Arrival', icon: 'fa-plane', color: '#2c3e50' },
+            description: 'From airport arrival to Sigiriya.',
+          },
+          {
+            type: 'Guided tour',
+            title: {
+              title: 'Dambulla Cave Temple & Golden Buddha',
+              icon: 'fa-place-of-worship',
+              color: '#2980b9',
+            },
+            description: 'Dambulla Cave Temple and Golden Buddha statue.',
+            image: 'assets/img/5daysTours/4.jpg',
+          },
           {
             type: 'Safari',
-            title: { title: 'Wilpattu National Park Safari', icon: 'fa-paw', color: '#27ae60' },
-            description:
-              'Explore Sri Lanka’s largest national park on a 5-hour 4x4 jeep safari. Spot leopards, sloth bears, elephants, deer, crocodiles and diverse birdlife.',
-            image: 'assets/img/5daysTours/37.jpg',
-          },
-          {
-            type: 'Accommodation',
-            title: { title: 'Thimbiri Wewa Resort – Wilpattu', icon: 'fa-hotel', color: '#16a085' },
-            description:
-              'Overnight stay at Thimbiri Wewa Resort Wilpattu (or similar). Half Board basis.',
-            image: 'assets/img/5daysTours/38.jpg',
-            extra: ['Dinner Included', 'Star Class Hotel'],
-          },
-        ],
-      },
-
-      {
-        day: 2,
-        title: 'Wilpattu – Anuradhapura – Sigiriya',
-        activities: [
-          {
-            type: 'Religious Visit',
-            title: { title: 'Sri Maha Bodhi Temple', icon: 'fa-place-of-worship', color: '#8e44ad' },
-            description:
-              'Visit the sacred Sri Maha Bodhi Tree in Anuradhapura.',
-            image: 'assets/img/5daysTours/39.jpg',
-          },
-          {
-            type: 'Historical Visit',
-            title: { title: 'Ruwanweli Maha Seya', icon: 'fa-landmark', color: '#e67e22' },
-            description:
-              'Explore one of Sri Lanka’s most sacred Buddhist monuments.',
-            image: 'assets/img/5daysTours/40.jpg',
-          },
-          {
-            type: 'Scenic Hike',
-            title: { title: 'Pidurangala Rock Sunset', icon: 'fa-mountain', color: '#e74c3c' },
-            description:
-              'Climb Pidurangala Rock for breathtaking sunset views.',
-            image: 'assets/img/5daysTours/41.jpg',
-          },
-          {
-            type: 'Accommodation',
-            title: { title: 'Fresco Water Villa – Sigiriya', icon: 'fa-hotel', color: '#16a085' },
-            description:
-              'Overnight stay at Fresco Water Villa (or similar).',
-            image: 'assets/img/5daysTours/c.jpg',
-            extra: ['Breakfast & Dinner Included', '4 Star Hotel'],
-          },
-        ],
-      },
-
-      {
-        day: 3,
-        title: 'Sigiriya Cultural Triangle',
-        activities: [
-          {
-            type: 'UNESCO Site',
-            title: { title: 'Sigiriya Lion Rock Fortress', icon: 'fa-mountain', color: '#c0392b' },
-            description:
-              'Climb the UNESCO-listed Sigiriya Rock Fortress.',
-            image: 'assets/img/5daysTours/42.jpg',
-          },
-          {
-            type: 'Village Experience',
-            title: { title: 'Hiriwadunna Village Tour', icon: 'fa-leaf', color: '#27ae60' },
-            description:
-              'Experience authentic rural Sri Lankan village life.',
+            title: {
+              title: 'Habarana Village or Eco Park Safari',
+              icon: 'fa-leaf',
+              color: '#8e44ad',
+            },
+            description: 'Habarana Village Safari or Habarana Eco Park safari.',
             image: 'assets/img/5daysTours/36.jpg',
           },
           {
-            type: 'Safari',
-            title: { title: 'Minneriya Safari', icon: 'fa-paw', color: '#2ecc71' },
-            description:
-              'Enjoy a 4x4 jeep safari famous for elephant gatherings.',
-            image: 'assets/img/5daysTours/37.jpg',
+            type: 'Accommodation',
+            title: {
+              title: 'Palwehera Resort Sigiriya',
+              icon: 'fa-hotel',
+              color: '#27ae60',
+            },
+            description: 'Stay 1st night at Palwehera Resort at Sigiriya.',
+            image: 'assets/img/5daysTours/c.jpg',
+          },
+        ],
+      },
+      {
+        day: 2,
+        title: 'Sigiriya & Polonnaruwa',
+        activities: [
+          {
+            type: 'Guided tour',
+            title: {
+              title: 'Sigiriya Lion Rock or Pidurangala',
+              icon: 'fa-mountain',
+              color: '#e74c3c',
+            },
+            description: 'Sigiriya Lion Rock or Pidurangala.',
+            image: 'assets/img/5daysTours/c8dyxgodivrwf4hxzziq.jpg',
           },
           {
-            type: 'Wellness',
-            title: { title: 'Ayurveda Massage', icon: 'fa-spa', color: '#9b59b6' },
-            description:
-              'Relax with a traditional herbal oil massage.',
-            image: 'assets/img/5daysTours/43.jpg',
+            type: 'Guided tour',
+            title: {
+              title: 'Polonnaruwa Ancient City',
+              icon: 'fa-landmark',
+              color: '#16a085',
+            },
+            description: 'Explore Polonnaruwa ancient city.',
           },
           {
             type: 'Accommodation',
-            title: { title: 'Fresco Water Villa – Sigiriya', icon: 'fa-hotel', color: '#16a085' },
-            description:
-              'Overnight stay at Fresco Water Villa (or similar).',
+            title: {
+              title: 'Fresco Villa or Similar',
+              icon: 'fa-hotel',
+              color: '#27ae60',
+            },
+            description: 'Stay night at Fresco Villa or similar.',
             image: 'assets/img/5daysTours/c.jpg',
-            extra: ['Breakfast & Dinner Included', '4 Star Hotel'],
+          },
+        ],
+      },
+      {
+        day: 3,
+        title: 'Matale to Kandy',
+        activities: [
+          {
+            type: 'Guided tour',
+            title: {
+              title: 'Matale Hindu Temple',
+              icon: 'fa-place-of-worship',
+              color: '#2980b9',
+            },
+            description: 'Matale Hindu temple.',
+          },
+          {
+            type: 'Guided tour',
+            title: {
+              title: 'Ayurveda Herbal Garden',
+              icon: 'fa-leaf',
+              color: '#27ae60',
+            },
+            description: 'Ayurveda herbal garden.',
+          },
+          {
+            type: 'Guided tour',
+            title: {
+              title: 'Kandy View Point',
+              icon: 'fa-mountain',
+              color: '#e67e22',
+            },
+            description: 'Kandy view point.',
+          },
+          {
+            type: 'Guided tour',
+            title: {
+              title: 'Temple of the Tooth Relic',
+              icon: 'fa-place-of-worship',
+              color: '#2980b9',
+            },
+            description: 'Kandy Temple of the Tooth Relic.',
+            image: 'assets/img/5daysTours/4.jpg',
+          },
+          {
+            type: 'Cultural show',
+            title: {
+              title: 'Kandy Cultural Dance Show',
+              icon: 'fa-theater-masks',
+              color: '#8e44ad',
+            },
+            description: 'Kandy culture dance show.',
+            image: 'assets/img/5daysTours/fifyrnqt5tvouhpgh6kk.jpg',
+          },
+          {
+            type: 'Accommodation',
+            title: {
+              title: 'Hotel Topaz Kandy',
+              icon: 'fa-hotel',
+              color: '#27ae60',
+            },
+            description: 'Stay night at Hotel Topaz Kandy.',
+            image: 'assets/img/5daysTours/25.jpg',
           },
         ],
       },
       {
         day: 4,
-        title: 'Sigiriya – Kandy',
+        title: 'Kandy to Ramboda',
         activities: [
           {
-            type: 'Cultural Visit',
-            title: { title: 'Matale Spice Garden', icon: 'fa-seedling', color: '#32CD32' },
-            description:
-              'Discover Sri Lanka’s famous spices and herbs.',
-            image: 'assets/img/5daysTours/44.jpg',
+            type: 'Nature',
+            title: {
+              title: 'Peradeniya Botanical Garden',
+              icon: 'fa-tree',
+              color: '#16a085',
+            },
+            description: 'Peradeniya National Botanical Garden.',
+            image: 'assets/img/5daysTours/26.jpg',
           },
-          {
-            type: 'UNESCO Site',
-            title: { title: 'Temple of the Sacred Tooth Relic', icon: 'fa-place-of-worship', color: '#2980b9' },
-            description:
-              'Visit Sri Lanka’s most sacred Buddhist temple in Kandy.',
-            image: 'assets/img/5daysTours/14.jpg',
-          },
-          {
-            type: 'Cultural Show',
-            title: { title: 'Kandy Cultural Dance Show', icon: 'fa-theater-masks', color: '#e74c3c' },
-            description:
-              'Enjoy traditional Kandyan dance performances.',
-            image: 'assets/img/5daysTours/fifyrnqt5tvouhpgh6kk.jpg',
-          },
-          {
-            type: 'Accommodation',
-            title: { title: 'Hotel Topaz – Kandy', icon: 'fa-hotel', color: '#16a085' },
-            description:
-              'Overnight stay at Hotel Topaz (or similar) in Kandy. Half Board basis.',
-            image: 'assets/img/5daysTours/25.jpg',
-            extra: ['Hotel 4 stars (Premium)', 'Private bathroom', 'Breakfast', 'Dinner Included'],
-          },
-        ],
-      },
-
-      {
-        day: 5,
-        title: 'Kandy – Nuwara Eliya – Ella',
-        activities: [
           {
             type: 'Tea Experience',
-            title: { title: 'Blue Field Tea Factory', icon: 'fa-mug-hot', color: '#8B4513' },
-            description:
-              'Learn how world-famous Ceylon tea is produced.',
+            title: {
+              title: 'Tea Plantation & Factory',
+              icon: 'fa-coffee',
+              color: '#8B4513',
+            },
+            description: 'Tea plantation and factory.',
             image: 'assets/img/5daysTours/28.png',
           },
           {
-            type: 'Nature',
-            title: { title: 'Ramboda Waterfall', icon: 'fa-water', color: '#3498db' },
+            type: 'Wildlife Experience',
+            title: {
+              title: 'Pinnawala Elephant Orphanage',
+              icon: 'fa-paw',
+              color: '#8e44ad',
+            },
             description:
-              'Visit one of Sri Lanka’s tallest waterfalls.',
+              'Pinnawala Elephant Orphanage or do activities with elephants.',
+            image: 'assets/img/5daysTours/7.jpg',
+          },
+          {
+            type: 'Guided tour',
+            title: {
+              title: 'Ambuluwawa Tower',
+              icon: 'fa-mountain',
+              color: '#e67e22',
+            },
+            description: 'Ambuluwawa Tower.',
+          },
+          {
+            type: 'Accommodation',
+            title: {
+              title: 'Ramboda Falls Hotel',
+              icon: 'fa-hotel',
+              color: '#27ae60',
+            },
+            description: 'Stay night at Ramboda Falls Hotel.',
+            image: 'assets/img/5daysTours/29.jpg',
+          },
+        ],
+      },
+      {
+        day: 5,
+        title: 'Nuwara Eliya to Ella',
+        activities: [
+          {
+            type: 'Guided tour',
+            title: {
+              title: 'Nuwara Eliya Post Office',
+              icon: 'fa-landmark',
+              color: '#16a085',
+            },
+            description: 'Nuwara Eliya Post Office.',
+          },
+          {
+            type: 'Guided tour',
+            title: {
+              title: 'Nine Arch Bridge',
+              icon: 'fa-bridge',
+              color: '#c0392b',
+            },
+            description: 'Nine Arch Bridge.',
+            image: 'assets/img/5daysTours/5.jpg',
+          },
+          {
+            type: 'Guided tour',
+            title: {
+              title: "Little Adam's Peak",
+              icon: 'fa-mountain',
+              color: '#8e44ad',
+            },
+            description: "Little Adam's Peak.",
+            image: 'assets/img/5daysTours/9.jpg',
+          },
+          {
+            type: 'Guided tour',
+            title: {
+              title: 'Ella Train Ride',
+              icon: 'fa-train',
+              color: '#e67e22',
+            },
+            description: 'Ella train ride.',
+          },
+          {
+            type: 'Accommodation',
+            title: {
+              title: 'Oak Ray Ella Gap Hotel',
+              icon: 'fa-hotel',
+              color: '#27ae60',
+            },
+            description: 'Stay night at Oak Ray Ella Gap Hotel.',
+            image: 'assets/img/5daysTours/30.jpg',
+          },
+        ],
+      },
+      {
+        day: 6,
+        title: 'Ella to Yala / Udawalawe',
+        activities: [
+          {
+            type: 'Guided tour',
+            title: {
+              title: 'Ravana Waterfall',
+              icon: 'fa-water',
+              color: '#3498db',
+            },
+            description: 'Ravana waterfall.',
             image: 'assets/img/5daysTours/27.jpg',
           },
           {
-            type: 'Accommodation',
-            title: { title: ' Oak Ray Ella Gap Hotel (or similar) - HB Basis', icon: 'fa-hotel', color: '#16a085' },
+            type: 'Wildlife Experience',
+            title: {
+              title: 'Watching Monkeys on the Street',
+              icon: 'fa-paw',
+              color: '#8e44ad',
+            },
+            description: 'Watching monkeys on the street.',
+          },
+          {
+            type: 'Safari',
+            title: {
+              title: 'Yala or Udawalawe Safari',
+              icon: 'fa-paw',
+              color: '#27ae60',
+            },
             description:
-              'Overnight stay in  Oak Ray Ella Gap Hotel (or similar) - HB Basis.',
-            image: 'assets/img/5daysTours/xowpqo2nib4z21zdldhp.jpg',
-            extra: ['Hotel 4 stars (Premium)', 'Private bathroom', 'Breakfast', 'Dinner Included'],
+              'Wild safari at Yala National Park or Udawalawe National Park.',
+            image: 'assets/img/5daysTours/24.jpg',
+          },
+          {
+            type: 'Accommodation',
+            title: {
+              title: 'Grand Tamarind or Peacock Hotel',
+              icon: 'fa-hotel',
+              color: '#27ae60',
+            },
+            description: 'Stay night at Grand Tamarind Hotel or Peacock Hotel.',
           },
         ],
       },
-
-      {
-        day: 6,
-        title: 'Ella – Hikkaduwa',
-        activities: [
-          {
-            type: 'Landmark',
-            title: { title: 'Nine Arch Bridge', icon: 'fa-bridge', color: '#A9A9A9' },
-            description:
-              'Visit the famous colonial-era railway bridge.',
-            image: 'assets/img/5daysTours/3.jpeg',
-          },
-          {
-            type: 'Wildlife',
-            title: { title: 'Elephant Transit Home', icon: 'fa-elephant', color: '#2ecc71' },
-            description:
-              'Observe rescued baby elephants.',
-            image: 'assets/img/5daysTours/7.jpg',
-          },
-           {
-            type: 'Accommodation',
-            title: { title: 'Somerset Mirissa Hotel', icon: 'fa-hotel', color: '#16a085' },
-            description:
-              'Accommodation in Somerset Mirissa Hotel or Similar hotel - HB Basis',
-            image: 'assets/img/5daysTours/35.jpg',
-              extra: [
-                'Hotel 4 stars (Premium)',
-                'Breakfast',
-                'Private bathroom',
-                'Dinner',
-              ],
-          }
-        ],
-      },
-
       {
         day: 7,
-        title: 'Hikkaduwa Beach',
+        title: 'Mirissa Beach',
         activities: [
           {
-            type: 'Beach Relaxation',
-            title: { title: 'Hikkaduwa Beach', icon: 'fa-umbrella-beach', color: '#f1c40f' },
-            description:
-              'Relax on golden beaches and swim in the Indian Ocean.',
-            image: 'assets/img/5daysTours/45.jpg',
+            type: 'Guided tour',
+            title: {
+              title: 'Mirissa Coconut Tree Hill',
+              icon: 'fa-tree',
+              color: '#27ae60',
+            },
+            description: 'Mirissa Coconut Tree Hill.',
           },
-           {
+          {
+            type: 'Leisure',
+            title: {
+              title: 'Mirissa Beach',
+              icon: 'fa-umbrella-beach',
+              color: '#f39c12',
+            },
+            description: 'Beautiful Mirissa beach.',
+          },
+          {
             type: 'Accommodation',
-            title: { title: 'Somerset Mirissa Hotel', icon: 'fa-hotel', color: '#16a085' },
-            description:
-              'Accommodation in Somerset Mirissa Hotel or Similar hotel - HB Basis',
-            image: 'assets/img/5daysTours/35.jpg',
-              extra: [
-                'Hotel 4 stars (Premium)',
-                'Breakfast',
-                'Private bathroom',
-                'Dinner',
-              ],
-          }
+            title: {
+              title: 'Somerset Mirissa Hotel',
+              icon: 'fa-hotel',
+              color: '#27ae60',
+            },
+            description: 'Stay at Somerset Mirissa Hotel.',
+          },
         ],
       },
       {
         day: 8,
-        title: 'Hikkaduwa Beach',
+        title: 'Whale Watching & Surfing',
         activities: [
           {
-            type: 'Beach Relaxation',
-            title: { title: 'Hikkaduwa Beach', icon: 'fa-umbrella-beach', color: '#f1c40f' },
-            description:
-              'Relax on golden beaches and swim in the Indian Ocean.',
-            image: 'assets/img/5daysTours/45.jpg',
+            type: 'Wildlife Experience',
+            title: {
+              title: 'Whale Watching at Mirissa',
+              icon: 'fa-water',
+              color: '#2980b9',
+            },
+            description: 'Whale watching at Mirissa.',
           },
-           {
+          {
+            type: 'Activity',
+            title: {
+              title: 'Weligama Surfing Club',
+              icon: 'fa-water',
+              color: '#3498db',
+            },
+            description: 'Weligama surfing club.',
+          },
+          {
             type: 'Accommodation',
-            title: { title: 'Somerset Mirissa Hotel', icon: 'fa-hotel', color: '#16a085' },
-            description:
-              'Accommodation in Somerset Mirissa Hotel or Similar hotel - HB Basis',
-            image: 'assets/img/5daysTours/35.jpg',
-              extra: [
-                'Hotel 4 stars (Premium)',
-                'Breakfast',
-                'Private bathroom',
-                'Dinner',
-              ],
-          }
+            title: {
+              title: 'Somerset Hotel',
+              icon: 'fa-hotel',
+              color: '#27ae60',
+            },
+            description: 'Stay at Somerset Hotel.',
+          },
         ],
       },
       {
         day: 9,
-        title: 'water Activities to Kalutara',
+        title: 'Unawatuna, Galle & Coast',
         activities: [
-                    {
+          {
             type: 'Guided tour',
             title: {
-              title: 'Peraliya Tsunami Memorial',
-              icon: 'fa-monument',
-              color: '#FF8C00',
+              title: 'Stilt Fishermen at Unawatuna',
+              icon: 'fa-water',
+              color: '#3498db',
             },
-            description:
-              'Peraliya Tsunami Memorial honors the victims of the 2004 tsunami, featuring a towering Buddha statue as a symbol of peace and remembrance near the site of Sri Lanka’s worst tsunami disaster.',
-            image: 'assets/img/7daystour/lf8xpxoe67nlur3zr3da.jpg',
+            description: 'Stilt fishermen at Unawatuna.',
           },
           {
-            type: 'Wildlife Conservation',
+            type: 'Guided tour',
             title: {
-              title: 'Koggala Turtle Hatchery Visit',
+              title: 'Galle Fort & Ancient City',
+              icon: 'fa-landmark',
+              color: '#16a085',
+            },
+            description: 'Galle Fort and ancient city.',
+            image: 'assets/img/5daysTours/32.jpg',
+          },
+          {
+            type: 'Activity',
+            title: {
+              title: 'Swimming with the Turtles',
+              icon: 'fa-water',
+              color: '#2980b9',
+            },
+            description: 'Swimming with the turtles.',
+          },
+          {
+            type: 'Guided tour',
+            title: {
+              title: 'Moonstone Mine Village',
+              icon: 'fa-gem',
+              color: '#8e44ad',
+            },
+            description: 'Moonstone mine village.',
+          },
+          {
+            type: 'Conservation',
+            title: {
+              title: 'Turtle Hatchery',
               icon: 'fa-water',
               color: '#27ae60',
             },
-            description:
-              'Visit the Koggala Turtle Hatchery and Conservation Center where endangered sea turtles are protected and rehabilitated. Learn about Sri Lanka’s marine conservation efforts, observe baby turtles in hatchery pools and understand how rescued turtles are released back into the Indian Ocean.',
+            description: 'Turtle hatchery.',
             image: 'assets/img/5daysTours/31.jpg',
           },
           {
             type: 'Boat Safari',
             title: {
-              title: 'Madu River Boat Safari',
+              title: 'River Boat Safari',
               icon: 'fa-ship',
-              color: '#16a085',
+              color: '#3498db',
             },
-            description:
-              'Experience a scenic boat safari through the mangrove forests and small islands of the Madu River. Visit traditional cinnamon plantations and explore one of Sri Lanka’s most beautiful wetland ecosystems.',
-            image: 'assets/img/5daysTours/32.jpg',
+            description: 'River boat safari.',
           },
           {
             type: 'Accommodation',
-            title: { title: 'Kamili Beach Resort (or similar) - HB Basis', icon: 'fa-hotel', color: '#16a085' },
-            description:
-              'Overnight stay in  Kamili Beach Resort (or similar) - HB Basis.',
-            image: 'assets/img/5daysTours/46.jpg',
-            extra: ['Hotel 4 stars (Premium)', 'Private bathroom', 'Breakfast', 'Dinner Included'],
+            title: {
+              title: 'Kamili Beach Resort',
+              icon: 'fa-hotel',
+              color: '#27ae60',
+            },
+            description: 'Stay night at Kamili Beach Resort.',
           },
         ],
       },
       {
         day: 10,
-        title: 'Departure from Colombo',
+        title: 'Colombo City Highlights',
         activities: [
           {
-            type: 'Guided tour',
+            type: 'Shopping',
             title: {
-              title: 'Peraliya Tsunami Memorial',
-              icon: 'fa-monument',
-              color: '#FF8C00',
+              title: 'Souvenir & Shopping Bazaar at Kalutara',
+              icon: 'fa-store',
+              color: '#e67e22',
             },
-            description:
-              'Peraliya Tsunami Memorial honors the victims of the 2004 tsunami, featuring a towering Buddha statue as a symbol of peace and remembrance near the site of Sri Lanka’s worst tsunami disaster.',
-            image: 'assets/img/7daystour/lf8xpxoe67nlur3zr3da.jpg',
-          },
-          {
-            type: 'Guided tour',
-            title: {
-              title: 'Independence Memorial Hall',
-              icon: 'fa-landmark',
-              color: '#A9A9A9',
-            },
-            description:
-              'Independence Square in Colombo is a historic landmark built to commemorate Sri Lanka’s independence, featuring grand colonial architecture, lush gardens, and a peaceful atmosphere for visitors.',
-            image: 'assets/img/7daystour/fsrleaf7977wcxityzu8.jpg',
+            description: 'Souvenir and shopping bazaar at Kalutara.',
           },
           {
             type: 'Guided tour',
             title: {
               title: 'Gangaramaya Temple',
-              icon: 'fa-landmark',
-              color: '#FFD700',
+              icon: 'fa-place-of-worship',
+              color: '#2980b9',
             },
-            description:
-              'Gangaramaya Temple in Colombo is a beautiful Buddhist temple blending Sri Lankan, Thai, and Chinese architecture, featuring statues, relics, and a serene lakeside setting.',
-            image: 'assets/img/7daystour/fn10nlk7fc0dzyawswa5.jpg',
+            description: 'Gangaramaya Temple.',
           },
           {
             type: 'Guided tour',
             title: {
-              title: 'Galle Face Green',
-              icon: 'fa-park',
-              color: '#32CD32',
+              title: 'Red Mosque',
+              icon: 'fa-mosque',
+              color: '#c0392b',
             },
-            description:
-              'Galle Face Green in Colombo is a scenic oceanfront promenade, perfect for relaxing walks, stunning sunsets, and enjoying street food, offering a lively atmosphere by the Indian Ocean.',
+            description: 'Red Mosque.',
+            image: 'assets/img/7daystour/owzua0jhk0zazg9d8hcn.jpg',
+          },
+          {
+            type: 'Guided tour',
+            title: {
+              title: 'Independence Square',
+              icon: 'fa-landmark',
+              color: '#16a085',
+            },
+            description: 'Independence Square.',
+          },
+          {
+            type: 'Guided tour',
+            title: {
+              title: 'Old Lighthouse Colombo',
+              icon: 'fa-lightbulb',
+              color: '#f39c12',
+            },
+            description: 'Old lighthouse at Colombo.',
+          },
+          {
+            type: 'Guided tour',
+            title: {
+              title: 'Galle Face Beach',
+              icon: 'fa-umbrella-beach',
+              color: '#3498db',
+            },
+            description: 'Galle Face Beach.',
             image: 'assets/img/7daystour/qu0e7cjpkcfhfds1zeem.jpg',
           },
           {
@@ -405,23 +548,20 @@ export class TenDaysTourComponent implements OnInit , OnDestroy {
             title: {
               title: 'Pettah Market',
               icon: 'fa-store',
-              color: '#FF4500',
+              color: '#e74c3c',
             },
-            description:
-              'Colombo Fort Market is a bustling hub offering a mix of local goods, clothing, spices, and street food, providing a vibrant shopping experience in the heart of the city.',
+            description: 'Pettah Market.',
             image: 'assets/img/7daystour/vlk48jx8ywhuzyqlvqg8.jpg',
           },
           {
-            type: 'Guided tour',
+            type: 'Accommodation',
             title: {
-              title: 'Red Mosque (Jami Ul-Alfar Mosque)',
-              icon: 'fa-mosque',
-              color: '#FF0000',
+              title: 'Kamili Beach Hotel or Similar',
+              icon: 'fa-hotel',
+              color: '#27ae60',
             },
-            description:
-              'Jami Ul-Alfar Mosque, or the Red Mosque in Colombo, is an iconic landmark with striking red-and-white architecture, offering a glimpse into Sri Lanka’s rich Islamic heritage.',
-            image: 'assets/img/7daystour/owzua0jhk0zazg9d8hcn.jpg',
-          }
+            description: 'Stay night at Kamili Beach Hotel or similar.',
+          },
         ],
       },
     ],
@@ -429,7 +569,7 @@ export class TenDaysTourComponent implements OnInit , OnDestroy {
     includes: [
       'Air-Conditioned Private Vehicle',
       'English Speaking Professional Driver',
-      'Half Board Accommodation (7 Nights)',
+      'Half Board Accommodation (9 Nights)',
       'Fuel & Parking Fees',
       'Airport Pickup & Drop Off',
     ],
@@ -535,7 +675,6 @@ export class TenDaysTourComponent implements OnInit , OnDestroy {
   }
 
   loadPrice(filecode: string): Promise<number> {
-
     if (!isPlatformBrowser(this.platformId)) {
       return Promise.resolve(0);
     }
@@ -544,17 +683,15 @@ export class TenDaysTourComponent implements OnInit , OnDestroy {
     const defaultFile = `assets/data/US${filecode}.json`;
 
     return new Promise((resolve) => {
-
       this.http.get(countryFile).subscribe({
         next: (data: any) => resolve(data?.price?.['2'] ?? 0),
         error: () => {
           this.http.get(defaultFile).subscribe({
             next: (data: any) => resolve(data?.price?.['2'] ?? 0),
-            error: () => resolve(0)
+            error: () => resolve(0),
           });
-        }
+        },
       });
-
     });
   }
 
@@ -567,17 +704,17 @@ export class TenDaysTourComponent implements OnInit , OnDestroy {
 
   bookNow() {
     if (isPlatformBrowser(this.platformId)) {
-    const barcode = '10-day-sri-lanka-tour';
-    localStorage.setItem('tour', JSON.stringify(this.tour));
-    localStorage.setItem('filecode', barcode);
-    localStorage.setItem('image', this.images[0]);
-    this.router.navigate(['/booking', barcode], {
-      state: {
-        tour: this.tour,
-        barcode: barcode,
-        Image: this.images[0],
-      },
-    });
-  }
+      const barcode = '10-day-sri-lanka-tour';
+      localStorage.setItem('tour', JSON.stringify(this.tour));
+      localStorage.setItem('filecode', barcode);
+      localStorage.setItem('image', this.images[0]);
+      this.router.navigate(['/booking', barcode], {
+        state: {
+          tour: this.tour,
+          barcode: barcode,
+          Image: this.images[0],
+        },
+      });
+    }
   }
 }

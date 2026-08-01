@@ -47,55 +47,43 @@ export class SevenDaysTourComponent implements OnInit, OnDestroy {
   price = 0;
 
   tour = {
-    title: 'Sri Lanka Seven Days Tour',
+    title: '7 Days (6 Nights) Excursion in Sri Lanka',
     description:
-      'Experience the beauty of Sri Lanka with 7 days full of adventure, culture, and relaxation.',
-    duration: '7 Days',
+      'A private 7-day Sri Lanka excursion covering Sigiriya, Kandy, Nuwara Eliya, Ella, Yala, Mirissa and the southwest coast.',
+    duration: '7 Days / 6 Nights',
     persons: '20 Persons',
     filecode: '7-day-sri-lanka-tour',
-    overview: `We are here for you to organize the perfect holiday you always dreamed of in 'Paradise Island', Sri Lanka.
-    Our 7days(6 nights) travel package is scheduled in a way that you'll cover not only all the famous attractions but also some of the rare experiences that are very unique to Pabudu Tours while accomadating our guests in Sri Lanka's finest 4 star category hotels on half board basis.
-    Yala Safari, Sigiriya, Ella Nine Arches Bridge, Ella train journey, Kandy Sacred Tooth Relic Temple, Ramboda watefall, Little Adam's Peak hike, Nuwara Eliya, Galle Fort, Bentota River tour are just to name a few main attractions that you'll cover during the journey.
-    Altogether you'll be visiting 28 attractions in total covering 10 districts of Sri Lanka while enjoing private trasportation.`,
+    overview: `7 Days (6 Nights) Excursion in Sri Lanka with Pabudu Tours — private chauffeur-guided travel from Colombo Airport through Sigiriya, Habarana, Matale, Kandy, Nuwara Eliya, Ella, Yala, Mirissa, Galle and Bentota, ending with airport drop-off.
+
+First 2 days program will be change depends on your arrival time.`,
     tourType: 'Round Tour',
 
     itinerary: [
       {
         day: 1,
-        title: 'Arrival  & Pidurangala Rock',
+        title: 'Arrival — Colombo Airport to Sigiriya',
         activities: [
           {
-            type: 'Arrival ',
-            title: { title: 'Arrival ', icon: 'fa-plane', color: '#2c3e50' },
-          },
-          {
-            type: 'Guided tour',
-            title: {
-              title: 'Pidurangala Rock',
-              icon: 'fa-hiking',
-              color: '#f39c12',
-            },
+            type: 'Arrival',
+            title: { title: 'Airport Pickup', icon: 'fa-plane', color: '#2c3e50' },
             description:
-              'Little hike to Pidurangala Rock and enjoy the scenery.',
-            image: 'assets/img/5daysTours/c8dyxgodivrwf4hxzziq.jpg',
+              'Arrival to hotel from Colombo Airport to Sigiriya and relax.',
           },
           {
             type: 'Accommodation',
             title: {
-              title: 'Fresco Water Villa',
+              title: 'Overnight in Sigiriya',
               icon: 'fa-hotel',
               color: '#27ae60',
             },
-            description:
-              'Accommodation in Hotel Fresco Water Villa or Similar Hotel - HB Basis',
+            description: 'Stay 1st night near Sigiriya (hotel as arranged).',
             image: 'assets/img/7dayschange/f4yqlbw3bjsz3szp3hbq.jpg',
-            extra: ['Hotel 4 stars (Premium)', 'Private bathroom', 'Dinner'],
           },
         ],
       },
       {
         day: 2,
-        title: 'Sigiriya & Dambulla',
+        title: 'Sigiriya, Dambulla & Habarana',
         activities: [
           {
             type: 'Guided tour',
@@ -104,299 +92,334 @@ export class SevenDaysTourComponent implements OnInit, OnDestroy {
               icon: 'fa-mountain',
               color: '#e74c3c',
             },
-            description:
-              'To kick off day two s proceedings, you ll be visiting an UNESCO World Heritage site - Sigiriya rock fortress.',
+            description: 'Climb the UNESCO World Heritage Sigiriya Lion Rock fortress.',
             image: 'assets/img/7dayschange/ihyw8fdom33yg8zqkmfi.jpg',
           },
           {
             type: 'Guided tour',
             title: {
-              title: 'Hiriwadunna Village & Lake Adventure',
-              icon: 'fa-leaf',
-              color: '#8e44ad',
-            },
-            description:
-              "Let's get some traditional Sri Lankan village experience!!! A visit to the hamlet of Hiriwadunna in Sri Lanka showcases the laid-back rhythms of small village life.",
-            image: 'assets/img/5daysTours/36.jpg',
-          },
-          {
-            type: 'Guided tour',
-            title: {
-              title: 'Dambulla Cave Temple',
+              title: 'Dambulla Cave Temple & Golden Buddha',
               icon: 'fa-place-of-worship',
               color: '#2980b9',
             },
             description:
-              'After refreshing at Hiriwadunna Village, next up you ll be heading to Dambulla Royal Cave Temple A sacred pilgrimage site for 22 centuries.',
+              'Visit Dambulla Cave Temple and the Golden Buddha statue.',
             image: 'assets/img/7dayschange/d2ap1r8hoijw6wsm5xgy.jpg',
           },
           {
-            type: 'Guided tour',
+            type: 'Village Experience',
             title: {
-              title: 'Dambulla Dedicated Economic Center',
-              icon: 'fa-shopping-basket',
-              color: '#16a085',
+              title: 'Habarana Traditional Village Safari',
+              icon: 'fa-leaf',
+              color: '#8e44ad',
             },
             description:
-              'Enjoy fresh fruits and vegetables at Dambulla market.',
-            image: 'assets/img/7dayschange/v54wmh9aukt4toblznpu.jpg',
+              'Habarana Sri Lankan tradition village safari.',
+            image: 'assets/img/5daysTours/36.jpg',
           },
           {
-            type: 'Accommodation',
+            type: 'Safari',
             title: {
-              title: 'Fresco Water Villa',
-              icon: 'fa-hotel',
+              title: 'Habarana Eco Park Safari',
+              icon: 'fa-paw',
               color: '#27ae60',
             },
-            description: 'Stay overnight with HB basis',
-            image: 'assets/img/7dayschange/f4yqlbw3bjsz3szp3hbq.jpg',
-            extra: ['Breakfast', 'Dinner'],
+            description: 'Habarana Eco park safari.',
+            image: 'assets/img/5daysTours/24.jpg',
+          },
+          {
+            type: 'Note',
+            title: {
+              title: 'Arrival-time note',
+              icon: 'fa-info-circle',
+              color: '#c0392b',
+            },
+            description:
+              'First 2 days program will be change depends on your arrival time.',
           },
         ],
       },
       {
         day: 3,
-        title: 'Kandy City Tour',
+        title: 'Matale to Kandy',
         activities: [
           {
             type: 'Guided tour',
             title: {
-              title: 'Sri Dalada Maligawa',
+              title: 'Matale Hindu Kovil',
               icon: 'fa-place-of-worship',
               color: '#2980b9',
             },
-            description:
-              'You ll be finally visiting the temple which houses the Sacred Tooth Relic of the Buddha is one of the holiest shrines in the entire Buddhist world!!!',
-            image: 'assets/img/7dayschange/f3pqyx8y4gpwmqhzleh0.jpg',
-          },
-          {
-            type: 'Guided tour',
-            title: {
-              title: 'Kandy Lake Club - Cultural Dance Show',
-              icon: 'fa-theater-masks',
-              color: '#8e44ad',
-            },
-            description:
-              'The Kandy Lake Club Cultural Dance Show is a stimulating Sri Lankan Arts, Dance & Cultural Heritage Show that is a must see for any visitor who visits the historic city of Kandy.',
-            image: 'assets/img/7dayschange/upxn0ge9htdg20ycpgp6.jpg',
-          },
-          {
-            type: 'Guided tour',
-            title: {
-              title: 'Sri Muthumariamman Temple',
-              icon: 'fa-place-of-worship',
-              color: '#2980b9',
-            },
-            description:
-              'Sri Muthumariamman Hindu Temple is one of the great examples to prove Sri Lanka has been a multi cultural country through out all these years.',
+            description: 'Visit Matale Hindu kovil.',
             image: 'assets/img/7dayschange/gt14exwu7ogp3rz9aun9.jpg',
           },
           {
             type: 'Guided tour',
             title: {
-              title: 'Nalanda Gedige',
-              icon: 'fa-landmark',
-              color: '#16a085',
+              title: 'Ayurveda Herbal Garden',
+              icon: 'fa-leaf',
+              color: '#2ecc71',
+            },
+            description: 'Ayurveda herbal garden visit.',
+          },
+          {
+            type: 'Guided tour',
+            title: {
+              title: 'Peradeniya Botanical Garden',
+              icon: 'fa-tree',
+              color: '#27ae60',
+            },
+            description: 'National Botanical Garden at Peradeniya.',
+            image: 'assets/img/7dayschange/asojmlldivxq8vforwxt.jpg',
+          },
+          {
+            type: 'Wildlife Experience',
+            title: {
+              title: 'Pinnawala Elephant Orphanage',
+              icon: 'fa-paw',
+              color: '#8e44ad',
             },
             description:
-              'An ancient and mysterious edifice near Matale that has confounded researchers with its strange mix of Hindu and Buddhist architecture. Believed to be at least a thousand years old the structure',
-            image: 'assets/img/7dayschange/u9901tv9mcxlz9rd9mgw.jpg',
+              'Pinnawala Elephant Orphanage or do activities with elephants (riding, feeding, bathing and take pictures with elephants).',
+            image: 'assets/img/5daysTours/33.jpg',
+          },
+          {
+            type: 'Cultural show',
+            title: {
+              title: 'Kandy Lake Club Cultural Show',
+              icon: 'fa-theater-masks',
+              color: '#e67e22',
+            },
+            description: 'Kandy Lake Club culture show at evening.',
+            image: 'assets/img/7dayschange/upxn0ge9htdg20ycpgp6.jpg',
           },
           {
             type: 'Accommodation',
-            title: { title: 'Hotel Topaz', icon: 'fa-hotel', color: '#27ae60' },
-            description: 'Accommodation in Hotel Topaz or similar - HB Basis',
+            title: {
+              title: 'Overnight in Kandy',
+              icon: 'fa-hotel',
+              color: '#27ae60',
+            },
+            description:
+              'Stay 3rd night at Kandy Thilanka Hotel or Hill Paradise at Hanthana.',
             image: 'assets/img/7dayschange/sxapeujg7mpergbd5nic.jpg',
-            extra: ['Hotel 4 stars (Premium)', 'Private bathroom'],
           },
         ],
       },
       {
         day: 4,
-        title: 'Nuwara Eliya via Ramboda Falls',
+        title: 'Kandy to Nuwara Eliya / Ramboda',
         activities: [
           {
             type: 'Guided tour',
             title: {
-              title: 'Royal Botanical Garden',
-              icon: 'fa-leaf',
-              color: '#2ecc71',
+              title: 'Temple of the Tooth or Nelligala Temple',
+              icon: 'fa-place-of-worship',
+              color: '#2980b9',
             },
             description:
-              'The gardens display over 4 000 different species of plants, regarded amongst the most superior in Asia.',
-            image: 'assets/img/7dayschange/asojmlldivxq8vforwxt.jpg',
+              'Kandy Temple of the Tooth Buddha or Nelligala Temple.',
+            image: 'assets/img/7dayschange/f3pqyx8y4gpwmqhzleh0.jpg',
           },
           {
             type: 'Guided tour',
             title: {
-              title: 'Ambuluwawa Tower',
-              icon: 'fa-mountain',
-              color: '#e67e22',
-            },
-            description:
-              'Next up.. an easy hike to do which gives you 360 degree views of the surrounding mountains, forests, rivers and towns in Kandy!',
-            image: 'assets/img/7dayschange/w3a48osbcocecoaaq9hd.jpg',
-          },
-          {
-            type: 'Guided tour',
-            title: {
-              title: 'Bluefield Tea Factory',
+              title: 'Tea Plantation & Factory',
               icon: 'fa-coffee',
               color: '#8e44ad',
             },
-            description:
-              'As a land of tea, Nuwara Eliya has quite a large number of tea factories, tea houses and tea fields. Bluefield Tea Factory in Nuwara Eliya is one of the most popular tea factories in Sri Lanka.',
+            description: 'Tea plantation and factory visit.',
             image: 'assets/img/7dayschange/tijr5ztiozgdesbxotm4.jpg',
           },
           {
             type: 'Guided tour',
             title: {
-              title: 'Ramboda Falls View Point',
+              title: 'Nuwara Eliya Post Office',
+              icon: 'fa-landmark',
+              color: '#16a085',
+            },
+            description: 'Visit the famous Nuwara Eliya Post Office.',
+          },
+          {
+            type: 'Guided tour',
+            title: {
+              title: 'Ramboda Waterfall',
               icon: 'fa-water',
               color: '#3498db',
             },
-            description:
-              'Ramboda falls lies in the Pussellawa district, in the city of Kandy. The area is known for marvelous landscapes comprising of highlands, ridges, plains, streams and hilly mountains.',
+            description: 'Stop at Ramboda waterfall.',
             image: 'assets/img/7dayschange/ovdxsgglrdreodbe1tmv.jpg',
           },
           {
             type: 'Accommodation',
             title: {
-              title: 'Ramboda Falls Hotel',
+              title: 'Hotel Ramboda Falls',
               icon: 'fa-hotel',
               color: '#27ae60',
             },
-            description:
-              'Accommodation in Ramboda Falls Hotel or Similar - HB Basis',
+            description: 'Stay 4th night at Hotel Ramboda Fall.',
             image: 'assets/img/7dayschange/zxla06noouvzn6e0teui.jpg',
-            extra: ['Hotel 4 stars (Premium)', 'Private bathroom'],
           },
         ],
       },
       {
         day: 5,
-        title: 'Ella Adventures',
+        title: 'Ella Train & Yala Safari',
         activities: [
           {
             type: 'Guided tour',
             title: {
-              title: 'Nine Arches Bridge',
-              icon: 'fa-bridge',
+              title: 'Famous Ella Train Ride',
+              icon: 'fa-train',
               color: '#c0392b',
             },
-            description:
-              'The majestic Nine Arch Bridge is one of the many reasons for that. The glorious Nine Arch Bridge between Ella and Demodara station is one of the engineering marvels in the early 20th century.',
+            description: 'Scenic Ella train ride through the hill country.',
+          },
+          {
+            type: 'Guided tour',
+            title: {
+              title: 'Nine Arch Bridge',
+              icon: 'fa-bridge',
+              color: '#e67e22',
+            },
+            description: 'Visit the Nine Arch Bridge.',
             image: 'assets/img/7dayschange/yka3mpx2nahiftrb0lpu.jpg',
           },
           {
             type: 'Guided tour',
             title: {
-              title: 'Lake Gregory',
+              title: 'Ravana Waterfall',
               icon: 'fa-water',
-              color: '#2980b9',
+              color: '#3498db',
             },
-            description:
-              'Spanning 225 acres, Lake Gregory is the place to go for water activities in Nuwara Eliya, with the park serving as a great spot for picnics.',
-            image: 'assets/img/7dayschange/sd3y8zh2cskrddig22n7.jpg',
+            description: 'Stop at Ravana waterfall.',
+            image: 'assets/img/7dayschange/zauxzn86ulp9ddnrzlvw.jpg',
           },
           {
-            type: 'Guided tour',
+            type: 'Safari',
             title: {
-              title: "Little Adam's Peak",
-              icon: 'fa-mountain',
-              color: '#8e44ad',
+              title: 'Yala Evening Safari',
+              icon: 'fa-paw',
+              color: '#27ae60',
             },
-            description:
-              'It is 1141 m in height and from the entrance it takes up to 30-45 min for the hike. Views from the summit are incredible. 360 degrees panoramic views with clouds rolling in, is a treat to watch.',
-            image: 'assets/img/7dayschange/e7sgetzhdjoahy2h9wgh.jpg',
+            description: 'Yala evening safari (duration 4 hours).',
+            image: 'assets/img/7dayschange/u1iadnsusjf2h8zdhma5.jpg',
           },
           {
             type: 'Accommodation',
             title: {
-              title: 'Oak Ray Ella Gap Hotel',
+              title: 'Hotel Peacock at Yala',
               icon: 'fa-hotel',
               color: '#27ae60',
             },
-            description:
-              'Accommodation in Oak Ray Ella Gap Hotel or Similar - HB Basis',
-            image: 'assets/img/7dayschange/nhm6ktdm7nimqwwrgtbm.jpg',
-            extra: ['Hotel 4 stars (Premium)', 'Private bathroom'],
+            description: 'Stay 5th night at Hotel Peacock at Yala.',
+            image: 'assets/img/7dayschange/ipbxv6o0ovr2tfbc6pge.jpg',
           },
         ],
       },
       {
         day: 6,
-        title: 'Yala National Park & Ravana Falls',
+        title: 'Mirissa Beach Day',
         activities: [
           {
-            type: 'Guided tour',
+            type: 'Wildlife Experience',
             title: {
-              title: 'Yala National Park',
-              icon: 'fa-paw',
-              color: '#2ecc71',
+              title: 'Whale Watching at Mirissa',
+              icon: 'fa-water',
+              color: '#2980b9',
             },
-            description:
-              'Yala is home to 44 varieties of mammal and 215 bird species. Among its more famous residents are the world’s biggest concentration of leopards',
-            image: 'assets/img/7dayschange/u1iadnsusjf2h8zdhma5.jpg',
+            description: 'Whale watching at Mirissa.',
           },
           {
             type: 'Guided tour',
             title: {
-              title: 'Ravana Falls',
+              title: 'Coconut Tree Hill',
+              icon: 'fa-tree',
+              color: '#27ae60',
+            },
+            description: 'Coconut Tree Hill at Mirissa.',
+          },
+          {
+            type: 'Activity',
+            title: {
+              title: 'Weligama Surfing',
               icon: 'fa-water',
               color: '#3498db',
             },
-            description:
-              'Ravana Falls is entrenched in myth and folklore. It is believed that the demon King Ravana, from the epic Ramayan, hid Sita in the cave behind the waterfall after he kidnapped her and brought her back',
-            image: 'assets/img/7dayschange/zauxzn86ulp9ddnrzlvw.jpg',
+            description: 'Weligama surfing activities.',
+          },
+          {
+            type: 'Leisure',
+            title: {
+              title: 'Mirissa Beach',
+              icon: 'fa-umbrella-beach',
+              color: '#f39c12',
+            },
+            description: 'Swim at beautiful beach at Mirissa.',
           },
           {
             type: 'Accommodation',
             title: {
-              title: 'Grand Tamarind Lake Hotel',
+              title: 'Hotel Mirissa',
               icon: 'fa-hotel',
               color: '#27ae60',
             },
-            description:
-              'Accommodation in Grand Tamarind Lake Hotel or Similar - HB Basis',
-            image: 'assets/img/7dayschange/ipbxv6o0ovr2tfbc6pge.jpg',
-            extra: ['Hotel 5 stars (Luxury)', 'Private bathroom'],
+            description: 'Stay 6th night at hotel Mirissa.',
           },
         ],
       },
       {
         day: 7,
-        title: 'Mirissa & Departure',
+        title: 'Galle, Bentota & Departure',
         activities: [
           {
-            type: 'Conservation',
+            type: 'Guided tour',
             title: {
-              title: 'Sea Turtle Conservation Project',
-              icon: 'fa-water',
-              color: '#2980b9',
+              title: 'Galle Dutch Fort',
+              icon: 'fa-landmark',
+              color: '#16a085',
             },
-            description:
-              'Visit a sea turtle conservation center along the south coast and learn about marine wildlife protection, hatchery programs and rehabilitation efforts.',
-            image: 'assets/img/5daysTours/31.jpg',
+            description: 'Explore Galle Dutch Fort.',
+            image: 'assets/img/5daysTours/32.jpg',
           },
           {
             type: 'Boat Safari',
             title: {
-              title: 'Madu River Safari',
+              title: 'Bentota or Madu River Safari',
               icon: 'fa-ship',
               color: '#3498db',
             },
             description:
-              'Enjoy a scenic boat safari through the mangrove forests and small islands of the Madu River. Discover local cinnamon cultivation and diverse wetland wildlife.',
-            image: 'assets/img/5daysTours/32.jpg',
+              'Bentota River safari or Madu River safari (duration 1 hour).',
+          },
+          {
+            type: 'Guided tour',
+            title: {
+              title: 'Moonstone Mine Village',
+              icon: 'fa-gem',
+              color: '#8e44ad',
+            },
+            description: 'Moonstone Mine village at Meetiyagoda.',
+          },
+          {
+            type: 'Conservation',
+            title: {
+              title: 'Turtle Farm at Kosgoda',
+              icon: 'fa-water',
+              color: '#2980b9',
+            },
+            description: 'Turtle farm at Kosgoda.',
+            image: 'assets/img/5daysTours/31.jpg',
           },
           {
             type: 'Departure',
             title: {
-              title: 'Departure Transfer',
+              title: 'Airport Drop-off',
               icon: 'fa-plane',
               color: '#2c3e50',
             },
+            description:
+              'Departure to your final destination (drop off to airport).',
           },
         ],
       },

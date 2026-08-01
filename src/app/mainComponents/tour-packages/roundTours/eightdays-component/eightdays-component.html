@@ -1,6 +1,5 @@
 <div class="container tour-split mt-4">
-  <div class="tour-split__main">
-    <div class="tour-split__gallery">
+  <div class="tour-split__gallery">
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-12 col-md-10 col-lg-7 text-center">
@@ -23,17 +22,18 @@
     </div>
 </div>
     </div>
-    <app-tour-details-component [tour]="tourForDetails"></app-tour-details-component>
+    <div class="tour-split__main">
+    <app-tour-details-component [tour]="tourForDetails">
+      <app-tour-booking-sidebar
+        tourBooking
+        [filecode]="tour.filecode"
+        [tour]="tour"
+        [image]="images[0]"
+        [price]="price"
+        [persons]="tour.persons">
+      </app-tour-booking-sidebar>
+    </app-tour-details-component>
   </div>
-  <aside class="tour-split__aside">
-    <app-tour-booking-sidebar
-      [filecode]="tour.filecode"
-      [tour]="tour"
-      [image]="images[0]"
-      [price]="price"
-      [persons]="tour.persons">
-    </app-tour-booking-sidebar>
-  </aside>
 </div>
 
 <div class="container-fluid py-5">

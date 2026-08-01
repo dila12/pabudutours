@@ -51,13 +51,6 @@
   </url>
 
   <url>
-    <loc>https://www.pabudutours.com/4-day-sri-lanka-tour</loc>
-    <lastmod>2026-08-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
     <loc>https://www.pabudutours.com/5-day-sri-lanka-tour</loc>
     <lastmod>2026-08-01</lastmod>
     <changefreq>monthly</changefreq>
@@ -65,24 +58,10 @@
   </url>
 
   <url>
-    <loc>https://www.pabudutours.com/6-day-sri-lanka-private-tour</loc>
-    <lastmod>2026-08-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.92</priority>
-  </url>
-
-  <url>
     <loc>https://www.pabudutours.com/7-day-sri-lanka-tour</loc>
     <lastmod>2026-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.93</priority>
-  </url>
-
-  <url>
-    <loc>https://www.pabudutours.com/8-day-sri-lanka-private-tour</loc>
-    <lastmod>2026-08-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.94</priority>
   </url>
 
   <url>
@@ -115,6 +94,20 @@
 
   <url>
     <loc>https://www.pabudutours.com/sigiriya-day-tour</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.96</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pabudutours.com/udawalawa-day-tour</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.96</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pabudutours.com/mirissa-day-tour</loc>
     <lastmod>2026-08-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.96</priority>

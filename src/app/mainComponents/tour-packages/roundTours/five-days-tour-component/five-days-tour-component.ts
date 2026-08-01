@@ -47,173 +47,216 @@ export class FiveDaysTourComponent implements OnInit, OnDestroy {
   price = 0;
 
   tour = {
-    title: '5 Day Sri Lanka Private Tour | Cultural Heritage, Hill Country & Wildlife Safari',
+    title: '5 Days (4 Nights) Excursion in Sri Lanka',
     description:
-      'Explore Sri Lanka in 5 unforgettable days with ancient cities, UNESCO heritage sites, scenic tea plantations, thrilling wildlife safaris and relaxing coastal experiences.',
-    duration: '5 Days',
+      'Sigiriya, Kandy, Nuwara Eliya, Ella, safari and the down south — a private 5-day excursion.',
+    duration: '5 Days / 4 Nights',
     persons: '1-20 Persons',
-    filecode: "5-day-sri-lanka-tour",
-    overview: `Discover the highlights of Sri Lanka in this perfectly balanced 5-day private round tour. 
-  Travel through the Cultural Triangle, explore Sigiriya Rock Fortress, experience Kandy’s sacred Temple of the Tooth Relic, journey through the misty tea plantations of Nuwara Eliya, enjoy an exciting Udawalawa National Park safari, and unwind along the beautiful South West Coast. 
-  With private transportation, experienced English-speaking driver guide, and comfortable accommodation options, this tour offers the ideal combination of culture, nature, wildlife and relaxation — perfect for couples, families and small groups.`,
+    filecode: '5-day-sri-lanka-tour',
+    overview: `5 Days (4 Nights) Excursion in Sri Lanka — Sigiriya / Kandy / Nuwara Eliya / Ella / Safari and Down South.
+
+Private chauffeur-guided travel from Colombo Airport through the Cultural Triangle, hill country, wildlife safari and southwest coast, ending with airport or hotel drop-off.
+
+1st and 2nd day program will be customize depends with your arrival time.`,
 
     tourType: 'Round Tour',
 
     itinerary: [
-
       {
         day: 1,
-        title: 'Airport to Sigiriya – Elephants & Safari Adventure',
+        title: 'Colombo Airport to Sigiriya',
         activities: [
           {
             type: 'Arrival',
             title: { title: 'Airport Pickup', icon: 'fa-plane', color: '#2c3e50' },
+            description: 'From Colombo Airport to Sigiriya.',
+          },
+          {
+            type: 'Accommodation',
+            title: {
+              title: '4-Star Hotel near Sigiriya',
+              icon: 'fa-hotel',
+              color: '#27ae60',
+            },
             description:
-              'Meet your professional driver guide at Bandaranaike International Airport and begin your private Sri Lanka journey heading towards the Cultural Triangle.',
+              'Relax at your 1st night at 4-star hotel near Sigiriya Lion Rock.',
+            image: 'assets/img/5daysTours/c.jpg',
+            extra: ['4 Star Hotel', 'Breakfast & Dinner'],
+          },
+        ],
+      },
+      {
+        day: 2,
+        title: 'Sigiriya to Kandy',
+        activities: [
+          {
+            type: 'Guided tour',
+            title: {
+              title: 'Sigiriya Lion Rock',
+              icon: 'fa-mountain',
+              color: '#e74c3c',
+            },
+            description: 'Climb Sigiriya Lion Rock.',
+            image: 'assets/img/5daysTours/c8dyxgodivrwf4hxzziq.jpg',
+          },
+          {
+            type: 'Guided tour',
+            title: {
+              title: 'Dambulla Cave Temple & Golden Buddha',
+              icon: 'fa-place-of-worship',
+              color: '#2980b9',
+            },
+            description: 'Dambulla Cave Temple and Golden Buddha statue.',
+            image: 'assets/img/5daysTours/4.jpg',
+          },
+          {
+            type: 'Village Experience',
+            title: {
+              title: 'Habarana Village Safari',
+              icon: 'fa-leaf',
+              color: '#8e44ad',
+            },
+            description: 'Habarana Village safari.',
+            image: 'assets/img/5daysTours/36.jpg',
+          },
+          {
+            type: 'Guided tour',
+            title: {
+              title: 'Matale Hindu Kovil',
+              icon: 'fa-place-of-worship',
+              color: '#16a085',
+            },
+            description: 'Matale Hindu kovil.',
+          },
+          {
+            type: 'Guided tour',
+            title: {
+              title: 'Matale Ayurveda Herbal & Spice Garden',
+              icon: 'fa-leaf',
+              color: '#27ae60',
+            },
+            description: 'Matale Ayurveda herbal & spice garden.',
+          },
+          {
+            type: 'Note',
+            title: {
+              title: 'Arrival-time note',
+              icon: 'fa-info-circle',
+              color: '#c0392b',
+            },
+            description:
+              '1st and 2nd day program will be customize depends with your arrival time.',
+          },
+          {
+            type: 'Accommodation',
+            title: { title: 'Kandy Hotel', icon: 'fa-hotel', color: '#27ae60' },
+            description: 'Stay 2nd night at Kandy hotel.',
+            image: 'assets/img/5daysTours/25.jpg',
+            extra: ['4 Star Hotel', 'Breakfast & Dinner'],
+          },
+        ],
+      },
+      {
+        day: 3,
+        title: 'Kandy to Nuwara Eliya / Ramboda',
+        activities: [
+          {
+            type: 'Guided tour',
+            title: {
+              title: 'Temple of the Tooth or Nelligala Temple',
+              icon: 'fa-place-of-worship',
+              color: '#2980b9',
+            },
+            description: 'Kandy Temple of the Tooth Relic or Nelligala Temple.',
+            image: 'assets/img/5daysTours/4.jpg',
+          },
+          {
+            type: 'Nature',
+            title: {
+              title: 'National Botanical Garden',
+              icon: 'fa-tree',
+              color: '#16a085',
+            },
+            description: 'National Botanical Garden.',
+            image: 'assets/img/5daysTours/26.jpg',
           },
           {
             type: 'Wildlife Experience',
             title: {
               title: 'Pinnawala Elephant Orphanage',
               icon: 'fa-paw',
-              color: '#27ae60',
-            },
-            description:
-              'Visit Pinnawala Elephant Orphanage, a renowned sanctuary caring for rescued and orphaned elephants. Observe elephants up close and, depending on timing, witness their memorable river bathing session.',
-            image: 'assets/img/5daysTours/7.jpg',
-          },
-          {
-            type: 'Safari',
-            title: {
-              title: 'Minneriya National Park Safari',
-              icon: 'fa-leaf',
               color: '#8e44ad',
             },
             description:
-              'Enjoy a thrilling 4x4 jeep safari in Minneriya National Park, famous for “The Gathering” — one of Asia’s largest wild elephant congregations. Spot elephants, deer, buffalo and diverse bird species.',
-            image: 'assets/img/5daysTours/24.jpg',
+              'Pinnawala Elephant Orphanage or elephant activities (riding, feeding and bathing elephants).',
+            image: 'assets/img/5daysTours/7.jpg',
           },
-          {
-            type: 'Accommodation',
-            title: { title: 'Fresco Water Villa – Sigiriya', icon: 'fa-hotel', color: '#16a085' },
-            description:
-              'Overnight stay at Fresco Water Villa (or similar).',
-            image: 'assets/img/5daysTours/c.jpg',
-            extra: ['Breakfast & Dinner Included', '3.5 Star Hotel'],
-          },
-        ],
-      },
-
-      {
-        day: 2,
-        title: 'Sigiriya to Kandy – Cultural Heritage',
-        activities: [
           {
             type: 'Guided tour',
             title: {
-              title: 'Sigiriya Rock Fortress',
+              title: 'Ambuluwawa Tower',
               icon: 'fa-mountain',
-              color: '#e74c3c',
+              color: '#e67e22',
             },
-            description:
-              'Climb the UNESCO-listed Sigiriya Lion Rock Fortress, a 5th-century royal palace rising dramatically above the jungle plains. Explore ancient frescoes, the Mirror Wall and panoramic summit views.',
-            image: 'assets/img/5daysTours/c8dyxgodivrwf4hxzziq.jpg',
-          },
-          {
-            type: 'Guided tour',
-            title: {
-              title: 'Temple of the Sacred Tooth Relic',
-              icon: 'fa-place-of-worship',
-              color: '#2980b9',
-            },
-            description:
-              'Visit Sri Dalada Maligawa in Kandy, one of the most sacred Buddhist temples in the world. Witness traditional rituals and admire the temple’s beautiful Kandyan architecture.',
-            image: 'assets/img/5daysTours/4.jpg',
-          },
-          {
-            type: 'Cultural Experience',
-            title: {
-              title: 'Kandy Cultural Dance Show',
-              icon: 'fa-theater-masks',
-              color: '#e74c3c',
-            },
-            description:
-              'Enjoy an evening cultural dance performance featuring traditional Kandyan drumming, fire walking and vibrant costumes that showcase Sri Lanka’s rich artistic heritage.',
-            image: 'assets/img/5daysTours/fifyrnqt5tvouhpgh6kk.jpg',
-          },
-          {
-            type: 'Accommodation',
-            title: { title: 'Hotel Topaz – Kandy', icon: 'fa-hotel', color: '#16a085' },
-            description:
-              'Overnight stay at Hotel Topaz (or similar).',
-            image: 'assets/img/5daysTours/25.jpg',
-            extra: ['Breakfast & Dinner Included', '4 Star Hotel'],
-          },
-        ],
-      },
-
-      {
-        day: 3,
-        title: 'Kandy to Nuwara Eliya – Scenic Tea Country',
-        activities: [
-          {
-            type: 'Nature',
-            title: {
-              title: 'Royal Botanical Gardens Peradeniya',
-              icon: 'fa-tree',
-              color: '#16a085',
-            },
-            description:
-              'Explore one of Asia’s finest botanical gardens featuring exotic orchids, towering palm avenues, medicinal plants and beautifully landscaped grounds along the Mahaweli River.',
-            image: 'assets/img/5daysTours/26.jpg',
-          },
-          {
-            type: 'Nature',
-            title: {
-              title: 'Ramboda Waterfall',
-              icon: 'fa-water',
-              color: '#3498db',
-            },
-            description:
-              'Stop at Ramboda Falls, one of Sri Lanka’s tallest waterfalls, surrounded by scenic tea estates and cool mountain air.',
-            image: 'assets/img/5daysTours/27.jpg',
+            description: 'Ambuluwawa Tower (free tuk tuk included).',
+            image: 'assets/img/5daysTours/9.jpg',
           },
           {
             type: 'Tea Experience',
             title: {
-              title: 'Tea Factory & Plantation Visit',
-              icon: 'fa-mug-hot',
+              title: 'Tea Plantation & Factory',
+              icon: 'fa-coffee',
               color: '#8B4513',
             },
-            description:
-              'Discover how world-famous Ceylon tea is produced from leaf to cup. Walk through lush tea plantations and enjoy a fresh tea tasting session in Sri Lanka’s hill country.',
+            description: 'Tea plantation and factory visit.',
             image: 'assets/img/5daysTours/28.png',
           },
           {
             type: 'Accommodation',
-            title: { title: 'Hotel Yara Nuwara Eliya', icon: 'fa-hotel', color: '#16a085' },
+            title: {
+              title: 'Nuwara Eliya or Ramboda Falls Hotel',
+              icon: 'fa-hotel',
+              color: '#27ae60',
+            },
             description:
-              'Overnight stay at Yara Nuwara Eliya (or similar).',
+              'Stay 3rd night at Nuwara Eliya hotel or Ramboda Falls hotel.',
             image: 'assets/img/5daysTours/29.jpg',
-            extra: ['Breakfast & Dinner Included', '4 Star Hotel'],
+            extra: ['4 Star Hotel', 'Breakfast & Dinner'],
           },
         ],
       },
-
       {
         day: 4,
-        title: 'Nuwara Eliya to Ella – Mountain Scenery ',
+        title: 'Ella & Safari',
         activities: [
           {
             type: 'Guided tour',
             title: {
-              title: 'Nine Arches Bridge',
-              icon: 'fa-bridge',
+              title: 'Famous Ella Train Ride',
+              icon: 'fa-train',
               color: '#c0392b',
             },
-            description:
-              'The majestic Nine Arch Bridge is one of the many reasons for that. The glorious Nine Arch Bridge between Ella and Demodara station is one of the engineering marvels in the early 20th century.',
+            description: 'Ella famous train ride.',
+          },
+          {
+            type: 'Guided tour',
+            title: {
+              title: 'Nine Arch Bridge',
+              icon: 'fa-bridge',
+              color: '#e67e22',
+            },
+            description: 'Nine Arch Bridge (free tuk tuk included).',
             image: 'assets/img/5daysTours/5.jpg',
+          },
+          {
+            type: 'Guided tour',
+            title: {
+              title: 'Ravana Waterfall',
+              icon: 'fa-water',
+              color: '#3498db',
+            },
+            description: 'Ravana waterfall.',
+            image: 'assets/img/5daysTours/27.jpg',
           },
           {
             type: 'Guided tour',
@@ -222,66 +265,122 @@ export class FiveDaysTourComponent implements OnInit, OnDestroy {
               icon: 'fa-mountain',
               color: '#8e44ad',
             },
-            description:
-              'It is 1141 m in height and from the entrance it takes up to 30-45 min for the hike. Views from the summit are incredible. 360 degrees panoramic views with clouds rolling in, is a treat to watch.',
+            description: "Little Adam's Peak mountain.",
             image: 'assets/img/5daysTours/9.jpg',
+          },
+          {
+            type: 'Safari',
+            title: {
+              title: 'Yala or Udawalawe Safari',
+              icon: 'fa-paw',
+              color: '#27ae60',
+            },
+            description: 'Yala or Udawalawe national safari.',
+            image: 'assets/img/5daysTours/24.jpg',
           },
           {
             type: 'Accommodation',
             title: {
-              title: 'Oak Ray Ella Gap Hotel',
+              title: 'Yala or Udawalawe Jungle Hotel',
               icon: 'fa-hotel',
               color: '#27ae60',
             },
-            description:
-              'Accommodation in Oak Ray Ella Gap Hotel or Similar - HB Basis',
+            description: 'Stay 4th night at hotel Yala or Udawalawe jungle.',
             image: 'assets/img/5daysTours/30.jpg',
-            extra: ['Hotel 4 stars (Premium)', 'Private bathroom'],
+            extra: ['4 Star Hotel', 'Breakfast & Dinner'],
           },
         ],
       },
       {
         day: 5,
-        title: 'Udawalawa to South West Coast – River & Conservation',
+        title: 'Down South & Departure',
         activities: [
+          {
+            type: 'Guided tour',
+            title: {
+              title: 'Mirissa Coconut Tree Hill',
+              icon: 'fa-tree',
+              color: '#27ae60',
+            },
+            description: 'Mirissa Coconut Tree Hill.',
+          },
+          {
+            type: 'Guided tour',
+            title: {
+              title: 'Galle Dutch Fort',
+              icon: 'fa-landmark',
+              color: '#16a085',
+            },
+            description: 'Galle Dutch Fort.',
+            image: 'assets/img/5daysTours/32.jpg',
+          },
+          {
+            type: 'Guided tour',
+            title: {
+              title: 'Gem & Moonstone Mine Village',
+              icon: 'fa-gem',
+              color: '#8e44ad',
+            },
+            description: 'Gem and Moonstone mine village.',
+          },
+          {
+            type: 'Guided tour',
+            title: {
+              title: 'Tsunami Museum',
+              icon: 'fa-landmark',
+              color: '#2c3e50',
+            },
+            description: 'Tsunami Museum.',
+          },
           {
             type: 'Conservation',
             title: {
-              title: 'Sea Turtle Conservation Project',
+              title: 'Turtle Farm',
               icon: 'fa-water',
               color: '#2980b9',
             },
-            description:
-              'Visit a sea turtle conservation center along the south coast and learn about marine wildlife protection, hatchery programs and rehabilitation efforts.',
+            description: 'Turtle farm visit.',
             image: 'assets/img/5daysTours/31.jpg',
           },
           {
             type: 'Boat Safari',
             title: {
-              title: 'Madu River Safari',
+              title: 'Madu or Bentota River Safari',
               icon: 'fa-ship',
               color: '#3498db',
             },
             description:
-              'Enjoy a scenic boat safari through the mangrove forests and small islands of the Madu River. Discover local cinnamon cultivation and diverse wetland wildlife.',
+              '1-hour Madu River safari or Bentota River safari.',
             image: 'assets/img/5daysTours/32.jpg',
-          }
+          },
+          {
+            type: 'Departure',
+            title: {
+              title: 'Airport or Hotel Drop-off',
+              icon: 'fa-plane',
+              color: '#2c3e50',
+            },
+            description:
+              'Drop off to airport or your hotel (your final destination).',
+          },
         ],
-      }
+      },
     ],
 
     includes: [
-      'Air-Conditioned Private Vehicle',
-      'English Speaking Professional Driver',
-      'Pickup & Airport Drop Off',
-      'Fuel & Parking Fees',
-      'Unlimited Mileage for entire tour',
+      'Air condition private vehicle with hotel pickup and drop off (with parking fees)',
+      'Professional and friendly local driver/guide for the whole excursion (English / Russian / German / French / Hindi)',
+      'Site professional special guide (licensed by Sri Lanka Tourism Authority) for Kandy Temple, National Botanical Garden, Sigiriya',
+      'Free tuk tuk for Nine Arch Bridge and Ambuluwawa',
+      'Your hotel accommodation — 4-star hotel (including breakfast and dinner)',
+      'Unlimited mineral water bottles',
+      "Your driver/guide accommodation and meal",
+      '24/7 customer and friendly service',
     ],
 
     excludes: [
-      'Entrance & Activity Fees',
-      'Food & Drinks',
-      'Accommodation (Can be arranged upon request)',
+      'Entrance and activities fees',
+      'Food and drinks',
     ],
   };
 

@@ -11,16 +11,17 @@ import { EllaDayTourComponent } from './mainComponents/tour-packages/dayTours/el
 import { GalleDayTour } from './mainComponents/tour-packages/dayTours/galle-day-tour/galle-day-tour';
 import { KandyDayTourComponent } from './mainComponents/tour-packages/dayTours/kandy-day-tour-component/kandy-day-tour-component';
 import { SigiriyaDayTourComponent } from './mainComponents/tour-packages/dayTours/sigiriya-day-tour-component/sigiriya-day-tour-component';
+import { UdawalawaDayTourComponent } from './mainComponents/tour-packages/dayTours/udawalawa-day-tour-component/udawalawa-day-tour-component';
+import { MirissaDayTourComponent } from './mainComponents/tour-packages/dayTours/mirissa-day-tour-component/mirissa-day-tour-component';
 import { BookingComponent } from './sharedComponents/booking-component/booking-component';
+
+
 import { ContactUsComponent } from './sharedComponents/contact-us-component/contact-us-component';
 import { DestinationComponent } from './sharedComponents/destination-component/destination-component';
 import { Testimonial } from './sharedComponents/testimonial/testimonial';
 import { TravelGuides } from './sharedComponents/travel-guides/travel-guides';
 import { ResturantComponent } from './mainComponents/resturant-component/resturant-component';
 import { TwoDaysTourPlus } from './mainComponents/tour-packages/roundTours/two-days-tour-plus/two-days-tour-plus';
-import { SixDaysTour } from './mainComponents/tour-packages/roundTours/six-days-tour/six-days-tour';
-import { EightdaysComponent } from './mainComponents/tour-packages/roundTours/eightdays-component/eightdays-component';
-import { FourdaysTourComponent } from './mainComponents/tour-packages/roundTours/fourdays-tour-component/fourdays-tour-component';
 import { TwoDayTourComponent } from './mainComponents/tour-packages/roundTours/two-days-tour/two-day-tour-component';
 import { ThreeDaysTours } from './mainComponents/tour-packages/roundTours/three-days-tours/three-days-tours';
 import { NotFoundComponent } from './sharedComponents/not-found-component/not-found-component';
@@ -79,7 +80,7 @@ export const routes: Routes = [
         path: '7-day-sri-lanka-tour',
         component: SevenDaysTourComponent,
         data: {
-          title: '7 Day Sri Lanka Tour Package | Cultural & Scenic Round Trip',
+          title: '7 Days (6 Nights) Excursion in Sri Lanka | Pabudu Tours',
           description:
             'Experience the best of Sri Lanka in 7 days including Sigiriya, Kandy, Ella and Yala safari.',
           keywords: '7 day Sri Lanka tour, Sri Lanka 1 week itinerary',
@@ -89,10 +90,10 @@ export const routes: Routes = [
         path: '10-day-sri-lanka-tour',
         component: TenDaysTourComponent,
         data: {
-          title: '10 Day Sri Lanka Tour | Complete Island Exploration',
+          title: '10 Days / 9 Nights Excursion in Sri Lanka | Pabudu Tours',
           description:
-            'Explore Sri Lanka in 10 days with beaches, wildlife safaris, hill country and cultural heritage sites.',
-          keywords: '10 day Sri Lanka tour, Sri Lanka 10 day itinerary',
+            'Private 10-day Sri Lanka excursion covering Sigiriya, Polonnaruwa, Kandy, Ella, safari, Mirissa, Galle and Colombo with half-board hotels.',
+          keywords: '10 day Sri Lanka tour, Sri Lanka 10 day itinerary, 10 days 9 nights Sri Lanka',
         },
       },
       // {
@@ -108,7 +109,7 @@ export const routes: Routes = [
         path: '5-day-sri-lanka-tour',
         component: FiveDaysTourComponent,
         data: {
-          title: '5 Day Sri Lanka Tour | Balanced Cultural & Scenic Experience',
+          title: '5 Days (4 Nights) Excursion in Sri Lanka | Pabudu Tours',
           description:
             'Discover a balanced mix of cultural heritage, scenic beauty and wildlife in 5 days.',
           keywords: '5 day Sri Lanka tour, Sri Lanka 5 day itinerary',
@@ -140,24 +141,46 @@ export const routes: Routes = [
         path: 'kandy-day-tour',
         component: KandyDayTourComponent,
         data: {
-          title: 'Kandy Day Tour | Cultural & Scenic Highlights',
+          title: '1 Day Kandy Excursion | Pabudu Tours',
           description:
-            'Experience the cultural and scenic highlights of Kandy including the Temple of the Sacred Tooth Relic and royal gardens.',
-          keywords: 'Kandy day tour, Kandy private tour',
+            'Private 1 day Kandy excursion: Temple of the Tooth or Nelligala, Peradeniya Botanical Garden, tea factory, Pinnawala elephants, Ayurveda garden and batik factory.',
+          keywords: '1 day Kandy excursion, Kandy day tour, Kandy private tour',
         },
       },
       {
         path: 'sigiriya-day-tour',
         component: SigiriyaDayTourComponent,
         data: {
-          title: 'Sigiriya Day Tour | Ancient Rock Fortress',
+          title: '1 Day Sigiriya Excursion | Pabudu Tours',
           description:
-            'Explore the ancient Sigiriya rock fortress and its surrounding gardens with our private day tour.',
-          keywords: 'Sigiriya day tour, Sigiriya private tour',
+            'Private 1 day Sigiriya excursion: Lion Rock, Dambulla Cave Temple, Habarana village safari and Habarana elephant eco park safari.',
+          keywords: '1 day Sigiriya excursion, Sigiriya day tour, Sigiriya private tour',
+        },
+      },
+      {
+        path: 'udawalawa-day-tour',
+        component: UdawalawaDayTourComponent,
+        data: {
+          title: '1 Day Udawalawa Safari | Pabudu Tours',
+          description:
+            'Private Udawalawa day tour safari: 4–5 hour Udawalawa National Park jeep safari and Udawalawa baby elephant transit home.',
+          keywords: 'Udawalawa safari, Udawalawa day tour, Udawalawe safari, baby elephant transit',
+        },
+      },
+      {
+        path: 'mirissa-day-tour',
+        component: MirissaDayTourComponent,
+        data: {
+          title: 'Whale Watching at Mirissa | Pabudu Tours',
+          description:
+            'Private Mirissa day tour: whale watching (3–5 hours), Coconut Tree Hill, and swimming at Mirissa beach.',
+          keywords: 'Mirissa whale watching, Mirissa day tour, Coconut Tree Hill, Mirissa beach',
         },
       },
 
       // OTHER PAGES
+
+
       {
         path: 'booking/:filecode',
         component: BookingComponent,
@@ -244,28 +267,6 @@ export const routes: Routes = [
         },
       },
       {
-        path: '6-day-sri-lanka-private-tour',
-        component: SixDaysTour,
-        data: {
-          title:
-            '6 Day Sri Lanka Private Tour | Sigiriya, Kandy, Ella & Yala Safari',
-          description:
-            'Explore Sri Lanka in 6 days with a private guided tour covering Sigiriya Rock Fortress, Kandy Temple of the Tooth, Ella hill country, Yala National Park safari and scenic beaches.',
-          keywords:
-            '6 day Sri Lanka tour, Sri Lanka 6 day itinerary, Sri Lanka private tour 6 days, Sigiriya Kandy Ella tour, Yala safari tour Sri Lanka',
-        },
-      },
-      {
-        path: '4-day-sri-lanka-tour',
-        component: FourdaysTourComponent,
-        data: {
-          title: '4 Day Sri Lanka Tour | Cultural & Scenic Highlights',
-          description:
-            'Experience the best of Sri Lanka in 4 days with a private guided tour covering Sigiriya, Kandy, Ella and Yala safari.',
-          keywords: '4 day Sri Lanka tour, Sri Lanka 4 day itinerary',
-        },
-      },
-      {
         path: '3-day-sigiriya-kandy-ella-yala-tour',
         component: ThreeDaysTours,
         data: {
@@ -274,18 +275,6 @@ export const routes: Routes = [
             'Explore Sri Lanka in 3 days with Sigiriya Rock Fortress, Kandy cultural sites, Ella hill country, scenic train ride and Yala National Park safari.',
           keywords:
             '3 day Sri Lanka tour, Sigiriya Kandy Ella tour, Yala safari Sri Lanka, Sri Lanka 3 day itinerary',
-        },
-      },
-      {
-        path: '8-day-sri-lanka-private-tour',
-        component: EightdaysComponent,
-        data: {
-          title:
-            '8 Day Sri Lanka Private Tour | Wilpattu Safari, Sigiriya, Kandy, Ella & Beach Stay',
-          description:
-            'Discover Sri Lanka in 8 days with a private guided tour covering Wilpattu National Park safari, Anuradhapura ancient city, Sigiriya Rock Fortress, Kandy Temple of the Tooth, Ella hill country and relaxing beach stay in Hikkaduwa.',
-          keywords:
-            '8 day Sri Lanka tour, Sri Lanka 8 day itinerary, Sri Lanka private tour 8 days, Wilpattu safari tour, Sigiriya Kandy Ella beach tour',
         },
       },
       {

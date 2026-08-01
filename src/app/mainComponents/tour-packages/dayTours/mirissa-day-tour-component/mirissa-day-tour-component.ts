@@ -9,19 +9,19 @@ import { PackageItemComponent } from '../../../../sharedComponents/package-item-
 import { TourBookingSidebarComponent } from '../../../../sharedComponents/tour-booking-sidebar/tour-booking-sidebar';
 
 @Component({
-  selector: 'app-sigiriya-day-tour-component',
+  selector: 'app-mirissa-day-tour-component',
   standalone: true,
   imports: [CommonModule, RouterModule, TourDetailsComponent, PackageItemComponent, TourBookingSidebarComponent],
-  templateUrl: './sigiriya-day-tour-component.html',
-  styleUrl: './sigiriya-day-tour-component.css'
+  templateUrl: './mirissa-day-tour-component.html',
+  styleUrl: './mirissa-day-tour-component.css'
 })
-export class SigiriyaDayTourComponent implements OnInit, OnDestroy {
+export class MirissaDayTourComponent implements OnInit, OnDestroy {
   images: string[] = [
-    'assets/img/onedayTour/Sigiriya/1.jpg',
-    'assets/img/onedayTour/Sigiriya/2.jpg',
-    'assets/img/onedayTour/Sigiriya/3.jpg',
-    'assets/img/onedayTour/Sigiriya/4.jpg',
-    'assets/img/onedayTour/Sigiriya/5.jpg',
+    'assets/img/7daystour/goayffj226ceow8zxhey.jpg',
+    'assets/img/7daystour/kolleldbe5pt7keqqls3.jpg',
+    'assets/img/onedayTour/Galle/1.jpg',
+    'assets/img/onedayTour/Galle/3.jpg',
+    'assets/img/7daystour/gf3kppt2kpvcfd5bgmgh.jpg',
   ];
 
   currentIndex = 0;
@@ -32,59 +32,49 @@ export class SigiriyaDayTourComponent implements OnInit, OnDestroy {
   price = 0;
 
   tour = {
-    title: '1 Day Sigiriya Excursion',
+    title: 'Whale Watching at Mirissa',
     description:
-      'Private full-day Sigiriya excursion covering Lion Rock, Dambulla Cave Temple, Habarana village safari and Habarana elephant eco park safari.',
+      'Private Mirissa day tour with whale watching (3–5 hours), Coconut Tree Hill, and swimming at Mirissa beach.',
     duration: '1 Day',
     persons: '20 Persons',
-    filecode: 'sigiriya-day-tour',
-    overview: `1 Day Sigiriya Excursion with Pabudu Tours — private air-conditioned vehicle, pickup and drop-off, multilingual local driver/guide, and a special site guide for Sigiriya.`,
+    filecode: 'mirissa-day-tour',
+    overview: `Whale Watching at Mirissa with Pabudu Tours — private air-conditioned vehicle, pickup and drop-off, English-speaking local driver, a 3–5 hour whale watching trip, Coconut Tree Hill, and time to swim at beautiful Mirissa beach.`,
     tourType: 'Day Tour',
 
     itinerary: [
       {
         day: 1,
-        title: '1 Day Sigiriya Excursion',
+        title: 'Whale Watching at Mirissa',
         activities: [
           {
-            type: 'Adventure',
+            type: 'Wildlife Experience',
             title: {
-              title: 'Sigiriya Lion Rock',
-              icon: 'fa-mountain',
-              color: '#e74c3c',
+              title: 'Whale Watching at Mirissa',
+              icon: 'fa-water',
+              color: '#2980b9',
             },
-            description: 'Climb Sigiriya Lion Rock.',
-            image: 'assets/img/onedayTour/Sigiriya/8.jpg',
+            description: 'Whale watching at Mirissa (3–5 hours).',
+            image: 'assets/img/onedayTour/Galle/1.jpg',
           },
           {
             type: 'Guided tour',
             title: {
-              title: 'Dambulla Cave Temple & Golden Buddha',
-              icon: 'fa-place-of-worship',
-              color: '#c0392b',
-            },
-            description: 'Dambulla Cave Temple and Golden Buddha statue.',
-            image: 'assets/img/onedayTour/Sigiriya/6.jpg',
-          },
-          {
-            type: 'Village Experience',
-            title: {
-              title: 'Habarana Village Safari',
-              icon: 'fa-leaf',
-              color: '#8e44ad',
-            },
-            description: 'Habarana village safari.',
-            image: 'assets/img/onedayTour/Sigiriya/1.jpg',
-          },
-          {
-            type: 'Safari',
-            title: {
-              title: 'Habarana Elephant Safari (Eco Park)',
-              icon: 'fa-paw',
+              title: 'Coconut Tree Hill',
+              icon: 'fa-tree',
               color: '#27ae60',
             },
-            description: 'Habarana elephant safari at the eco park.',
-            image: 'assets/img/onedayTour/Sigiriya/9.jpg',
+            description: 'Visit Coconut Tree Hill for panoramic ocean and palm views.',
+            image: 'assets/img/7daystour/kolleldbe5pt7keqqls3.jpg',
+          },
+          {
+            type: 'Leisure',
+            title: {
+              title: 'Swim at Mirissa Beach',
+              icon: 'fa-umbrella-beach',
+              color: '#f39c12',
+            },
+            description: 'Swim at Mirissa’s beautiful beach.',
+            image: 'assets/img/7daystour/goayffj226ceow8zxhey.jpg',
           },
         ],
       },
@@ -93,14 +83,13 @@ export class SigiriyaDayTourComponent implements OnInit, OnDestroy {
     includes: [
       'Air condition private vehicle with parking fee',
       'Pickup and drop off',
-      'Professional and friendly local driver/guide (English / Russian / German / French / Hindi)',
-      'Special site guide for Sigiriya',
+      'Professional and friendly local driver speaking English',
       'Unlimited mineral water',
-      '24 hour good service',
+      '24/7 unlimited service',
     ],
     excludes: [
-      'Entrance and activities fees',
-      'Food and drinks (alcohol / soft drinks)',
+      'Passenger boat tickets for each person',
+      'Food and beverage',
     ],
   };
 
@@ -224,7 +213,7 @@ export class SigiriyaDayTourComponent implements OnInit, OnDestroy {
 
   bookNow() {
     if (!isPlatformBrowser(this.platformId)) return;
-    const barcode = 'sigiriya-day-tour';
+    const barcode = 'mirissa-day-tour';
     localStorage.setItem('tour', JSON.stringify(this.tour));
     localStorage.setItem('filecode', barcode);
     localStorage.setItem('image', this.images[0]);

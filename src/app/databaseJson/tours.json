@@ -22,7 +22,7 @@
     },
     {
       "id": 3,
-      "title": "Kandy Day Tour - Temple of the Tooth & Hill Country",
+      "title": "1 Day Kandy Excursion",
       "days": "1 day",
       "persons": "1-20 Persons",
       "rating": 5,
@@ -32,15 +32,37 @@
     },
     {
       "id": 4,
-      "title": "Sigiriya Day Tour - Lion Rock & Cultural Triangle",
+      "title": "1 Day Sigiriya Excursion",
       "days": "1 day",
       "persons": "1-20 Persons",
       "rating": 5,
       "filecode": "sigiriya-day-tour",
       "image": "assets/img/mainpage/5.jpeg",
       "routerLink": "/sigiriya-day-tour"
+    },
+    {
+      "id": 11,
+      "title": "1 Day Udawalawa Safari",
+      "days": "1 day",
+      "persons": "1-20 Persons",
+      "rating": 5,
+      "filecode": "udawalawa-day-tour",
+      "image": "assets/img/5daysTours/24.jpg",
+      "routerLink": "/udawalawa-day-tour"
+    },
+    {
+      "id": 12,
+      "title": "Whale Watching at Mirissa",
+      "days": "1 day",
+      "persons": "1-20 Persons",
+      "rating": 5,
+      "filecode": "mirissa-day-tour",
+      "image": "assets/img/7daystour/goayffj226ceow8zxhey.jpg",
+      "routerLink": "/mirissa-day-tour"
     }
   ],
+
+
   "multiDayTours": [
     {
       "id": 5,
@@ -74,17 +96,7 @@
     },
     {
       "id": 8,
-      "title": "4 Day Sri Lanka Tour Cultural & Scenic Highlights",
-      "days": "4 days",
-      "persons": "1-20 Persons",
-      "rating": 5,
-      "filecode": "4-day-sri-lanka-tour",
-      "image": "assets/img/mainpage/1.jpeg",
-      "routerLink": "/4-day-sri-lanka-tour"
-    },
-    {
-      "id": 9,
-      "title": "5 Day Sri Lanka Tour Package",
+      "title": "5 Days (4 Nights) Excursion in Sri Lanka",
       "days": "5 days",
       "persons": "1-20 Persons",
       "rating": 5,
@@ -93,18 +105,8 @@
       "routerLink": "/5-day-sri-lanka-tour"
     },
     {
-      "id": 10,
-      "title": "6 Day Sri Lanka Private Tour Sigiriya, Kandy, Ella & Yala",
-      "days": "6 days",
-      "persons": "1-20 Persons",
-      "rating": 5,
-      "filecode": "6-day-sri-lanka-private-tour",
-      "image": "assets/img/mainpage/3.jpeg",
-      "routerLink": "/6-day-sri-lanka-private-tour"
-    },
-    {
-      "id": 11,
-      "title": "7 Day Sri Lanka Tour Package Cultural & Scenic Round Trip",
+      "id": 9,
+      "title": "7 Days (6 Nights) Excursion in Sri Lanka",
       "days": "7 days",
       "persons": "1-20 Persons",
       "rating": 5,
@@ -113,18 +115,8 @@
       "routerLink": "/7-day-sri-lanka-tour"
     },
     {
-      "id": 12,
-      "title": "8 Day Sri Lanka Private Tour Wilpattu, Sigiriya, Kandy & Beach",
-      "days": "8 days",
-      "persons": "1-20 Persons",
-      "rating": 5,
-      "filecode": "8-day-sri-lanka-private-tour",
-      "image": "assets/img/mainpage/5.jpeg",
-      "routerLink": "/8-day-sri-lanka-private-tour"
-    },
-    {
-      "id": 13,
-      "title": "10 Day Sri Lanka Tour Complete Island Exploration",
+      "id": 10,
+      "title": "10 Days / 9 Nights Excursion in Sri Lanka",
       "days": "10 days",
       "persons": "1-20 Persons",
       "rating": 5,

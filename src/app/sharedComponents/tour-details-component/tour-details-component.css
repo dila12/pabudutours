@@ -261,3 +261,71 @@ ul {
 .scrollable-activities::-webkit-scrollbar-thumb:hover {
   background-color: #999;
 }
+
+/* Full-width title/meta; booking only beside overview/plan */
+.tour-details-intro {
+  width: 100%;
+}
+
+.tour-details-intro .container-fluid,
+.tour-details-intro .container,
+.tour-details-body .container-fluid,
+.tour-details-body .container {
+  max-width: none;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.tour-details-title {
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 1rem;
+  font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+  letter-spacing: 0.08em;
+  line-height: 1.25;
+}
+
+.tour-details-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 360px);
+  column-gap: 1.75rem;
+  /* Stretch aside to full content height so sticky can travel downward */
+  align-items: stretch;
+  margin-top: 0.5rem;
+}
+
+.tour-details-body {
+  min-width: 0;
+}
+
+.tour-details-aside {
+  min-width: 0;
+  position: relative;
+  align-self: stretch;
+}
+
+@media (min-width: 992px) {
+  .tour-details-aside ::ng-deep app-tour-booking-sidebar {
+    display: block;
+    position: sticky;
+    top: 7.25rem;
+    align-self: start;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .tour-details-split {
+    grid-template-columns: 1fr;
+  }
+
+  .tour-details-aside {
+    height: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+  }
+}
+

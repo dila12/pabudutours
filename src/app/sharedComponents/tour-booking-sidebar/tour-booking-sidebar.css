@@ -1,7 +1,15 @@
 :host {
   display: block;
   width: 100%;
-  z-index: 5;
+}
+
+/* Stick beside overview/plan and follow as the user scrolls down */
+@media (min-width: 992px) {
+  :host-context(.tour-details-aside) {
+    position: sticky;
+    top: 7.25rem;
+    z-index: 2;
+  }
 }
 
 .viator-card {
