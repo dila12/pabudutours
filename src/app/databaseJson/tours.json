@@ -2,7 +2,7 @@
   "dayTours": [
     {
       "id": 1,
-      "title": "Ella Day Tour - Departing from Any Location in Sri Lanka",
+      "title": "Ella Day Tour Sri Lanka – Nine Arch Bridge & Scenic Train",
       "days": "1 day",
       "persons": "1-20 Persons",
       "rating": 5,
@@ -12,7 +12,7 @@
     },
     {
       "id": 2,
-      "title": "Galle Day Tour - South Coast Highlights",
+      "title": "Galle Day Tour Sri Lanka – Dutch Fort & South Coast",
       "days": "1 day",
       "persons": "1-20 Persons",
       "rating": 5,
@@ -22,7 +22,7 @@
     },
     {
       "id": 3,
-      "title": "1 Day Kandy Excursion",
+      "title": "Kandy Day Tour Sri Lanka – Temple of the Tooth & Cultural City",
       "days": "1 day",
       "persons": "1-20 Persons",
       "rating": 5,
@@ -32,7 +32,7 @@
     },
     {
       "id": 4,
-      "title": "1 Day Sigiriya Excursion",
+      "title": "Sigiriya Day Tour Sri Lanka – Lion Rock & Cultural Triangle",
       "days": "1 day",
       "persons": "1-20 Persons",
       "rating": 5,
@@ -42,7 +42,7 @@
     },
     {
       "id": 11,
-      "title": "1 Day Udawalawa Safari",
+      "title": "Udawalawa Safari Day Tour Sri Lanka – Elephants & Wildlife",
       "days": "1 day",
       "persons": "1-20 Persons",
       "rating": 5,
@@ -52,7 +52,7 @@
     },
     {
       "id": 12,
-      "title": "Whale Watching at Mirissa",
+      "title": "Mirissa Whale Watching Day Tour Sri Lanka",
       "days": "1 day",
       "persons": "1-20 Persons",
       "rating": 5,
@@ -66,7 +66,7 @@
   "tukTukTours": [
     {
       "id": 13,
-      "title": "Bentota Tuk Tuk Tour",
+      "title": "Bentota Tuk Tuk Tour Sri Lanka – Beach, Temple & Local Ride",
       "days": "2–3 hours",
       "persons": "Max 3 Persons",
       "rating": 5,
@@ -80,7 +80,7 @@
   "multiDayTours": [
     {
       "id": 5,
-      "title": "Ella & Kandy 2 Day Excursion Yala Safari, Train Ride & Hill Country",
+      "title": "2 Day Ella & Kandy Tour Sri Lanka – Train Ride, Hills & Safari",
       "days": "2 days",
       "persons": "1-20 Persons",
       "rating": 5,
@@ -90,7 +90,7 @@
     },
     {
       "id": 6,
-      "title": "Sigiriya & Kandy 2 Day Excursion Cultural Tour & Elephant Safari",
+      "title": "2 Day Sigiriya & Kandy Tour Sri Lanka – Culture & Elephant Safari",
       "days": "2 days",
       "persons": "1-20 Persons",
       "rating": 5,
@@ -100,7 +100,7 @@
     },
     {
       "id": 7,
-      "title": "3 Day Sri Lanka Tour Sigiriya, Kandy, Ella & Yala Safari",
+      "title": "3 Day Sri Lanka Tour – Sigiriya, Kandy, Ella & Yala Safari",
       "days": "3 days",
       "persons": "1-20 Persons",
       "rating": 5,
@@ -110,7 +110,7 @@
     },
     {
       "id": 8,
-      "title": "5 Days (4 Nights) Excursion in Sri Lanka",
+      "title": "5 Day Sri Lanka Tour – Sigiriya, Kandy, Ella, Safari & South Coast",
       "days": "5 days",
       "persons": "1-20 Persons",
       "rating": 5,
@@ -120,7 +120,7 @@
     },
     {
       "id": 9,
-      "title": "7 Days (6 Nights) Excursion in Sri Lanka",
+      "title": "7 Day Sri Lanka Private Tour – Culture, Hills, Wildlife & Beaches",
       "days": "7 days",
       "persons": "1-20 Persons",
       "rating": 5,
@@ -130,7 +130,7 @@
     },
     {
       "id": 10,
-      "title": "10 Days / 9 Nights Excursion in Sri Lanka",
+      "title": "10 Day Sri Lanka Grand Tour – Complete Island Experience",
       "days": "10 days",
       "persons": "1-20 Persons",
       "rating": 5,

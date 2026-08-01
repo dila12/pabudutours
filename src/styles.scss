@@ -146,6 +146,15 @@ video {
 
   body.booking-sheet-open {
     overflow: hidden;
+    touch-action: none;
+  }
+
+  body.booking-sheet-open .whatsapp-float,
+  body.booking-sheet-open #scrollTopBtn,
+  body.booking-sheet-open app-scroll-to-to-component {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
   }
 }
 

@@ -33,11 +33,20 @@ export class TourBookingSidebarComponent implements AfterViewInit, OnDestroy {
 
   isMobile = false;
   sheetOpen = false;
+  quoteTotal: number | null = null;
+  quoteTravelers = 1;
 
   private readonly isBrowser: boolean;
   private readonly topOffset = 120;
   private readonly desktopMin = 992;
   private rafId = 0;
+
+  get displayAmount(): number | string {
+    if (this.quoteTotal != null && this.quoteTotal > 0) {
+      return Math.round(this.quoteTotal);
+    }
+    return this.price;
+  }
 
   constructor(
     private readonly el: ElementRef<HTMLElement>,
@@ -82,6 +91,11 @@ export class TourBookingSidebarComponent implements AfterViewInit, OnDestroy {
   closeSheet(): void {
     this.sheetOpen = false;
     this.unlockBodyScroll();
+  }
+
+  onQuoteChange(quote: { total: number; travelers: number }): void {
+    this.quoteTotal = quote.total;
+    this.quoteTravelers = quote.travelers || 1;
   }
 
   private syncViewportMode(): void {

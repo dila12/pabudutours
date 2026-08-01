@@ -32,7 +32,7 @@ export class UdawalawaDayTourComponent implements OnInit, OnDestroy {
   price = 0;
 
   tour = {
-    title: '1 Day Udawalawa Safari',
+    title: 'Udawalawa Safari Day Tour Sri Lanka – Elephants & Wildlife',
     description:
       'Private Udawalawa day tour safari with a 4–5 hour jeep safari and a visit to the Udawalawa baby elephant transit home.',
     duration: '1 Day',

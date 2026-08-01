@@ -32,7 +32,7 @@ export class EllaDayTourComponent implements OnInit, OnDestroy {
   price = 0;
 
   tour = {
-    title: 'Sri Lanka Ella One Day Tour',
+    title: 'Ella Day Tour Sri Lanka – Nine Arch Bridge & Scenic Train',
     description:
       'Experience the beauty of Ella with one day full of adventure, culture, and relaxation.',
     duration: 'one Day',

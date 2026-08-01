@@ -32,7 +32,7 @@ export class MirissaDayTourComponent implements OnInit, OnDestroy {
   price = 0;
 
   tour = {
-    title: 'Whale Watching at Mirissa',
+    title: 'Mirissa Whale Watching Day Tour Sri Lanka',
     description:
       'Private Mirissa day tour with whale watching (3–5 hours), Coconut Tree Hill, and swimming at Mirissa beach.',
     duration: '1 Day',

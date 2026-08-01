@@ -47,7 +47,7 @@ export class FiveDaysTourComponent implements OnInit, OnDestroy {
   price = 0;
 
   tour = {
-    title: '5 Days (4 Nights) Excursion in Sri Lanka',
+    title: '5 Day Sri Lanka Tour – Sigiriya, Kandy, Ella, Safari & South Coast',
     description:
       'Sigiriya, Kandy, Nuwara Eliya, Ella, safari and the down south — a private 5-day excursion.',
     duration: '5 Days / 4 Nights',

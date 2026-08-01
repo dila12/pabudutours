@@ -32,7 +32,7 @@ export class SigiriyaDayTourComponent implements OnInit, OnDestroy {
   price = 0;
 
   tour = {
-    title: '1 Day Sigiriya Excursion',
+    title: 'Sigiriya Day Tour Sri Lanka – Lion Rock & Cultural Triangle',
     description:
       'Private full-day Sigiriya excursion covering Lion Rock, Dambulla Cave Temple, Habarana village safari and Habarana elephant eco park safari.',
     duration: '1 Day',

@@ -41,7 +41,7 @@ export class TenDaysTourComponent implements OnInit, OnDestroy {
   price = 0;
 
   tour = {
-    title: '10 Days / 9 Nights Excursion in Sri Lanka',
+    title: '10 Day Sri Lanka Grand Tour – Complete Island Experience',
     description:
       'A private 10-day Sri Lanka excursion covering Sigiriya, Polonnaruwa, Kandy, Nuwara Eliya, Ella, safari, Mirissa, Galle and Colombo.',
     duration: '10 Days / 9 Nights',

@@ -1,10 +1,12 @@
 import {
   Component,
+  EventEmitter,
   Inject,
   Input,
   OnChanges,
   OnDestroy,
   OnInit,
+  Output,
   PLATFORM_ID,
   SimpleChanges,
 } from '@angular/core';
@@ -35,6 +37,9 @@ export class BookingComponent implements OnInit, OnChanges, OnDestroy {
   @Input() filecodeInput = '';
   @Input() tourInput: any = null;
   @Input() imageInput = '';
+  /** Hide the inline total row when the parent booking card already shows it. */
+  @Input() hideInlineTotal = false;
+  @Output() quoteChange = new EventEmitter<{ total: number; travelers: number }>();
   showGuestDetails = false;
 
   tour: any = {
@@ -259,6 +264,7 @@ export class BookingComponent implements OnInit, OnChanges, OnDestroy {
       this.subtotal = 0;
     }
     this.total = this.subtotal;
+    this.quoteChange.emit({ total: this.total, travelers: this.travelers });
   }
 
   get amountDue() {

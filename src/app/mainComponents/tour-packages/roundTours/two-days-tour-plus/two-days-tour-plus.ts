@@ -49,7 +49,7 @@ export class TwoDaysTourPlus implements OnInit, OnDestroy {
 
   tour = {
     title:
-      'Ella & Kandy 2 Day Excursion – Yala Safari, Train Ride & Hill Country Experience',
+      '2 Day Ella & Kandy Tour Sri Lanka – Train Ride, Hills & Safari',
 
     description:
       'Enjoy a 2-day private tour covering Yala safari, Ella highlights, scenic train ride, tea plantations, and Kandy cultural attractions with a comfortable stay in Nuwara Eliya.',

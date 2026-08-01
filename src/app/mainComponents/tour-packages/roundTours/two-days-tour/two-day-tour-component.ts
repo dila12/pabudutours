@@ -41,7 +41,7 @@ export class TwoDayTourComponent implements OnInit, OnDestroy {
   price = 0;
 
   tour = {
-  title: 'Sigiriya & Kandy 2 Day Excursion – Cultural Tour & Wildlife Experience',
+  title: '2 Day Sigiriya & Kandy Tour Sri Lanka – Culture & Elephant Safari',
 
   description:
     'Explore Sigiriya, Dambulla, village life, elephant safari and Kandy highlights in this 2-day private tour with 4-star hotel stay.',

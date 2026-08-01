@@ -82,7 +82,7 @@ export const routes: Routes = [
         path: '7-day-sri-lanka-tour',
         component: SevenDaysTourComponent,
         data: {
-          title: '7 Days (6 Nights) Excursion in Sri Lanka | Pabudu Tours',
+          title: '7 Day Sri Lanka Private Tour – Culture, Hills, Wildlife & Beaches | Pabudu Tours',
           description:
             'Experience the best of Sri Lanka in 7 days including Sigiriya, Kandy, Ella and Yala safari.',
           keywords: '7 day Sri Lanka tour, Sri Lanka 1 week itinerary',
@@ -92,7 +92,7 @@ export const routes: Routes = [
         path: '10-day-sri-lanka-tour',
         component: TenDaysTourComponent,
         data: {
-          title: '10 Days / 9 Nights Excursion in Sri Lanka | Pabudu Tours',
+          title: '10 Day Sri Lanka Grand Tour – Complete Island Experience | Pabudu Tours',
           description:
             'Private 10-day Sri Lanka excursion covering Sigiriya, Polonnaruwa, Kandy, Ella, safari, Mirissa, Galle and Colombo with half-board hotels.',
           keywords: '10 day Sri Lanka tour, Sri Lanka 10 day itinerary, 10 days 9 nights Sri Lanka',
@@ -111,7 +111,7 @@ export const routes: Routes = [
         path: '5-day-sri-lanka-tour',
         component: FiveDaysTourComponent,
         data: {
-          title: '5 Days (4 Nights) Excursion in Sri Lanka | Pabudu Tours',
+          title: '5 Day Sri Lanka Tour – Sigiriya, Kandy, Ella, Safari & South Coast | Pabudu Tours',
           description:
             'Discover a balanced mix of cultural heritage, scenic beauty and wildlife in 5 days.',
           keywords: '5 day Sri Lanka tour, Sri Lanka 5 day itinerary',
@@ -123,7 +123,7 @@ export const routes: Routes = [
         path: 'ella-day-tour',
         component: EllaDayTourComponent,
         data: {
-          title: 'Ella Day Tour | Scenic Train & Nine Arch Bridge',
+          title: 'Ella Day Tour Sri Lanka – Nine Arch Bridge & Scenic Train | Pabudu Tours',
           description:
             'Enjoy a private Ella day tour including Nine Arch Bridge, Little Adam’s Peak and Ravana Falls.',
           keywords: 'Ella day tour, Ella private tour',
@@ -133,7 +133,7 @@ export const routes: Routes = [
         path: 'galle-day-tour',
         component: GalleDayTour,
         data: {
-          title: 'Galle Day Tour | Galle Fort & Southern Coast',
+          title: 'Galle Day Tour Sri Lanka – Dutch Fort & South Coast | Pabudu Tours',
           description:
             'Discover Galle Fort, beaches and southern coastal attractions with our private day tour.',
           keywords: 'Galle day tour, Galle fort tour',
@@ -143,7 +143,7 @@ export const routes: Routes = [
         path: 'kandy-day-tour',
         component: KandyDayTourComponent,
         data: {
-          title: '1 Day Kandy Excursion | Pabudu Tours',
+          title: 'Kandy Day Tour Sri Lanka – Temple of the Tooth & Cultural City | Pabudu Tours',
           description:
             'Private 1 day Kandy excursion: Temple of the Tooth or Nelligala, Peradeniya Botanical Garden, tea factory, Pinnawala elephants, Ayurveda garden and batik factory.',
           keywords: '1 day Kandy excursion, Kandy day tour, Kandy private tour',
@@ -153,7 +153,7 @@ export const routes: Routes = [
         path: 'sigiriya-day-tour',
         component: SigiriyaDayTourComponent,
         data: {
-          title: '1 Day Sigiriya Excursion | Pabudu Tours',
+          title: 'Sigiriya Day Tour Sri Lanka – Lion Rock & Cultural Triangle | Pabudu Tours',
           description:
             'Private 1 day Sigiriya excursion: Lion Rock, Dambulla Cave Temple, Habarana village safari and Habarana elephant eco park safari.',
           keywords: '1 day Sigiriya excursion, Sigiriya day tour, Sigiriya private tour',
@@ -163,7 +163,7 @@ export const routes: Routes = [
         path: 'udawalawa-day-tour',
         component: UdawalawaDayTourComponent,
         data: {
-          title: '1 Day Udawalawa Safari | Pabudu Tours',
+          title: 'Udawalawa Safari Day Tour Sri Lanka – Elephants & Wildlife | Pabudu Tours',
           description:
             'Private Udawalawa day tour safari: 4–5 hour Udawalawa National Park jeep safari and Udawalawa baby elephant transit home.',
           keywords: 'Udawalawa safari, Udawalawa day tour, Udawalawe safari, baby elephant transit',
@@ -173,7 +173,7 @@ export const routes: Routes = [
         path: 'mirissa-day-tour',
         component: MirissaDayTourComponent,
         data: {
-          title: 'Whale Watching at Mirissa | Pabudu Tours',
+          title: 'Mirissa Whale Watching Day Tour Sri Lanka | Pabudu Tours',
           description:
             'Private Mirissa day tour: whale watching (3–5 hours), Coconut Tree Hill, and swimming at Mirissa beach.',
           keywords: 'Mirissa whale watching, Mirissa day tour, Coconut Tree Hill, Mirissa beach',
@@ -183,7 +183,7 @@ export const routes: Routes = [
         path: 'bentota-tuk-tuk-tour',
         component: BentotaTukTukTourComponent,
         data: {
-          title: 'Bentota Tuk Tuk Tour | Pabudu Tours',
+          title: 'Bentota Tuk Tuk Tour Sri Lanka – Beach, Temple & Local Ride | Pabudu Tours',
           description:
             'Explore Bentota by tuk tuk in 2–3 hours: beach, turtle hatchery, Kande Vihara Temple, local shops and photo stops. Fuel included.',
           keywords: 'Bentota tuk tuk tour, Bentota tuk tuk ride, Bentota short tour, turtle hatchery Bentota',
@@ -259,7 +259,7 @@ export const routes: Routes = [
         component: TwoDaysTourPlus,
         data: {
           title:
-            '2 Day Sri Lanka Private Tour – Ella, Kandy & Udawalawa | Airport or Hotel Drop',
+            '2 Day Ella & Kandy Tour Sri Lanka – Train Ride, Hills & Safari | Pabudu Tours',
           description:
             'Book a 2 day Sri Lanka private tour covering Udawalawa Elephant Transit Home, Ella highlights, Ramboda Falls, Ambuluwawa Tower and Kandy Temple of the Tooth. Airport or hotel drop included.',
           keywords:
@@ -271,7 +271,7 @@ export const routes: Routes = [
         component: TwoDayTourComponent,
         data: {
           title:
-            '2 Day Sigiriya & Kandy Private Tour | Cultural Triangle Sri Lanka',
+            '2 Day Sigiriya & Kandy Tour Sri Lanka – Culture & Elephant Safari | Pabudu Tours',
           description:
             'Book a 2 day private Sri Lanka tour covering Sigiriya Rock Fortress, Dambulla Cave Temple, Kandy Temple of the Tooth and scenic Cultural Triangle highlights with a local chauffeur guide.',
           keywords:
@@ -283,7 +283,7 @@ export const routes: Routes = [
         path: '3-day-sigiriya-kandy-ella-yala-tour',
         component: ThreeDaysTours,
         data: {
-          title: '3 Day Sri Lanka Tour | Sigiriya, Kandy, Ella & Yala Safari',
+          title: '3 Day Sri Lanka Tour – Sigiriya, Kandy, Ella & Yala Safari | Pabudu Tours',
           description:
             'Explore Sri Lanka in 3 days with Sigiriya Rock Fortress, Kandy cultural sites, Ella hill country, scenic train ride and Yala National Park safari.',
           keywords:

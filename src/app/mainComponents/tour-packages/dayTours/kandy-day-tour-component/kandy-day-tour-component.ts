@@ -40,7 +40,7 @@ export class KandyDayTourComponent implements OnInit, OnDestroy {
   price = 0;
 
   tour = {
-    title: '1 Day Kandy Excursion',
+    title: 'Kandy Day Tour Sri Lanka – Temple of the Tooth & Cultural City',
     description:
       'Full-day private Kandy excursion covering the Temple of the Tooth or Nelligala, Peradeniya Botanical Garden, tea, elephants, Ayurveda garden and batik factory.',
     duration: '1 Day',

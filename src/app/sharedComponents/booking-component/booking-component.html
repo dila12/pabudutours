@@ -89,7 +89,7 @@
         {{ isDayTour ? 'Same-day booking available for this day tour.' : 'Please book from tomorrow onwards for multi-day tours.' }}
       </p>
 
-      <p class="sidebar-total" *ngIf="total">
+      <p class="sidebar-total" *ngIf="total && !hideInlineTotal">
         Total <strong>${{ total.toFixed(0) }}</strong>
         <span>for {{ travelers }} traveler{{ travelers > 1 ? 's' : '' }}</span>
       </p>

@@ -47,7 +47,7 @@ export class SevenDaysTourComponent implements OnInit, OnDestroy {
   price = 0;
 
   tour = {
-    title: '7 Days (6 Nights) Excursion in Sri Lanka',
+    title: '7 Day Sri Lanka Private Tour – Culture, Hills, Wildlife & Beaches',
     description:
       'A private 7-day Sri Lanka excursion covering Sigiriya, Kandy, Nuwara Eliya, Ella, Yala, Mirissa and the southwest coast.',
     duration: '7 Days / 6 Nights',

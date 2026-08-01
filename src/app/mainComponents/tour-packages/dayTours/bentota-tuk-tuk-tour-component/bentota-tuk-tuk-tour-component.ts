@@ -32,7 +32,7 @@ export class BentotaTukTukTourComponent implements OnInit, OnDestroy {
   price = 0;
 
   tour = {
-    title: 'Bentota Tuk Tuk Tour',
+    title: 'Bentota Tuk Tuk Tour Sri Lanka – Beach, Temple & Local Ride',
     description:
       'Hop on a tuk tuk and discover Bentota beaches, culture and hidden gems on a short 2–3 hour ride with a friendly local driver.',
     duration: '2–3 Hours',

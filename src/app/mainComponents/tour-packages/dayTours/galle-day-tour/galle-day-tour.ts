@@ -32,7 +32,7 @@ images: string[] = [
   price = 0;
 
   tour = {
-    title: 'Sri Lanka Galle One Day Tour',
+    title: 'Galle Day Tour Sri Lanka – Dutch Fort & South Coast',
     description:
       'Enjoy a full-day guided tour to Galle with scenic coastal attractions, cultural landmarks, and memorable experiences.',
     duration: 'one Day',

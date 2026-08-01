@@ -20,10 +20,10 @@
   overflow: visible;
 }
 
-/* Sidebar booking form */
+/* Sidebar booking form — stacked by default (mobile / narrow card) */
 .sidebar-select-row {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 1fr;
   gap: 0.6rem;
   margin-bottom: 0.9rem;
 }
@@ -33,6 +33,7 @@
   flex-direction: column;
   gap: 0.3rem;
   margin: 0;
+  min-width: 0;
   padding: 0.65rem 0.75rem;
   border: 1px solid rgba(1, 44, 19, 0.14);
   border-radius: 12px;
@@ -64,11 +65,27 @@
   outline: 0;
   padding: 0;
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   min-height: 1.4rem;
   background: transparent;
   color: #012c13;
   font-size: 0.95rem;
   font-weight: 700;
+}
+
+.sidebar-field input[type='date'] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.sidebar-field input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.sidebar-field input[type='number']::-webkit-outer-spin-button,
+.sidebar-field input[type='number']::-webkit-inner-spin-button {
+  margin: 0;
 }
 
 .sidebar-date-error {
@@ -197,6 +214,55 @@
 .custom-toast {
   position: relative;
   margin: 10px 0;
+}
+
+@media (min-width: 992px) {
+  .sidebar-select-row {
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  }
+}
+
+@media (max-width: 991.98px) {
+  .sidebar-select-row {
+    gap: 0.65rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .sidebar-field {
+    padding: 0.8rem 0.9rem;
+  }
+
+  .sidebar-field input[type='date'] {
+    min-height: 1.7rem;
+  }
+
+  .sidebar-field input[type='date']::-webkit-calendar-picker-indicator {
+    margin-left: 0.25rem;
+    cursor: pointer;
+    opacity: 0.7;
+  }
+
+  .sidebar-date-hint {
+    margin: 0 0 0.9rem;
+  }
+
+  .sidebar-guest__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar-guest .phone-row {
+    flex-direction: column;
+  }
+
+  .sidebar-guest .phone-code {
+    max-width: none;
+    width: 100%;
+  }
+
+  .sidebar-cta {
+    min-height: 50px;
+    margin-top: 0.15rem;
+  }
 }
 
 @media (max-width: 767.98px) {

@@ -42,7 +42,7 @@ export class ThreeDaysTours {
 
   tour = {
     title:
-      'Sigiriya, Kandy, Nuwara Eliya & Ella 3 Day Tour – Yala Safari & Scenic Train Ride',
+      '3 Day Sri Lanka Tour – Sigiriya, Kandy, Ella & Yala Safari',
 
     description:
       'Explore Sri Lanka’s cultural sites, hill country, tea plantations, Ella highlights and enjoy an exciting Yala or Udawalawa safari in this 3-day private tour.',
