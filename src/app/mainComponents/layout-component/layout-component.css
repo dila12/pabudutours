@@ -246,26 +246,24 @@ body {
 }
 
 .site-brand__mark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 62px;
-  height: 62px;
+  display: block;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   flex-shrink: 0;
-  background: radial-gradient(circle at 35% 30%, #1a5c32 0%, #012c13 70%);
-  border: 2px solid rgba(184, 149, 74, 0.75);
-  box-shadow:
-    0 0 0 3px rgba(1, 44, 19, 0.35),
-    0 8px 18px rgba(0, 0, 0, 0.28);
   overflow: hidden;
+  line-height: 0;
+  background: #012c13;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.28);
 }
 
 .site-brand__mark img {
-  width: 58px;
-  height: 58px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  object-position: 50% 50%;
   display: block;
+  margin: 0;
 }
 
 .site-brand__text {
@@ -293,16 +291,24 @@ body {
 }
 
 .site-nav__toggler {
-  border: 1px solid rgba(184, 149, 74, 0.45) !important;
+  border: 1px solid rgba(184, 149, 74, 0.55) !important;
   border-radius: 10px;
   min-width: 44px;
   min-height: 44px;
   padding: 0.5rem;
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.06);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .site-nav__toggler .navbar-toggler-icon {
-  filter: invert(1);
+  width: 1.35rem;
+  height: 1.35rem;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.95)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2.5' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
 }
 
 .site-nav__links {
@@ -489,13 +495,15 @@ body {
     height: 52px;
   }
 
-  .site-brand__mark img {
-    width: 48px;
-    height: 48px;
+  .site-brand__name {
+    font-size: 1.1rem;
   }
 
   .site-brand__tag {
-    display: none;
+    display: block;
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
   }
 
   .site-nav__inner {
