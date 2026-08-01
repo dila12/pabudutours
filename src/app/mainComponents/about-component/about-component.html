@@ -1,222 +1,119 @@
-<!-- Header Start -->
 <div class="container-fluid page-header">
-    <div class="container">
-        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
-            <h3 class="display-4 text-white text-uppercase">About</h3>
-            <div class="d-inline-flex text-white">
-                <p class="m-0 text-uppercase"><a class="text-white" routerLink="/">Home</a></p>
-                <i class="fa fa-angle-double-right pt-1 px-3"></i>
-                <p class="m-0 text-uppercase">About</p>
-            </div>
-        </div>
+  <div class="container">
+    <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
+      <h1 class="display-4 text-white text-uppercase mb-2">About</h1>
+      <div class="d-inline-flex text-white align-items-center">
+        <p class="m-0 text-uppercase"><a class="text-white" routerLink="/">Home</a></p>
+        <i class="fa fa-angle-double-right pt-1 px-3" aria-hidden="true"></i>
+        <p class="m-0 text-uppercase">About</p>
+      </div>
     </div>
+  </div>
 </div>
 
-<!-- About Start -->
-<div class="container-fluid py-5">
-    <div class="container pt-5">
-        <div class="row">
-            <!-- Image Section -->
-            <div class="col-lg-5" style="min-height: 400px;">
-                <div class="position-relative h-100">
-                    <img class="position-absolute w-100 h-80" src="assets/img/5daysTours/6.jpeg"
-                        style="object-fit: cover;" alt="Pabudu Tours Sri Lanka">
-                </div>
-            </div>
+<section class="about-page">
+  <div class="container">
+    <div class="about-hero">
+      <div class="about-hero__media">
+        <img
+          src="assets/img/5daysTours/6.jpeg"
+          alt="Scenic Sri Lanka journey with Pabudu Tours"
+          width="720"
+          height="900"
+          loading="eager"
+          decoding="async">
+        <div class="about-hero__media-shade" aria-hidden="true"></div>
+      </div>
 
-            <!-- Text Section -->
-            <div class="col-lg-6 pb-lg-5">
-                <div class="about-text bg-white  p-lg-5 my-lg-5">
-                    <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">About Us</h6>
-                    <h1 class="mb-3">Trusted Sri Lanka Tour Company</h1>
+      <div class="about-hero__panel">
+        <p class="about-hero__eyebrow">About us</p>
+        <h2 class="about-hero__title">Trusted Sri Lanka tour company</h2>
 
-                    <p>
-                        <strong>Pabudu Tours</strong> is a trusted local tour company offering
-                        private Sri Lanka tours, tailor-made holiday packages, and chauffeur driven round tours
-                        across the island.
-                    </p>
+        <p class="about-hero__text">
+          <strong>Pabudu Tours</strong> is a trusted local tour company offering private Sri Lanka tours,
+          tailor-made holiday packages, and chauffeur-driven round tours across the island.
+        </p>
 
-                    <p>
-                        Explore the best of Sri Lanka including Sigiriya, Kandy, Ella, Nuwara Eliya, Galle,
-                        and Yala National Park. We provide comfortable vehicles, friendly chauffeur guides,
-                        and personalized travel experiences for families, couples, and honeymoon travelers.
-                    </p>
+        <p class="about-hero__text">
+          Explore the best of Sri Lanka including Sigiriya, Kandy, Ella, Nuwara Eliya, Galle,
+          and Yala National Park. We provide comfortable vehicles, friendly chauffeur guides,
+          and personalized travel experiences for families, couples, and honeymoon travelers.
+        </p>
 
-                    <div class="row mb-4">
-                        <div class="col-6">
-                            <img class="img-fluid rounded" src="assets/img/about-1.jpg"
-                                alt="Private Sri Lanka Tour with Pabudu Tours">
-                        </div>
-                        <div class="col-6">
-                            <img class="img-fluid rounded" src="assets/img/about-2.jpg"
-                                alt="Sri Lanka Tour Packages with Chauffeur Guide">
-                        </div>
-                    </div>
-
-                    <p>
-                        Plan your perfect Sri Lanka holiday with a reliable local tour operator
-                        and enjoy safe, comfortable, and unforgettable travel experiences.
-                    </p>
-
-                    <a href="/contact-us" class="btn btn-primary py-md-3 px-md-5 mt-2">
-                        Plan Your Sri Lanka Tour
-                    </a>
-                </div>
-            </div>
+        <div class="about-hero__gallery">
+          <img
+            src="assets/img/about-1.jpg"
+            alt="Private Sri Lanka tour with Pabudu Tours"
+            width="320"
+            height="220"
+            loading="lazy"
+            decoding="async">
+          <img
+            src="assets/img/about-2.jpg"
+            alt="Sri Lanka safari tour packages with chauffeur guide"
+            width="320"
+            height="220"
+            loading="lazy"
+            decoding="async">
         </div>
+
+        <p class="about-hero__text about-hero__text--closing">
+          Plan your perfect Sri Lanka holiday with a reliable local tour operator
+          and enjoy safe, comfortable, and unforgettable travel experiences.
+        </p>
+
+        <a routerLink="/contact-us" class="about-hero__cta">
+          Plan your Sri Lanka tour
+          <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
     </div>
-</div>
-<!-- About End -->
 
-<!-- Feature End -->
-<div class="container-fluid pb-5" itemscope itemtype="https://schema.org/TravelAgency">
-    <div class="container pb-5">
-        <div class="row">
-
-            <!-- Competitive Pricing -->
-            <div class="col-md-4">
-                <div class="d-flex mb-4 mb-lg-0">
-                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-primary mr-3"
-                        style="height: 100px; width: 100px;">
-                        <i class="fa fa-2x fa-money-check-alt text-white"></i>
-                    </div>
-                    <div class="d-flex flex-column">
-                        <h3 class="h5" itemprop="name">Affordable Sri Lanka Tour Packages</h3>
-                        <p class="m-0" itemprop="description">
-                            We provide affordable private Sri Lanka tours, tailor-made holiday packages, and
-                            chauffeur-driven tours designed to fit every budget without compromising comfort,
-                            safety, and quality travel experiences.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Best Services -->
-            <div class="col-md-4">
-                <div class="d-flex mb-4 mb-lg-0">
-                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-primary mr-3"
-                        style="height: 100px; width: 100px;">
-                        <i class="fa fa-2x fa-award text-white"></i>
-                    </div>
-                    <div class="d-flex flex-column">
-                        <h3 class="h5">Professional Chauffeur Guides & Personalized Service</h3>
-                        <p class="m-0">
-                            Our experienced chauffeur guides and travel experts ensure a safe, comfortable,
-                            and personalized Sri Lanka travel experience, covering top destinations like
-                            Sigiriya, Kandy, Ella, Yala, and Galle.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Sri Lankan Hospitality -->
-            <div class="col-md-4">
-                <div class="d-flex mb-4 mb-lg-0">
-                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-primary mr-3"
-                        style="height: 100px; width: 100px;">
-                        <i class="fa fa-2x fa-globe text-white"></i>
-                    </div>
-                    <div class="d-flex flex-column">
-                        <h3 class="h5">Trusted Sri Lanka Travel Experts</h3>
-                        <p class="m-0">
-                            As a trusted local Sri Lanka tour operator, we welcome travelers worldwide
-                            and offer unforgettable experiences including cultural tours, wildlife safaris,
-                            beach holidays, and luxury private round tours across Sri Lanka.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
+    <div class="about-points" itemscope itemtype="https://schema.org/TravelAgency">
+      <article class="about-point">
+        <span class="about-point__icon" aria-hidden="true">
+          <i class="fa fa-money-check-alt"></i>
+        </span>
+        <div>
+          <h3 class="about-point__title" itemprop="name">Affordable Sri Lanka tour packages</h3>
+          <p class="about-point__text" itemprop="description">
+            Affordable private tours, tailor-made holiday packages, and chauffeur-driven trips
+            designed for every budget — without compromising comfort, safety, or quality.
+          </p>
         </div>
-    </div>
-</div>
+      </article>
 
-<!-- Registration Start -->
-<div class="container-fluid bg-registration py-5" style="margin: 90px 0;">
-    <div class="container py-5">
-        <app-contact-us-component [homecontact]="homecontact"></app-contact-us-component>
-    </div>
-</div>
-<!-- Registration End -->
-
-
-<!-- Team Start -->
-<!-- <div class="container-fluid py-5">
-    <div class="container pt-5 pb-3">
-        <div class="text-center mb-3 pb-3">
-            <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Guides</h6>
-            <h1>Our Travel Guides</h1>
+      <article class="about-point">
+        <span class="about-point__icon" aria-hidden="true">
+          <i class="fa fa-award"></i>
+        </span>
+        <div>
+          <h3 class="about-point__title">Professional chauffeur guides</h3>
+          <p class="about-point__text">
+            Experienced chauffeur guides and travel experts deliver safe, comfortable,
+            personalized journeys covering Sigiriya, Kandy, Ella, Yala, and Galle.
+          </p>
         </div>
-        <div class="row">
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="team-item bg-white mb-4">
-                    <div class="team-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="assets/img/team-1.jpg" alt="">
-                        <div class="team-social">
-                            <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center py-4">
-                        <h5 class="text-truncate">Guide Name</h5>
-                        <p class="m-0">Designation</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="team-item bg-white mb-4">
-                    <div class="team-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="assets/img/team-2.jpg" alt="">
-                        <div class="team-social">
-                            <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center py-4">
-                        <h5 class="text-truncate">Guide Name</h5>
-                        <p class="m-0">Designation</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="team-item bg-white mb-4">
-                    <div class="team-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="assets/img/team-3.jpg" alt="">
-                        <div class="team-social">
-                            <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center py-4">
-                        <h5 class="text-truncate">Guide Name</h5>
-                        <p class="m-0">Designation</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="team-item bg-white mb-4">
-                    <div class="team-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="assets/img/team-4.jpg" alt="">
-                        <div class="team-social">
-                            <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center py-4">
-                        <h5 class="text-truncate">Guide Name</h5>
-                        <p class="m-0">Designation</p>
-                    </div>
-                </div>
-            </div>
+      </article>
+
+      <article class="about-point">
+        <span class="about-point__icon" aria-hidden="true">
+          <i class="fa fa-globe"></i>
+        </span>
+        <div>
+          <h3 class="about-point__title">Trusted local travel experts</h3>
+          <p class="about-point__text">
+            As a trusted local operator, we welcome travelers worldwide with cultural tours,
+            wildlife safaris, beach holidays, and luxury private round tours across Sri Lanka.
+          </p>
         </div>
+      </article>
     </div>
-</div> -->
-<!-- Team End -->
+  </div>
+</section>
+
+<section class="about-contact-band">
+  <div class="container">
+    <app-contact-us-component [homecontact]="homecontact"></app-contact-us-component>
+  </div>
+</section>

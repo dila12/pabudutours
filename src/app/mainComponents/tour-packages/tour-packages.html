@@ -22,24 +22,35 @@
             <h1 class="font-bold text-4xl">Perfect Tour Packages</h1>
         </div>
 
-        <div class="flex text-center mb-4 relative">
+        <div class="package-tabs" role="tablist" aria-label="Tour package categories">
             <button class="tab-btn-outline" [class.active]="activeTab==='multi'" (click)="setTab('multi')">
                 Multi-Day Tours
             </button>
             <button class="tab-btn-outline" [class.active]="activeTab==='day'" (click)="setTab('day')">
                 Day Tours
             </button>
-
+            <button class="tab-btn-outline" [class.active]="activeTab==='tuktuk'" (click)="setTab('tuktuk')">
+                Tuk Tuk Ride
+            </button>
         </div>
 
         <h2 class="h4 text-center mb-4">
-          {{ activeTab === 'day' ? 'Day Tours' : 'Multi-Day Tours' }}
+          {{ activeTabLabel }}
         </h2>
 
-        <!-- Tab Content -->
-        <div class="row">
-            <div *ngFor="let tour of activeTab==='day' ? dayTours : multiDayTours; let i = index"
-                class="col-lg-4 col-md-6 mb-4 package-card-wrapper" [style.--i]="i">
+        <!-- Tab Content: center sparse grids so one card doesn’t sit alone on the left -->
+        <div
+          class="row package-grid"
+          [class.package-grid--sparse]="activeTours.length > 0 && activeTours.length < 3"
+          [class.package-grid--single]="activeTours.length === 1">
+            <div *ngFor="let tour of activeTours; let i = index"
+                class="mb-4 package-card-wrapper"
+                [class.col-lg-4]="activeTours.length !== 1"
+                [class.col-md-6]="activeTours.length !== 1"
+                [class.col-lg-5]="activeTours.length === 1"
+                [class.col-md-8]="activeTours.length === 1"
+                [class.col-12]="activeTours.length === 1"
+                [style.--i]="i">
                 <app-package-item-component [image]="tour.image" [days]="tour.days" [persons]="tour.persons"
                     [rating]="tour.rating" [price]="tour.price" [title]="tour.title" [routerLink]="tour.routerLink"
                     [titleLevel]="3"
@@ -47,6 +58,7 @@
                 </app-package-item-component>
             </div>
         </div>
+
 
     </div>
 </div>

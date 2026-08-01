@@ -13,7 +13,9 @@ import { KandyDayTourComponent } from './mainComponents/tour-packages/dayTours/k
 import { SigiriyaDayTourComponent } from './mainComponents/tour-packages/dayTours/sigiriya-day-tour-component/sigiriya-day-tour-component';
 import { UdawalawaDayTourComponent } from './mainComponents/tour-packages/dayTours/udawalawa-day-tour-component/udawalawa-day-tour-component';
 import { MirissaDayTourComponent } from './mainComponents/tour-packages/dayTours/mirissa-day-tour-component/mirissa-day-tour-component';
+import { BentotaTukTukTourComponent } from './mainComponents/tour-packages/dayTours/bentota-tuk-tuk-tour-component/bentota-tuk-tuk-tour-component';
 import { BookingComponent } from './sharedComponents/booking-component/booking-component';
+
 
 
 import { ContactUsComponent } from './sharedComponents/contact-us-component/contact-us-component';
@@ -177,8 +179,19 @@ export const routes: Routes = [
           keywords: 'Mirissa whale watching, Mirissa day tour, Coconut Tree Hill, Mirissa beach',
         },
       },
+      {
+        path: 'bentota-tuk-tuk-tour',
+        component: BentotaTukTukTourComponent,
+        data: {
+          title: 'Bentota Tuk Tuk Tour | Pabudu Tours',
+          description:
+            'Explore Bentota by tuk tuk in 2–3 hours: beach, turtle hatchery, Kande Vihara Temple, local shops and photo stops. Fuel included.',
+          keywords: 'Bentota tuk tuk tour, Bentota tuk tuk ride, Bentota short tour, turtle hatchery Bentota',
+        },
+      },
 
       // OTHER PAGES
+
 
 
       {

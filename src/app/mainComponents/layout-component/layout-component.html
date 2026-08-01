@@ -4,11 +4,11 @@
       <div class="site-topbar__contact d-none d-md-flex">
         <a href="mailto:Pabudutour@gmail.com">
           <i class="fa fa-envelope" aria-hidden="true"></i>
-          Pabudutour@gmail.com
+          <span>Pabudutour@gmail.com</span>
         </a>
         <a href="tel:+94779008803">
           <i class="fa fa-phone-alt" aria-hidden="true"></i>
-          +94 77 900 88 03
+          <span>+94 77 900 88 03</span>
         </a>
       </div>
 
@@ -64,8 +64,18 @@
   <nav class="site-nav navbar navbar-expand-lg" aria-label="Main">
     <div class="site-nav__inner">
       <a routerLink="/" class="site-brand" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-        <img src="assets/img/logos/logo-112.webp" alt="" width="56" height="56" decoding="async">
-        <span>Pabudu Tours</span>
+        <span class="site-brand__mark">
+          <img
+            src="assets/img/logos/logo-nav.png"
+            alt="Pabudu Tours logo"
+            width="64"
+            height="64"
+            decoding="async">
+        </span>
+        <span class="site-brand__text">
+          <span class="site-brand__name">Pabudu Tours</span>
+          <span class="site-brand__tag">Forever Unforgettable</span>
+        </span>
       </a>
 
       <button
@@ -137,7 +147,9 @@
         <a routerLink="/kandy-day-tour">1 Day Kandy Excursion</a>
         <a routerLink="/udawalawa-day-tour">1 Day Udawalawa Safari</a>
         <a routerLink="/mirissa-day-tour">Whale Watching at Mirissa</a>
+        <a routerLink="/bentota-tuk-tuk-tour">Bentota Tuk Tuk Tour</a>
         <a routerLink="/galle-day-tour">Galle Day Tour</a>
+
 
 
         <a routerLink="/2-day-sigiriya-kandy-private-tour-sri-lanka">2 Day Sigiriya &amp; Kandy</a>

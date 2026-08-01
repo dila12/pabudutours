@@ -227,18 +227,30 @@ export class BookingComponent implements OnInit, OnChanges, OnDestroy {
     this.orderNumber = `#${datePart}-${newOrder.toString().padStart(6, '0')}`;
   }
 
+  get maxTravelers(): number {
+    const fromTour = Number(this.tour?.maxPersons);
+    if (Number.isFinite(fromTour) && fromTour >= 1) {
+      return fromTour;
+    }
+    return 20;
+  }
+
   updateTravelers(event: any) {
     const value = parseInt(event.target.value, 10);
-    this.travelers = isNaN(value) || value < 1 ? 1 : value;
+    const raw = isNaN(value) || value < 1 ? 1 : value;
+    this.travelers = Math.min(raw, this.maxTravelers);
     this.updateAmounts();
 
-    if (this.travelers >= 7) {
+    if (this.maxTravelers <= 3 && raw > this.maxTravelers) {
+      this.groupNotice = `This tuk tuk ride is limited to ${this.maxTravelers} persons maximum.`;
+    } else if (this.travelers >= 7) {
       this.groupNotice =
         'For groups of 7 or more travelers, please contact Pabudutour@gmail.com for a customized group tour arrangement.';
     } else {
       this.groupNotice = '';
     }
   }
+
 
   updateAmounts() {
     if (this.prices && this.prices[this.travelers]) {
@@ -257,8 +269,15 @@ export class BookingComponent implements OnInit, OnChanges, OnDestroy {
   get isDayTour(): boolean {
     const type = String(this.tour?.tourType || '').toLowerCase();
     const duration = String(this.tour?.duration || '').toLowerCase();
-    return type.includes('day tour') || duration.includes('1 day') || duration === '1 day';
+    return (
+      type.includes('day tour') ||
+      type.includes('tuk tuk') ||
+      duration.includes('1 day') ||
+      duration === '1 day' ||
+      duration.includes('hour')
+    );
   }
+
 
   get minTravelDate(): string {
     return this.formatDateInput(this.earliestAllowedDate());

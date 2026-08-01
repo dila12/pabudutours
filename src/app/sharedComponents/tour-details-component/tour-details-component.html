@@ -1,149 +1,169 @@
 <div class="tour-details-intro">
-  <div class="container-fluid booking mt-1">
-    <div class="container">
-      <h1 class="tour-details-title text-primary text-uppercase mb-3">
-        {{ tour.title }}
-      </h1>
-      <div class="bg-light shadow rounded-3 p-2">
-        <div class="row text-center gy-4">
+  <div class="booking mt-1">
+    <h1 class="tour-details-title text-primary text-uppercase mb-3">
+      {{ tour.title }}
+    </h1>
 
-          <div class="col-6 col-md-3">
-            <i class="fas fa-clock fa-2x uniform-icon mb-2"></i>
-            <p class="mb-1 fw-semibold">Duration</p>
-            <p class="fw-bold mb-0">{{ tour.duration }}</p>
-          </div>
-
-          <div class="col-6 col-md-3">
-            <i class="fas fa-users fa-2x uniform-icon mb-2"></i>
-            <p class="mb-1 fw-semibold">Max People</p>
-            <p class="fw-bold mb-0">{{ tour.persons }}</p>
-          </div>
-
-          <div class="col-6 col-md-3">
-            <i class="fas fa-dollar-sign fa-2x uniform-icon mb-2"></i>
-            <p class="mb-1 fw-semibold">Price</p>
-            <p class="fw-bold mb-0">$ {{ tour.price }} (based on 2 people)</p>
-          </div>
-
-          <div class="col-6 col-md-3">
-            <i class="fas fa-map-marked-alt fa-2x uniform-icon mb-2"></i>
-            <p class="mb-1 fw-semibold">Tour Type</p>
-            <p class="fw-bold mb-0">{{ tour.tourType }}</p>
-          </div>
-
+    <div class="tour-meta" aria-label="Tour highlights">
+      <article class="tour-meta__item">
+        <span class="tour-meta__icon" aria-hidden="true">
+          <i class="fas fa-clock"></i>
+        </span>
+        <div class="tour-meta__copy">
+          <p class="tour-meta__label">Duration</p>
+          <p class="tour-meta__value">{{ tour.duration }}</p>
         </div>
-      </div>
+      </article>
+
+      <article class="tour-meta__item">
+        <span class="tour-meta__icon" aria-hidden="true">
+          <i class="fas fa-users"></i>
+        </span>
+        <div class="tour-meta__copy">
+          <p class="tour-meta__label">Max people</p>
+          <p class="tour-meta__value">{{ tour.persons }}</p>
+        </div>
+      </article>
+
+      <article class="tour-meta__item tour-meta__item--accent">
+        <span class="tour-meta__icon" aria-hidden="true">
+          <i class="fas fa-tag"></i>
+        </span>
+        <div class="tour-meta__copy">
+          <p class="tour-meta__label">From (2 people)</p>
+          <p class="tour-meta__value">$ {{ tour.price }}</p>
+        </div>
+      </article>
+
+      <article class="tour-meta__item">
+        <span class="tour-meta__icon" aria-hidden="true">
+          <i class="fas fa-map-marked-alt"></i>
+        </span>
+        <div class="tour-meta__copy">
+          <p class="tour-meta__label">Tour type</p>
+          <p class="tour-meta__value">{{ tour.tourType }}</p>
+        </div>
+      </article>
     </div>
   </div>
 </div>
 
 <div class="tour-details-split">
   <div class="tour-details-body">
-    <div class="container-fluid">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 ">
-            <div class="d-flex flex-column">
-              <div class="bg-white p-4 p-lg-5 my-lg-3">
-                <h2 class="text-primary text-uppercase justify-content-start" style="letter-spacing: 5px;">Tour
-                  Overview</h2>
-                <p>{{tour.overview}}</p>
-              </div>
-            </div>
-          </div>
+    <section class="tour-overview" aria-labelledby="tour-overview-heading">
+      <div class="tour-overview__head">
+        <span class="tour-overview__badge" aria-hidden="true">
+          <i class="fas fa-compass"></i>
+        </span>
+        <div>
+          <p class="tour-overview__eyebrow">The experience</p>
+          <h2 id="tour-overview-heading" class="tour-overview__title">Tour Overview</h2>
         </div>
       </div>
-    </div>
+      <p class="tour-overview__text">{{ tour.overview }}</p>
+    </section>
 
-    <div class="container-fluid">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 mb-4">
-            <div class="bg-white p-2 p-lg-5 shadow-sm">
-              <div *ngIf="tour.itinerary">
-                <h3 class="mb-3">Tour Plan</h3>
-                <div *ngFor="let day of tour.itinerary" class=" border-bottom">
-                  <h4 (click)="toggleDay(day.day)" class="itinerary-header">
-                    <i class="fas fa-map-marker-alt location-icon me-2"></i>
-                    <span class="mx-2">Day {{ day.day }}: {{ day.title }}</span>
-                    <span [class.expanded]="expandedDays[day.day]" style="float: right;">
-                      ▲
-                    </span>
-                  </h4>
+    <section class="tour-plan" *ngIf="tour.itinerary?.length" aria-labelledby="tour-plan-heading">
+      <div class="tour-plan__intro">
+        <p class="tour-plan__eyebrow">Itinerary</p>
+        <h3 id="tour-plan-heading" class="tour-plan__heading">Tour Plan</h3>
+      </div>
 
-                  <div [class.open]="expandedDays[day.day]" class="itinerary-content ps-3 scrollable-activities">
-                    <div *ngFor="let activity of day.activities" class="mb-3">
-                      <p class="text fw-semibold mb-1">
-                        <i class="fas {{ activity.title.icon || 'fa-circle' }} mr-2"
-                          [style.color]="activity.title.color"></i>
-                        {{ activity.title.title }}
-                      </p>
-                      <div *ngIf="activity.description">{{ activity.description }}</div>
+      <div class="tour-plan__timeline">
+        <article
+          *ngFor="let day of tour.itinerary"
+          class="plan-day"
+          [class.plan-day--open]="expandedDays[day.day]">
+          <button
+            type="button"
+            class="plan-day__toggle"
+            (click)="toggleDay(day.day)"
+            [attr.aria-expanded]="!!expandedDays[day.day]">
+            <span class="plan-day__badge" aria-hidden="true">
+              <span class="plan-day__badge-label">Day</span>
+              <span class="plan-day__badge-num">{{ day.day }}</span>
+            </span>
+            <span class="plan-day__title">{{ day.title }}</span>
+            <span class="plan-day__chevron" aria-hidden="true">
+              <i class="fas fa-chevron-down"></i>
+            </span>
+          </button>
 
-                      <ul *ngIf="activity.extra?.length" class="small text-muted ms-4">
-                        <li *ngFor="let item of activity.extra">{{ item }}</li>
-                      </ul>
-
-                      <img *ngIf="activity.image" [src]="activity.image" class="rounded my-2"
-                        style="width: 100px; height: 100px; object-fit: cover; cursor: pointer;"
-                        (click)="openImage(activity.image)" />
-                    </div>
-                  </div>
+          <div class="plan-day__body" [class.plan-day__body--open]="expandedDays[day.day]">
+            <ul class="plan-activity">
+              <li *ngFor="let activity of day.activities" class="plan-activity__item">
+                <span
+                  class="plan-activity__icon"
+                  aria-hidden="true"
+                  [style.background]="activity.title.color || '#012c13'">
+                  <i class="fas {{ activity.title.icon || 'fa-circle' }}"></i>
+                </span>
+                <div class="plan-activity__content">
+                  <p class="plan-activity__name">{{ activity.title.title }}</p>
+                  <p class="plan-activity__desc" *ngIf="activity.description">{{ activity.description }}</p>
+                  <ul *ngIf="activity.extra?.length" class="plan-activity__extra">
+                    <li *ngFor="let item of activity.extra">{{ item }}</li>
+                  </ul>
+                  <button
+                    *ngIf="activity.image"
+                    type="button"
+                    class="plan-activity__photo"
+                    (click)="openImage(activity.image)"
+                    [attr.aria-label]="'View photo for ' + activity.title.title">
+                    <img [src]="activity.image" alt="" />
+                  </button>
                 </div>
-              </div>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="cover-panel" aria-label="Included and excluded">
+      <div class="cover-panel__intro">
+        <p class="cover-panel__eyebrow">Good to know</p>
+        <h3 class="cover-panel__heading">What's covered</h3>
+      </div>
+
+      <div class="cover-panel__grid">
+        <div class="cover-list cover-list--in">
+          <div class="cover-list__head">
+            <span class="cover-list__mark" aria-hidden="true">
+              <i class="fas fa-check"></i>
+            </span>
+            <div>
+              <h4 class="cover-list__title">Included</h4>
+              <p class="cover-list__sub">Already in your tour price</p>
             </div>
           </div>
+          <ul class="cover-list__items">
+            <li *ngFor="let item of tour.includes; let i = index" [style.--i]="i">
+              <span class="cover-list__icon" aria-hidden="true"><i class="fas fa-check"></i></span>
+              <span>{{ item }}</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cover-list cover-list--out">
+          <div class="cover-list__head">
+            <span class="cover-list__mark" aria-hidden="true">
+              <i class="fas fa-minus"></i>
+            </span>
+            <div>
+              <h4 class="cover-list__title">Excluded</h4>
+              <p class="cover-list__sub">Pay separately if needed</p>
+            </div>
+          </div>
+          <ul class="cover-list__items">
+            <li *ngFor="let item of tour.excludes; let i = index" [style.--i]="i">
+              <span class="cover-list__icon" aria-hidden="true"><i class="fas fa-minus"></i></span>
+              <span>{{ item }}</span>
+            </li>
+          </ul>
         </div>
       </div>
-    </div>
-
-    <div class="container-fluid">
-      <div class="container">
-        <div class="row">
-
-          <!-- Included Section -->
-          <div class="col-md-6 mb-4">
-            <div class="card shadow-sm h-100">
-              <div class="card-header bg-white d-flex align-items-center border-bottom border-primary">
-                <i class="fas fa-check-circle mr-2 text-primary"></i>
-                <h3 class="mb-0 text-primary h5">Included</h3>
-              </div>
-              <div class="card-body">
-                <ul class="list-unstyled mb-0">
-                  <li *ngFor="let item of tour.includes" class="mb-2 d-flex align-items-center">
-                    <span class="icon-circle bg-success text-white mr-2">
-                      <i class="fas fa-check"></i>
-                    </span>
-                    {{ item }}
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <!-- Excluded Section -->
-          <div class="col-md-6 mb-4">
-            <div class="card shadow-sm h-100 border" style="border-color: #ada878;">
-              <div class="card-header bg-white d-flex align-items-center" style="border-bottom: 2px solid #ada878;">
-                <i class="fas fa-times-circle mr-2" style="color: #ada878;"></i>
-                <h3 class="mb-0 h5" style="color: #ada878;">Excluded</h3>
-              </div>
-              <div class="card-body">
-                <ul class="list-unstyled mb-0">
-                  <li *ngFor="let item of tour.excludes" class="mb-2 d-flex align-items-center">
-                    <span class="icon-circle mr-2" style="background-color: #ada878; color: #fff;">
-                      <i class="fas fa-times" style="font-size: 0.8rem;"></i>
-                    </span>
-                    {{ item }}
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-
-        </div>
-      </div>
-    </div>
+    </section>
 
     <div *ngIf="selectedImage" class="image-modal">
       <button class="close-btn" (click)="closeImage()">×</button>

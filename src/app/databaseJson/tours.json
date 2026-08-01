@@ -63,6 +63,20 @@
   ],
 
 
+  "tukTukTours": [
+    {
+      "id": 13,
+      "title": "Bentota Tuk Tuk Tour",
+      "days": "2–3 hours",
+      "persons": "Max 3 Persons",
+      "rating": 5,
+      "filecode": "bentota-tuk-tuk-tour",
+      "image": "assets/img/onedayTour/Galle/2.jpg",
+      "routerLink": "/bentota-tuk-tuk-tour"
+    }
+
+  ],
+
   "multiDayTours": [
     {
       "id": 5,

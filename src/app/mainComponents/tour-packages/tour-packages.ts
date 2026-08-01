@@ -16,9 +16,10 @@ import { TourPriceService } from '../../Services/tour-price.service';
 export class TourPackages {
   dayTours: any[] = [];
   multiDayTours: any[] = [];
+  tukTukTours: any[] = [];
   userCountry = 'US';
 
-  activeTab: 'multi' | 'day' = 'multi';
+  activeTab: 'multi' | 'day' | 'tuktuk' = 'multi';
 
   constructor(
     private countryService: CountryService,
@@ -30,6 +31,19 @@ export class TourPackages {
     this.userCountry = await this.countryService.detectCountry();
     this.dayTours = await this.loadToursWithPrices(toursData.dayTours);
     this.multiDayTours = await this.loadToursWithPrices(toursData.multiDayTours);
+    this.tukTukTours = await this.loadToursWithPrices(toursData.tukTukTours ?? []);
+  }
+
+  get activeTours() {
+    if (this.activeTab === 'day') return this.dayTours;
+    if (this.activeTab === 'tuktuk') return this.tukTukTours;
+    return this.multiDayTours;
+  }
+
+  get activeTabLabel() {
+    if (this.activeTab === 'day') return 'Day Tours';
+    if (this.activeTab === 'tuktuk') return 'Tuk Tuk Ride';
+    return 'Multi-Day Tours';
   }
 
   async loadToursWithPrices(tours: any[]) {
@@ -48,7 +62,7 @@ export class TourPackages {
     return this.tourPriceService.loadPrice(filecode, this.userCountry);
   }
 
-  setTab(tab: 'multi' | 'day') {
+  setTab(tab: 'multi' | 'day' | 'tuktuk') {
     this.activeTab = tab;
   }
 }

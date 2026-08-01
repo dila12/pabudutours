@@ -79,7 +79,7 @@
         </label>
         <label class="sidebar-field">
           <span><i class="fa fa-user" aria-hidden="true"></i> Travelers</span>
-          <input type="number" [(ngModel)]="travelers" name="travelers" min="1" max="20"
+          <input type="number" [(ngModel)]="travelers" name="travelers" min="1" [max]="maxTravelers"
             (change)="updateTravelers($event)" required>
         </label>
       </div>
@@ -146,7 +146,7 @@
       <div class="col-lg-6">
         <label class="form-label">Number of Travelers</label>
         <input type="number" class="form-control" [(ngModel)]="travelers" name="travelers" min="1"
-          max="20" (change)="updateTravelers($event)" required>
+          [max]="maxTravelers" (change)="updateTravelers($event)" required>
       </div>
       <div class="col-lg-6">
         <label class="form-label">Select Travel Date</label>

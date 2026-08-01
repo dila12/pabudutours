@@ -3,7 +3,6 @@
   width: 100%;
 }
 
-/* Stick beside overview/plan and follow as the user scrolls down */
 @media (min-width: 992px) {
   :host-context(.tour-details-aside) {
     position: sticky;
@@ -12,90 +11,139 @@
   }
 }
 
-.viator-card {
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 1.25rem 1.25rem 1.1rem;
-  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.06);
+.book-card {
+  --book-green: #012c13;
+  --book-gold: #b8954a;
+  position: relative;
+  background:
+    linear-gradient(165deg, rgba(1, 44, 19, 0.05) 0%, #fff 38%, #fff 100%);
+  border: 1px solid rgba(1, 44, 19, 0.12);
+  border-radius: 16px;
+  padding: 1.35rem 1.25rem 1.2rem;
+  box-shadow: 0 14px 34px rgba(1, 44, 19, 0.1);
+  overflow: hidden;
 }
 
-.viator-card__price {
-  margin: 0 0 1rem;
-  color: #111827;
+.book-card__accent {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--book-green), var(--book-gold));
+}
+
+.book-card__price {
+  margin: 0 0 1.1rem;
+}
+
+.book-card__eyebrow {
+  margin: 0 0 0.35rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--book-gold);
+}
+
+.book-card__amount {
+  margin: 0;
+  color: #1a1f1c;
   font-size: 0.95rem;
   font-weight: 600;
+  line-height: 1.3;
 }
 
-.viator-card__price strong {
-  font-size: 1.55rem;
-  font-weight: 700;
-  margin-right: 0.25rem;
+.book-card__amount strong {
+  display: inline-block;
+  margin-right: 0.2rem;
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--book-green);
+  letter-spacing: -0.02em;
 }
 
-.viator-card__price span {
-  color: #6b7280;
-  font-size: 0.9rem;
+.book-card__amount span {
+  color: #6b736e;
+  font-size: 0.88rem;
   font-weight: 500;
 }
 
-.viator-card__sheet-head {
+.book-card__sheet-head {
   display: none;
 }
 
-.viator-card__close {
+.book-card__close {
   display: none;
 }
 
-.viator-card__perks {
+.book-card__perks {
   list-style: none;
-  margin: 1rem 0 0;
-  padding: 0.9rem 0 0;
-  border-top: 1px solid #eef0f2;
+  margin: 1.05rem 0 0;
+  padding: 1rem 0 0;
+  border-top: 1px solid rgba(1, 44, 19, 0.08);
 }
 
-.viator-card__perks li {
-  display: flex;
-  gap: 0.55rem;
-  align-items: flex-start;
-  margin-bottom: 0.55rem;
-  color: #374151;
-  font-size: 0.84rem;
-  line-height: 1.4;
-}
-
-.viator-card__perks li:last-child {
-  margin-bottom: 0;
-}
-
-.viator-card__perks i {
-  margin-top: 0.2rem;
-  color: #059669;
-  font-size: 0.75rem;
-}
-
-.viator-card__note {
+.book-card__perks li {
   display: flex;
   gap: 0.65rem;
   align-items: flex-start;
-  margin-top: 0.9rem;
-  padding: 0.75rem 0.85rem;
-  background: #f8fafc;
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-}
-
-.viator-card__note i {
-  color: #012c13;
-  margin-top: 0.15rem;
-}
-
-.viator-card__note p {
-  margin: 0;
-  color: #4b5563;
-  font-size: 0.82rem;
+  margin-bottom: 0.65rem;
+  color: #2f3833;
+  font-size: 0.84rem;
   line-height: 1.4;
   font-weight: 500;
+}
+
+.book-card__perks li:last-child {
+  margin-bottom: 0;
+}
+
+.book-card__perk-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.3rem;
+  height: 1.3rem;
+  margin-top: 0.05rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: rgba(1, 44, 19, 0.1);
+  color: var(--book-green);
+  font-size: 0.58rem;
+}
+
+.book-card__note {
+  display: flex;
+  gap: 0.7rem;
+  align-items: flex-start;
+  margin-top: 1rem;
+  padding: 0.85rem 0.9rem;
+  background: linear-gradient(135deg, rgba(184, 149, 74, 0.14), rgba(184, 149, 74, 0.05));
+  border: 1px solid rgba(184, 149, 74, 0.28);
+  border-radius: 12px;
+}
+
+.book-card__note-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.85rem;
+  height: 1.85rem;
+  border-radius: 9px;
+  flex-shrink: 0;
+  background: var(--book-gold);
+  color: #fff;
+  font-size: 0.8rem;
+  box-shadow: 0 6px 12px rgba(184, 149, 74, 0.28);
+}
+
+.book-card__note p {
+  margin: 0;
+  color: #5a4a28;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  font-weight: 600;
 }
 
 .mobile-book-bar,
@@ -123,8 +171,8 @@
     z-index: 1100;
     padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom, 0px));
     background: #fff;
-    border-top: 1px solid #e5e7eb;
-    box-shadow: 0 -6px 24px rgba(15, 23, 42, 0.12);
+    border-top: 1px solid rgba(1, 44, 19, 0.1);
+    box-shadow: 0 -8px 28px rgba(1, 44, 19, 0.12);
   }
 
   .mobile-book-bar__price {
@@ -132,7 +180,7 @@
     flex-wrap: wrap;
     align-items: baseline;
     gap: 0.25rem 0.35rem;
-    color: #111827;
+    color: #1a1f1c;
     font-size: 0.85rem;
     font-weight: 600;
     min-width: 0;
@@ -140,11 +188,12 @@
 
   .mobile-book-bar__price strong {
     font-size: 1.25rem;
-    font-weight: 700;
+    font-weight: 800;
+    color: #012c13;
   }
 
   .mobile-book-bar__price small {
-    color: #6b7280;
+    color: #6b736e;
     font-size: 0.78rem;
     font-weight: 500;
   }
@@ -152,7 +201,7 @@
   .mobile-book-bar__cta {
     flex: 0 0 auto;
     border: 0;
-    border-radius: 8px;
+    border-radius: 10px;
     background: #012c13;
     color: #fff;
     font-size: 0.92rem;
@@ -170,7 +219,7 @@
     background: rgba(15, 23, 42, 0.45);
   }
 
-  .viator-card--sheet {
+  .book-card--sheet {
     position: fixed;
     left: 0;
     right: 0;
@@ -178,10 +227,10 @@
     z-index: 1110;
     max-height: min(88vh, 720px);
     margin: 0;
-    padding: 1rem 1rem calc(1rem + env(safe-area-inset-bottom, 0px));
-    border-radius: 16px 16px 0 0;
+    padding: 1.1rem 1rem calc(1rem + env(safe-area-inset-bottom, 0px));
+    border-radius: 18px 18px 0 0;
     border: 0;
-    box-shadow: 0 -10px 40px rgba(15, 23, 42, 0.2);
+    box-shadow: 0 -12px 40px rgba(1, 44, 19, 0.18);
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     transform: translateY(105%);
@@ -189,17 +238,17 @@
     pointer-events: none;
   }
 
-  .viator-card--sheet-open {
+  .book-card--sheet-open {
     transform: translateY(0);
     pointer-events: auto;
   }
 
-  .viator-card__sheet-head {
+  .book-card__sheet-head {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     gap: 0.75rem;
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.5rem;
     position: sticky;
     top: 0;
     background: #fff;
@@ -207,19 +256,19 @@
     padding-bottom: 0.35rem;
   }
 
-  .viator-card__price--sheet {
+  .book-card__price--sheet {
     margin: 0;
   }
 
-  .viator-card__close {
+  .book-card__close {
     display: grid;
     place-items: center;
     width: 44px;
     height: 44px;
     border: 0;
     border-radius: 999px;
-    background: #f3f4f6;
-    color: #111827;
+    background: rgba(1, 44, 19, 0.08);
+    color: #012c13;
     flex: 0 0 auto;
   }
 }

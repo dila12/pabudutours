@@ -2,33 +2,42 @@
   class="package-item"
   [routerLink]="routerLink"
   [attr.aria-label]="'View and book ' + title">
-  <!-- Image Section -->
   <div class="package-image-container">
     <img [src]="image" alt="" class="package-image" width="400" height="260" loading="lazy" decoding="async" />
+    <div class="package-image-shade" aria-hidden="true"></div>
     <div class="package-badge">
-      <i class="fa fa-star" aria-hidden="true"></i> {{ rating }}
+      <i class="fa fa-star" aria-hidden="true"></i>
+      <span>{{ rating }}</span>
     </div>
   </div>
 
-  <!-- Content Section -->
   <div class="package-content">
     <h3 *ngIf="titleLevel === 3" class="package-title">{{ title }}</h3>
     <h4 *ngIf="titleLevel === 4" class="package-title">{{ title }}</h4>
 
     <div class="info-badges">
       <span class="badge-item">
-        <i class="fa fa-calendar-alt" aria-hidden="true"></i> {{ days }}
+        <span class="badge-item__icon" aria-hidden="true">
+          <i class="fa fa-calendar-alt"></i>
+        </span>
+        {{ days }}
       </span>
       <span class="badge-item">
-        <i class="fa fa-users" aria-hidden="true"></i> {{ persons }}
+        <span class="badge-item__icon" aria-hidden="true">
+          <i class="fa fa-users"></i>
+        </span>
+        {{ persons }}
       </span>
     </div>
 
     <div class="price-section">
       <div class="price-display">
-        <span class="price-currency">$</span>
-        <span class="price-amount">{{ (price/2) | number:'1.0-0' }}</span>
-        <span class="price-per">/person</span>
+        <span class="price-label">From</span>
+        <div class="price-row">
+          <span class="price-currency">$</span>
+          <span class="price-amount">{{ (price / 2) | number: '1.0-0' }}</span>
+          <span class="price-per">/person</span>
+        </div>
       </div>
       <span class="book-btn">
         Book Now <i class="fa fa-arrow-right" aria-hidden="true"></i>

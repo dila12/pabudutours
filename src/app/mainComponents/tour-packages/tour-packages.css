@@ -1,15 +1,26 @@
+.package-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.85rem 1rem;
+  margin: 1.25rem 0 1.5rem;
+  padding: 0 0.5rem;
+}
+
 .tab-btn-outline {
-  padding: 10px 28px;
+  padding: 10px 26px;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   background: transparent;
-  border: 2px solid #012c13; /* primary outline */
+  border: 2px solid #012c13;
   border-radius: 50px;
   color: #012c13;
   cursor: pointer;
-  margin:10px 10px 10px 10px;
-  transition: all 0.4s ease;
+  margin: 0;
+  transition: all 0.3s ease;
   position: relative;
+  white-space: nowrap;
 }
 
 .tab-btn-outline:hover {
@@ -20,33 +31,44 @@
 .tab-btn-outline.active {
   background-color: #012c13;
   color: white;
-  box-shadow: 0 8px 20px #012c13;
+  box-shadow: 0 4px 12px rgba(1, 44, 19, 0.28);
+}
+
+@media (max-width: 575.98px) {
+  .package-tabs {
+    gap: 0.65rem;
+  }
+
+  .tab-btn-outline {
+    padding: 9px 18px;
+    font-size: 0.95rem;
+  }
 }
 
 
-/* Package card hover */
+.package-grid--sparse {
+  justify-content: center;
+}
+
+.package-grid--single {
+  min-height: 28rem;
+  align-items: stretch;
+}
+
+.package-grid--single .package-card-wrapper {
+  max-width: 420px;
+}
+
 .package-card {
-  transition: transform 0.4s, box-shadow 0.4s;
+  display: block;
+  height: 100%;
 }
-.package-card:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 20px 35px #012c13;
-}
-
-/* Optional: fade in animation for cards */
-.row > .col-lg-4 {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.6s forwards;
-  animation-delay: calc(var(--i) * 0.1s); /* stagger effect */
-}
-
 
 .package-card-wrapper {
   opacity: 0;
   transform: translateY(20px);
-  animation: fadeInUp 2.9s forwards; /* slower animation */
-  animation-delay: calc(var(--i) * 1.5s); /* stagger each card */
+  animation: fadeInUp 0.55s forwards;
+  animation-delay: calc(var(--i) * 0.08s);
 }
 
 
@@ -56,14 +78,3 @@
     transform: translateY(0);
   }
 }
-
-/* Optional: add hover effects on the card */
-.package-card {
-  transition: transform 0.4s, box-shadow 0.4s;
-}
-.package-card:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.15);
-}
-
-

@@ -1,109 +1,111 @@
-
-    <!-- Header Start -->
-    <div class="container-fluid page-header">
-        <div class="container">
-            <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
-                <h3 class="display-4 text-white text-uppercase">Services</h3>
-                <div class="d-inline-flex text-white">
-                    <p class="m-0 text-uppercase"><a class="text-white" routerLink="/">Home</a></p>
-                    <i class="fa fa-angle-double-right pt-1 px-3"></i>
-                    <p class="m-0 text-uppercase">Services</p>
-                </div>
-            </div>
-        </div>
+<div class="container-fluid page-header">
+  <div class="container">
+    <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
+      <h1 class="display-4 text-white text-uppercase mb-2">Services</h1>
+      <div class="d-inline-flex text-white align-items-center">
+        <p class="m-0 text-uppercase"><a class="text-white" routerLink="/">Home</a></p>
+        <i class="fa fa-angle-double-right pt-1 px-3" aria-hidden="true"></i>
+        <p class="m-0 text-uppercase">Services</p>
+      </div>
     </div>
-    <!-- Header End -->
-
-
-<!-- Service Start -->
-<div class="container-fluid py-5">
-    <div class="container pt-5 pb-3">
-
-        <div class="text-center mb-5">
-            <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Our Services</h6>
-            <h1>Travel & Hospitality Services by Pabudu Tours</h1>
-            <p class="text-muted">
-                We provide comfortable travel experiences, guided tours and authentic Sri Lankan hospitality.
-            </p>
-        </div>
-
-        <div class="row">
-
-            <!-- Private Tours -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="service-item bg-white text-center py-5 px-4 shadow-sm">
-                    <i class="fa fa-2x fa-route text-primary mx-auto mb-4"></i>
-                    <h5 class="mb-3">Private Sri Lanka Tours</h5>
-                    <p class="m-0">
-                        Explore Sri Lanka with customized private tours including cultural sites,
-                        beaches, wildlife safaris and scenic hill country.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Chauffeur Guide -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="service-item bg-white text-center py-5 px-4 shadow-sm">
-                    <i class="fa fa-2x fa-car text-primary mx-auto mb-4"></i>
-                    <h5 class="mb-3">Chauffeur Guide Service</h5>
-                    <p class="m-0">
-                        Travel safely with experienced local chauffeur guides and modern
-                        air-conditioned vehicles for a comfortable journey across Sri Lanka.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Tour Packages -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="service-item bg-white text-center py-5 px-4 shadow-sm">
-                    <i class="fa fa-2x fa-suitcase text-primary mx-auto mb-4"></i>
-                    <h5 class="mb-3">Tailor-Made Tour Packages</h5>
-                    <p class="m-0">
-                        Choose from day tours, multi-day round tours and customized travel
-                        itineraries designed for your budget and interests.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Airport Transfer -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="service-item bg-white text-center py-5 px-4 shadow-sm">
-                    <i class="fa fa-2x fa-plane text-primary mx-auto mb-4"></i>
-                    <h5 class="mb-3">Airport Transfers</h5>
-                    <p class="m-0">
-                        Reliable airport pickup and drop-off services from Bandaranaike
-                        International Airport to any destination in Sri Lanka.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Wildlife Safari -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="service-item bg-white text-center py-5 px-4 shadow-sm">
-                    <i class="fa fa-2x fa-paw text-primary mx-auto mb-4"></i>
-                    <h5 class="mb-3">Wildlife Safari Tours</h5>
-                    <p class="m-0">
-                        Experience unforgettable safari adventures in Yala and Udawalawe
-                        National Parks to see elephants, leopards and exotic wildlife.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Pabudu Restaurant -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="service-item bg-white text-center py-5 px-4 shadow-sm">
-                    <h5 class="mb-3">Pabudu Tuk Tuk Tours</h5>
-<p class="m-0">
-    Explore Sri Lanka like a local with Pabudu Tuk Tuk Tours. 
-    Enjoy a fun and comfortable ride through beautiful streets, 
-    cultural landmarks, and hidden local spots while experiencing 
-    the true charm of Sri Lanka.
-</p>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
+  </div>
 </div>
-    <!-- Service End -->
+
+<section class="services-page">
+  <div class="container">
+    <div class="services-page__intro">
+      <p class="services-page__eyebrow">Our services</p>
+      <h2 class="services-page__title">Travel &amp; hospitality by Pabudu Tours</h2>
+      <p class="services-page__lead">
+        Comfortable private travel, guided tours and authentic Sri Lankan hospitality —
+        planned around your pace, style and budget.
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <article class="service-card">
+        <span class="service-card__icon" aria-hidden="true">
+          <i class="fa fa-route"></i>
+        </span>
+        <h3 class="service-card__title">Private Sri Lanka Tours</h3>
+        <p class="service-card__text">
+          Explore Sri Lanka with customized private tours including cultural sites,
+          beaches, wildlife safaris and scenic hill country.
+        </p>
+        <a routerLink="/tour-packages" class="service-card__link">
+          View packages <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </article>
+
+      <article class="service-card">
+        <span class="service-card__icon" aria-hidden="true">
+          <i class="fa fa-car"></i>
+        </span>
+        <h3 class="service-card__title">Chauffeur Guide Service</h3>
+        <p class="service-card__text">
+          Travel safely with experienced local chauffeur guides and modern
+          air-conditioned vehicles for a comfortable journey across Sri Lanka.
+        </p>
+        <a routerLink="/contact-us" class="service-card__link">
+          Book a guide <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </article>
+
+      <article class="service-card">
+        <span class="service-card__icon" aria-hidden="true">
+          <i class="fa fa-suitcase"></i>
+        </span>
+        <h3 class="service-card__title">Tailor-Made Tour Packages</h3>
+        <p class="service-card__text">
+          Choose from day tours, multi-day round tours and customized travel
+          itineraries designed for your budget and interests.
+        </p>
+        <a routerLink="/tour-packages" class="service-card__link">
+          Explore tours <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </article>
+
+      <article class="service-card">
+        <span class="service-card__icon" aria-hidden="true">
+          <i class="fa fa-plane"></i>
+        </span>
+        <h3 class="service-card__title">Airport Transfers</h3>
+        <p class="service-card__text">
+          Reliable airport pickup and drop-off from Bandaranaike International Airport
+          to any destination in Sri Lanka.
+        </p>
+        <a routerLink="/contact-us" class="service-card__link">
+          Arrange transfer <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </article>
+
+      <article class="service-card">
+        <span class="service-card__icon" aria-hidden="true">
+          <i class="fa fa-paw"></i>
+        </span>
+        <h3 class="service-card__title">Wildlife Safari Tours</h3>
+        <p class="service-card__text">
+          Unforgettable safari adventures in Yala and Udawalawe National Parks —
+          elephants, leopards and exotic wildlife in the wild.
+        </p>
+        <a routerLink="/udawalawa-day-tour" class="service-card__link">
+          See safari day tour <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </article>
+
+      <article class="service-card service-card--accent">
+        <span class="service-card__icon" aria-hidden="true">
+          <i class="fa fa-motorcycle"></i>
+        </span>
+        <h3 class="service-card__title">Pabudu Tuk Tuk Tours</h3>
+        <p class="service-card__text">
+          Explore like a local with fun, comfortable tuk tuk rides through beautiful streets,
+          cultural landmarks and hidden spots across Bentota and beyond.
+        </p>
+        <a routerLink="/bentota-tuk-tuk-tour" class="service-card__link">
+          Book tuk tuk ride <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
