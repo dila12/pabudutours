@@ -31,11 +31,52 @@ function escapeHtml(value) {
     .replace(/'/g, "&#39;");
 }
 
-function formatDate(value) {
+function formatTravelDate(value) {
+  if (!value) return "—";
+
+  // Prefer YYYY-MM-DD so timezone never shifts the calendar day
+  const raw = String(value);
+  const match = raw.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (match) {
+    const year = Number(match[1]);
+    const month = Number(match[2]);
+    const day = Number(match[3]);
+    const months = [
+      "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+      "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+    ];
+    return escapeHtml(`${day} ${months[month - 1]} ${year}`);
+  }
+
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return escapeHtml(raw);
+
+  // Fall back: use Asia/Colombo calendar day only
+  return escapeHtml(
+    date.toLocaleDateString("en-GB", {
+      timeZone: "Asia/Colombo",
+      day: "numeric",
+      month: "short",
+      year: "numeric",
+    }),
+  );
+}
+
+function formatDateTime(value) {
   if (!value) return "—";
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) return escapeHtml(value);
-  return escapeHtml(date.toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" }));
+  return escapeHtml(
+    date.toLocaleString("en-GB", {
+      timeZone: "Asia/Colombo",
+      day: "numeric",
+      month: "short",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+    }),
+  );
 }
 
 function formatMoney(total) {
@@ -120,8 +161,8 @@ module.exports = async function handler(req, res) {
     tourTitle: escapeHtml(tourTitle),
     tourDuration: escapeHtml(tourDuration),
     total: formatMoney(total),
-    bookingDate: formatDate(bookingDate),
-    travelDate: formatDate(travelDate),
+    bookingDate: formatDateTime(bookingDate),
+    travelDate: formatTravelDate(travelDate),
   };
 
   try {

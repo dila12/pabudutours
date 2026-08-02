@@ -394,8 +394,8 @@ export class BookingComponent implements OnInit, OnChanges, OnDestroy {
       },
       orderNumber: this.orderNumber,
       total: this.total,
-      bookingDate: this.bookingDate,
-      travelDate: this.travelDate,
+      bookingDate: this.bookingDate?.toISOString?.() || this.bookingDate,
+      travelDate: this.travelDate ? this.formatDateInput(this.travelDate) : null,
     };
 
     this.isSubmitting = true;
@@ -436,8 +436,13 @@ export class BookingComponent implements OnInit, OnChanges, OnDestroy {
         })
       : '—';
     const bookedOn = this.bookingDate.toLocaleString('en-GB', {
-      dateStyle: 'medium',
-      timeStyle: 'short',
+      timeZone: 'Asia/Colombo',
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false,
     });
 
     const printWindow = window.open('', '_blank', 'width=900,height=700');
