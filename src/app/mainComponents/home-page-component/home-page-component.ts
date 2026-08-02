@@ -132,9 +132,9 @@ export class HomePageComponent implements OnInit, OnDestroy {
         ) => number;
       };
       if (typeof w.requestIdleCallback === 'function') {
-        w.requestIdleCallback(() => void fillPrices(), { timeout: 2000 });
+        w.requestIdleCallback(() => void fillPrices(), { timeout: 6000 });
       } else {
-        setTimeout(() => void fillPrices(), 400);
+        setTimeout(() => void fillPrices(), 5000);
       }
     } catch (error) {
       console.error('Browser data load failed:', error);

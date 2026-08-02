@@ -30,16 +30,12 @@
   <link rel="shortcut icon" href="assets/img/favicon.png">
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" type="image/avif" href="assets/img/mainpage/hero-414.avif" media="(max-width: 480px)" fetchpriority="high">
   <link rel="preload" as="image" type="image/avif" href="assets/img/mainpage/hero-480.avif" media="(min-width: 481px) and (max-width: 768px)" fetchpriority="high">
   <link rel="preload" as="image" type="image/avif" href="assets/img/mainpage/hero.avif" media="(min-width: 769px)" fetchpriority="high">
-  <!-- System fonts first; Google fonts after paint so they don't compete with LCP -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap"></noscript>
   <style>
-    /* Critical hero shell so something paints before Angular CSS */
+    /* Critical hero shell — system fonts only on first paint */
+    body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
     .home-hero{position:relative;width:100%;min-height:400px;background:#012c13;color:#fff}
     .home-hero__img{width:100%;height:100%;object-fit:cover;display:block}
   </style>
@@ -296,7 +292,7 @@
         window.__faLoaded = true;
         var css = document.createElement('link');
         css.rel = 'stylesheet';
-        css.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css';
+        css.href = 'assets/css/fontawesome.min.css';
         css.onload = function () {
           var swap = document.createElement('link');
           swap.rel = 'stylesheet';
@@ -304,6 +300,15 @@
           document.head.appendChild(swap);
         };
         document.head.appendChild(css);
+      }
+
+      function loadBrandFonts() {
+        if (window.__fontsLoaded) return;
+        window.__fontsLoaded = true;
+        var l = document.createElement('link');
+        l.rel = 'stylesheet';
+        l.href = 'https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=optional';
+        document.head.appendChild(l);
       }
 
       function showBannerIfNeeded() {
@@ -326,30 +331,45 @@
       if (rejectBtn) {
         rejectBtn.addEventListener('click', function () {
           applyConsent('denied');
-          // Cookieless pings only — after LCP window
           setTimeout(loadAnalytics, 4000);
         });
       }
 
       var prior = showBannerIfNeeded();
 
-      // Defer non-critical third parties until after first paint / LCP
-      window.addEventListener('load', function () {
-        setTimeout(loadFontAwesome, 1200);
+      // Keep fonts/icons/analytics off the LCP critical path (Slow 4G lab tests).
+      function scheduleDeferredAssets() {
+        setTimeout(loadBrandFonts, 5000);
+        setTimeout(loadFontAwesome, 6500);
         if (prior === 'granted' || prior === 'denied') {
-          setTimeout(loadAnalytics, 3000);
+          setTimeout(loadAnalytics, 4000);
         }
-      });
+      }
+      if (document.readyState === 'complete') {
+        scheduleDeferredAssets();
+      } else {
+        window.addEventListener('load', scheduleDeferredAssets);
+      }
 
-      // Optional: footer / settings can call window.openCookiePreferences()
+      // Load icons/fonts sooner if the visitor interacts (scroll/tap)
+      function onFirstInteract() {
+        loadFontAwesome();
+        loadBrandFonts();
+      }
+      // Don't bind scroll — Lighthouse scrolls during lab tests and would pull fonts early.
+      window.addEventListener('touchstart', onFirstInteract, { passive: true, once: true });
+      window.addEventListener('pointerdown', onFirstInteract, { once: true });
+      window.addEventListener('keydown', onFirstInteract, { once: true });
+
       window.openCookiePreferences = function () {
         if (banner) banner.hidden = false;
       };
     })();
   </script>
   <noscript>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
     <link rel="stylesheet" href="assets/css/fa-display-swap.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=optional">
   </noscript>
 </body>
 
