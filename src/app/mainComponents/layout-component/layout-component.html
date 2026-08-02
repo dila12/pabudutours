@@ -65,12 +65,15 @@
     <div class="site-nav__inner">
       <a routerLink="/" class="site-brand" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
         <span class="site-brand__mark">
-          <img
-            src="assets/img/logos/logo-nav.png"
-            [attr.alt]="'nav.logoAlt' | translate"
-            width="64"
-            height="64"
-            decoding="async">
+          <picture>
+            <source srcset="assets/img/logos/logo-nav-128.webp" type="image/webp">
+            <img
+              src="assets/img/logos/logo-nav-128.png"
+              [attr.alt]="'nav.logoAlt' | translate"
+              width="64"
+              height="64"
+              decoding="async">
+          </picture>
         </span>
         <span class="site-brand__text">
           <span class="site-brand__name">{{ 'nav.brandName' | translate }}</span>
