@@ -84,15 +84,17 @@
       <button
         type="button"
         class="navbar-toggler site-nav__toggler"
-        data-toggle="collapse"
-        data-target="#navbarCollapse"
+        (click)="toggleNav($event)"
+        [attr.aria-expanded]="navOpen"
         aria-controls="navbarCollapse"
-        aria-expanded="false"
         [attr.aria-label]="'nav.toggleNavigation' | translate">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div
+        class="collapse navbar-collapse"
+        id="navbarCollapse"
+        [class.show]="navOpen">
         <div class="navbar-nav site-nav__links ml-auto">
           <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-item nav-link">{{ 'nav.home' | translate }}</a>
           <a routerLink="/tour-packages" routerLinkActive="active" class="nav-item nav-link">{{ 'nav.tourPackages' | translate }}</a>

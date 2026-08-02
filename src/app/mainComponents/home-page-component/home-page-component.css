@@ -65,6 +65,16 @@
 
 .home-hero__carousel .carousel-item {
   background: #012c13;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 0;
+  transition: opacity 0.65s ease;
+}
+
+.home-hero__carousel .carousel-item.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
 }
 
 .home-hero__img {
@@ -555,6 +565,10 @@
 }
 
 /* Contact band */
+.home-contact-placeholder {
+  min-height: 420px;
+}
+
 .home-contact-band {
   padding: clamp(3rem, 7vw, 5rem) 0;
   width: 100%;

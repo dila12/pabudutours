@@ -27,7 +27,10 @@ export class HomePageComponent implements OnInit, OnDestroy {
   dayTours: any[] = [];
   multiDayTours: any[] = [];
   currentIndex = 0;
+  heroSlide = 0;
+  readonly heroSlideCount = 6;
   interval: ReturnType<typeof setInterval> | null = null;
+  heroInterval: ReturnType<typeof setInterval> | null = null;
   userCountry = 'US';
   activeTab: 'multi' | 'day' = 'multi';
   private jsonLdEl: HTMLScriptElement | null = null;
@@ -103,6 +106,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
         toursData.multiDayTours,
       );
       this.autoSlide();
+      this.startHeroCarousel();
     } catch (error) {
       console.error('Browser data load failed:', error);
     }
@@ -111,6 +115,9 @@ export class HomePageComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     if (this.interval) {
       clearInterval(this.interval);
+    }
+    if (this.heroInterval) {
+      clearInterval(this.heroInterval);
     }
     if (this.jsonLdEl) {
       this.renderer.removeChild(this.document.head, this.jsonLdEl);
@@ -185,6 +192,21 @@ export class HomePageComponent implements OnInit, OnDestroy {
     this.interval = setInterval(() => {
       this.next();
     }, 6000);
+  }
+
+  startHeroCarousel() {
+    this.heroInterval = setInterval(() => {
+      this.nextHero();
+    }, 5500);
+  }
+
+  prevHero() {
+    this.heroSlide =
+      (this.heroSlide - 1 + this.heroSlideCount) % this.heroSlideCount;
+  }
+
+  nextHero() {
+    this.heroSlide = (this.heroSlide + 1) % this.heroSlideCount;
   }
 
   scrollToSection(sectionId: string) {

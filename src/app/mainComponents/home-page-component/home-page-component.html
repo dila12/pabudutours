@@ -1,8 +1,8 @@
 <!-- Hero carousel sized so next section peeks below -->
 <section class="home-hero" aria-label="Pabudu Tours Sri Lanka">
-  <div id="header-carousel" class="carousel slide home-hero__carousel" data-ride="carousel" data-interval="5500">
+  <div id="header-carousel" class="carousel slide home-hero__carousel">
     <div class="carousel-inner">
-      <div class="carousel-item active">
+      <div class="carousel-item" [class.active]="heroSlide === 0">
         <picture>
           <source
             media="(max-width: 480px)"
@@ -32,31 +32,31 @@
             decoding="sync">
         </picture>
       </div>
-      <div class="carousel-item">
+      <div class="carousel-item" [class.active]="heroSlide === 1">
         <picture>
           <source srcset="assets/img/mainpage/1.webp" type="image/webp">
           <img class="home-hero__img" src="assets/img/mainpage/1.jpeg" alt="Guests on a Sri Lanka tour" width="1400" height="900" loading="lazy" decoding="async">
         </picture>
       </div>
-      <div class="carousel-item">
+      <div class="carousel-item" [class.active]="heroSlide === 2">
         <picture>
           <source srcset="assets/img/mainpage/2.webp" type="image/webp">
           <img class="home-hero__img" src="assets/img/mainpage/2.jpeg" alt="Sigiriya tour Sri Lanka" width="1400" height="900" loading="lazy" decoding="async">
         </picture>
       </div>
-      <div class="carousel-item">
+      <div class="carousel-item" [class.active]="heroSlide === 3">
         <picture>
           <source srcset="assets/img/mainpage/3.webp" type="image/webp">
           <img class="home-hero__img" src="assets/img/mainpage/3.jpeg" alt="Sri Lanka wildlife safari tour" width="1400" height="900" loading="lazy" decoding="async">
         </picture>
       </div>
-      <div class="carousel-item">
+      <div class="carousel-item" [class.active]="heroSlide === 4">
         <picture>
           <source srcset="assets/img/mainpage/5.webp" type="image/webp">
           <img class="home-hero__img" src="assets/img/mainpage/5.jpeg" alt="Sigiriya Lion Rock tour Sri Lanka" width="1400" height="900" loading="lazy" decoding="async">
         </picture>
       </div>
-      <div class="carousel-item">
+      <div class="carousel-item" [class.active]="heroSlide === 5">
         <picture>
           <source srcset="assets/img/mainpage/6-800.avif" type="image/avif">
           <source srcset="assets/img/mainpage/6-800.webp" type="image/webp">
@@ -64,10 +64,10 @@
         </picture>
       </div>
     </div>
-    <button type="button" class="carousel-control-prev home-hero__control" data-target="#header-carousel" data-slide="prev" aria-label="Previous slide">
+    <button type="button" class="carousel-control-prev home-hero__control" (click)="prevHero()" aria-label="Previous slide">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     </button>
-    <button type="button" class="carousel-control-next home-hero__control" data-target="#header-carousel" data-slide="next" aria-label="Next slide">
+    <button type="button" class="carousel-control-next home-hero__control" (click)="nextHero()" aria-label="Next slide">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
     </button>
   </div>
@@ -343,7 +343,11 @@
 <!-- Contact band -->
 <section class="home-contact-band">
   <div class="home-wrap">
-    <app-contact-us-component [homecontact]="homecontact"></app-contact-us-component>
+    @defer (on viewport; prefetch on idle) {
+      <app-contact-us-component [homecontact]="homecontact"></app-contact-us-component>
+    } @placeholder {
+      <div class="home-contact-placeholder" aria-hidden="true"></div>
+    }
   </div>
 </section>
 

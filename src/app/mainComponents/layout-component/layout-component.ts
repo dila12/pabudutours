@@ -15,6 +15,7 @@ import { filter, Subscription } from 'rxjs';
 })
 export class LayoutComponent implements OnInit, OnDestroy {
   langMenuOpen = false;
+  navOpen = false;
   currentYear = new Date().getFullYear();
   isHome = false;
   private routeSub?: Subscription;
@@ -50,6 +51,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
       .subscribe((e) => {
         const url = e.urlAfterRedirects.split('?')[0];
         this.isHome = url === '/' || url === '';
+        this.navOpen = false;
       });
 
     if (isPlatformBrowser(this.platformId)) {
@@ -73,6 +75,11 @@ export class LayoutComponent implements OnInit, OnDestroy {
   toggleLangMenu(event: Event) {
     event.stopPropagation();
     this.langMenuOpen = !this.langMenuOpen;
+  }
+
+  toggleNav(event?: Event) {
+    event?.stopPropagation();
+    this.navOpen = !this.navOpen;
   }
 
   selectLang(lang: string, event: Event) {

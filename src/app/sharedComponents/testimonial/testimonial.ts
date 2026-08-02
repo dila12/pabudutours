@@ -35,6 +35,9 @@ export class Testimonial implements OnInit, OnDestroy {
     this.styleEl.href = 'assets/lib/owlcarousel/assets/owl.carousel.min.css';
     document.head.appendChild(this.styleEl);
 
+    await this.loadScript(
+      'https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js',
+    );
     await this.loadScript('assets/lib/owlcarousel/owl.carousel.min.js');
 
     const $ = typeof jQuery !== 'undefined' ? jQuery : (window as any).$;

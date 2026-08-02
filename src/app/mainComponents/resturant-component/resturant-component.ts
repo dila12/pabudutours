@@ -1,12 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Meta, Title } from '@angular/platform-browser';
-import { register } from 'swiper/element/bundle';
 import { isPlatformBrowser } from '@angular/common';
 import { Inject, PLATFORM_ID } from '@angular/core';
-import { RouterLink } from '@angular/router';
-register();
 
 @Component({
   selector: 'app-resturant-component',
@@ -16,7 +13,7 @@ register();
   templateUrl: './resturant-component.html',
   styleUrl: './resturant-component.css',
 })
-export class ResturantComponent {
+export class ResturantComponent implements OnInit {
   packages: any[] = [];
 
   constructor(
@@ -26,8 +23,9 @@ export class ResturantComponent {
     @Inject(PLATFORM_ID) private platformId: Object,
   ) {}
 
-  ngOnInit() {
+  async ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
+      const { register } = await import('swiper/element/bundle');
       register();
     }
     this.title.setTitle(
