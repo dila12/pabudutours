@@ -8,9 +8,7 @@ const ALLOWED_ORIGINS = [
 ];
 
 const DEFAULT_ADMIN_EMAILS = [
-  "Pabudutour@gmail.com",
-  "dilanlakshitha194@gmail.com",
-  "shanikamadushani468@gmail.com",
+  "Pabudutour@gmail.com"
 ];
 
 function setCors(req, res) {

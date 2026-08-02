@@ -1,5 +1,5 @@
 <!-- Mobile sticky booking bar -->
-<div class="mobile-book-bar" *ngIf="isMobile && !sheetOpen">
+<div class="mobile-book-bar" *ngIf="isMobile && !sheetOpen && !bookingDone">
   <div class="mobile-book-bar__price">
     <span>{{ 'booking.from' | translate }}</span>
     <strong>${{ displayAmount }}</strong>
@@ -25,6 +25,7 @@
   id="tour-booking-panel"
   [class.book-card--sheet]="isMobile"
   [class.book-card--sheet-open]="isMobile && sheetOpen"
+  [class.book-card--confirmed]="bookingDone"
   role="dialog"
   [attr.aria-modal]="isMobile ? true : null"
   [attr.aria-hidden]="isMobile && !sheetOpen ? true : null">
@@ -34,8 +35,8 @@
     <span class="book-card__handle" aria-hidden="true"></span>
     <div class="book-card__sheet-head-row">
       <div class="book-card__price book-card__price--sheet">
-        <p class="book-card__eyebrow">{{ 'booking.reserveYourSeat' | translate }}</p>
-        <p class="book-card__amount">
+        <p class="book-card__eyebrow">{{ bookingDone ? ('booking.confirmedTitle' | translate) : ('booking.reserveYourSeat' | translate) }}</p>
+        <p class="book-card__amount" *ngIf="!bookingDone">
           <strong>${{ displayAmount }}</strong>
           <span>{{ (quoteTravelers > 1 ? 'booking.forTravelers' : 'booking.forTraveler') | translate:{ n: quoteTravelers } }}</span>
         </p>
@@ -46,7 +47,7 @@
     </div>
   </div>
 
-  <div class="book-card__price" *ngIf="!isMobile">
+  <div class="book-card__price" *ngIf="!isMobile && !bookingDone">
     <p class="book-card__eyebrow">{{ 'booking.reserveYourSeat' | translate }}</p>
     <p class="book-card__amount">
       <strong>${{ displayAmount }}</strong>
@@ -62,10 +63,11 @@
     [tourInput]="tour"
     [imageInput]="image"
     [displayPrice]="price"
-    (quoteChange)="onQuoteChange($event)">
+    (quoteChange)="onQuoteChange($event)"
+    (bookingComplete)="onBookingComplete()">
   </app-booking-component>
 
-  <ul class="book-card__perks">
+  <ul class="book-card__perks" *ngIf="!bookingDone">
     <li>
       <span class="book-card__perk-icon" aria-hidden="true"><i class="fa fa-check"></i></span>
       {{ 'booking.perkPayLater' | translate }}
@@ -80,7 +82,7 @@
     </li>
   </ul>
 
-  <div class="book-card__note">
+  <div class="book-card__note" *ngIf="!bookingDone">
     <span class="book-card__note-icon" aria-hidden="true">
       <i class="fa fa-thumbs-up"></i>
     </span>

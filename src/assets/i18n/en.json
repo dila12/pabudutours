@@ -246,7 +246,18 @@
     "country": "Country",
     "phone": "Phone",
     "agreeTerms": "I agree to the terms & conditions",
-    "completeBooking": "Complete booking"
+    "completeBooking": "Complete booking",
+    "confirmedTitle": "Booking confirmed!",
+    "confirmedLead": "Your reservation is saved and a confirmation email has been sent.",
+    "orderNumber": "Order #",
+    "payment": "Payment",
+    "paymentLater": "Pay later",
+    "tour": "Tour",
+    "duration": "Duration",
+    "travelDate": "Travel date",
+    "guest": "Guest",
+    "printInvoice": "Print / Download invoice",
+    "printHint": "Open the invoice, then use Print → Save as PDF to download."
   },
   "common": {
     "from": "From",

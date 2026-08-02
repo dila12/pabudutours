@@ -246,7 +246,18 @@
     "country": "देश",
     "phone": "फोन",
     "agreeTerms": "मैं नियम और शर्तों से सहमत हूँ",
-    "completeBooking": "बुकिंग पूरी करें"
+    "completeBooking": "बुकिंग पूरी करें",
+    "confirmedTitle": "बुकिंग पुष्टि हो गई!",
+    "confirmedLead": "आपकी बुकिंग सेव हो गई है और पुष्टि ईमेल भेज दी गई है।",
+    "orderNumber": "ऑर्डर #",
+    "payment": "भुगतान",
+    "paymentLater": "बाद में भुगतान",
+    "tour": "टूर",
+    "duration": "अवधि",
+    "travelDate": "यात्रा तिथि",
+    "guest": "अतिथि",
+    "printInvoice": "इनवॉइस प्रिंट / डाउनलोड करें",
+    "printHint": "इनवॉइस खोलें, फिर Print → Save as PDF चुनें।"
   },
   "common": {
     "from": "से",

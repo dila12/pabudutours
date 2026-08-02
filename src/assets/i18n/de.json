@@ -246,7 +246,18 @@
     "country": "Land",
     "phone": "Telefon",
     "agreeTerms": "Ich akzeptiere die AGB",
-    "completeBooking": "Buchung abschließen"
+    "completeBooking": "Buchung abschließen",
+    "confirmedTitle": "Buchung bestätigt!",
+    "confirmedLead": "Ihre Reservierung wurde gespeichert und eine Bestätigungs-E-Mail wurde gesendet.",
+    "orderNumber": "Bestellnr.",
+    "payment": "Zahlung",
+    "paymentLater": "Später zahlen",
+    "tour": "Tour",
+    "duration": "Dauer",
+    "travelDate": "Reisedatum",
+    "guest": "Gast",
+    "printInvoice": "Rechnung drucken / herunterladen",
+    "printHint": "Rechnung öffnen, dann Drucken → Als PDF speichern."
   },
   "common": {
     "from": "Ab",

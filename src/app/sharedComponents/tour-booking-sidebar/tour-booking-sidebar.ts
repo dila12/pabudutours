@@ -29,11 +29,12 @@ export class TourBookingSidebarComponent implements AfterViewInit, OnDestroy {
 
   @HostBinding('class.has-mobile-bar')
   get hostMobileBar(): boolean {
-    return this.isMobile;
+    return this.isMobile && !this.bookingDone;
   }
 
   isMobile = false;
   sheetOpen = false;
+  bookingDone = false;
   quoteTotal: number | null = null;
   quoteTravelers = 1;
 
@@ -97,6 +98,13 @@ export class TourBookingSidebarComponent implements AfterViewInit, OnDestroy {
   onQuoteChange(quote: { total: number; travelers: number }): void {
     this.quoteTotal = quote.total;
     this.quoteTravelers = quote.travelers || 1;
+  }
+
+  onBookingComplete(): void {
+    this.bookingDone = true;
+    if (this.isMobile) {
+      this.sheetOpen = true;
+    }
   }
 
   private syncViewportMode(): void {

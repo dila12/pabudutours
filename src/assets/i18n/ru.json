@@ -246,7 +246,18 @@
     "country": "Страна",
     "phone": "Телефон",
     "agreeTerms": "Я согласен с условиями",
-    "completeBooking": "Завершить бронирование"
+    "completeBooking": "Завершить бронирование",
+    "confirmedTitle": "Бронирование подтверждено!",
+    "confirmedLead": "Ваша бронь сохранена, подтверждение отправлено на email.",
+    "orderNumber": "Заказ №",
+    "payment": "Оплата",
+    "paymentLater": "Оплата позже",
+    "tour": "Тур",
+    "duration": "Длительность",
+    "travelDate": "Дата поездки",
+    "guest": "Гость",
+    "printInvoice": "Печать / скачать счет",
+    "printHint": "Откройте счет, затем Печать → Сохранить как PDF."
   },
   "common": {
     "from": "От",

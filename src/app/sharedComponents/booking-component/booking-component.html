@@ -204,44 +204,67 @@
 </ng-template>
 
 <ng-template #successTpl>
-  <div id="invoiceContent" class="card shadow-lg border-0 p-4"
-    style="border-radius: 1rem; background: linear-gradient(135deg, #f9f9f9, #ffffff);">
-    <div class="d-flex align-items-center mb-3">
-      <i class="fa fa-check-circle text-success me-2" style="font-size: 2rem;"></i>
-      <h3 class="text-success mb-0">Booking Confirmed!</h3>
-    </div>
-    <p class="mb-4 text-muted">
-      Your order has been completed and a confirmation email has been sent. Thank you for booking with us!
-    </p>
-    <div class="d-flex flex-wrap gap-2 mb-3">
-      <span class="badge bg-primary text-white p-2">Order #: {{ orderNumber }}</span>
-      <span class="badge text-dark p-2 ml-2" style="background-color: #ada878;">
-        Date: {{ bookingDate | date:'medium' }}
+  <div class="booking-success">
+    <div class="booking-success__header">
+      <span class="booking-success__check" aria-hidden="true">
+        <i class="fa fa-check"></i>
       </span>
-      <span class="badge bg-success text-white p-2 ml-2">Total: ${{ total.toFixed(2) }}</span>
-      <span class="badge bg-warning text-dark p-2 ml-2">Payment: Payment Later</span>
+      <div>
+        <h3 class="booking-success__title">{{ 'booking.confirmedTitle' | translate }}</h3>
+        <p class="booking-success__lead">{{ 'booking.confirmedLead' | translate }}</p>
+      </div>
     </div>
-    <div class="card border shadow-sm mb-3">
-      <div class="card-header bg-light fw-bold text-primary">Order Details</div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item d-flex justify-content-between">
-          <span>{{ tour.title }}</span>
-          <span class="fw-bold">${{ total.toFixed(2) }}</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between">
-          <span>Duration</span>
-          <span>{{ tour.duration }}</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between">
-          <span>Travelers ({{ travelers }})</span>
-          <span>${{ total.toFixed(2) }}</span>
-        </li>
-      </ul>
+
+    <div id="invoiceContent" class="booking-invoice">
+      <div class="booking-invoice__meta">
+        <div>
+          <span>{{ 'booking.orderNumber' | translate }}</span>
+          <strong>{{ orderNumber }}</strong>
+        </div>
+        <div>
+          <span>{{ 'booking.payment' | translate }}</span>
+          <strong>{{ 'booking.paymentLater' | translate }}</strong>
+        </div>
+      </div>
+
+      <div class="booking-invoice__rows">
+        <div class="booking-invoice__row">
+          <span>{{ 'booking.tour' | translate }}</span>
+          <strong>{{ tour.title }}</strong>
+        </div>
+        <div class="booking-invoice__row">
+          <span>{{ 'booking.duration' | translate }}</span>
+          <strong>{{ tour.duration }}</strong>
+        </div>
+        <div class="booking-invoice__row">
+          <span>{{ 'booking.travelDate' | translate }}</span>
+          <strong>{{ travelDate | date:'mediumDate' }}</strong>
+        </div>
+        <div class="booking-invoice__row">
+          <span>{{ 'booking.guest' | translate }}</span>
+          <strong>{{ firstName }} {{ lastName }}</strong>
+        </div>
+        <div class="booking-invoice__row">
+          <span>{{ 'booking.email' | translate }}</span>
+          <strong>{{ email }}</strong>
+        </div>
+        <div class="booking-invoice__row">
+          <span>{{ 'booking.travelers' | translate }}</span>
+          <strong>{{ travelers }}</strong>
+        </div>
+        <div class="booking-invoice__row booking-invoice__row--total">
+          <span>{{ 'booking.total' | translate }}</span>
+          <strong>${{ total.toFixed(2) }}</strong>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="text-center mt-3" *ngIf="!embedMode">
-    <button class="btn btn-outline-primary" type="button" (click)="printInvoice()">
-      <i class="fa fa-print"></i> Print Invoice
-    </button>
+
+    <div class="booking-success__actions">
+      <button type="button" class="booking-success__print" (click)="printInvoice()">
+        <i class="fa fa-print" aria-hidden="true"></i>
+        {{ 'booking.printInvoice' | translate }}
+      </button>
+      <p class="booking-success__hint">{{ 'booking.printHint' | translate }}</p>
+    </div>
   </div>
 </ng-template>

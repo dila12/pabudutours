@@ -12,9 +12,7 @@ const BRAND = {
 };
 
 const DEFAULT_ADMIN_EMAILS = [
-  "Pabudutour@gmail.com",
-  "dilanlakshitha194@gmail.com",
-  "shanikamadushani468@gmail.com",
+  "Pabudutour@gmail.com"
 ];
 
 const ALLOWED_ORIGINS = [

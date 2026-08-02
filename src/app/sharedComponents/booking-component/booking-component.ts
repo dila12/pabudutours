@@ -41,6 +41,7 @@ export class BookingComponent implements OnInit, OnChanges, OnDestroy {
   /** Hide the inline total row when the parent booking card already shows it. */
   @Input() hideInlineTotal = false;
   @Output() quoteChange = new EventEmitter<{ total: number; travelers: number }>();
+  @Output() bookingComplete = new EventEmitter<void>();
   showGuestDetails = false;
 
   tour: any = {
@@ -410,6 +411,7 @@ export class BookingComponent implements OnInit, OnChanges, OnDestroy {
           );
           setTimeout(() => {
             this.bookingCompleted = true;
+            this.bookingComplete.emit();
           }, 800);
         },
         error: (err) => {
@@ -425,31 +427,171 @@ export class BookingComponent implements OnInit, OnChanges, OnDestroy {
 
   printInvoice() {
     if (!this.isBrowser) return;
-    const printContents = document.getElementById('invoiceContent')?.innerHTML;
 
-    if (printContents) {
-      const printWindow = window.open('', '', 'height=700,width=900');
-      printWindow!.document.write(`
-      <html>
-        <head>
-          <title>Booking Invoice</title>
-          <style>
-            body { font-family: Arial, sans-serif; margin: 20px; color: #333; }
-            .card { box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 20px; border-radius: 10px; }
-            .list-group-item { border: none; border-bottom: 1px solid #eee; padding: 10px 0; }
-            .text-center { text-align: center; }
-            .fw-bold { font-weight: bold; }
-            .text-success { color: green; }
-            .text-danger { color: red; }
-            .text-primary { color: #007bff; }
-          </style>
-        </head>
-        <body>${printContents}</body>
-      </html>
-    `);
-      printWindow!.document.close();
-      printWindow!.print();
+    const travelDateLabel = this.travelDate
+      ? this.travelDate.toLocaleDateString('en-GB', {
+          day: 'numeric',
+          month: 'short',
+          year: 'numeric',
+        })
+      : '—';
+    const bookedOn = this.bookingDate.toLocaleString('en-GB', {
+      dateStyle: 'medium',
+      timeStyle: 'short',
+    });
+
+    const printWindow = window.open('', '_blank', 'width=900,height=700');
+    if (!printWindow) {
+      this.toastr.warning(
+        'Please allow pop-ups to print or download your invoice.',
+        'Popup blocked',
+      );
+      return;
     }
+
+    printWindow.document.write(`<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Invoice ${this.orderNumber} – Pabudu Tours</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 32px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #1a1a1a;
+      background: #fff;
+    }
+    .sheet { max-width: 720px; margin: 0 auto; }
+    .top {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      border-bottom: 3px solid #012c13;
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+    }
+    .brand { color: #012c13; }
+    .brand h1 { margin: 0; font-size: 24px; }
+    .brand p { margin: 4px 0 0; color: #666; font-size: 13px; }
+    .badge {
+      background: #012c13;
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    h2 {
+      margin: 0 0 12px;
+      color: #012c13;
+      font-size: 16px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 18px;
+    }
+    th, td {
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 1px solid #e8ebe9;
+      vertical-align: top;
+      font-size: 14px;
+    }
+    th {
+      width: 34%;
+      color: #666;
+      font-weight: 600;
+      background: #f6f8f7;
+    }
+    .total td {
+      background: rgba(184, 149, 74, 0.12);
+      font-size: 16px;
+      font-weight: 700;
+      color: #012c13;
+      border-bottom: 0;
+    }
+    .note {
+      margin-top: 24px;
+      padding: 12px 14px;
+      background: #f6f8f7;
+      border-radius: 8px;
+      color: #555;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .footer {
+      margin-top: 28px;
+      padding-top: 14px;
+      border-top: 1px solid #e8ebe9;
+      color: #777;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+    @media print {
+      body { padding: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="sheet">
+    <div class="top">
+      <div class="brand">
+        <h1>Pabudu Tours</h1>
+        <p>Private Sri Lanka tours · Forever Unforgettable</p>
+      </div>
+      <div class="badge">INVOICE</div>
+    </div>
+
+    <h2>Booking details</h2>
+    <table>
+      <tr><th>Order number</th><td>${this.escapeHtml(this.orderNumber)}</td></tr>
+      <tr><th>Booked on</th><td>${this.escapeHtml(bookedOn)}</td></tr>
+      <tr><th>Tour</th><td>${this.escapeHtml(this.tour?.title || '')}</td></tr>
+      <tr><th>Duration</th><td>${this.escapeHtml(this.tour?.duration || '')}</td></tr>
+      <tr><th>Travel date</th><td>${this.escapeHtml(travelDateLabel)}</td></tr>
+      <tr><th>Guest</th><td>${this.escapeHtml(`${this.firstName} ${this.lastName}`.trim())}</td></tr>
+      <tr><th>Email</th><td>${this.escapeHtml(this.email)}</td></tr>
+      <tr><th>Phone</th><td>${this.escapeHtml(this.fullPhone || '—')}</td></tr>
+      <tr><th>Country</th><td>${this.escapeHtml(this.country || '—')}</td></tr>
+      <tr><th>Travelers</th><td>${this.escapeHtml(String(this.travelers))}</td></tr>
+      <tr><th>Payment</th><td>Payment later at destination</td></tr>
+      <tr class="total"><th>Total</th><td>$${Number(this.total || 0).toFixed(2)}</td></tr>
+    </table>
+
+    <div class="note">
+      A confirmation email has also been sent to your inbox.
+      Our team will contact you shortly with travel arrangements.
+    </div>
+
+    <div class="footer">
+      Pabudu Tours<br/>
+      No: 439/2 Managala Rd, Kuda Waskaduwa, Waskaduwa, Kalutara, Sri Lanka<br/>
+      WhatsApp: +94 77 900 88 03 · Email: Pabudutour@gmail.com
+    </div>
+  </div>
+  <script>
+    window.onload = function () {
+      window.focus();
+      window.print();
+    };
+  </script>
+</body>
+</html>`);
+    printWindow.document.close();
+  }
+
+  private escapeHtml(value: string): string {
+    return String(value ?? '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
   }
 
   onTravelDateChange(dateString: string) {
