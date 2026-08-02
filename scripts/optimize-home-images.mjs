@@ -1,71 +1,84 @@
 import sharp from 'sharp';
-import fs from 'fs/promises';
+import fs from 'fs';
 import path from 'path';
 
-const root = 'src/assets/img';
+const packageImages = [
+  'src/assets/img/onedayTour/ella/7.jpeg',
+  'src/assets/img/mainpage/3.jpeg',
+  'src/assets/img/mainpage/4.jpeg',
+  'src/assets/img/mainpage/5.jpeg',
+  'src/assets/img/mainpage/2.jpeg',
+  'src/assets/img/mainpage/6.jpeg',
+  'src/assets/img/5daysTours/24.jpg',
+  'src/assets/img/7daystour/goayffj226ceow8zxhey.jpg',
+  'src/assets/img/onedayTour/Galle/2.jpg',
+  'src/assets/img/2daysTours/1.jpeg',
+];
 
-async function toWebp(input, output, opts = {}) {
-  await fs.mkdir(path.dirname(output), { recursive: true });
-  await sharp(input).webp(opts).toFile(output);
-  const inStat = await fs.stat(input);
-  const outStat = await fs.stat(output);
+async function report(file) {
+  if (!fs.existsSync(file)) return;
+  const m = await sharp(file).metadata();
   console.log(
-    path.basename(output),
-    Math.round(inStat.size / 1024) + 'KB ->',
-    Math.round(outStat.size / 1024) + 'KB',
+    path.basename(file),
+    `${m.width}x${m.height}`,
+    `${(fs.statSync(file).size / 1024).toFixed(1)} KiB`,
   );
 }
 
-for (let i = 1; i <= 6; i++) {
-  await toWebp(
-    path.join(root, `destination-${i}.jpg`),
-    path.join(root, `destination-${i}.webp`),
-    { quality: 72, effort: 5 },
-  );
+/** Cards display ~346×227 on mobile; 400×260 covers ~1.15× CSS + slight DPR headroom. */
+async function makeCards() {
+  for (const src of packageImages) {
+    if (!fs.existsSync(src)) {
+      console.log('MISSING', src);
+      continue;
+    }
+    const parsed = path.parse(src);
+    const webpOut = path.join(parsed.dir, `${parsed.name}-card.webp`);
+    const avifOut = path.join(parsed.dir, `${parsed.name}-card.avif`);
+
+    await sharp(src)
+      .resize(400, 260, { fit: 'cover', position: 'centre' })
+      .webp({ quality: 64, effort: 6 })
+      .toFile(webpOut);
+
+    await sharp(src)
+      .resize(400, 260, { fit: 'cover', position: 'centre' })
+      .avif({ quality: 42, effort: 6 })
+      .toFile(avifOut);
+
+    await report(webpOut);
+    await report(avifOut);
+  }
 }
 
-await sharp(path.join(root, 'logos/2.png'))
-  .resize(112, 112, {
-    fit: 'contain',
-    background: { r: 0, g: 0, b: 0, alpha: 0 },
-  })
-  .webp({ quality: 80, effort: 5 })
-  .toFile(path.join(root, 'logos/logo-112.webp'));
-console.log(
-  'logo-112.webp',
-  Math.round((await fs.stat(path.join(root, 'logos/logo-112.webp'))).size / 1024) +
-    'KB',
-);
+/**
+ * About block: ~373×280 mobile, ~half-column desktop.
+ * 800×600 covers 2× mobile and typical desktop without the 1200px original.
+ */
+async function makeAbout() {
+  const src = 'src/assets/img/mainpage/about.webp';
+  if (!fs.existsSync(src)) {
+    console.log('MISSING', src);
+    return;
+  }
 
-await sharp(path.join(root, 'mainpage/6.jpeg'))
-  .resize(1600, null, { withoutEnlargement: true })
-  .webp({ quality: 68, effort: 5 })
-  .toFile(path.join(root, 'mainpage/6.webp'));
+  // Keep a decode of the current file, then overwrite both outputs.
+  const input = fs.readFileSync(src);
+  const base = sharp(input).resize(800, 600, { fit: 'cover', position: 'centre' });
 
-await sharp(path.join(root, 'mainpage/6.jpeg'))
-  .resize(800, null, { withoutEnlargement: true })
-  .webp({ quality: 68, effort: 5 })
-  .toFile(path.join(root, 'mainpage/6-800.webp'));
+  const webpBuf = await base
+    .clone()
+    .webp({ quality: 68, effort: 6 })
+    .toBuffer();
+  fs.writeFileSync(src, webpBuf);
+  await report(src);
 
-await sharp(path.join(root, 'mainpage/hero.webp'))
-  .resize(480, null, { withoutEnlargement: true })
-  .webp({ quality: 70, effort: 5 })
-  .toFile(path.join(root, 'mainpage/hero-480.webp'));
-
-const optPath = path.join(root, 'mainpage/hero-800-opt.webp');
-const hero800 = path.join(root, 'mainpage/hero-800.webp');
-await sharp(hero800).webp({ quality: 68, effort: 5 }).toFile(optPath);
-const a = await fs.stat(hero800);
-const b = await fs.stat(optPath);
-if (b.size < a.size) {
-  await fs.rename(optPath, hero800);
-  console.log('replaced hero-800.webp', Math.round(b.size / 1024) + 'KB');
-} else {
-  await fs.unlink(optPath);
-  console.log('kept hero-800.webp', Math.round(a.size / 1024) + 'KB');
+  const avifOut = 'src/assets/img/mainpage/about.avif';
+  await sharp(webpBuf)
+    .avif({ quality: 45, effort: 6 })
+    .toFile(avifOut);
+  await report(avifOut);
 }
 
-for (const f of ['6.webp', '6-800.webp', 'hero-480.webp']) {
-  const s = await fs.stat(path.join(root, 'mainpage', f));
-  console.log(f, Math.round(s.size / 1024) + 'KB');
-}
+await makeCards();
+await makeAbout();

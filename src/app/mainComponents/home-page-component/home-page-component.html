@@ -220,12 +220,21 @@
   <div class="home-wrap about__grid">
     <div class="about__media">
       <picture>
+        <source
+          media="(max-width: 991.98px)"
+          srcset="assets/img/mainpage/about-480.avif"
+          type="image/avif">
+        <source
+          media="(max-width: 991.98px)"
+          srcset="assets/img/mainpage/about-480.webp"
+          type="image/webp">
+        <source srcset="assets/img/mainpage/about.avif" type="image/avif">
         <source srcset="assets/img/mainpage/about.webp" type="image/webp">
         <img
           src="assets/img/mainpage/2.jpeg"
           alt="Private Sri Lanka tour with Pabudu Tours"
-          width="1200"
-          height="900"
+          width="800"
+          height="600"
           loading="lazy"
           decoding="async">
       </picture>
