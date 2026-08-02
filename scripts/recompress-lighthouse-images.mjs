@@ -9,7 +9,7 @@ async function report(label, file) {
   console.log(`${label}: ${Math.round(size / 1024)} KB`);
 }
 
-// Mobile hero must stay sharp on full-bleed phones (~3x DPR) — do not shrink to 400px.
+// Mobile hero must stay sharp on full-bleed phones (~3x DPR) do not shrink to 400px.
 const heroSrc = path.join(root, 'mainpage/4.jpeg');
 await sharp(heroSrc)
   .rotate()

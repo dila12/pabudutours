@@ -30,15 +30,6 @@
   border: 0;
 }
 
-#google_translate_element select,
-.goog-te-banner-frame.skiptranslate {
-  display: none !important;
-}
-
-body {
-  top: 0 !important;
-}
-
 .site-header {
   --nav-green: #012c13;
   --nav-deep: #01150a;
@@ -300,9 +291,15 @@ body {
   min-height: 44px;
   padding: 0.5rem;
   background: rgba(255, 255, 255, 0.06);
-  display: inline-flex;
+  display: none;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 991.98px) {
+  .site-nav__toggler {
+    display: inline-flex;
+  }
 }
 
 .site-nav__toggler .navbar-toggler-icon {
@@ -486,6 +483,17 @@ body {
   margin: 0;
   width: min(1180px, calc(100% - 2rem));
   margin-inline: auto;
+}
+
+.site-footer__credit {
+  margin-top: 0.35rem !important;
+  opacity: 0.85;
+  font-size: 0.82rem;
+}
+
+.site-footer__credit span {
+  color: #b8954a;
+  font-weight: 600;
 }
 
 @media (max-width: 991.98px) {

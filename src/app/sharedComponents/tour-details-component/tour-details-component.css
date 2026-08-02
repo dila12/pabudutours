@@ -27,7 +27,7 @@ ul {
   font-size: 0.8rem;
 }
 
-/* Tour Plan — timeline accordion */
+/* Tour Plan timeline accordion */
 .tour-plan {
   --plan-green: #012c13;
   --plan-gold: #b8954a;
@@ -449,7 +449,7 @@ ul {
   background-color: #999;
 }
 
-/* Tour meta strip — Duration / People / Price / Type */
+/* Tour meta strip Duration / People / Price / Type */
 .tour-meta {
   --meta-green: #012c13;
   --meta-gold: #b8954a;
@@ -634,7 +634,7 @@ ul {
   }
 }
 
-/* Included / Excluded — refined dual panel */
+/* Included / Excluded refined dual panel */
 .cover-panel {
   --cover-green: #012c13;
   --cover-gold: #b8954a;

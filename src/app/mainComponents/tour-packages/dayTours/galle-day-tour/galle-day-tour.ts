@@ -7,11 +7,14 @@ import toursData from '../../../../databaseJson/tours.json';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { PackageItemComponent } from '../../../../sharedComponents/package-item-component/package-item-component';
 import { TourBookingSidebarComponent } from '../../../../sharedComponents/tour-booking-sidebar/tour-booking-sidebar';
+import { TourImageGalleryComponent } from '../../../../sharedComponents/tour-image-gallery/tour-image-gallery';
+
 
 @Component({
   selector: 'app-galle-day-tour',
   standalone: true,
-  imports: [CommonModule, RouterModule, TourDetailsComponent, PackageItemComponent, TourBookingSidebarComponent],
+  imports: [
+    TourImageGalleryComponent,CommonModule, RouterModule, TourDetailsComponent, PackageItemComponent, TourBookingSidebarComponent],
   templateUrl: './galle-day-tour.html',
   styleUrl: './galle-day-tour.css'
 })
@@ -124,6 +127,7 @@ Ideal for couples, families, and small groups looking for a comfortable and enri
 
   get tourForDetails(): TourDetails {
   return {
+    filecode: this.tour.filecode,
     title: this.tour.title,
     description: this.tour.description,
     duration: this.tour.duration,

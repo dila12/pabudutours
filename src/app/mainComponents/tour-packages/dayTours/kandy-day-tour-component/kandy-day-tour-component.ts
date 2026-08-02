@@ -10,10 +10,13 @@ import { CountryService } from '../../../../Services/country.service';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { PackageItemComponent } from '../../../../sharedComponents/package-item-component/package-item-component';
 import { TourBookingSidebarComponent } from '../../../../sharedComponents/tour-booking-sidebar/tour-booking-sidebar';
+import { TourImageGalleryComponent } from '../../../../sharedComponents/tour-image-gallery/tour-image-gallery';
+
 
 @Component({
   selector: 'app-kandy-day-tour-component',
   imports: [
+    TourImageGalleryComponent,
     CommonModule,
     RouterModule,
     TourDetailsComponent,
@@ -46,7 +49,7 @@ export class KandyDayTourComponent implements OnInit, OnDestroy {
     duration: '1 Day',
     persons: '20 Persons',
     filecode: 'kandy-day-tour',
-    overview: `1 Day Kandy Excursion with Pabudu Tours — private air-conditioned vehicle, pickup and drop-off, multilingual local driver/guide, and special site guides for Kandy Temple and the Botanical Garden.`,
+    overview: `1 Day Kandy Excursion with Pabudu Tours private air-conditioned vehicle, pickup and drop-off, multilingual local driver/guide, and special site guides for Kandy Temple and the Botanical Garden.`,
     tourType: 'Day Tour',
 
     itinerary: [
@@ -140,6 +143,7 @@ export class KandyDayTourComponent implements OnInit, OnDestroy {
 
   get tourForDetails(): TourDetails {
     return {
+      filecode: this.tour.filecode,
       title: this.tour.title,
       description: this.tour.description,
       duration: this.tour.duration,

@@ -10,11 +10,14 @@ import { PackageItemComponent } from '../../../../sharedComponents/package-item-
 import { TourBookingSidebarComponent } from '../../../../sharedComponents/tour-booking-sidebar/tour-booking-sidebar';
 import { HttpClient } from '@angular/common/http';
 import { CountryService } from '../../../../Services/country.service';
+import { TourImageGalleryComponent } from '../../../../sharedComponents/tour-image-gallery/tour-image-gallery';
+
 
 @Component({
   selector: 'app-ten-days-tour-component',
   standalone: true,
   imports: [
+    TourImageGalleryComponent,
     CommonModule,
     RouterModule,
     TourDetailsComponent,
@@ -47,7 +50,7 @@ export class TenDaysTourComponent implements OnInit, OnDestroy {
     duration: '10 Days / 9 Nights',
     persons: '1-20 Persons',
     filecode: '10-day-sri-lanka-tour',
-    overview: `10 Days / 9 Nights Excursion in Sri Lanka with Pabudu Tours — from airport arrival at Sigiriya through Polonnaruwa, Kandy, hill country, Ella, wildlife safari, Mirissa beaches, Galle and Colombo city highlights.`,
+    overview: `10 Days / 9 Nights Excursion in Sri Lanka with Pabudu Tours from airport arrival at Sigiriya through Polonnaruwa, Kandy, hill country, Ella, wildlife safari, Mirissa beaches, Galle and Colombo city highlights.`,
 
     tourType: 'Round Tour',
 
@@ -601,6 +604,7 @@ export class TenDaysTourComponent implements OnInit, OnDestroy {
 
   get tourForDetails(): TourDetails {
     return {
+      filecode: this.tour.filecode,
       title: this.tour.title,
       description: this.tour.description,
       duration: this.tour.duration,

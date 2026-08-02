@@ -14,6 +14,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule, isPlatformBrowser, NgTemplateOutlet } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { TranslatePipe } from '@ngx-translate/core';
 import { environment } from '../../../../environment';
 import countriesData from './../../../assets/data/countries.json';
 import countryCode from './../../../assets/data/countryCode.json';
@@ -24,7 +25,7 @@ import { TourPriceService } from '../../Services/tour-price.service';
 @Component({
   selector: 'app-booking-component',
   standalone: true,
-  imports: [CommonModule, FormsModule, NgTemplateOutlet],
+  imports: [CommonModule, FormsModule, NgTemplateOutlet, TranslatePipe],
   templateUrl: './booking-component.html',
   styleUrl: './booking-component.css',
 })
@@ -57,6 +58,7 @@ export class BookingComponent implements OnInit, OnChanges, OnDestroy {
   filecode = '';
   image = '';
   bookingCompleted = false;
+  isSubmitting = false;
   bookingDate: Date = new Date();
   travelDate: Date | null = null;
   firstName = '';
@@ -357,6 +359,10 @@ export class BookingComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   completeBooking() {
+    if (this.isSubmitting) {
+      return;
+    }
+
     if (!this.agreeTerms) {
       this.toastr.warning('Please agree to the terms & conditions.', 'Required');
       return;
@@ -367,25 +373,37 @@ export class BookingComponent implements OnInit, OnChanges, OnDestroy {
       return;
     }
 
+    if (!this.firstName?.trim() || !this.email?.trim()) {
+      this.toastr.warning('Please fill in your name and email.', 'Required');
+      return;
+    }
+
     const bookingDetails = {
-      firstName: this.firstName,
-      lastName: this.lastName,
-      email: this.email,
+      firstName: this.firstName.trim(),
+      lastName: (this.lastName || '').trim(),
+      email: this.email.trim(),
       phone: this.fullPhone,
       country: this.country,
       travelers: this.travelers,
-      tour: this.tour,
+      tour: {
+        title: this.tour?.title,
+        duration: this.tour?.duration,
+        tourType: this.tour?.tourType,
+        filecode: this.filecode || this.tour?.filecode,
+      },
       orderNumber: this.orderNumber,
       total: this.total,
       bookingDate: this.bookingDate,
       travelDate: this.travelDate,
     };
 
+    this.isSubmitting = true;
     this.toastr.info('Processing your booking...', 'Please wait');
     this.http
       .post(`${environment.backendUrl}/send-booking-email`, bookingDetails)
       .subscribe({
         next: () => {
+          this.isSubmitting = false;
           this.toastr.success(
             'Your booking has been completed successfully!',
             'Booking Confirmed',
@@ -395,6 +413,7 @@ export class BookingComponent implements OnInit, OnChanges, OnDestroy {
           }, 800);
         },
         error: (err) => {
+          this.isSubmitting = false;
           console.error('Email error:', err);
           this.toastr.error(
             'There was an error processing your booking. Please try again later.',

@@ -20,7 +20,7 @@
             (click)="toggleLangMenu($event)"
             [attr.aria-expanded]="langMenuOpen"
             aria-haspopup="listbox"
-            aria-label="Select language">
+            [attr.aria-label]="'nav.selectLanguage' | translate">
             <img
               [src]="activeLanguage.flag"
               [alt]="activeLanguage.label"
@@ -49,11 +49,11 @@
           </ul>
         </div>
 
-        <div class="site-social" aria-label="Social links">
-          <a href="https://www.instagram.com/Pabudutourssr?igsh=djF2YXB2aDV6bjc4" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <div class="site-social" [attr.aria-label]="'nav.socialLinks' | translate">
+          <a href="https://www.instagram.com/Pabudutourssr?igsh=djF2YXB2aDV6bjc4" target="_blank" rel="noopener noreferrer" [attr.aria-label]="'nav.instagram' | translate">
             <i class="fab fa-instagram" aria-hidden="true"></i>
           </a>
-          <a href="https://www.tripadvisor.com/Attraction_Review-g304136-d34261425-Reviews-Pabudu_Tours-Kalutara_Western_Province.html" target="_blank" rel="noopener noreferrer" aria-label="TripAdvisor">
+          <a href="https://www.tripadvisor.com/Attraction_Review-g304136-d34261425-Reviews-Pabudu_Tours-Kalutara_Western_Province.html" target="_blank" rel="noopener noreferrer" [attr.aria-label]="'nav.tripadvisor' | translate">
             <i class="fab fa-tripadvisor" aria-hidden="true"></i>
           </a>
         </div>
@@ -67,14 +67,14 @@
         <span class="site-brand__mark">
           <img
             src="assets/img/logos/logo-nav.png"
-            alt="Pabudu Tours logo"
+            [attr.alt]="'nav.logoAlt' | translate"
             width="64"
             height="64"
             decoding="async">
         </span>
         <span class="site-brand__text">
-          <span class="site-brand__name">Pabudu Tours</span>
-          <span class="site-brand__tag">Forever Unforgettable</span>
+          <span class="site-brand__name">{{ 'nav.brandName' | translate }}</span>
+          <span class="site-brand__tag">{{ 'nav.brandTag' | translate }}</span>
         </span>
       </a>
 
@@ -85,24 +85,24 @@
         data-target="#navbarCollapse"
         aria-controls="navbarCollapse"
         aria-expanded="false"
-        aria-label="Toggle navigation">
+        [attr.aria-label]="'nav.toggleNavigation' | translate">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav site-nav__links ml-auto">
-          <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-item nav-link">Home</a>
-          <a routerLink="/tour-packages" routerLinkActive="active" class="nav-item nav-link">Tour Packages</a>
-          <a routerLink="/our-services" routerLinkActive="active" class="nav-item nav-link">Services</a>
-          <a routerLink="/about-us" routerLinkActive="active" class="nav-item nav-link">About</a>
-          <a routerLink="/contact-us" routerLinkActive="active" class="nav-item nav-link site-nav__cta">Contact</a>
+          <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-item nav-link">{{ 'nav.home' | translate }}</a>
+          <a routerLink="/tour-packages" routerLinkActive="active" class="nav-item nav-link">{{ 'nav.tourPackages' | translate }}</a>
+          <a routerLink="/our-services" routerLinkActive="active" class="nav-item nav-link">{{ 'nav.services' | translate }}</a>
+          <a routerLink="/about-us" routerLinkActive="active" class="nav-item nav-link">{{ 'nav.about' | translate }}</a>
+          <a routerLink="/contact-us" routerLinkActive="active" class="nav-item nav-link site-nav__cta">{{ 'nav.contact' | translate }}</a>
         </div>
       </div>
     </div>
   </nav>
 </header>
 
-<a href="https://wa.me/94779008803" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
+<a href="https://wa.me/94779008803" target="_blank" rel="noopener noreferrer" class="whatsapp-float" [attr.aria-label]="'nav.chatWhatsapp' | translate">
   <i class="fab fa-whatsapp" aria-hidden="true"></i>
 </a>
 <app-scroll-to-to-component></app-scroll-to-to-component>
@@ -114,55 +114,53 @@
 <footer class="site-footer">
   <div class="site-footer__grid">
     <div>
-      <p class="site-footer__brand">Pabudu Tours</p>
-      <p class="site-footer__text">
-        Your trusted travel partner in Sri Lanka — private tours, round trips and tailor-made holidays with reliable local service.
-      </p>
+      <p class="site-footer__brand">{{ 'footer.brandName' | translate }}</p>
+      <p class="site-footer__text">{{ 'footer.tagline' | translate }}</p>
       <div class="site-social site-social--footer">
-        <a href="https://www.instagram.com/Pabudutourssr?igsh=djF2YXB2aDV6bjc4" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <a href="https://www.instagram.com/Pabudutourssr?igsh=djF2YXB2aDV6bjc4" target="_blank" rel="noopener noreferrer" [attr.aria-label]="'nav.instagram' | translate">
           <i class="fab fa-instagram" aria-hidden="true"></i>
         </a>
-        <a href="https://www.tripadvisor.com/Attraction_Review-g304136-d34261425-Reviews-Pabudu_Tours-Kalutara_Western_Province.html" target="_blank" rel="noopener noreferrer" aria-label="TripAdvisor">
+        <a href="https://www.tripadvisor.com/Attraction_Review-g304136-d34261425-Reviews-Pabudu_Tours-Kalutara_Western_Province.html" target="_blank" rel="noopener noreferrer" [attr.aria-label]="'nav.tripadvisor' | translate">
           <i class="fab fa-tripadvisor" aria-hidden="true"></i>
         </a>
       </div>
     </div>
 
     <div>
-      <h2 class="site-footer__heading">Explore</h2>
+      <h2 class="site-footer__heading">{{ 'footer.explore' | translate }}</h2>
       <nav class="site-footer__links" aria-label="Footer explore">
-        <a routerLink="/about-us">About</a>
-        <a routerLink="/our-services">Services</a>
-        <a routerLink="/tour-packages">Tour Packages</a>
-        <a routerLink="/destinations-sri-lanka">Destinations</a>
-        <a routerLink="/customer-testimonials">Testimonials</a>
+        <a routerLink="/about-us">{{ 'footer.about' | translate }}</a>
+        <a routerLink="/our-services">{{ 'footer.services' | translate }}</a>
+        <a routerLink="/tour-packages">{{ 'footer.tourPackages' | translate }}</a>
+        <a routerLink="/destinations-sri-lanka">{{ 'footer.destinations' | translate }}</a>
+        <a routerLink="/customer-testimonials">{{ 'footer.testimonials' | translate }}</a>
       </nav>
     </div>
 
     <div>
-      <h2 class="site-footer__heading">Popular tours</h2>
+      <h2 class="site-footer__heading">{{ 'footer.popularTours' | translate }}</h2>
       <nav class="site-footer__links" aria-label="Footer tours">
-        <a routerLink="/ella-day-tour">Ella Day Tour Sri Lanka</a>
-        <a routerLink="/sigiriya-day-tour">Sigiriya Day Tour Sri Lanka</a>
-        <a routerLink="/kandy-day-tour">Kandy Day Tour Sri Lanka</a>
-        <a routerLink="/udawalawa-day-tour">Udawalawa Safari Day Tour</a>
-        <a routerLink="/mirissa-day-tour">Mirissa Whale Watching Day Tour</a>
-        <a routerLink="/bentota-tuk-tuk-tour">Bentota Tuk Tuk Tour Sri Lanka</a>
-        <a routerLink="/galle-day-tour">Galle Day Tour Sri Lanka</a>
-        <a routerLink="/2-day-sigiriya-kandy-private-tour-sri-lanka">2 Day Sigiriya &amp; Kandy Tour</a>
-        <a routerLink="/5-day-sri-lanka-tour">5 Day Sri Lanka Tour</a>
-        <a routerLink="/7-day-sri-lanka-tour">7 Day Sri Lanka Private Tour</a>
-        <a routerLink="/10-day-sri-lanka-tour">10 Day Sri Lanka Grand Tour</a>
-        <a routerLink="/tour-packages">All Tour Packages</a>
-        <a routerLink="/sri-lanka-travel-guides">Travel Guides</a>
+        <a routerLink="/ella-day-tour">{{ 'footer.tourElla' | translate }}</a>
+        <a routerLink="/sigiriya-day-tour">{{ 'footer.tourSigiriya' | translate }}</a>
+        <a routerLink="/kandy-day-tour">{{ 'footer.tourKandy' | translate }}</a>
+        <a routerLink="/udawalawa-day-tour">{{ 'footer.tourUdawalawa' | translate }}</a>
+        <a routerLink="/mirissa-day-tour">{{ 'footer.tourMirissa' | translate }}</a>
+        <a routerLink="/bentota-tuk-tuk-tour">{{ 'footer.tourBentota' | translate }}</a>
+        <a routerLink="/galle-day-tour">{{ 'footer.tourGalle' | translate }}</a>
+        <a routerLink="/2-day-sigiriya-kandy-private-tour-sri-lanka">{{ 'footer.tour2DaySigiriyaKandy' | translate }}</a>
+        <a routerLink="/5-day-sri-lanka-tour">{{ 'footer.tour5Day' | translate }}</a>
+        <a routerLink="/7-day-sri-lanka-tour">{{ 'footer.tour7Day' | translate }}</a>
+        <a routerLink="/10-day-sri-lanka-tour">{{ 'footer.tour10Day' | translate }}</a>
+        <a routerLink="/tour-packages">{{ 'footer.allTourPackages' | translate }}</a>
+        <a routerLink="/sri-lanka-travel-guides">{{ 'footer.travelGuides' | translate }}</a>
       </nav>
     </div>
 
     <div>
-      <h2 class="site-footer__heading">Contact</h2>
+      <h2 class="site-footer__heading">{{ 'footer.contact' | translate }}</h2>
       <p class="site-footer__text">
         <i class="fa fa-map-marker-alt" aria-hidden="true"></i>
-        No: 439/2 Managala Rd, Kuda Waskaduwa, Waskaduwa, Kalutara, Sri Lanka
+        {{ 'footer.address' | translate }}
       </p>
       <p class="site-footer__text">
         <i class="fa fa-phone-alt" aria-hidden="true"></i>
@@ -172,11 +170,15 @@
         <i class="fa fa-envelope" aria-hidden="true"></i>
         <a href="mailto:Pabudutour@gmail.com">Pabudutour@gmail.com</a>
       </p>
-      <a routerLink="/contact-us" class="site-footer__btn">Request a Quote</a>
+      <a routerLink="/contact-us" class="site-footer__btn">{{ 'footer.requestQuote' | translate }}</a>
     </div>
   </div>
 
   <div class="site-footer__bottom">
-    <p>© {{ currentYear }} Pabudu Tours. All rights reserved.</p>
+    <p>{{ 'footer.copyright' | translate:{ currentYear: currentYear } }}</p>
+    <p class="site-footer__credit">
+      {{ 'footer.designedBy' | translate }}
+      <span>Disty Tech</span>
+    </p>
   </div>
 </footer>

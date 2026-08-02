@@ -254,7 +254,7 @@
   text-decoration: none;
 }
 
-/* —— Sections —— */
+/* —Sections —*/
 .home-section {
   padding: clamp(2rem, 4vw, 3.25rem) 0;
   width: 100%;
@@ -305,7 +305,7 @@
   line-height: 1.6;
 }
 
-/* Destinations — image tiles, not card chrome */
+/* Destinations image tiles, not card chrome */
 .destinations {
   padding-top: clamp(1rem, 2.5vw, 1.5rem);
   padding-bottom: clamp(2rem, 4vw, 3.25rem);
@@ -572,7 +572,7 @@
   background-repeat: no-repeat;
 }
 
-/* Founder — editorial, no card chrome */
+/* Founder editorial, no card chrome */
 .founder {
   background: #f4f1ec;
   padding-top: clamp(2.5rem, 5vw, 4rem);
@@ -632,7 +632,7 @@
 
 .founder-panel__role {
   margin: 0 0 1.1rem;
-  color: #4a3814; /* ~10:1 on #f4f1ec — WCAG AA */
+  color: #4a3814; /* ~10:1 on #f4f1ec WCAG AA */
   font-weight: 700;
   font-size: 0.78rem;
   letter-spacing: 0.14em;

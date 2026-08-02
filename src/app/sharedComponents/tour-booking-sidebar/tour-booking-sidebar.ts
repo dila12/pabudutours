@@ -10,12 +10,13 @@ import {
   PLATFORM_ID,
 } from '@angular/core';
 import { CommonModule, isPlatformBrowser, DOCUMENT } from '@angular/common';
+import { TranslatePipe } from '@ngx-translate/core';
 import { BookingComponent } from '../booking-component/booking-component';
 
 @Component({
   selector: 'app-tour-booking-sidebar',
   standalone: true,
-  imports: [CommonModule, BookingComponent],
+  imports: [CommonModule, BookingComponent, TranslatePipe],
   templateUrl: './tour-booking-sidebar.html',
   styleUrl: './tour-booking-sidebar.css',
 })

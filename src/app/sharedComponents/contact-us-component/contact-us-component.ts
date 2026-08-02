@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, Inject, Input, PLATFORM_ID } from '@angular/core';
 import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
 import { environment } from '../../../../environment';
 import { ToastrService } from 'ngx-toastr';
 import countryCode from './../../../assets/data/countryCode.json';
@@ -10,7 +11,7 @@ import countryCode from './../../../assets/data/countryCode.json';
 @Component({
   selector: 'app-contact-us-component',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule, TranslatePipe],
   templateUrl: './contact-us-component.html',
   styleUrls: ['./contact-us-component.css'],
 })

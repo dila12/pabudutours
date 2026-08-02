@@ -7,11 +7,14 @@ import { CountryService } from '../../../../Services/country.service';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { PackageItemComponent } from '../../../../sharedComponents/package-item-component/package-item-component';
 import { TourBookingSidebarComponent } from '../../../../sharedComponents/tour-booking-sidebar/tour-booking-sidebar';
+import { TourImageGalleryComponent } from '../../../../sharedComponents/tour-image-gallery/tour-image-gallery';
+
 
 @Component({
   selector: 'app-mirissa-day-tour-component',
   standalone: true,
-  imports: [CommonModule, RouterModule, TourDetailsComponent, PackageItemComponent, TourBookingSidebarComponent],
+  imports: [
+    TourImageGalleryComponent,CommonModule, RouterModule, TourDetailsComponent, PackageItemComponent, TourBookingSidebarComponent],
   templateUrl: './mirissa-day-tour-component.html',
   styleUrl: './mirissa-day-tour-component.css'
 })
@@ -38,7 +41,7 @@ export class MirissaDayTourComponent implements OnInit, OnDestroy {
     duration: '1 Day',
     persons: '20 Persons',
     filecode: 'mirissa-day-tour',
-    overview: `Whale Watching at Mirissa with Pabudu Tours — private air-conditioned vehicle, pickup and drop-off, English-speaking local driver, a 3–5 hour whale watching trip, Coconut Tree Hill, and time to swim at beautiful Mirissa beach.`,
+    overview: `Whale Watching at Mirissa with Pabudu Tours private air-conditioned vehicle, pickup and drop-off, English-speaking local driver, a 3–5 hour whale watching trip, Coconut Tree Hill, and time to swim at beautiful Mirissa beach.`,
     tourType: 'Day Tour',
 
     itinerary: [
@@ -99,6 +102,7 @@ export class MirissaDayTourComponent implements OnInit, OnDestroy {
 
   get tourForDetails(): TourDetails {
     return {
+      filecode: this.tour.filecode,
       title: this.tour.title,
       description: this.tour.description,
       duration: this.tour.duration,

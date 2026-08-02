@@ -1,11 +1,11 @@
 <div class="container-fluid page-header">
   <div class="container">
     <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
-      <h1 class="display-4 text-white text-uppercase mb-2">About</h1>
+      <h1 class="display-4 text-white text-uppercase mb-2">{{ 'about.pageTitle' | translate }}</h1>
       <div class="d-inline-flex text-white align-items-center">
-        <p class="m-0 text-uppercase"><a class="text-white" routerLink="/">Home</a></p>
+        <p class="m-0 text-uppercase"><a class="text-white" routerLink="/">{{ 'about.breadcrumbHome' | translate }}</a></p>
         <i class="fa fa-angle-double-right pt-1 px-3" aria-hidden="true"></i>
-        <p class="m-0 text-uppercase">About</p>
+        <p class="m-0 text-uppercase">{{ 'about.breadcrumbAbout' | translate }}</p>
       </div>
     </div>
   </div>
@@ -26,18 +26,15 @@
       </div>
 
       <div class="about-hero__panel">
-        <p class="about-hero__eyebrow">About us</p>
-        <h2 class="about-hero__title">Trusted Sri Lanka tour company</h2>
+        <p class="about-hero__eyebrow">{{ 'about.eyebrow' | translate }}</p>
+        <h2 class="about-hero__title">{{ 'about.title' | translate }}</h2>
 
         <p class="about-hero__text">
-          <strong>Pabudu Tours</strong> is a trusted local tour company offering private Sri Lanka tours,
-          tailor-made holiday packages, and chauffeur-driven round tours across the island.
+          {{ 'about.para1' | translate }}
         </p>
 
         <p class="about-hero__text">
-          Explore the best of Sri Lanka including Sigiriya, Kandy, Ella, Nuwara Eliya, Galle,
-          and Yala National Park. We provide comfortable vehicles, friendly chauffeur guides,
-          and personalized travel experiences for families, couples, and honeymoon travelers.
+          {{ 'about.para2' | translate }}
         </p>
 
         <div class="about-hero__gallery">
@@ -58,12 +55,11 @@
         </div>
 
         <p class="about-hero__text about-hero__text--closing">
-          Plan your perfect Sri Lanka holiday with a reliable local tour operator
-          and enjoy safe, comfortable, and unforgettable travel experiences.
+          {{ 'about.para3' | translate }}
         </p>
 
         <a routerLink="/contact-us" class="about-hero__cta">
-          Plan your Sri Lanka tour
+          {{ 'about.cta' | translate }}
           <i class="fa fa-arrow-right" aria-hidden="true"></i>
         </a>
       </div>
@@ -75,10 +71,9 @@
           <i class="fa fa-money-check-alt"></i>
         </span>
         <div>
-          <h3 class="about-point__title" itemprop="name">Affordable Sri Lanka tour packages</h3>
+          <h3 class="about-point__title" itemprop="name">{{ 'about.pointAffordableTitle' | translate }}</h3>
           <p class="about-point__text" itemprop="description">
-            Affordable private tours, tailor-made holiday packages, and chauffeur-driven trips
-            designed for every budget — without compromising comfort, safety, or quality.
+            {{ 'about.pointAffordableBody' | translate }}
           </p>
         </div>
       </article>
@@ -88,10 +83,9 @@
           <i class="fa fa-award"></i>
         </span>
         <div>
-          <h3 class="about-point__title">Professional chauffeur guides</h3>
+          <h3 class="about-point__title">{{ 'about.pointGuidesTitle' | translate }}</h3>
           <p class="about-point__text">
-            Experienced chauffeur guides and travel experts deliver safe, comfortable,
-            personalized journeys covering Sigiriya, Kandy, Ella, Yala, and Galle.
+            {{ 'about.pointGuidesBody' | translate }}
           </p>
         </div>
       </article>
@@ -101,10 +95,9 @@
           <i class="fa fa-globe"></i>
         </span>
         <div>
-          <h3 class="about-point__title">Trusted local travel experts</h3>
+          <h3 class="about-point__title">{{ 'about.pointLocalTitle' | translate }}</h3>
           <p class="about-point__text">
-            As a trusted local operator, we welcome travelers worldwide with cultural tours,
-            wildlife safaris, beach holidays, and luxury private round tours across Sri Lanka.
+            {{ 'about.pointLocalBody' | translate }}
           </p>
         </div>
       </article>

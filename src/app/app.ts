@@ -3,6 +3,7 @@ import { RouterModule, Router, NavigationEnd, ActivatedRoute } from '@angular/ro
 import { Title, Meta } from '@angular/platform-browser';
 import { filter, map, mergeMap } from 'rxjs/operators';
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { LanguageService } from './Services/language.service';
 
 const SITE_ORIGIN = 'https://www.pabudutours.com';
 const DEFAULT_OG_IMAGE = `${SITE_ORIGIN}/assets/img/mainpage/hero.webp`;
@@ -20,9 +21,12 @@ export class AppComponent {
     private route: ActivatedRoute,
     private titleService: Title,
     private metaService: Meta,
+    private languageService: LanguageService,
     @Inject(PLATFORM_ID) private platformId: Object,
     @Inject(DOCUMENT) private document: Document,
   ) {
+    // Ensure preferred language is applied on bootstrap.
+    void this.languageService.currentLang;
     this.router.events
       .pipe(
         filter((event) => event instanceof NavigationEnd),

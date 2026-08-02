@@ -1,24 +1,6 @@
 <div class="container tour-split mt-4">
   <div class="tour-split__gallery">
-    <div class="main-image-container">
-      <img [src]="currentImage" class="main-img rounded shadow" alt="Bentota Tuk Tuk Tour" />
-      <div class="indicators">
-        <span
-          *ngFor="let img of images; let i = index"
-          (click)="goToImage(i)"
-          [class.active-indicator]="i === currentIndex"
-          class="indicator-dot"></span>
-      </div>
-    </div>
-
-    <div class="thumbs">
-      <div
-        *ngFor="let img of nextImages"
-        class="thumb-img"
-        (click)="goToImageFromThumb(img.index)">
-        <img [src]="img.src" class="img-thumbnail rounded" alt="Preview" />
-      </div>
-    </div>
+    <app-tour-image-gallery [images]="images" alt="Tour image"></app-tour-image-gallery>
   </div>
 
   <div class="tour-split__main">
@@ -50,6 +32,7 @@
           [rating]="tour.rating"
           [price]="tour.price"
           [title]="tour.title"
+          [filecode]="tour.filecode"
           [routerLink]="tour.routerLink"
           [titleLevel]="3">
         </app-package-item-component>

@@ -1,11 +1,11 @@
 <div *ngIf="!homecontact" class="container-fluid page-header">
   <div class="container">
     <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
-      <h1 class="display-4 text-white text-uppercase mb-2">Contact</h1>
+      <h1 class="display-4 text-white text-uppercase mb-2">{{ 'contact.pageTitle' | translate }}</h1>
       <div class="d-inline-flex text-white align-items-center">
-        <p class="m-0 text-uppercase"><a class="text-white" routerLink="/">Home</a></p>
+        <p class="m-0 text-uppercase"><a class="text-white" routerLink="/">{{ 'contact.breadcrumbHome' | translate }}</a></p>
         <i class="fa fa-angle-double-right pt-1 px-3" aria-hidden="true"></i>
-        <p class="m-0 text-uppercase">Contact</p>
+        <p class="m-0 text-uppercase">{{ 'contact.breadcrumbContact' | translate }}</p>
       </div>
     </div>
   </div>
@@ -14,33 +14,32 @@
 <section class="contact-page" [class.contact-page--home]="homecontact" [ngClass]="{ 'white-text': homecontact }">
   <div class="container">
     <div class="contact-page__intro">
-      <p class="contact-page__eyebrow">Contact</p>
-      <h2 *ngIf="!homecontact" class="contact-page__title">Contact for any query</h2>
-      <h2 *ngIf="homecontact" id="home-contact-heading" class="contact-page__title">Contact for any query</h2>
+      <p class="contact-page__eyebrow">{{ 'contact.eyebrow' | translate }}</p>
+      <h2 *ngIf="!homecontact" class="contact-page__title">{{ 'contact.title' | translate }}</h2>
+      <h2 *ngIf="homecontact" id="home-contact-heading" class="contact-page__title">{{ 'contact.title' | translate }}</h2>
       <p class="contact-page__lead">
-        Reach Pabudu Tours anytime — we reply quickly on WhatsApp, phone and email.
+        {{ 'contact.lead' | translate }}
       </p>
     </div>
 
     <div class="contact-layout">
       <aside class="contact-info">
-        <h3 class="contact-info__heading">Contact information</h3>
+        <h3 class="contact-info__heading">{{ 'contact.infoHeading' | translate }}</h3>
 
         <ul class="contact-info__list">
           <li>
             <span class="contact-info__icon" aria-hidden="true"><i class="fa fa-map-marker-alt"></i></span>
             <div>
-              <p class="contact-info__label">Address</p>
+              <p class="contact-info__label">{{ 'contact.labelAddress' | translate }}</p>
               <p class="contact-info__value">
-                No: 439/2 Managala Rd, Kuda Waskaduwa,<br>
-                Waskaduwa, Kalutara, Sri Lanka
+                {{ 'contact.address' | translate }}
               </p>
             </div>
           </li>
           <li>
             <span class="contact-info__icon" aria-hidden="true"><i class="fa fa-phone-alt"></i></span>
             <div>
-              <p class="contact-info__label">WhatsApp / Voice</p>
+              <p class="contact-info__label">{{ 'contact.labelWhatsappVoice' | translate }}</p>
               <p class="contact-info__value contact-info__value--nowrap">
                 <a href="tel:+94779008803">+94 77 900 88 03</a>
               </p>
@@ -49,7 +48,7 @@
           <li>
             <span class="contact-info__icon" aria-hidden="true"><i class="fa fa-envelope"></i></span>
             <div>
-              <p class="contact-info__label">Email</p>
+              <p class="contact-info__label">{{ 'contact.labelEmail' | translate }}</p>
               <p class="contact-info__value">
                 <a href="mailto:Pabudutour@gmail.com">Pabudutour@gmail.com</a>
               </p>
@@ -58,45 +57,43 @@
           <li>
             <span class="contact-info__icon" aria-hidden="true"><i class="fa fa-clock"></i></span>
             <div>
-              <p class="contact-info__label">Business hours</p>
-              <p class="contact-info__value">Open 24 hours · 7 days</p>
+              <p class="contact-info__label">{{ 'contact.labelHours' | translate }}</p>
+              <p class="contact-info__value">{{ 'contact.hoursValue' | translate }}</p>
             </div>
           </li>
         </ul>
 
         <div class="contact-info__note">
-          <h4 class="contact-info__note-title">Get in touch with us</h4>
+          <h4 class="contact-info__note-title">{{ 'contact.noteTitle' | translate }}</h4>
           <p>
-            Everything you need is at your fingertips. Use the form, email us at
-            <a href="mailto:Pabudutour@gmail.com">Pabudutour@gmail.com</a>, or talk to us via
-            <a class="contact-info__phone-inline" href="tel:+94779008803">+94 77 900 88 03</a>. We are always here to help.
+            {{ 'contact.noteBody' | translate }}
           </p>
         </div>
       </aside>
 
       <div class="contact-form-card">
-        <h3 class="contact-form-card__heading">Send a message</h3>
-        <p class="contact-form-card__sub">Tell us your dates, group size and what you'd like to explore.</p>
+        <h3 class="contact-form-card__heading">{{ 'contact.formHeading' | translate }}</h3>
+        <p class="contact-form-card__sub">{{ 'contact.formSub' | translate }}</p>
 
         <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
           <div class="contact-form__field">
-            <label for="name">Your name *</label>
+            <label for="name">{{ 'contact.labelName' | translate }}</label>
             <input id="name" type="text" formControlName="name" autocomplete="name" />
             <div class="contact-form__error" *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.invalid">
-              Name is required
+              {{ 'contact.errorNameRequired' | translate }}
             </div>
           </div>
 
           <div class="contact-form__field">
-            <label for="email">Your email *</label>
+            <label for="email">{{ 'contact.labelEmailField' | translate }}</label>
             <input id="email" type="email" formControlName="email" autocomplete="email" />
             <div class="contact-form__error" *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid">
-              Please enter a valid email
+              {{ 'contact.errorEmailInvalid' | translate }}
             </div>
           </div>
 
           <div class="contact-form__field">
-            <span class="contact-form__label" id="contact-phone-label">Contact phone *</span>
+            <span class="contact-form__label" id="contact-phone-label">{{ 'contact.labelPhone' | translate }}</span>
             <div class="contact-form__phone">
               <label class="sr-only" for="contact-country-code">Country calling code</label>
               <select
@@ -111,11 +108,11 @@
                 </option>
               </select>
 
-              <label class="sr-only" for="contact-phone-input">Phone number</label>
+              <label class="sr-only" for="contact-phone-input">{{ 'contact.labelPhoneNumber' | translate }}</label>
               <input
                 id="contact-phone-input"
                 type="tel"
-                placeholder="712345678"
+                [placeholder]="'contact.phonePlaceholder' | translate"
                 formControlName="contactPhone"
                 required
                 pattern="^\d{7,15}$"
@@ -125,20 +122,20 @@
             <small
               class="contact-form__error"
               *ngIf="contactForm.get('contactPhone')?.invalid && contactForm.get('contactPhone')?.touched">
-              Valid phone number is required
+              {{ 'contact.errorPhoneRequired' | translate }}
             </small>
           </div>
 
           <div class="contact-form__field">
-            <label for="message">Message *</label>
+            <label for="message">{{ 'contact.labelMessage' | translate }}</label>
             <textarea id="message" rows="5" formControlName="message"></textarea>
             <div class="contact-form__error" *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.invalid">
-              Message is required
+              {{ 'contact.errorMessageRequired' | translate }}
             </div>
           </div>
 
           <button type="submit" class="contact-form__submit" [disabled]="contactForm.invalid">
-            Send message
+            {{ 'contact.submit' | translate }}
           </button>
         </form>
 

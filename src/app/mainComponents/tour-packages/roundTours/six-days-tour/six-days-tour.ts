@@ -7,11 +7,14 @@ import toursData from '../../../../databaseJson/tours.json';
 import { Router, RouterModule } from '@angular/router';
 import { PackageItemComponent } from '../../../../sharedComponents/package-item-component/package-item-component';
 import { TourBookingSidebarComponent } from '../../../../sharedComponents/tour-booking-sidebar/tour-booking-sidebar';
+import { TourImageGalleryComponent } from '../../../../sharedComponents/tour-image-gallery/tour-image-gallery';
+
 
 @Component({
   selector: 'app-six-days-tour',
   standalone: true,
   imports: [
+    TourImageGalleryComponent,
     CommonModule,
     RouterModule,
     TourDetailsComponent,
@@ -47,7 +50,7 @@ images: string[] = [
     filecode: "6-day-sri-lanka-private-tour",
     overview: `Discover the highlights of Sri Lanka in this perfectly balanced 6-day private round tour. 
   Travel through the Cultural Triangle, explore Sigiriya Rock Fortress, experience Kandy’s sacred Temple of the Tooth Relic, journey through the misty tea plantations of Nuwara Eliya, enjoy an exciting Udawalawa National Park safari, and unwind along the beautiful South West Coast. 
-  With private transportation, experienced English-speaking driver guide, and comfortable accommodation options, this tour offers the ideal combination of culture, nature, wildlife and relaxation — perfect for couples, families and small groups.`,
+  With private transportation, experienced English-speaking driver guide, and comfortable accommodation options, this tour offers the ideal combination of culture, nature, wildlife and relaxation perfect for couples, families and small groups.`,
 
     tourType: 'Round Tour',
 
@@ -82,7 +85,7 @@ images: string[] = [
               color: '#8e44ad',
             },
             description:
-              'Enjoy a thrilling 4x4 jeep safari in Minneriya National Park, famous for “The Gathering” — one of Asia’s largest wild elephant congregations. Spot elephants, deer, buffalo and diverse bird species.',
+              'Enjoy a thrilling 4x4 jeep safari in Minneriya National Park, famous for “The Gathering” one of Asia’s largest wild elephant congregations. Spot elephants, deer, buffalo and diverse bird species.',
             image: 'assets/img/5daysTours/24.jpg',
           },
           {
@@ -351,6 +354,7 @@ images: string[] = [
 
   get tourForDetails(): TourDetails {
     return {
+      filecode: this.tour.filecode,
       title: this.tour.title,
       description: this.tour.description,
       duration: this.tour.duration,

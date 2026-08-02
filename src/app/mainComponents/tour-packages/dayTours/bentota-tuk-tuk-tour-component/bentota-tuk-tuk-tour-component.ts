@@ -7,11 +7,14 @@ import { CountryService } from '../../../../Services/country.service';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { PackageItemComponent } from '../../../../sharedComponents/package-item-component/package-item-component';
 import { TourBookingSidebarComponent } from '../../../../sharedComponents/tour-booking-sidebar/tour-booking-sidebar';
+import { TourImageGalleryComponent } from '../../../../sharedComponents/tour-image-gallery/tour-image-gallery';
+
 
 @Component({
   selector: 'app-bentota-tuk-tuk-tour-component',
   standalone: true,
-  imports: [CommonModule, RouterModule, TourDetailsComponent, PackageItemComponent, TourBookingSidebarComponent],
+  imports: [
+    TourImageGalleryComponent,CommonModule, RouterModule, TourDetailsComponent, PackageItemComponent, TourBookingSidebarComponent],
   templateUrl: './bentota-tuk-tuk-tour-component.html',
   styleUrl: './bentota-tuk-tuk-tour-component.css'
 })
@@ -40,7 +43,7 @@ export class BentotaTukTukTourComponent implements OnInit, OnDestroy {
     maxPersons: 3,
     filecode: 'bentota-tuk-tuk-tour',
 
-    overview: `Ride. Explore. Experience Bentota! Hop on a tuk tuk and discover the stunning beaches, rich culture and hidden gems of Bentota. A perfect short tour for unforgettable memories — safe, reliable and fuel included, with English / Russian / German speaking drivers.`,
+    overview: `Ride. Explore. Experience Bentota! Hop on a tuk tuk and discover the stunning beaches, rich culture and hidden gems of Bentota. A perfect short tour for unforgettable memories safe, reliable and fuel included, with English / Russian / German speaking drivers.`,
     tourType: 'Tuk Tuk Ride',
 
     itinerary: [
@@ -85,7 +88,7 @@ export class BentotaTukTukTourComponent implements OnInit, OnDestroy {
               icon: 'fa-ship',
               color: '#16a085',
             },
-            description: 'Optional Madu River boat safari — available on request.',
+            description: 'Optional Madu River boat safari available on request.',
             image: 'assets/img/onedayTour/Galle/3.jpg',
           },
           {
@@ -132,6 +135,7 @@ export class BentotaTukTukTourComponent implements OnInit, OnDestroy {
 
   get tourForDetails(): TourDetails {
     return {
+      filecode: this.tour.filecode,
       title: this.tour.title,
       description: this.tour.description,
       duration: this.tour.duration,

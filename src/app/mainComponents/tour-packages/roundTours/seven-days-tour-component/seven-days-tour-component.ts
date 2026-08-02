@@ -16,11 +16,14 @@ import { PackageItemComponent } from '../../../../sharedComponents/package-item-
 import { TourBookingSidebarComponent } from '../../../../sharedComponents/tour-booking-sidebar/tour-booking-sidebar';
 import { HttpClient } from '@angular/common/http';
 import { CountryService } from '../../../../Services/country.service';
+import { TourImageGalleryComponent } from '../../../../sharedComponents/tour-image-gallery/tour-image-gallery';
+
 
 @Component({
   selector: 'app-seven-days-tour-component',
   standalone: true,
   imports: [
+    TourImageGalleryComponent,
     CommonModule,
     RouterModule,
     TourDetailsComponent,
@@ -53,7 +56,7 @@ export class SevenDaysTourComponent implements OnInit, OnDestroy {
     duration: '7 Days / 6 Nights',
     persons: '20 Persons',
     filecode: '7-day-sri-lanka-tour',
-    overview: `7 Days (6 Nights) Excursion in Sri Lanka with Pabudu Tours — private chauffeur-guided travel from Colombo Airport through Sigiriya, Habarana, Matale, Kandy, Nuwara Eliya, Ella, Yala, Mirissa, Galle and Bentota, ending with airport drop-off.
+    overview: `7 Days (6 Nights) Excursion in Sri Lanka with Pabudu Tours private chauffeur-guided travel from Colombo Airport through Sigiriya, Habarana, Matale, Kandy, Nuwara Eliya, Ella, Yala, Mirissa, Galle and Bentota, ending with airport drop-off.
 
 First 2 days program will be change depends on your arrival time.`,
     tourType: 'Round Tour',
@@ -61,7 +64,7 @@ First 2 days program will be change depends on your arrival time.`,
     itinerary: [
       {
         day: 1,
-        title: 'Arrival — Colombo Airport to Sigiriya',
+        title: 'Arrival Colombo Airport to Sigiriya',
         activities: [
           {
             type: 'Arrival',
@@ -451,6 +454,7 @@ First 2 days program will be change depends on your arrival time.`,
 
   get tourForDetails(): TourDetails {
     return {
+      filecode: this.tour.filecode,
       title: this.tour.title,
       description: this.tour.description,
       duration: this.tour.duration,

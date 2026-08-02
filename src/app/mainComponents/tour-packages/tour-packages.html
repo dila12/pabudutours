@@ -2,11 +2,11 @@
 <div class="container-fluid page-header">
     <div class="container">
         <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
-            <p class="display-4 text-white text-uppercase mb-0">Packages</p>
+            <p class="display-4 text-white text-uppercase mb-0">{{ 'packages.pageTitle' | translate }}</p>
             <div class="d-inline-flex text-white">
-                <p class="m-0 text-uppercase"><a class="text-white" routerLink="/">Home</a></p>
+                <p class="m-0 text-uppercase"><a class="text-white" routerLink="/">{{ 'packages.breadcrumbHome' | translate }}</a></p>
                 <i class="fa fa-angle-double-right pt-1 px-3"></i>
-                <p class="m-0 text-uppercase">Packages</p>
+                <p class="m-0 text-uppercase">{{ 'packages.breadcrumbPackages' | translate }}</p>
             </div>
         </div>
     </div>
@@ -18,24 +18,24 @@
 <div class="container-fluid  bg-light">
     <div class="container pt-5 pb-3">
         <div class="text-center ">
-            <p class="text-primary text-uppercase tracking-widest mb-2">Packages</p>
-            <h1 class="font-bold text-4xl">Perfect Tour Packages</h1>
+            <p class="text-primary text-uppercase tracking-widest mb-2">{{ 'packages.eyebrow' | translate }}</p>
+            <h1 class="font-bold text-4xl">{{ 'packages.heading' | translate }}</h1>
         </div>
 
-        <div class="package-tabs" role="tablist" aria-label="Tour package categories">
+        <div class="package-tabs" role="tablist" [attr.aria-label]="'packages.tabsAria' | translate">
             <button class="tab-btn-outline" [class.active]="activeTab==='multi'" (click)="setTab('multi')">
-                Multi-Day Tours
+                {{ 'packages.tabMultiDay' | translate }}
             </button>
             <button class="tab-btn-outline" [class.active]="activeTab==='day'" (click)="setTab('day')">
-                Day Tours
+                {{ 'packages.tabDay' | translate }}
             </button>
             <button class="tab-btn-outline" [class.active]="activeTab==='tuktuk'" (click)="setTab('tuktuk')">
-                Tuk Tuk Ride
+                {{ 'packages.tabTukTuk' | translate }}
             </button>
         </div>
 
         <h2 class="h4 text-center mb-4">
-          {{ activeTabLabel }}
+          {{ activeTabLabelKey | translate }}
         </h2>
 
         <!-- Tab Content: center sparse grids so one card doesn’t sit alone on the left -->
@@ -52,7 +52,7 @@
                 [class.col-12]="activeTours.length === 1"
                 [style.--i]="i">
                 <app-package-item-component [image]="tour.image" [days]="tour.days" [persons]="tour.persons"
-                    [rating]="tour.rating" [price]="tour.price" [title]="tour.title" [routerLink]="tour.routerLink"
+                    [rating]="tour.rating" [price]="tour.price" [title]="tour.title" [filecode]="tour.filecode" [routerLink]="tour.routerLink"
                     [titleLevel]="3"
                     class="package-card">
                 </app-package-item-component>

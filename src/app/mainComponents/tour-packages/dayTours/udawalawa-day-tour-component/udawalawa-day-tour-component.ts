@@ -7,11 +7,14 @@ import { CountryService } from '../../../../Services/country.service';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { PackageItemComponent } from '../../../../sharedComponents/package-item-component/package-item-component';
 import { TourBookingSidebarComponent } from '../../../../sharedComponents/tour-booking-sidebar/tour-booking-sidebar';
+import { TourImageGalleryComponent } from '../../../../sharedComponents/tour-image-gallery/tour-image-gallery';
+
 
 @Component({
   selector: 'app-udawalawa-day-tour-component',
   standalone: true,
-  imports: [CommonModule, RouterModule, TourDetailsComponent, PackageItemComponent, TourBookingSidebarComponent],
+  imports: [
+    TourImageGalleryComponent,CommonModule, RouterModule, TourDetailsComponent, PackageItemComponent, TourBookingSidebarComponent],
   templateUrl: './udawalawa-day-tour-component.html',
   styleUrl: './udawalawa-day-tour-component.css'
 })
@@ -38,7 +41,7 @@ export class UdawalawaDayTourComponent implements OnInit, OnDestroy {
     duration: '1 Day',
     persons: '20 Persons',
     filecode: 'udawalawa-day-tour',
-    overview: `1 Day Udawalawa Safari with Pabudu Tours — private air-conditioned vehicle, pickup and drop-off, multilingual local driver/guide, a 4–5 hour Udawalawa National Park safari, and the Udawalawa baby elephant transit home.`,
+    overview: `1 Day Udawalawa Safari with Pabudu Tours private air-conditioned vehicle, pickup and drop-off, multilingual local driver/guide, a 4–5 hour Udawalawa National Park safari, and the Udawalawa baby elephant transit home.`,
     tourType: 'Day Tour',
 
     itinerary: [
@@ -89,6 +92,7 @@ export class UdawalawaDayTourComponent implements OnInit, OnDestroy {
 
   get tourForDetails(): TourDetails {
     return {
+      filecode: this.tour.filecode,
       title: this.tour.title,
       description: this.tour.description,
       duration: this.tour.duration,

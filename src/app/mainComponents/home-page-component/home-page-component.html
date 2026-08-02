@@ -1,4 +1,4 @@
-<!-- Hero carousel — sized so next section peeks below -->
+<!-- Hero carousel sized so next section peeks below -->
 <section class="home-hero" aria-label="Pabudu Tours Sri Lanka">
   <div id="header-carousel" class="carousel slide home-hero__carousel" data-ride="carousel" data-interval="5500">
     <div class="carousel-inner">
@@ -62,17 +62,17 @@
 
   <div class="home-hero__veil" aria-hidden="true"></div>
   <div class="home-hero__content">
-    <p class="home-hero__brand">Pabudu Tours</p>
-    <h1 class="home-hero__title">Private Sri Lanka journeys, crafted locally</h1>
-    <p class="home-hero__lead">Tailor-made tours with trusted chauffeur guides across Sigiriya, Ella, Yala, Kandy and the coast.</p>
+    <p class="home-hero__brand">{{ 'home.heroBrand' | translate }}</p>
+    <h1 class="home-hero__title">{{ 'home.heroTitle' | translate }}</h1>
+    <p class="home-hero__lead">{{ 'home.heroLead' | translate }}</p>
     <div class="home-hero__actions">
-      <button type="button" class="btn-primary-solid" (click)="scrollToSection('packages')">Explore Tours</button>
-      <a routerLink="/contact-us" class="btn-ghost">Plan My Trip</a>
+      <button type="button" class="btn-primary-solid" (click)="scrollToSection('packages')">{{ 'home.ctaExploreTours' | translate }}</button>
+      <a routerLink="/contact-us" class="btn-ghost">{{ 'home.ctaPlanMyTrip' | translate }}</a>
     </div>
   </div>
 
   <div class="home-hero__scroll-hint" aria-hidden="true">
-    <span>Scroll</span>
+    <span>{{ 'home.scroll' | translate }}</span>
   </div>
 </section>
 
@@ -80,9 +80,9 @@
 <section class="home-section destinations" aria-labelledby="destinations-heading">
   <div class="home-wrap">
     <header class="section-head">
-      <p class="section-kicker">Destinations</p>
-      <h2 id="destinations-heading">Sri Lanka highlights on every itinerary</h2>
-      <p class="section-lead">Heritage cities, highland tea country, wildlife parks and southern shores — included across our private tours.</p>
+      <p class="section-kicker">{{ 'home.destKicker' | translate }}</p>
+      <h2 id="destinations-heading">{{ 'home.destTitle' | translate }}</h2>
+      <p class="section-lead">{{ 'home.destLead' | translate }}</p>
     </header>
 
     <div class="dest-grid">
@@ -93,8 +93,8 @@
           <img src="assets/img/destination-1.jpg" alt="Sigiriya Lion Rock Sri Lanka" width="400" height="280" loading="lazy" decoding="async">
         </picture>
         <span class="dest-tile__label">
-          <strong>Sigiriya</strong>
-          <em>Lion Rock &amp; gardens</em>
+          <strong>{{ 'home.destSigiriya' | translate }}</strong>
+          <em>{{ 'home.destSigiriyaSub' | translate }}</em>
         </span>
       </button>
       <button type="button" class="dest-tile" (click)="scrollToSection('packages')">
@@ -104,8 +104,8 @@
           <img src="assets/img/destination-2.jpg" alt="Ella Nine Arches Bridge Sri Lanka" width="400" height="280" loading="lazy" decoding="async">
         </picture>
         <span class="dest-tile__label">
-          <strong>Ella</strong>
-          <em>Nine Arches &amp; peaks</em>
+          <strong>{{ 'home.destElla' | translate }}</strong>
+          <em>{{ 'home.destEllaSub' | translate }}</em>
         </span>
       </button>
       <button type="button" class="dest-tile" (click)="scrollToSection('packages')">
@@ -115,8 +115,8 @@
           <img src="assets/img/destination-3.jpg" alt="Yala National Park Safari Sri Lanka" width="400" height="280" loading="lazy" decoding="async">
         </picture>
         <span class="dest-tile__label">
-          <strong>Yala</strong>
-          <em>Wildlife safari</em>
+          <strong>{{ 'home.destYala' | translate }}</strong>
+          <em>{{ 'home.destYalaSub' | translate }}</em>
         </span>
       </button>
       <button type="button" class="dest-tile" (click)="scrollToSection('packages')">
@@ -126,8 +126,8 @@
           <img src="assets/img/destination-4.jpg" alt="Kandy Temple of the Tooth Sri Lanka" width="400" height="280" loading="lazy" decoding="async">
         </picture>
         <span class="dest-tile__label">
-          <strong>Kandy</strong>
-          <em>Temple of the Tooth</em>
+          <strong>{{ 'home.destKandy' | translate }}</strong>
+          <em>{{ 'home.destKandySub' | translate }}</em>
         </span>
       </button>
       <button type="button" class="dest-tile" (click)="scrollToSection('packages')">
@@ -137,8 +137,8 @@
           <img src="assets/img/destination-5.jpg" alt="Dambulla Cave Temple Sri Lanka" width="400" height="280" loading="lazy" decoding="async">
         </picture>
         <span class="dest-tile__label">
-          <strong>Dambulla</strong>
-          <em>Golden Cave Temple</em>
+          <strong>{{ 'home.destDambulla' | translate }}</strong>
+          <em>{{ 'home.destDambullaSub' | translate }}</em>
         </span>
       </button>
       <button type="button" class="dest-tile" (click)="scrollToSection('packages')">
@@ -148,8 +148,8 @@
           <img src="assets/img/destination-6.jpg" alt="Galle Fort Sri Lanka" width="400" height="280" loading="lazy" decoding="async">
         </picture>
         <span class="dest-tile__label">
-          <strong>Galle</strong>
-          <em>Fort &amp; beaches</em>
+          <strong>{{ 'home.destGalle' | translate }}</strong>
+          <em>{{ 'home.destGalleSub' | translate }}</em>
         </span>
       </button>
     </div>
@@ -160,13 +160,13 @@
 <section id="packages" class="home-section packages" aria-labelledby="packages-heading">
   <div class="home-wrap">
     <header class="section-head">
-      <p class="section-kicker">Tour packages</p>
-      <h2 id="packages-heading">Day trips &amp; multi-day private tours</h2>
-      <p class="section-lead">Choose a ready itinerary or ask us to tailor every stop around your pace and interests.</p>
+      <p class="section-kicker">{{ 'home.packagesKicker' | translate }}</p>
+      <h2 id="packages-heading">{{ 'home.packagesTitle' | translate }}</h2>
+      <p class="section-lead">{{ 'home.packagesLead' | translate }}</p>
     </header>
 
     <div class="package-block">
-      <h3 class="package-block__title">Day Tours</h3>
+      <h3 class="package-block__title">{{ 'home.dayTours' | translate }}</h3>
       <div class="row">
         <div *ngFor="let tour of dayTours; let i = index" class="col-lg-4 col-md-6 mb-4">
           <app-package-item-component
@@ -176,6 +176,7 @@
             [rating]="tour.rating"
             [price]="tour.price"
             [title]="tour.title"
+            [filecode]="tour.filecode"
             [routerLink]="tour.routerLink">
           </app-package-item-component>
         </div>
@@ -183,7 +184,7 @@
     </div>
 
     <div class="package-block">
-      <h3 class="package-block__title">Multi-Day Tours</h3>
+      <h3 class="package-block__title">{{ 'home.multiDayTours' | translate }}</h3>
       <div class="row">
         <div *ngFor="let tour of multiDayTours; let i = index" class="col-lg-4 col-md-6 mb-4">
           <app-package-item-component
@@ -193,6 +194,7 @@
             [rating]="tour.rating"
             [price]="tour.price"
             [title]="tour.title"
+            [filecode]="tour.filecode"
             [routerLink]="tour.routerLink">
           </app-package-item-component>
         </div>
@@ -217,44 +219,42 @@
       </picture>
     </div>
     <div class="about__copy">
-      <p class="section-kicker">About us</p>
-      <h2 id="about-heading">Explore Sri Lanka like a local</h2>
+      <p class="section-kicker">{{ 'home.aboutKicker' | translate }}</p>
+      <h2 id="about-heading">{{ 'home.aboutTitle' | translate }}</h2>
       <p>
-        <strong>Pabudu Tours</strong> is a trusted local travel partner offering private and tailor-made tours
-        designed around your interests. Travel in comfort with well-maintained vehicles and experienced chauffeur
-        guides who keep every journey smooth, safe and memorable.
+        {{ 'home.aboutBody' | translate }}
       </p>
       <ul class="about__points">
         <li>
           <span class="about__icon" aria-hidden="true"><i class="fa fa-car"></i></span>
           <div>
-            <strong>Private transport</strong>
-            <span>Comfortable AC vehicles</span>
+            <strong>{{ 'home.pointPrivateTransport' | translate }}</strong>
+            <span>{{ 'home.pointPrivateTransportSub' | translate }}</span>
           </div>
         </li>
         <li>
           <span class="about__icon" aria-hidden="true"><i class="fa fa-user"></i></span>
           <div>
-            <strong>Local guides</strong>
-            <span>Friendly &amp; experienced</span>
+            <strong>{{ 'home.pointLocalGuides' | translate }}</strong>
+            <span>{{ 'home.pointLocalGuidesSub' | translate }}</span>
           </div>
         </li>
         <li>
           <span class="about__icon" aria-hidden="true"><i class="fa fa-map"></i></span>
           <div>
-            <strong>Custom tours</strong>
-            <span>Fully personalized trips</span>
+            <strong>{{ 'home.pointCustomTours' | translate }}</strong>
+            <span>{{ 'home.pointCustomToursSub' | translate }}</span>
           </div>
         </li>
         <li>
           <span class="about__icon" aria-hidden="true"><i class="fa fa-star"></i></span>
           <div>
-            <strong>Top rated</strong>
-            <span>5★ traveler reviews</span>
+            <strong>{{ 'home.pointTopRated' | translate }}</strong>
+            <span>{{ 'home.pointTopRatedSub' | translate }}</span>
           </div>
         </li>
       </ul>
-      <a routerLink="/contact-us" class="btn-primary-solid">Plan Your Tour</a>
+      <a routerLink="/contact-us" class="btn-primary-solid">{{ 'home.ctaPlanYourTour' | translate }}</a>
     </div>
   </div>
 </section>
@@ -263,26 +263,26 @@
 <section class="home-section why" aria-labelledby="why-heading">
   <div class="home-wrap">
     <header class="section-head">
-      <p class="section-kicker">Why Pabudu Tours</p>
-      <h2 id="why-heading">Trusted for private Sri Lanka travel</h2>
+      <p class="section-kicker">{{ 'home.whyKicker' | translate }}</p>
+      <h2 id="why-heading">{{ 'home.whyTitle' | translate }}</h2>
     </header>
     <div class="why-grid">
       <article class="why-item">
-        <h3 class="h5">Affordable private packages</h3>
+        <h3 class="h5">{{ 'home.whyAffordableTitle' | translate }}</h3>
         <p>
-          Fair pricing on chauffeur-driven tours without compromising comfort, safety or quality.
+          {{ 'home.whyAffordableBody' | translate }}
         </p>
       </article>
       <article class="why-item">
-        <h3 class="h5">Professional chauffeur guides</h3>
+        <h3 class="h5">{{ 'home.whyGuidesTitle' | translate }}</h3>
         <p>
-          Personalized service covering Sigiriya, Kandy, Ella, Yala, Galle and beyond.
+          {{ 'home.whyGuidesBody' | translate }}
         </p>
       </article>
       <article class="why-item">
-        <h3 class="h5">Local expertise</h3>
+        <h3 class="h5">{{ 'home.whyLocalTitle' | translate }}</h3>
         <p>
-          Cultural tours, wildlife safaris, beach holidays and luxury round tours crafted by island experts.
+          {{ 'home.whyLocalBody' | translate }}
         </p>
       </article>
     </div>
@@ -293,27 +293,27 @@
 <section class="home-section services" aria-labelledby="services-heading">
   <div class="home-wrap">
     <header class="section-head">
-      <p class="section-kicker">Services</p>
-      <h2 id="services-heading">Travel support beyond the road</h2>
+      <p class="section-kicker">{{ 'home.servicesKicker' | translate }}</p>
+      <h2 id="services-heading">{{ 'home.servicesTitle' | translate }}</h2>
       <p class="section-lead">
-        Private tours, hotel reservations, train tickets and customized holiday packages across Sri Lanka’s top destinations.
+        {{ 'home.servicesLead' | translate }}
       </p>
     </header>
     <div class="services-grid">
       <article class="service-panel">
         <i class="fa fa-route" aria-hidden="true"></i>
-        <h3 class="h5">Multilingual chauffeur guides</h3>
-        <p>English, German, Russian, Polish and French — safe, comfortable private touring island-wide.</p>
+        <h3 class="h5">{{ 'home.serviceGuidesTitle' | translate }}</h3>
+        <p>{{ 'home.serviceGuidesBody' | translate }}</p>
       </article>
       <article class="service-panel">
         <i class="fa fa-ticket-alt" aria-hidden="true"></i>
-        <h3 class="h5">Tickets &amp; entrances</h3>
-        <p>Ella train seats, safari slots and attraction tickets arranged for a hassle-free trip.</p>
+        <h3 class="h5">{{ 'home.serviceTicketsTitle' | translate }}</h3>
+        <p>{{ 'home.serviceTicketsBody' | translate }}</p>
       </article>
       <article class="service-panel">
         <i class="fa fa-hotel" aria-hidden="true"></i>
-        <h3 class="h5">Hotels &amp; stays</h3>
-        <p>Handpicked stays from boutique hotels to value guesthouses in the right locations.</p>
+        <h3 class="h5">{{ 'home.serviceHotelsTitle' | translate }}</h3>
+        <p>{{ 'home.serviceHotelsBody' | translate }}</p>
       </article>
     </div>
   </div>
@@ -342,36 +342,33 @@
       </figure>
 
       <div class="founder-panel__body">
-        <p class="section-kicker">Your host in Sri Lanka</p>
-        <h2 id="founder-heading">Pubudu Kavirathna</h2>
-        <p class="founder-panel__role">Founder &amp; Tour Specialist</p>
+        <p class="section-kicker">{{ 'home.founderKicker' | translate }}</p>
+        <h2 id="founder-heading">{{ 'home.founderName' | translate }}</h2>
+        <p class="founder-panel__role">{{ 'home.founderRole' | translate }}</p>
         <p class="founder-panel__bio">
-          With years of experience in Sri Lanka tourism, Pubudu designs private journeys that feel personal —
-          from iconic landmarks to quieter local places — with safety and comfort as the standard.
+          {{ 'home.founderBio' | translate }}
         </p>
 
         <dl class="founder-panel__facts">
           <div>
-            <dt>Based in</dt>
-            <dd>Kalutara, Sri Lanka</dd>
+            <dt>{{ 'home.founderBasedIn' | translate }}</dt>
+            <dd>{{ 'home.founderBasedInValue' | translate }}</dd>
           </div>
           <div>
-            <dt>Languages</dt>
+            <dt>{{ 'home.founderLanguages' | translate }}</dt>
             <dd>
-              <span>English</span>
-              <span>Russian</span>
-              <span>Hindi</span>
-              <span>German</span>
-              <span>Polish</span>
-              <span>French</span>
+              <span>{{ 'home.langEnglish' | translate }}</span>
+              <span>{{ 'home.langRussian' | translate }}</span>
+              <span>{{ 'home.langHindi' | translate }}</span>
+              <span>{{ 'home.langGerman' | translate }}</span>
             </dd>
           </div>
         </dl>
 
         <div class="founder-panel__actions">
-          <a routerLink="/contact-us" class="contact-btn">Plan a tour</a>
+          <a routerLink="/contact-us" class="contact-btn">{{ 'home.ctaPlanATour' | translate }}</a>
           <a href="https://wa.me/94714293585" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
-            <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
+            <i class="fab fa-whatsapp" aria-hidden="true"></i> {{ 'home.whatsapp' | translate }}
           </a>
         </div>
       </div>
@@ -383,8 +380,8 @@
 <section class="home-section testimonials" aria-labelledby="reviews-heading">
   <div class="home-wrap">
     <header class="section-head section-head--compact">
-      <p class="section-kicker">Guest reviews</p>
-      <h2 id="reviews-heading">Trusted by travelers</h2>
+      <p class="section-kicker">{{ 'home.reviewsKicker' | translate }}</p>
+      <h2 id="reviews-heading">{{ 'home.reviewsTitle' | translate }}</h2>
       <div class="review-links">
         <a
           class="review-links__btn review-links__btn--tripadvisor"
@@ -392,7 +389,7 @@
           target="_blank"
           rel="noopener noreferrer">
           <i class="fab fa-tripadvisor" aria-hidden="true"></i>
-          TripAdvisor reviews
+          {{ 'home.tripadvisorReviews' | translate }}
         </a>
         <a
           class="review-links__btn review-links__btn--google"
@@ -400,7 +397,7 @@
           target="_blank"
           rel="noopener noreferrer">
           <i class="fab fa-google" aria-hidden="true"></i>
-          Google reviews
+          {{ 'home.googleReviews' | translate }}
         </a>
       </div>
     </header>

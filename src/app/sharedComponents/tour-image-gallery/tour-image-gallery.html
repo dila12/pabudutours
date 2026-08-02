@@ -1,0 +1,92 @@
+<div class="tour-gallery" *ngIf="images?.length">
+  <div class="tour-gallery__main">
+    <img [src]="currentImage" class="tour-gallery__image" [alt]="alt" />
+
+    <button
+      *ngIf="images.length > 1"
+      type="button"
+      class="tour-gallery__nav tour-gallery__nav--prev"
+      (click)="prevImage()"
+      aria-label="Previous image">
+      <i class="fa fa-chevron-left" aria-hidden="true"></i>
+    </button>
+    <button
+      *ngIf="images.length > 1"
+      type="button"
+      class="tour-gallery__nav tour-gallery__nav--next"
+      (click)="nextImage()"
+      aria-label="Next image">
+      <i class="fa fa-chevron-right" aria-hidden="true"></i>
+    </button>
+
+    <button
+      *ngIf="images.length > 3"
+      type="button"
+      class="tour-gallery__all-btn"
+      (click)="openGrid()">
+      <i class="fa fa-th" aria-hidden="true"></i>
+      {{ images.length }} photos
+    </button>
+  </div>
+
+  <div class="tour-gallery__indicators" *ngIf="showDots">
+    <button
+      type="button"
+      *ngFor="let img of images; let i = index"
+      class="tour-gallery__dot"
+      [class.is-active]="i === currentIndex"
+      (click)="goToImage(i)"
+      [attr.aria-label]="'Go to image ' + (i + 1)"></button>
+  </div>
+
+  <div class="tour-gallery__counter" *ngIf="showCounter">
+    {{ currentIndex + 1 }} / {{ images.length }}
+  </div>
+
+  <div class="tour-gallery__thumbs" *ngIf="images.length > 1">
+    <button
+      type="button"
+      class="tour-gallery__thumb"
+      *ngFor="let img of previewThumbs; let i = index"
+      [class.is-active]="i === currentIndex && !(i === 2 && showOverflowBadge)"
+      [class.has-more]="i === 2 && showOverflowBadge"
+      (click)="onThumbClick(i, i === 2)">
+      <img [src]="img" [alt]="''" />
+      <span class="tour-gallery__more" *ngIf="i === 2 && showOverflowBadge">
+        +{{ overflowCount }}
+      </span>
+    </button>
+  </div>
+</div>
+
+<div
+  class="tour-gallery-modal"
+  *ngIf="gridOpen"
+  role="dialog"
+  aria-modal="true"
+  aria-label="All tour photos"
+  (click)="closeGrid()">
+  <div class="tour-gallery-modal__panel" (click)="$event.stopPropagation()">
+    <div class="tour-gallery-modal__header">
+      <h2 class="tour-gallery-modal__title">{{ images.length }} photos</h2>
+      <button
+        type="button"
+        class="tour-gallery-modal__close"
+        (click)="closeGrid()"
+        aria-label="Close gallery">
+        <i class="fa fa-times" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="tour-gallery-modal__grid">
+      <button
+        type="button"
+        class="tour-gallery-modal__item"
+        *ngFor="let img of images; let i = index"
+        [class.is-active]="i === currentIndex"
+        (click)="selectFromGrid(i)">
+        <img [src]="img" [alt]="alt + ' ' + (i + 1)" loading="lazy" />
+      </button>
+    </div>
+  </div>
+</div>

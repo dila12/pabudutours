@@ -10,6 +10,8 @@ import {
   Type,
 } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
+import { TourI18nPipe } from '../../shared/pipes/tour-i18n.pipe';
 
 export interface Activity {
   type: string;
@@ -38,6 +40,7 @@ export interface TourDetails {
   duration: string;
   persons: string;
   price: number;
+  filecode?: string;
   tourType?: string;
   overview?: string;
   itinerary?: ItineraryDay[];
@@ -48,7 +51,7 @@ export interface TourDetails {
 @Component({
   selector: 'app-tour-details-component',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslatePipe, TourI18nPipe],
   templateUrl: './tour-details-component.html',
   styleUrl: './tour-details-component.css',
 })

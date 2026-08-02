@@ -7,11 +7,14 @@ import { CountryService } from '../../../../Services/country.service';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { PackageItemComponent } from '../../../../sharedComponents/package-item-component/package-item-component';
 import { TourBookingSidebarComponent } from '../../../../sharedComponents/tour-booking-sidebar/tour-booking-sidebar';
+import { TourImageGalleryComponent } from '../../../../sharedComponents/tour-image-gallery/tour-image-gallery';
+
 
 @Component({
   selector: 'app-sigiriya-day-tour-component',
   standalone: true,
-  imports: [CommonModule, RouterModule, TourDetailsComponent, PackageItemComponent, TourBookingSidebarComponent],
+  imports: [
+    TourImageGalleryComponent,CommonModule, RouterModule, TourDetailsComponent, PackageItemComponent, TourBookingSidebarComponent],
   templateUrl: './sigiriya-day-tour-component.html',
   styleUrl: './sigiriya-day-tour-component.css'
 })
@@ -38,7 +41,7 @@ export class SigiriyaDayTourComponent implements OnInit, OnDestroy {
     duration: '1 Day',
     persons: '20 Persons',
     filecode: 'sigiriya-day-tour',
-    overview: `1 Day Sigiriya Excursion with Pabudu Tours — private air-conditioned vehicle, pickup and drop-off, multilingual local driver/guide, and a special site guide for Sigiriya.`,
+    overview: `1 Day Sigiriya Excursion with Pabudu Tours private air-conditioned vehicle, pickup and drop-off, multilingual local driver/guide, and a special site guide for Sigiriya.`,
     tourType: 'Day Tour',
 
     itinerary: [
@@ -110,6 +113,7 @@ export class SigiriyaDayTourComponent implements OnInit, OnDestroy {
 
   get tourForDetails(): TourDetails {
     return {
+      filecode: this.tour.filecode,
       title: this.tour.title,
       description: this.tour.description,
       duration: this.tour.duration,

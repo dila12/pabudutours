@@ -1,12 +1,13 @@
 <!-- Mobile sticky booking bar -->
 <div class="mobile-book-bar" *ngIf="isMobile && !sheetOpen">
   <div class="mobile-book-bar__price">
-    <span>From</span>
+    <span>{{ 'booking.from' | translate }}</span>
     <strong>${{ displayAmount }}</strong>
-    <small>{{ quoteTravelers > 1 ? 'for ' + quoteTravelers + ' travelers' : 'private tour' }}</small>
+    <small *ngIf="quoteTravelers > 1">{{ 'booking.forTravelers' | translate:{ n: quoteTravelers } }}</small>
+    <small *ngIf="quoteTravelers <= 1">{{ 'booking.privateTour' | translate }}</small>
   </div>
   <button type="button" class="mobile-book-bar__cta" (click)="openSheet()">
-    Check availability
+    {{ 'booking.checkAvailability' | translate }}
   </button>
 </div>
 
@@ -33,23 +34,23 @@
     <span class="book-card__handle" aria-hidden="true"></span>
     <div class="book-card__sheet-head-row">
       <div class="book-card__price book-card__price--sheet">
-        <p class="book-card__eyebrow">Reserve your seat</p>
+        <p class="book-card__eyebrow">{{ 'booking.reserveYourSeat' | translate }}</p>
         <p class="book-card__amount">
           <strong>${{ displayAmount }}</strong>
-          <span>for {{ quoteTravelers }} traveler{{ quoteTravelers > 1 ? 's' : '' }}</span>
+          <span>{{ (quoteTravelers > 1 ? 'booking.forTravelers' : 'booking.forTraveler') | translate:{ n: quoteTravelers } }}</span>
         </p>
       </div>
-      <button type="button" class="book-card__close" (click)="closeSheet()" aria-label="Close booking form">
+      <button type="button" class="book-card__close" (click)="closeSheet()" [attr.aria-label]="'booking.closeForm' | translate">
         <i class="fa fa-times" aria-hidden="true"></i>
       </button>
     </div>
   </div>
 
   <div class="book-card__price" *ngIf="!isMobile">
-    <p class="book-card__eyebrow">Reserve your seat</p>
+    <p class="book-card__eyebrow">{{ 'booking.reserveYourSeat' | translate }}</p>
     <p class="book-card__amount">
       <strong>${{ displayAmount }}</strong>
-      <span>for {{ quoteTravelers }} traveler{{ quoteTravelers > 1 ? 's' : '' }}</span>
+      <span>{{ (quoteTravelers > 1 ? 'booking.forTravelers' : 'booking.forTraveler') | translate:{ n: quoteTravelers } }}</span>
     </p>
   </div>
 
@@ -67,15 +68,15 @@
   <ul class="book-card__perks">
     <li>
       <span class="book-card__perk-icon" aria-hidden="true"><i class="fa fa-check"></i></span>
-      Reserve now, pay later at destination
+      {{ 'booking.perkPayLater' | translate }}
     </li>
     <li>
       <span class="book-card__perk-icon" aria-hidden="true"><i class="fa fa-check"></i></span>
-      Private tour with local chauffeur guide
+      {{ 'booking.perkPrivateGuide' | translate }}
     </li>
     <li>
       <span class="book-card__perk-icon" aria-hidden="true"><i class="fa fa-check"></i></span>
-      Free cancellation support via WhatsApp
+      {{ 'booking.perkCancelWhatsapp' | translate }}
     </li>
   </ul>
 
@@ -83,6 +84,6 @@
     <span class="book-card__note-icon" aria-hidden="true">
       <i class="fa fa-thumbs-up"></i>
     </span>
-    <p>Book ahead for the best availability on popular Sri Lanka dates.</p>
+    <p>{{ 'booking.noteAvailability' | translate }}</p>
   </div>
 </div>

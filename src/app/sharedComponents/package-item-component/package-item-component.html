@@ -1,7 +1,7 @@
 <a
   class="package-item"
   [routerLink]="routerLink"
-  [attr.aria-label]="'View and book ' + title">
+  [attr.aria-label]="filecode ? (('tours.' + filecode) | translate) : title">
   <div class="package-image-container">
     <img [src]="image" alt="" class="package-image" width="400" height="260" loading="lazy" decoding="async" />
     <div class="package-image-shade" aria-hidden="true"></div>
@@ -12,8 +12,8 @@
   </div>
 
   <div class="package-content">
-    <h3 *ngIf="titleLevel === 3" class="package-title">{{ title }}</h3>
-    <h4 *ngIf="titleLevel === 4" class="package-title">{{ title }}</h4>
+    <h3 *ngIf="titleLevel === 3" class="package-title">{{ filecode ? (('tours.' + filecode) | translate) : title }}</h3>
+    <h4 *ngIf="titleLevel === 4" class="package-title">{{ filecode ? (('tours.' + filecode) | translate) : title }}</h4>
 
     <div class="info-badges">
       <span class="badge-item">
@@ -32,15 +32,15 @@
 
     <div class="price-section">
       <div class="price-display">
-        <span class="price-label">From</span>
+        <span class="price-label">{{ 'packages.from' | translate }}</span>
         <div class="price-row">
           <span class="price-currency">$</span>
           <span class="price-amount">{{ (price / 2) | number: '1.0-0' }}</span>
-          <span class="price-per">/person</span>
+          <span class="price-per">{{ 'packages.perPerson' | translate }}</span>
         </div>
       </div>
       <span class="book-btn">
-        Book Now <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        {{ 'packages.bookNow' | translate }} <i class="fa fa-arrow-right" aria-hidden="true"></i>
       </span>
     </div>
   </div>

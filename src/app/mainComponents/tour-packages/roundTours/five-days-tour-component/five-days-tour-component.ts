@@ -16,11 +16,14 @@ import { PackageItemComponent } from '../../../../sharedComponents/package-item-
 import { TourBookingSidebarComponent } from '../../../../sharedComponents/tour-booking-sidebar/tour-booking-sidebar';
 import { HttpClient } from '@angular/common/http';
 import { CountryService } from '../../../../Services/country.service';
+import { TourImageGalleryComponent } from '../../../../sharedComponents/tour-image-gallery/tour-image-gallery';
+
 
 @Component({
   selector: 'app-five-days-tour-component',
   standalone: true,
   imports: [
+    TourImageGalleryComponent,
     CommonModule,
     RouterModule,
     TourDetailsComponent,
@@ -49,11 +52,11 @@ export class FiveDaysTourComponent implements OnInit, OnDestroy {
   tour = {
     title: '5 Day Sri Lanka Tour – Sigiriya, Kandy, Ella, Safari & South Coast',
     description:
-      'Sigiriya, Kandy, Nuwara Eliya, Ella, safari and the down south — a private 5-day excursion.',
+      'Sigiriya, Kandy, Nuwara Eliya, Ella, safari and the down south a private 5-day excursion.',
     duration: '5 Days / 4 Nights',
     persons: '1-20 Persons',
     filecode: '5-day-sri-lanka-tour',
-    overview: `5 Days (4 Nights) Excursion in Sri Lanka — Sigiriya / Kandy / Nuwara Eliya / Ella / Safari and Down South.
+    overview: `5 Days (4 Nights) Excursion in Sri Lanka Sigiriya / Kandy / Nuwara Eliya / Ella / Safari and Down South.
 
 Private chauffeur-guided travel from Colombo Airport through the Cultural Triangle, hill country, wildlife safari and southwest coast, ending with airport or hotel drop-off.
 
@@ -372,7 +375,7 @@ Private chauffeur-guided travel from Colombo Airport through the Cultural Triang
       'Professional and friendly local driver/guide for the whole excursion (English / Russian / German / French / Hindi)',
       'Site professional special guide (licensed by Sri Lanka Tourism Authority) for Kandy Temple, National Botanical Garden, Sigiriya',
       'Free tuk tuk for Nine Arch Bridge and Ambuluwawa',
-      'Your hotel accommodation — 4-star hotel (including breakfast and dinner)',
+      'Your hotel accommodation 4-star hotel (including breakfast and dinner)',
       'Unlimited mineral water bottles',
       "Your driver/guide accommodation and meal",
       '24/7 customer and friendly service',
@@ -404,6 +407,7 @@ Private chauffeur-guided travel from Colombo Airport through the Cultural Triang
 
   get tourForDetails(): TourDetails {
     return {
+      filecode: this.tour.filecode,
       title: this.tour.title,
       description: this.tour.description,
       duration: this.tour.duration,

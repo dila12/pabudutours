@@ -20,7 +20,7 @@
   overflow: visible;
 }
 
-/* Sidebar booking form — stacked by default (mobile / narrow card) */
+/* Sidebar booking form stacked by default (mobile / narrow card) */
 .sidebar-select-row {
   display: grid;
   grid-template-columns: 1fr;

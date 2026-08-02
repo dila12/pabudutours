@@ -1,0 +1,445 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "tourPackages": "Tourpakete",
+    "services": "Leistungen",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "brandName": "Pabudu Tours",
+    "brandTag": "Für immer unvergesslich",
+    "logoAlt": "Pabudu Tours Logo",
+    "selectLanguage": "Sprache wählen",
+    "socialLinks": "Soziale Links",
+    "instagram": "Instagram",
+    "tripadvisor": "TripAdvisor",
+    "toggleNavigation": "Navigation umschalten",
+    "chatWhatsapp": "Per WhatsApp chatten"
+  },
+  "footer": {
+    "brandName": "Pabudu Tours",
+    "tagline": "Ihr zuverlässiger Reisepartner in Sri Lanka private Touren, Rundreisen und maßgeschneiderte Urlaube mit lokalem Service.",
+    "explore": "Entdecken",
+    "about": "Über uns",
+    "services": "Leistungen",
+    "tourPackages": "Tourpakete",
+    "destinations": "Reiseziele",
+    "testimonials": "Bewertungen",
+    "popularTours": "Beliebte Touren",
+    "tourElla": "Ella Tagestour Sri Lanka",
+    "tourSigiriya": "Sigiriya Tagestour Sri Lanka",
+    "tourKandy": "Kandy Tagestour Sri Lanka",
+    "tourUdawalawa": "Udawalawa Safari Tagestour",
+    "tourMirissa": "Mirissa Walbeobachtung Tagestour",
+    "tourBentota": "Bentota Tuk-Tuk-Tour Sri Lanka",
+    "tourGalle": "Galle Tagestour Sri Lanka",
+    "tour2DaySigiriyaKandy": "2-Tages-Tour Sigiriya & Kandy",
+    "tour5Day": "5-Tages-Tour Sri Lanka",
+    "tour7Day": "7-Tages Privat-Tour Sri Lanka",
+    "tour10Day": "10-Tages Grand Tour Sri Lanka",
+    "allTourPackages": "Alle Tourpakete",
+    "travelGuides": "Reiseführer",
+    "contact": "Kontakt",
+    "address": "No: 439/2 Managala Rd, Kuda Waskaduwa, Waskaduwa, Kalutara, Sri Lanka",
+    "requestQuote": "Angebot anfordern",
+    "copyright": "© {{currentYear}} Pabudu Tours. Alle Rechte vorbehalten.",
+    "designedBy": "Gestaltet von"
+  },
+  "home": {
+    "heroBrand": "Pabudu Tours",
+    "heroTitle": "Private Sri-Lanka-Reisen, lokal gestaltet",
+    "heroLead": "Maßgeschneiderte Touren mit vertrauenswürdigen Chauffeur-Guides durch Sigiriya, Ella, Yala, Kandy und die Küste.",
+    "ctaExploreTours": "Touren entdecken",
+    "ctaPlanMyTrip": "Reise planen",
+    "scroll": "Scrollen",
+    "destKicker": "Reiseziele",
+    "destTitle": "Sri-Lanka-Highlights auf jeder Route",
+    "destLead": "Kulturstädte, Teelandschaften, Wildlife-Parks und Südküste in unseren privaten Touren enthalten.",
+    "destSigiriya": "Sigiriya",
+    "destSigiriyaSub": "Löwenfelsen & Gärten",
+    "destElla": "Ella",
+    "destEllaSub": "Nine Arches & Gipfel",
+    "destYala": "Yala",
+    "destYalaSub": "Wildlife-Safari",
+    "destKandy": "Kandy",
+    "destKandySub": "Zahntempel",
+    "destDambulla": "Dambulla",
+    "destDambullaSub": "Goldener Höhlentempel",
+    "destGalle": "Galle",
+    "destGalleSub": "Fort & Strände",
+    "packagesKicker": "Tourpakete",
+    "packagesTitle": "Tagesausflüge & mehrtägige Privattouren",
+    "packagesLead": "Wählen Sie eine fertige Route oder lassen Sie uns jede Station nach Ihrem Tempo anpassen.",
+    "dayTours": "Tagestouren",
+    "multiDayTours": "Mehrtägige Touren",
+    "aboutKicker": "Über uns",
+    "aboutTitle": "Sri Lanka wie ein Einheimischer erleben",
+    "aboutBody": "Pabudu Tours ist Ihr lokaler Partner für private und maßgeschneiderte Touren. Reisen Sie komfortabel mit gepflegten Fahrzeugen und erfahrenen Chauffeur-Guides sicher, reibungslos und unvergesslich.",
+    "pointPrivateTransport": "Privater Transport",
+    "pointPrivateTransportSub": "Komfortable Klimafahrzeuge",
+    "pointLocalGuides": "Lokale Guides",
+    "pointLocalGuidesSub": "Freundlich & erfahren",
+    "pointCustomTours": "Individuelle Touren",
+    "pointCustomToursSub": "Voll personalisierte Reisen",
+    "pointTopRated": "Top bewertet",
+    "pointTopRatedSub": "5★ Reisendenbewertungen",
+    "ctaPlanYourTour": "Tour planen",
+    "whyKicker": "Warum Pabudu Tours",
+    "whyTitle": "Vertrauenswürdig für private Reisen in Sri Lanka",
+    "whyAffordableTitle": "Erschwingliche Privatpakete",
+    "whyAffordableBody": "Faire Preise für Chauffeur-Touren ohne Kompromisse bei Komfort, Sicherheit oder Qualität.",
+    "whyGuidesTitle": "Professionelle Chauffeur-Guides",
+    "whyGuidesBody": "Persönlicher Service für Sigiriya, Kandy, Ella, Yala, Galle und mehr.",
+    "whyLocalTitle": "Lokale Expertise",
+    "whyLocalBody": "Kulturtouren, Wildlife-Safaris, Strandurlaube und Luxus-Rundreisen von Insellokalexperten.",
+    "servicesKicker": "Leistungen",
+    "servicesTitle": "Reiseunterstützung über die Straße hinaus",
+    "servicesLead": "Privattouren, Hotelbuchungen, Zugtickets und individuelle Urlaubspakete zu den Top-Zielen Sri Lankas.",
+    "serviceGuidesTitle": "Mehrsprachige Chauffeur-Guides",
+    "serviceGuidesBody": "Englisch, Deutsch, Russisch und Hindi sichere, komfortable Privattouren auf der ganzen Insel.",
+    "serviceTicketsTitle": "Tickets & Eintritte",
+    "serviceTicketsBody": "Ella-Zugplätze, Safari-Slots und Attraktionstickets für eine stressfreie Reise.",
+    "serviceHotelsTitle": "Hotels & Unterkünfte",
+    "serviceHotelsBody": "Handverlesene Hotels und Gästehäuser an den richtigen Orten.",
+    "founderKicker": "Ihr Gastgeber in Sri Lanka",
+    "founderName": "Pubudu Kavirathna",
+    "founderRole": "Gründer & Tourspezialist",
+    "founderBio": "Mit jahrelanger Erfahrung im Sri-Lanka-Tourismus plant Pubudu private Reisen, die persönlich wirken von Ikonen bis zu ruhigen lokalen Orten, mit Sicherheit und Komfort als Standard.",
+    "founderBasedIn": "Standort",
+    "founderBasedInValue": "Kalutara, Sri Lanka",
+    "founderLanguages": "Sprachen",
+    "langEnglish": "Englisch",
+    "langRussian": "Russisch",
+    "langHindi": "Hindi",
+    "langGerman": "Deutsch",
+    "ctaPlanATour": "Tour planen",
+    "whatsapp": "WhatsApp",
+    "reviewsKicker": "Gästebewertungen",
+    "reviewsTitle": "Von Reisenden empfohlen",
+    "tripadvisorReviews": "TripAdvisor-Bewertungen",
+    "googleReviews": "Google-Bewertungen"
+  },
+  "packages": {
+    "pageTitle": "Pakete",
+    "breadcrumbHome": "Startseite",
+    "breadcrumbPackages": "Pakete",
+    "eyebrow": "Pakete",
+    "heading": "Perfekte Tourpakete",
+    "tabsAria": "Tourpaket-Kategorien",
+    "tabMultiDay": "Mehrtägige Touren",
+    "tabDay": "Tagestouren",
+    "tabTukTuk": "Tuk-Tuk-Fahrt",
+    "from": "Ab",
+    "perPerson": "/Person",
+    "bookNow": "Jetzt buchen"
+  },
+  "about": {
+    "pageTitle": "Über uns",
+    "breadcrumbHome": "Startseite",
+    "breadcrumbAbout": "Über uns",
+    "eyebrow": "Über uns",
+    "title": "Vertrauenswürdige Sri-Lanka-Tourfirma",
+    "para1": "Pabudu Tours ist ein lokales Reiseunternehmen für private Sri-Lanka-Touren, maßgeschneiderte Urlaubspakete und Chauffeur-Rundreisen auf der ganzen Insel.",
+    "para2": "Entdecken Sie das Beste von Sri Lanka inklusive Sigiriya, Kandy, Ella, Nuwara Eliya, Galle und Yala. Wir bieten komfortable Fahrzeuge, freundliche Chauffeur-Guides und persönliche Erlebnisse für Familien, Paare und Flitterwochen.",
+    "para3": "Planen Sie Ihren perfekten Sri-Lanka-Urlaub mit einem zuverlässigen lokalen Veranstalter sicher, komfortabel und unvergesslich.",
+    "cta": "Sri-Lanka-Tour planen",
+    "pointAffordableTitle": "Erschwingliche Sri-Lanka-Tourpakete",
+    "pointAffordableBody": "Günstige Privattouren, maßgeschneiderte Pakete und Chauffeur-Reisen für jedes Budget ohne Kompromisse bei Komfort, Sicherheit oder Qualität.",
+    "pointGuidesTitle": "Professionelle Chauffeur-Guides",
+    "pointGuidesBody": "Erfahrene Guides und Experten sorgen für sichere, komfortable und persönliche Reisen zu Sigiriya, Kandy, Ella, Yala und Galle.",
+    "pointLocalTitle": "Lokale Reiseexperten",
+    "pointLocalBody": "Als lokaler Veranstalter begrüßen wir Reisende weltweit mit Kulturtouren, Safaris, Strandurlauben und privaten Luxus-Rundreisen."
+  },
+  "contact": {
+    "pageTitle": "Kontakt",
+    "breadcrumbHome": "Startseite",
+    "breadcrumbContact": "Kontakt",
+    "eyebrow": "Kontakt",
+    "title": "Kontakt für jede Anfrage",
+    "lead": "Erreichen Sie Pabudu Tours jederzeit wir antworten schnell per WhatsApp, Telefon und E-Mail.",
+    "infoHeading": "Kontaktinformationen",
+    "labelAddress": "Adresse",
+    "address": "No: 439/2 Managala Rd, Kuda Waskaduwa, Waskaduwa, Kalutara, Sri Lanka",
+    "labelWhatsappVoice": "WhatsApp / Anruf",
+    "labelEmail": "E-Mail",
+    "labelHours": "Öffnungszeiten",
+    "hoursValue": "24 Stunden geöffnet · 7 Tage",
+    "noteTitle": "Nehmen Sie Kontakt auf",
+    "noteBody": "Alles, was Sie brauchen, ist greifbar. Nutzen Sie das Formular, schreiben Sie an Pabudutour@gmail.com oder rufen Sie +94 77 900 88 03 an. Wir helfen gerne.",
+    "formHeading": "Nachricht senden",
+    "formSub": "Nennen Sie uns Daten, Gruppengröße und was Sie entdecken möchten.",
+    "labelName": "Ihr Name *",
+    "labelEmailField": "Ihre E-Mail *",
+    "labelPhone": "Telefon *",
+    "labelPhoneNumber": "Telefonnummer",
+    "phonePlaceholder": "712345678",
+    "labelMessage": "Nachricht *",
+    "submit": "Nachricht senden",
+    "errorNameRequired": "Name ist erforderlich",
+    "errorEmailInvalid": "Bitte gültige E-Mail eingeben",
+    "errorPhoneRequired": "Gültige Telefonnummer ist erforderlich",
+    "errorMessageRequired": "Nachricht ist erforderlich"
+  },
+  "services": {
+    "pageTitle": "Leistungen",
+    "breadcrumbHome": "Startseite",
+    "breadcrumbServices": "Leistungen",
+    "eyebrow": "Unsere Leistungen",
+    "title": "Reisen & Gastfreundschaft von Pabudu Tours",
+    "lead": "Komfortable Privatreisen, geführte Touren und echte sri-lankische Gastfreundschaft nach Ihrem Tempo und Budget.",
+    "privateToursTitle": "Private Sri-Lanka-Touren",
+    "privateToursBody": "Entdecken Sie Sri Lanka mit individuellen Privattouren zu Kulturstätten, Stränden, Safaris und dem Bergland.",
+    "privateToursCta": "Pakete ansehen",
+    "chauffeurTitle": "Chauffeur-Guide-Service",
+    "chauffeurBody": "Reisen Sie sicher mit erfahrenen lokalen Chauffeur-Guides und modernen Klimafahrzeugen durch Sri Lanka.",
+    "chauffeurCta": "Guide buchen",
+    "tailorMadeTitle": "Maßgeschneiderte Tourpakete",
+    "tailorMadeBody": "Wählen Sie Tagestouren, mehrtägige Rundreisen und individuelle Routen für Ihr Budget und Ihre Interessen.",
+    "tailorMadeCta": "Touren entdecken",
+    "airportTitle": "Flughafentransfers",
+    "airportBody": "Zuverlässiger Transfer vom Bandaranaike International Airport zu jedem Ziel in Sri Lanka.",
+    "airportCta": "Transfer arrangieren",
+    "safariTitle": "Wildlife-Safari-Touren",
+    "safariBody": "Unvergessliche Safaris in Yala und Udawalawe Elefanten, Leoparden und exotische Wildtiere.",
+    "safariCta": "Safari-Tagestour ansehen",
+    "tuktukTitle": "Pabudu Tuk-Tuk-Touren",
+    "tuktukBody": "Entdecken Sie wie ein Einheimischer mit komfortablen Tuk-Tuk-Fahrten durch Bentota und Umgebung.",
+    "tuktukCta": "Tuk-Tuk buchen"
+  },
+  "tour": {
+    "duration": "Dauer",
+    "maxPeople": "Max. Personen",
+    "from2People": "Ab (2 Personen)",
+    "tourType": "Tourart",
+    "experienceEyebrow": "Das Erlebnis",
+    "overview": "Tourübersicht",
+    "itineraryEyebrow": "Reiseverlauf",
+    "tourPlan": "Tourplan",
+    "day": "Tag",
+    "goodToKnow": "Gut zu wissen",
+    "whatsCovered": "Was enthalten ist",
+    "included": "Inbegriffen",
+    "includedSub": "Bereits im Tourpreis",
+    "excluded": "Nicht inbegriffen",
+    "excludedSub": "Separat zu zahlen falls nötig",
+    "viewPhotoFor": "Foto ansehen: {{title}}"
+  },
+  "booking": {
+    "from": "Ab",
+    "privateTour": "Privattour",
+    "forTraveler": "für {{n}} Reisenden",
+    "forTravelers": "für {{n}} Reisende",
+    "checkAvailability": "Verfügbarkeit prüfen",
+    "reserveYourSeat": "Platz reservieren",
+    "closeForm": "Buchungsformular schließen",
+    "perkPayLater": "Jetzt reservieren, später vor Ort zahlen",
+    "perkPrivateGuide": "Privattour mit lokalem Chauffeur-Guide",
+    "perkCancelWhatsapp": "Kostenlose Stornierungshilfe per WhatsApp",
+    "noteAvailability": "Buchen Sie frühzeitig für die besten Termine in Sri Lanka.",
+    "date": "Datum",
+    "travelers": "Reisende",
+    "hintDayTour": "Same-Day-Buchung für diese Tagestour möglich.",
+    "hintMultiDay": "Bitte ab morgen für mehrtägige Touren buchen.",
+    "total": "Gesamt",
+    "firstName": "Vorname",
+    "lastName": "Nachname",
+    "email": "E-Mail",
+    "country": "Land",
+    "phone": "Telefon",
+    "agreeTerms": "Ich akzeptiere die AGB",
+    "completeBooking": "Buchung abschließen"
+  },
+  "common": {
+    "from": "Ab",
+    "perPerson": "/Person",
+    "bookNow": "Jetzt buchen",
+    "persons": "{{n}} Personen",
+    "day": "{{n}} Tag",
+    "days": "{{n}} Tage"
+  },
+  "tours": {
+    "ella-day-tour": "Ella Tagestour Sri Lanka – Nine Arch Bridge & Panoramazug",
+    "galle-day-tour": "Galle Tagestour Sri Lanka – Holländisches Fort & Südküste",
+    "kandy-day-tour": "Kandy Tagestour Sri Lanka – Zahntempel & Kulturstadt",
+    "sigiriya-day-tour": "Sigiriya Tagestour Sri Lanka – Löwenfelsen & Kulturdreieck",
+    "udawalawa-day-tour": "Udawalawa Safari Tagestour Sri Lanka – Elefanten & Wildlife",
+    "mirissa-day-tour": "Mirissa Walbeobachtung Tagestour Sri Lanka",
+    "bentota-tuk-tuk-tour": "Bentota Tuk-Tuk-Tour Sri Lanka – Strand, Tempel & Lokal",
+    "2-day-ella-kandy-private-tour-sri-lanka": "2 Tages Tour Ella & Kandy Sri Lanka – Zug, Berge & Safari",
+    "2-day-sigiriya-kandy-private-tour-sri-lanka": "2-Tages-Tour Sigiriya & Kandy Sri Lanka – Kultur & Elefantensafari",
+    "3-day-sigiriya-kandy-ella-yala-tour": "3 Tages Tour Sri Lanka – Sigiriya, Kandy, Ella & Yala-Safari",
+    "5-day-sri-lanka-tour": "5 Tages Tour Sri Lanka – Sigiriya, Kandy, Ella, Safari & Südküste",
+    "7-day-sri-lanka-tour": "7 Tages Privat Tour Sri Lanka – Kultur, Berge, Wildlife & Strände",
+    "10-day-sri-lanka-tour": "10-Tages Grand Tour Sri Lanka – Komplette Inselreise"
+  },
+  "tourContent": {
+    "ella-day-tour": {
+      "duration": "1 Tag",
+      "persons": "Privattour (1–20 Personen)",
+      "tourType": "Tagestour",
+      "overview": "Entdecken Sie Ellas Highlights an einem Tag: Nine Arch Bridge, Panoramazug, Little Adam’s Peak, Ravana Falls und mehr mit privatem Chauffeur-Guide."
+    },
+    "galle-day-tour": {
+      "duration": "1 Tag",
+      "persons": "Privattour (1–20 Personen)",
+      "tourType": "Tagestour",
+      "overview": "Erkunden Sie die Südküste mit dem holländischen Fort Galle, Stränden und Küstenhighlights auf einer privaten Tagestour."
+    },
+    "kandy-day-tour": {
+      "duration": "1 Tag",
+      "persons": "Privattour (1–20 Personen)",
+      "tourType": "Tagestour",
+      "overview": "Besuchen Sie den Zahntempel, den Botanischen Garten, das Teeland und kulturelle Highlights Kandys auf einer Privattour."
+    },
+    "sigiriya-day-tour": {
+      "duration": "1 Tag",
+      "persons": "Privattour (1–20 Personen)",
+      "tourType": "Tagestour",
+      "overview": "Besteigen Sie den Sigiriya-Löwenfelsen, besuchen Sie Dambulla und genießen Sie Dorf- oder Elefantenerlebnisse."
+    },
+    "udawalawa-day-tour": {
+      "duration": "1 Tag",
+      "persons": "Privattour (1–20 Personen)",
+      "tourType": "Tagestour",
+      "overview": "Private Jeep-Safari in Udawalawa und Besuch des Baby-Elefanten-Transitheims auf dieser Wildlife-Tagestour."
+    },
+    "mirissa-day-tour": {
+      "duration": "1 Tag",
+      "persons": "Privattour (1–20 Personen)",
+      "tourType": "Tagestour",
+      "overview": "Walbeobachtung ab Mirissa, Coconut Tree Hill und Strandzeit auf einer privaten Südküsten-Tagestour."
+    },
+    "bentota-tuk-tuk-tour": {
+      "duration": "2–3 Stunden",
+      "persons": "Max. 3 Personen",
+      "tourType": "Tuk-Tuk-Tour",
+      "overview": "Erkunden Sie Bentota per Tuk-Tuk: Strand, Schildkrötenfarm, Tempel und Fotostopps in 2–3 Stunden."
+    },
+    "2-day-ella-kandy-private-tour-sri-lanka": {
+      "duration": "2 Tage",
+      "persons": "Privattour (1–20 Personen)",
+      "tourType": "Rundreise",
+      "overview": "Private 2-Tages-Reise mit Safari, Ella-Highlights, Panoramazug, Teeplantagen und Kandy-Kultur."
+    },
+    "2-day-sigiriya-kandy-private-tour-sri-lanka": {
+      "duration": "2 Tage",
+      "persons": "Privattour (1–20 Personen)",
+      "tourType": "Rundreise",
+      "overview": "Entdecken Sie Sigiriya, Dambulla, Dorfleben und Kandys heilige und kulturelle Highlights in 2 Tagen."
+    },
+    "5-day-sri-lanka-tour": {
+      "duration": "5 Tage",
+      "persons": "Privattour (1–20 Personen)",
+      "tourType": "Rundreise",
+      "overview": "Ausgewogene 5-Tages-Privattour mit Sigiriya, Kandy, Bergland, Ella, Safari und Südküste."
+    },
+    "7-day-sri-lanka-tour": {
+      "duration": "7 Tage",
+      "persons": "Privattour (1–20 Personen)",
+      "tourType": "Rundreise",
+      "overview": "Eine einwöchige private Sri-Lanka-Reise durch Kultur, Teeland, Wildlife, Strände und den Süden."
+    },
+    "10-day-sri-lanka-tour": {
+      "duration": "10 Tage",
+      "persons": "Privattour (1–20 Personen)",
+      "tourType": "Rundreise",
+      "overview": "Komplettes privates Inselerlebnis: antike Städte, Kandy, Ella, Safari, Mirissa, Galle und Colombo."
+    },
+    "3-day-sigiriya-kandy-ella-yala-tour": {
+      "duration": "3 Tage",
+      "persons": "Privattour (1–20 Personen)",
+      "tourType": "Rundreise",
+      "overview": "Erleben Sie das Beste von Sri Lanka in 3 Tagen. Besuchen Sie den Sigiriya-Felsen, den Höhlentempel von Dambulla und genießen Sie eine traditionelle Dorftour. Entdecken Sie kulturelle Orte in Kandy und übernachten Sie dort. Weiter geht es nach Nuwara Eliya und Ella mit Teeplantagen, Panoramablicken und der berühmten Zugfahrt. Zum Abschluss erwartet Sie eine spannende Safari in Yala oder Udawalawa.",
+      "day1": {
+        "title": "Sigiriya & Kandy Kulturtour",
+        "a0": {
+          "title": "Sigiriya Löwenfelsen / Pidurangala",
+          "desc": "Besteigen Sie den weltberühmten Sigiriya-Löwenfelsen, ein UNESCO-Weltkulturerbe mit antiken Fresken, Spiegelmauer und atemberaubendem Gipfelblick. Alternativ wandern Sie auf den Pidurangala-Felsen für ein abenteuerlicheres Erlebnis und Panoramablicke auf Sigiriya."
+        },
+        "a1": {
+          "title": "Dambulla Höhlentempel & Goldener Buddha",
+          "desc": "Erkunden Sie den heiligen Höhlentempelkomplex von Dambulla mit antiken Buddha-Statuen, Wandmalereien und fünf historischen Felsenhöhlen. Besuchen Sie die beeindruckende goldene Buddha-Statue und genießen Sie die Aussicht."
+        },
+        "a2": {
+          "title": "Habarana Dorftour",
+          "desc": "Erleben Sie authentisches Dorfleben mit Ochsenkarrenfahrt, Kanutour über einen ruhigen See und einem hausgemachten Dorflunch mit frischen lokalen Zutaten."
+        },
+        "a3": {
+          "title": "Hindu-Tempel Matale",
+          "desc": "Besuchen Sie den bunten Hindu-Tempel von Matale mit dravidischer Architektur und lebendigen Skulpturen – Einblick in Sri Lankas hinduistisches Erbe."
+        },
+        "a4": {
+          "title": "Gewürz- & Ayurveda-Garten",
+          "desc": "Entdecken Sie weltberühmte Gewürze und ayurvedische Traditionen. Erfahren Sie, wie Zimt, Kardamom und Pfeffer angebaut und genutzt werden."
+        },
+        "a5": {
+          "title": "Kandy Kultur-Tanzshow",
+          "desc": "Genießen Sie eine lebendige kandyanische Tanzshow mit traditionellem Trommeln, Feuertanz und prachtvollen Kostümen."
+        },
+        "a6": {
+          "title": "Übernachtung – Kandy (4-Sterne-Hotel)",
+          "desc": "Übernachtung in einem 4-Sterne-Hotel mit Abendessen und Frühstück."
+        }
+      },
+      "day2": {
+        "title": "Kandy nach Nuwara Eliya & Ella",
+        "a0": {
+          "title": "Zahntempel / Nelligala-Tempel",
+          "desc": "Besuchen Sie den heiligen Zahntempel, eines der wichtigsten buddhistischen Heiligtümer der Welt, oder den friedlichen Nelligala-Tempel mit Bergblicken."
+        },
+        "a1": {
+          "title": "Botanischer Garten Peradeniya",
+          "desc": "Spazieren Sie durch den königlichen Botanischen Garten mit seltenen Pflanzen, Bambus, Orchideen und Landschaften entlang des Mahaweli."
+        },
+        "a2": {
+          "title": "Pinnawala Elefantenwaisenhaus",
+          "desc": "Beobachten Sie gerettete Elefanten beim Füttern und Baden im Fluss – eine besondere Begegnung mit diesen sanften Riesen."
+        },
+        "a3": {
+          "title": "Teeplantage & Fabrik",
+          "desc": "Besuchen Sie eine Teeplantage und Fabrik und sehen Sie, wie Ceylon-Tee vom Pflücken bis zur Verarbeitung entsteht – inklusive Teeverkostung."
+        },
+        "a4": {
+          "title": "Ambuluwawa-Turm",
+          "desc": "Besteigen Sie den spiralförmigen Ambuluwawa-Turm für 360-Grad-Blicke auf Berge, Wälder und die Umgebung."
+        },
+        "a5": {
+          "title": "Übernachtung – Ella",
+          "desc": "Übernachtung in Ella mit herrlicher Aussicht."
+        }
+      },
+      "day3": {
+        "title": "Ella-Highlights & Safari",
+        "a0": {
+          "title": "Nine Arch Bridge",
+          "desc": "Besuchen Sie die ikonische Nine Arch Bridge, eines der meistfotografierten Wahrzeichen Sri Lankas zwischen Teeplantagen."
+        },
+        "a1": {
+          "title": "Ella Zugfahrt",
+          "desc": "Genießen Sie eine der schönsten Zugfahrten der Welt durch neblige Berge, Teeplantagen und spektakuläre Landschaften."
+        },
+        "a2": {
+          "title": "Ravana-Wasserfall",
+          "desc": "Halt am schönen Ravana-Wasserfall – entspannen Sie bei kaskadierendem Wasser im Dschungelambiente."
+        },
+        "a3": {
+          "title": "Yala- / Udawalawa-Safari",
+          "desc": "Erleben Sie eine spannende Jeep-Safari in Yala oder Udawalawa – Elefanten, Leoparden, Krokodile und viel weitere Wildlife."
+        }
+      },
+      "includes": {
+        "0": "Klimatisierter Privatwagen mit Hotel-Pickup & Drop-off",
+        "1": "Erfahrener Fahrer/Guide (Englisch, Russisch, Deutsch, Französisch, Hindi)",
+        "2": "Lizenzierte Guides für Sigiriya, Kandy-Tempel & Botanischen Garten",
+        "3": "Kostenloser Tuk-Tuk-Service (Nine Arch Bridge & Ambuluwawa)",
+        "4": "4-Sterne-Hotel (Frühstück & Abendessen inklusive)",
+        "5": "Unbegrenzte Mineralwasserflaschen",
+        "6": "Unterkunft & Mahlzeiten für den Fahrer",
+        "7": "24/7 Kundensupport"
+      },
+      "excludes": {
+        "0": "Eintritts- & Aktivitätsgebühren",
+        "1": "Essen & Getränke (außerhalb der Hotelmahlzeiten)"
+      }
+    }
+  }
+}

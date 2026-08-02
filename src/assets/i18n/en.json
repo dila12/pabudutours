@@ -1,0 +1,445 @@
+{
+  "nav": {
+    "home": "Home",
+    "tourPackages": "Tour Packages",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact",
+    "brandName": "Pabudu Tours",
+    "brandTag": "Forever Unforgettable",
+    "logoAlt": "Pabudu Tours logo",
+    "selectLanguage": "Select language",
+    "socialLinks": "Social links",
+    "instagram": "Instagram",
+    "tripadvisor": "TripAdvisor",
+    "toggleNavigation": "Toggle navigation",
+    "chatWhatsapp": "Chat on WhatsApp"
+  },
+  "footer": {
+    "brandName": "Pabudu Tours",
+    "tagline": "Your trusted travel partner in Sri Lanka private tours, round trips and tailor-made holidays with reliable local service.",
+    "explore": "Explore",
+    "about": "About",
+    "services": "Services",
+    "tourPackages": "Tour Packages",
+    "destinations": "Destinations",
+    "testimonials": "Testimonials",
+    "popularTours": "Popular tours",
+    "tourElla": "Ella Day Tour Sri Lanka",
+    "tourSigiriya": "Sigiriya Day Tour Sri Lanka",
+    "tourKandy": "Kandy Day Tour Sri Lanka",
+    "tourUdawalawa": "Udawalawa Safari Day Tour",
+    "tourMirissa": "Mirissa Whale Watching Day Tour",
+    "tourBentota": "Bentota Tuk Tuk Tour Sri Lanka",
+    "tourGalle": "Galle Day Tour Sri Lanka",
+    "tour2DaySigiriyaKandy": "2 Day Sigiriya & Kandy Tour",
+    "tour5Day": "5 Day Sri Lanka Tour",
+    "tour7Day": "7 Day Sri Lanka Private Tour",
+    "tour10Day": "10 Day Sri Lanka Grand Tour",
+    "allTourPackages": "All Tour Packages",
+    "travelGuides": "Travel Guides",
+    "contact": "Contact",
+    "address": "No: 439/2 Managala Rd, Kuda Waskaduwa, Waskaduwa, Kalutara, Sri Lanka",
+    "requestQuote": "Request a Quote",
+    "copyright": "© {{currentYear}} Pabudu Tours. All rights reserved.",
+    "designedBy": "Designed by"
+  },
+  "home": {
+    "heroBrand": "Pabudu Tours",
+    "heroTitle": "Private Sri Lanka journeys, crafted locally",
+    "heroLead": "Tailor-made tours with trusted chauffeur guides across Sigiriya, Ella, Yala, Kandy and the coast.",
+    "ctaExploreTours": "Explore Tours",
+    "ctaPlanMyTrip": "Plan My Trip",
+    "scroll": "Scroll",
+    "destKicker": "Destinations",
+    "destTitle": "Sri Lanka highlights on every itinerary",
+    "destLead": "Heritage cities, highland tea country, wildlife parks and southern shores included across our private tours.",
+    "destSigiriya": "Sigiriya",
+    "destSigiriyaSub": "Lion Rock & gardens",
+    "destElla": "Ella",
+    "destEllaSub": "Nine Arches & peaks",
+    "destYala": "Yala",
+    "destYalaSub": "Wildlife safari",
+    "destKandy": "Kandy",
+    "destKandySub": "Temple of the Tooth",
+    "destDambulla": "Dambulla",
+    "destDambullaSub": "Golden Cave Temple",
+    "destGalle": "Galle",
+    "destGalleSub": "Fort & beaches",
+    "packagesKicker": "Tour packages",
+    "packagesTitle": "Day trips & multi-day private tours",
+    "packagesLead": "Choose a ready itinerary or ask us to tailor every stop around your pace and interests.",
+    "dayTours": "Day Tours",
+    "multiDayTours": "Multi-Day Tours",
+    "aboutKicker": "About us",
+    "aboutTitle": "Explore Sri Lanka like a local",
+    "aboutBody": "Pabudu Tours is a trusted local travel partner offering private and tailor-made tours designed around your interests. Travel in comfort with well-maintained vehicles and experienced chauffeur guides who keep every journey smooth, safe and memorable.",
+    "pointPrivateTransport": "Private transport",
+    "pointPrivateTransportSub": "Comfortable AC vehicles",
+    "pointLocalGuides": "Local guides",
+    "pointLocalGuidesSub": "Friendly & experienced",
+    "pointCustomTours": "Custom tours",
+    "pointCustomToursSub": "Fully personalized trips",
+    "pointTopRated": "Top rated",
+    "pointTopRatedSub": "5★ traveler reviews",
+    "ctaPlanYourTour": "Plan Your Tour",
+    "whyKicker": "Why Pabudu Tours",
+    "whyTitle": "Trusted for private Sri Lanka travel",
+    "whyAffordableTitle": "Affordable private packages",
+    "whyAffordableBody": "Fair pricing on chauffeur-driven tours without compromising comfort, safety or quality.",
+    "whyGuidesTitle": "Professional chauffeur guides",
+    "whyGuidesBody": "Personalized service covering Sigiriya, Kandy, Ella, Yala, Galle and beyond.",
+    "whyLocalTitle": "Local expertise",
+    "whyLocalBody": "Cultural tours, wildlife safaris, beach holidays and luxury round tours crafted by island experts.",
+    "servicesKicker": "Services",
+    "servicesTitle": "Travel support beyond the road",
+    "servicesLead": "Private tours, hotel reservations, train tickets and customized holiday packages across Sri Lanka’s top destinations.",
+    "serviceGuidesTitle": "Multilingual chauffeur guides",
+    "serviceGuidesBody": "English, German, Russian and Hindi safe, comfortable private touring island-wide.",
+    "serviceTicketsTitle": "Tickets & entrances",
+    "serviceTicketsBody": "Ella train seats, safari slots and attraction tickets arranged for a hassle-free trip.",
+    "serviceHotelsTitle": "Hotels & stays",
+    "serviceHotelsBody": "Handpicked stays from boutique hotels to value guesthouses in the right locations.",
+    "founderKicker": "Your host in Sri Lanka",
+    "founderName": "Pubudu Kavirathna",
+    "founderRole": "Founder & Tour Specialist",
+    "founderBio": "With years of experience in Sri Lanka tourism, Pubudu designs private journeys that feel personal from iconic landmarks to quieter local places with safety and comfort as the standard.",
+    "founderBasedIn": "Based in",
+    "founderBasedInValue": "Kalutara, Sri Lanka",
+    "founderLanguages": "Languages",
+    "langEnglish": "English",
+    "langRussian": "Russian",
+    "langHindi": "Hindi",
+    "langGerman": "German",
+    "ctaPlanATour": "Plan a tour",
+    "whatsapp": "WhatsApp",
+    "reviewsKicker": "Guest reviews",
+    "reviewsTitle": "Trusted by travelers",
+    "tripadvisorReviews": "TripAdvisor reviews",
+    "googleReviews": "Google reviews"
+  },
+  "packages": {
+    "pageTitle": "Packages",
+    "breadcrumbHome": "Home",
+    "breadcrumbPackages": "Packages",
+    "eyebrow": "Packages",
+    "heading": "Perfect Tour Packages",
+    "tabsAria": "Tour package categories",
+    "tabMultiDay": "Multi-Day Tours",
+    "tabDay": "Day Tours",
+    "tabTukTuk": "Tuk Tuk Ride",
+    "from": "From",
+    "perPerson": "/person",
+    "bookNow": "Book Now"
+  },
+  "about": {
+    "pageTitle": "About",
+    "breadcrumbHome": "Home",
+    "breadcrumbAbout": "About",
+    "eyebrow": "About us",
+    "title": "Trusted Sri Lanka tour company",
+    "para1": "Pabudu Tours is a trusted local tour company offering private Sri Lanka tours, tailor-made holiday packages, and chauffeur-driven round tours across the island.",
+    "para2": "Explore the best of Sri Lanka including Sigiriya, Kandy, Ella, Nuwara Eliya, Galle, and Yala National Park. We provide comfortable vehicles, friendly chauffeur guides, and personalized travel experiences for families, couples, and honeymoon travelers.",
+    "para3": "Plan your perfect Sri Lanka holiday with a reliable local tour operator and enjoy safe, comfortable, and unforgettable travel experiences.",
+    "cta": "Plan your Sri Lanka tour",
+    "pointAffordableTitle": "Affordable Sri Lanka tour packages",
+    "pointAffordableBody": "Affordable private tours, tailor-made holiday packages, and chauffeur-driven trips designed for every budget without compromising comfort, safety, or quality.",
+    "pointGuidesTitle": "Professional chauffeur guides",
+    "pointGuidesBody": "Experienced chauffeur guides and travel experts deliver safe, comfortable, personalized journeys covering Sigiriya, Kandy, Ella, Yala, and Galle.",
+    "pointLocalTitle": "Trusted local travel experts",
+    "pointLocalBody": "As a trusted local operator, we welcome travelers worldwide with cultural tours, wildlife safaris, beach holidays, and luxury private round tours across Sri Lanka."
+  },
+  "contact": {
+    "pageTitle": "Contact",
+    "breadcrumbHome": "Home",
+    "breadcrumbContact": "Contact",
+    "eyebrow": "Contact",
+    "title": "Contact for any query",
+    "lead": "Reach Pabudu Tours anytime we reply quickly on WhatsApp, phone and email.",
+    "infoHeading": "Contact information",
+    "labelAddress": "Address",
+    "address": "No: 439/2 Managala Rd, Kuda Waskaduwa, Waskaduwa, Kalutara, Sri Lanka",
+    "labelWhatsappVoice": "WhatsApp / Voice",
+    "labelEmail": "Email",
+    "labelHours": "Business hours",
+    "hoursValue": "Open 24 hours · 7 days",
+    "noteTitle": "Get in touch with us",
+    "noteBody": "Everything you need is at your fingertips. Use the form, email us at Pabudutour@gmail.com, or talk to us via +94 77 900 88 03. We are always here to help.",
+    "formHeading": "Send a message",
+    "formSub": "Tell us your dates, group size and what you'd like to explore.",
+    "labelName": "Your name *",
+    "labelEmailField": "Your email *",
+    "labelPhone": "Contact phone *",
+    "labelPhoneNumber": "Phone number",
+    "phonePlaceholder": "712345678",
+    "labelMessage": "Message *",
+    "submit": "Send message",
+    "errorNameRequired": "Name is required",
+    "errorEmailInvalid": "Please enter a valid email",
+    "errorPhoneRequired": "Valid phone number is required",
+    "errorMessageRequired": "Message is required"
+  },
+  "services": {
+    "pageTitle": "Services",
+    "breadcrumbHome": "Home",
+    "breadcrumbServices": "Services",
+    "eyebrow": "Our services",
+    "title": "Travel & hospitality by Pabudu Tours",
+    "lead": "Comfortable private travel, guided tours and authentic Sri Lankan hospitality planned around your pace, style and budget.",
+    "privateToursTitle": "Private Sri Lanka Tours",
+    "privateToursBody": "Explore Sri Lanka with customized private tours including cultural sites, beaches, wildlife safaris and scenic hill country.",
+    "privateToursCta": "View packages",
+    "chauffeurTitle": "Chauffeur Guide Service",
+    "chauffeurBody": "Travel safely with experienced local chauffeur guides and modern air-conditioned vehicles for a comfortable journey across Sri Lanka.",
+    "chauffeurCta": "Book a guide",
+    "tailorMadeTitle": "Tailor-Made Tour Packages",
+    "tailorMadeBody": "Choose from day tours, multi-day round tours and customized travel itineraries designed for your budget and interests.",
+    "tailorMadeCta": "Explore tours",
+    "airportTitle": "Airport Transfers",
+    "airportBody": "Reliable airport pickup and drop-off from Bandaranaike International Airport to any destination in Sri Lanka.",
+    "airportCta": "Arrange transfer",
+    "safariTitle": "Wildlife Safari Tours",
+    "safariBody": "Unforgettable safari adventures in Yala and Udawalawe National Parks elephants, leopards and exotic wildlife in the wild.",
+    "safariCta": "See safari day tour",
+    "tuktukTitle": "Pabudu Tuk Tuk Tours",
+    "tuktukBody": "Explore like a local with fun, comfortable tuk tuk rides through beautiful streets, cultural landmarks and hidden spots across Bentota and beyond.",
+    "tuktukCta": "Book tuk tuk ride"
+  },
+  "tour": {
+    "duration": "Duration",
+    "maxPeople": "Max people",
+    "from2People": "From (2 people)",
+    "tourType": "Tour type",
+    "experienceEyebrow": "The experience",
+    "overview": "Tour Overview",
+    "itineraryEyebrow": "Itinerary",
+    "tourPlan": "Tour Plan",
+    "day": "Day",
+    "goodToKnow": "Good to know",
+    "whatsCovered": "What's covered",
+    "included": "Included",
+    "includedSub": "Already in your tour price",
+    "excluded": "Excluded",
+    "excludedSub": "Pay separately if needed",
+    "viewPhotoFor": "View photo for {{title}}"
+  },
+  "booking": {
+    "from": "From",
+    "privateTour": "private tour",
+    "forTraveler": "for {{n}} traveler",
+    "forTravelers": "for {{n}} travelers",
+    "checkAvailability": "Check availability",
+    "reserveYourSeat": "Reserve your seat",
+    "closeForm": "Close booking form",
+    "perkPayLater": "Reserve now, pay later at destination",
+    "perkPrivateGuide": "Private tour with local chauffeur guide",
+    "perkCancelWhatsapp": "Free cancellation support via WhatsApp",
+    "noteAvailability": "Book ahead for the best availability on popular Sri Lanka dates.",
+    "date": "Date",
+    "travelers": "Travelers",
+    "hintDayTour": "Same-day booking available for this day tour.",
+    "hintMultiDay": "Please book from tomorrow onwards for multi-day tours.",
+    "total": "Total",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email",
+    "country": "Country",
+    "phone": "Phone",
+    "agreeTerms": "I agree to the terms & conditions",
+    "completeBooking": "Complete booking"
+  },
+  "common": {
+    "from": "From",
+    "perPerson": "/person",
+    "bookNow": "Book Now",
+    "persons": "{{n}} Persons",
+    "day": "{{n}} day",
+    "days": "{{n}} days"
+  },
+  "tours": {
+    "ella-day-tour": "Ella Day Tour Sri Lanka – Nine Arch Bridge & Scenic Train",
+    "galle-day-tour": "Galle Day Tour Sri Lanka – Dutch Fort & South Coast",
+    "kandy-day-tour": "Kandy Day Tour Sri Lanka – Temple of the Tooth & Cultural City",
+    "sigiriya-day-tour": "Sigiriya Day Tour Sri Lanka – Lion Rock & Cultural Triangle",
+    "udawalawa-day-tour": "Udawalawa Safari Day Tour Sri Lanka – Elephants & Wildlife",
+    "mirissa-day-tour": "Mirissa Whale Watching Day Tour Sri Lanka",
+    "bentota-tuk-tuk-tour": "Bentota Tuk Tuk Tour Sri Lanka – Beach, Temple & Local Ride",
+    "2-day-ella-kandy-private-tour-sri-lanka": "2 Day Ella & Kandy Tour Sri Lanka – Train Ride, Hills & Safari",
+    "2-day-sigiriya-kandy-private-tour-sri-lanka": "2 Day Sigiriya & Kandy Tour Sri Lanka – Culture & Elephant Safari",
+    "3-day-sigiriya-kandy-ella-yala-tour": "3 Day Sri Lanka Tour – Sigiriya, Kandy, Ella & Yala Safari",
+    "5-day-sri-lanka-tour": "5 Day Sri Lanka Tour – Sigiriya, Kandy, Ella, Safari & South Coast",
+    "7-day-sri-lanka-tour": "7 Day Sri Lanka Private Tour – Culture, Hills, Wildlife & Beaches",
+    "10-day-sri-lanka-tour": "10 Day Sri Lanka Grand Tour – Complete Island Experience"
+  },
+  "tourContent": {
+    "ella-day-tour": {
+      "duration": "1 Day",
+      "persons": "Private Tour (1-20 Persons)",
+      "tourType": "Day Tour",
+      "overview": "Discover Ella’s highlights in one day: Nine Arch Bridge, scenic train views, Little Adam’s Peak, Ravana Falls and more with a private chauffeur guide."
+    },
+    "galle-day-tour": {
+      "duration": "1 Day",
+      "persons": "Private Tour (1-20 Persons)",
+      "tourType": "Day Tour",
+      "overview": "Explore the southern coast with Galle Dutch Fort, beaches and coastal highlights on a private day tour."
+    },
+    "kandy-day-tour": {
+      "duration": "1 Day",
+      "persons": "Private Tour (1-20 Persons)",
+      "tourType": "Day Tour",
+      "overview": "Visit Kandy’s Temple of the Tooth, botanical gardens, tea country and cultural highlights on a private day tour."
+    },
+    "sigiriya-day-tour": {
+      "duration": "1 Day",
+      "persons": "Private Tour (1-20 Persons)",
+      "tourType": "Day Tour",
+      "overview": "Climb Sigiriya Lion Rock, visit Dambulla Cave Temple and enjoy village or elephant experiences on a private day tour."
+    },
+    "udawalawa-day-tour": {
+      "duration": "1 Day",
+      "persons": "Private Tour (1-20 Persons)",
+      "tourType": "Day Tour",
+      "overview": "Enjoy a private Udawalawa jeep safari and visit the baby elephant transit home on this wildlife day tour."
+    },
+    "mirissa-day-tour": {
+      "duration": "1 Day",
+      "persons": "Private Tour (1-20 Persons)",
+      "tourType": "Day Tour",
+      "overview": "Whale watching from Mirissa, Coconut Tree Hill and beach time on a private south-coast day tour."
+    },
+    "bentota-tuk-tuk-tour": {
+      "duration": "2–3 hours",
+      "persons": "Max 3 Persons",
+      "tourType": "Tuk Tuk Tour",
+      "overview": "Explore Bentota by tuk tuk: beach, turtle hatchery, temple stops and local photo spots in 2–3 hours."
+    },
+    "2-day-ella-kandy-private-tour-sri-lanka": {
+      "duration": "2 Days",
+      "persons": "Private Tour (1-20 Persons)",
+      "tourType": "Round Tour",
+      "overview": "A private 2-day journey through safari country, Ella highlights, scenic train views, tea plantations and Kandy culture."
+    },
+    "2-day-sigiriya-kandy-private-tour-sri-lanka": {
+      "duration": "2 Days",
+      "persons": "Private Tour (1-20 Persons)",
+      "tourType": "Round Tour",
+      "overview": "Discover Sigiriya, Dambulla, village life and Kandy’s sacred and cultural highlights on a private 2-day tour."
+    },
+    "5-day-sri-lanka-tour": {
+      "duration": "5 Days",
+      "persons": "Private Tour (1-20 Persons)",
+      "tourType": "Round Tour",
+      "overview": "A balanced 5-day private tour covering Sigiriya, Kandy, hill country, Ella, safari and the south coast."
+    },
+    "7-day-sri-lanka-tour": {
+      "duration": "7 Days",
+      "persons": "Private Tour (1-20 Persons)",
+      "tourType": "Round Tour",
+      "overview": "A week-long private Sri Lanka journey through culture, tea country, wildlife, beaches and southern highlights."
+    },
+    "10-day-sri-lanka-tour": {
+      "duration": "10 Days",
+      "persons": "Private Tour (1-20 Persons)",
+      "tourType": "Round Tour",
+      "overview": "A complete private island experience covering ancient cities, Kandy, Ella, safari, Mirissa, Galle and Colombo."
+    },
+    "3-day-sigiriya-kandy-ella-yala-tour": {
+      "duration": "3 Days",
+      "persons": "Private Tour (1-20 Persons)",
+      "tourType": "Round Tour",
+      "overview": "Experience the best of Sri Lanka in 3 days. Visit Sigiriya Rock, Dambulla Cave Temple and enjoy a traditional village tour. Explore Kandy cultural sites and stay overnight. Continue to Nuwara Eliya and Ella with tea plantations, scenic views and famous train ride. End your journey with an exciting safari in Yala or Udawalawa National Park.",
+      "day1": {
+        "title": "Sigiriya & Kandy Cultural Tour",
+        "a0": {
+          "title": "Sigiriya Lion Rock / Pidurangala",
+          "desc": "Climb the world-famous Sigiriya Lion Rock, a UNESCO World Heritage Site known for its ancient frescoes, mirror wall and breathtaking views from the summit. Alternatively, hike Pidurangala Rock for a more adventurous experience and enjoy panoramic views of Sigiriya surrounded by lush jungle landscapes."
+        },
+        "a1": {
+          "title": "Dambulla Cave Temple & Golden Buddha",
+          "desc": "Explore the sacred Dambulla Cave Temple complex featuring ancient Buddhist statues, intricate murals and five historic caves carved into rock. Visit the impressive Golden Buddha statue and enjoy stunning views of the surrounding countryside."
+        },
+        "a2": {
+          "title": "Habarana Village Tour",
+          "desc": "Experience authentic Sri Lankan village life with a traditional tour including a bullock cart ride, canoe ride across a serene lake and a home-cooked village lunch prepared with fresh local ingredients."
+        },
+        "a3": {
+          "title": "Matale Hindu Kovil",
+          "desc": "Visit the colorful Matale Hindu Kovil, famous for its intricate Dravidian architecture and vibrant sculptures, offering insight into Sri Lanka’s rich Hindu cultural heritage."
+        },
+        "a4": {
+          "title": "Spice & Ayurveda Garden",
+          "desc": "Discover Sri Lanka’s world-famous spices and traditional Ayurvedic treatments. Learn how spices like cinnamon, cardamom and pepper are grown and used for cooking and natural medicine."
+        },
+        "a5": {
+          "title": "Kandy Cultural Dance Show",
+          "desc": "Enjoy a vibrant Kandyan cultural dance performance featuring traditional drumming, fire dancing and stunning costumes that reflect Sri Lanka’s rich artistic heritage."
+        },
+        "a6": {
+          "title": "Overnight Stay – Kandy (4 Star Hotel)",
+          "desc": "Stay overnight in a 4-star hotel with dinner and breakfast."
+        }
+      },
+      "day2": {
+        "title": "Kandy to Nuwara Eliya & Ella",
+        "a0": {
+          "title": "Temple of the Tooth / Nelligala Temple",
+          "desc": "Visit the sacred Temple of the Tooth Relic, one of the most important Buddhist sites in the world, or explore the peaceful Nelligala Temple with breathtaking hilltop views."
+        },
+        "a1": {
+          "title": "Peradeniya Botanical Garden",
+          "desc": "Walk through the beautiful Royal Botanical Garden featuring rare plants, giant bamboo trees, orchid collections and scenic landscapes along the Mahaweli River."
+        },
+        "a2": {
+          "title": "Pinnawala Elephant Orphanage",
+          "desc": "Observe rescued elephants as they are fed and bathed in the river, offering a unique opportunity to see these gentle giants up close."
+        },
+        "a3": {
+          "title": "Tea Plantation & Factory",
+          "desc": "Visit a traditional tea plantation and factory to see how world-famous Ceylon tea is produced, from leaf picking to processing, with a chance to taste fresh tea."
+        },
+        "a4": {
+          "title": "Ambuluwawa Tower",
+          "desc": "Climb the unique spiral tower of Ambuluwawa for breathtaking 360-degree views of mountains, forests and surrounding landscapes."
+        },
+        "a5": {
+          "title": "Overnight Stay – Ella",
+          "desc": "Stay overnight in Ella with scenic views."
+        }
+      },
+      "day3": {
+        "title": "Ella Highlights & Safari",
+        "a0": {
+          "title": "Nine Arch Bridge",
+          "desc": "Visit the iconic Nine Arch Bridge, one of Sri Lanka’s most photographed landmarks, set amidst lush green tea plantations."
+        },
+        "a1": {
+          "title": "Ella Train Ride",
+          "desc": "Enjoy one of the most scenic train journeys in the world, passing through misty mountains, tea plantations and breathtaking landscapes."
+        },
+        "a2": {
+          "title": "Ravana Falls",
+          "desc": "Stop at the beautiful Ravana Falls, a popular natural attraction where you can relax and enjoy the cascading water surrounded by jungle scenery."
+        },
+        "a3": {
+          "title": "Yala / Udawalawa Safari",
+          "desc": "Experience an exciting jeep safari in Yala or Udawalawa National Park, where you can spot elephants, leopards, crocodiles and a wide variety of wildlife in their natural habitat."
+        }
+      },
+      "includes": {
+        "0": "Air-conditioned private vehicle with hotel pickup & drop-off",
+        "1": "Experienced driver/guide (English, Russian, German, French, Hindi)",
+        "2": "Licensed guides for Sigiriya, Kandy Temple & Botanical Garden",
+        "3": "Free tuk tuk service (Nine Arch Bridge & Ambuluwawa)",
+        "4": "4-star hotel accommodation (breakfast & dinner included)",
+        "5": "Unlimited mineral water bottles",
+        "6": "Driver accommodation & meals",
+        "7": "24/7 customer support"
+      },
+      "excludes": {
+        "0": "Entrance & activity fees",
+        "1": "Food & drinks (outside hotel meals)"
+      }
+    }
+  }
+}

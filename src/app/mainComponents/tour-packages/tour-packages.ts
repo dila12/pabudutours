@@ -1,6 +1,7 @@
 import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { RouterLink, RouterModule } from '@angular/router';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { TranslatePipe } from '@ngx-translate/core';
 import toursData from '../../databaseJson/tours.json';
 import { PackageItemComponent } from '../../sharedComponents/package-item-component/package-item-component';
 import { CountryService } from '../../Services/country.service';
@@ -9,7 +10,7 @@ import { TourPriceService } from '../../Services/tour-price.service';
 @Component({
   selector: 'app-tour-packages',
   standalone: true,
-  imports: [RouterLink, CommonModule, RouterModule, PackageItemComponent],
+  imports: [RouterLink, CommonModule, RouterModule, PackageItemComponent, TranslatePipe],
   templateUrl: './tour-packages.html',
   styleUrl: './tour-packages.css',
 })
@@ -40,10 +41,10 @@ export class TourPackages {
     return this.multiDayTours;
   }
 
-  get activeTabLabel() {
-    if (this.activeTab === 'day') return 'Day Tours';
-    if (this.activeTab === 'tuktuk') return 'Tuk Tuk Ride';
-    return 'Multi-Day Tours';
+  get activeTabLabelKey() {
+    if (this.activeTab === 'day') return 'packages.tabDay';
+    if (this.activeTab === 'tuktuk') return 'packages.tabTukTuk';
+    return 'packages.tabMultiDay';
   }
 
   async loadToursWithPrices(tours: any[]) {

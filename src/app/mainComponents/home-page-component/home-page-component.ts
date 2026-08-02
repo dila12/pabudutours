@@ -3,6 +3,7 @@ import toursData from '../../databaseJson/tours.json';
 import { PackageItemComponent } from '../../sharedComponents/package-item-component/package-item-component';
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
 import { ContactUsComponent } from '../../sharedComponents/contact-us-component/contact-us-component';
 import { HttpClient } from '@angular/common/http';
 import { CountryService } from '../../Services/country.service';
@@ -16,6 +17,7 @@ import { TourPriceService } from '../../Services/tour-price.service';
     PackageItemComponent,
     RouterModule,
     ContactUsComponent,
+    TranslatePipe,
   ],
   templateUrl: './home-page-component.html',
   styleUrl: './home-page-component.css',
@@ -30,7 +32,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
   activeTab: 'multi' | 'day' = 'multi';
   private jsonLdEl: HTMLScriptElement | null = null;
 
-  /** Public review profile links — replace googleReviewsUrl with your Business Profile link */
+  /** Public review profile links replace googleReviewsUrl with your Business Profile link */
   tripadvisorReviewsUrl =
     'https://www.tripadvisor.com/Attraction_Review-g304136-d34261425-Reviews-Pabudu_Tours-Kalutara_Western_Province.html';
   googleReviewsUrl = 'https://share.google/ZUplfSNRQT7GHlgMn';

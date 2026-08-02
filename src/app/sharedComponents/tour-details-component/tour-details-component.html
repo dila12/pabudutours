@@ -1,7 +1,7 @@
 <div class="tour-details-intro">
   <div class="booking mt-1">
     <h1 class="tour-details-title text-primary text-uppercase mb-3">
-      {{ tour.title }}
+      {{ tour.filecode ? (('tours.' + tour.filecode) | translate) : tour.title }}
     </h1>
 
     <div class="tour-meta" aria-label="Tour highlights">
@@ -10,8 +10,8 @@
           <i class="fas fa-clock"></i>
         </span>
         <div class="tour-meta__copy">
-          <p class="tour-meta__label">Duration</p>
-          <p class="tour-meta__value">{{ tour.duration }}</p>
+          <p class="tour-meta__label">{{ 'tour.duration' | translate }}</p>
+          <p class="tour-meta__value">{{ tour.duration | tourI18n:tour.filecode:'duration' }}</p>
         </div>
       </article>
 
@@ -20,8 +20,8 @@
           <i class="fas fa-users"></i>
         </span>
         <div class="tour-meta__copy">
-          <p class="tour-meta__label">Max people</p>
-          <p class="tour-meta__value">{{ tour.persons }}</p>
+          <p class="tour-meta__label">{{ 'tour.maxPeople' | translate }}</p>
+          <p class="tour-meta__value">{{ tour.persons | tourI18n:tour.filecode:'persons' }}</p>
         </div>
       </article>
 
@@ -30,7 +30,7 @@
           <i class="fas fa-tag"></i>
         </span>
         <div class="tour-meta__copy">
-          <p class="tour-meta__label">From (2 people)</p>
+          <p class="tour-meta__label">{{ 'tour.from2People' | translate }}</p>
           <p class="tour-meta__value">$ {{ tour.price }}</p>
         </div>
       </article>
@@ -40,8 +40,8 @@
           <i class="fas fa-map-marked-alt"></i>
         </span>
         <div class="tour-meta__copy">
-          <p class="tour-meta__label">Tour type</p>
-          <p class="tour-meta__value">{{ tour.tourType }}</p>
+          <p class="tour-meta__label">{{ 'tour.tourType' | translate }}</p>
+          <p class="tour-meta__value">{{ tour.tourType | tourI18n:tour.filecode:'tourType' }}</p>
         </div>
       </article>
     </div>
@@ -56,17 +56,17 @@
           <i class="fas fa-compass"></i>
         </span>
         <div>
-          <p class="tour-overview__eyebrow">The experience</p>
-          <h2 id="tour-overview-heading" class="tour-overview__title">Tour Overview</h2>
+          <p class="tour-overview__eyebrow">{{ 'tour.experienceEyebrow' | translate }}</p>
+          <h2 id="tour-overview-heading" class="tour-overview__title">{{ 'tour.overview' | translate }}</h2>
         </div>
       </div>
-      <p class="tour-overview__text">{{ tour.overview }}</p>
+      <p class="tour-overview__text">{{ tour.overview | tourI18n:tour.filecode:'overview' }}</p>
     </section>
 
     <section class="tour-plan" *ngIf="tour.itinerary?.length" aria-labelledby="tour-plan-heading">
       <div class="tour-plan__intro">
-        <p class="tour-plan__eyebrow">Itinerary</p>
-        <h3 id="tour-plan-heading" class="tour-plan__heading">Tour Plan</h3>
+        <p class="tour-plan__eyebrow">{{ 'tour.itineraryEyebrow' | translate }}</p>
+        <h3 id="tour-plan-heading" class="tour-plan__heading">{{ 'tour.tourPlan' | translate }}</h3>
       </div>
 
       <div class="tour-plan__timeline">
@@ -80,10 +80,10 @@
             (click)="toggleDay(day.day)"
             [attr.aria-expanded]="!!expandedDays[day.day]">
             <span class="plan-day__badge" aria-hidden="true">
-              <span class="plan-day__badge-label">Day</span>
+              <span class="plan-day__badge-label">{{ 'tour.day' | translate }}</span>
               <span class="plan-day__badge-num">{{ day.day }}</span>
             </span>
-            <span class="plan-day__title">{{ day.title }}</span>
+            <span class="plan-day__title">{{ day.title | tourI18n:tour.filecode:('day' + day.day + '.title') }}</span>
             <span class="plan-day__chevron" aria-hidden="true">
               <i class="fas fa-chevron-down"></i>
             </span>
@@ -91,7 +91,7 @@
 
           <div class="plan-day__body" [class.plan-day__body--open]="expandedDays[day.day]">
             <ul class="plan-activity">
-              <li *ngFor="let activity of day.activities" class="plan-activity__item">
+              <li *ngFor="let activity of day.activities; let i = index" class="plan-activity__item">
                 <span
                   class="plan-activity__icon"
                   aria-hidden="true"
@@ -99,17 +99,23 @@
                   <i class="fas {{ activity.title.icon || 'fa-circle' }}"></i>
                 </span>
                 <div class="plan-activity__content">
-                  <p class="plan-activity__name">{{ activity.title.title }}</p>
-                  <p class="plan-activity__desc" *ngIf="activity.description">{{ activity.description }}</p>
+                  <p class="plan-activity__name">
+                    {{ activity.title.title | tourI18n:tour.filecode:('day' + day.day + '.a' + i + '.title') }}
+                  </p>
+                  <p class="plan-activity__desc" *ngIf="activity.description">
+                    {{ activity.description | tourI18n:tour.filecode:('day' + day.day + '.a' + i + '.desc') }}
+                  </p>
                   <ul *ngIf="activity.extra?.length" class="plan-activity__extra">
-                    <li *ngFor="let item of activity.extra">{{ item }}</li>
+                    <li *ngFor="let item of activity.extra; let ei = index">
+                      {{ item | tourI18n:tour.filecode:('day' + day.day + '.a' + i + '.extra' + ei) }}
+                    </li>
                   </ul>
                   <button
                     *ngIf="activity.image"
                     type="button"
                     class="plan-activity__photo"
                     (click)="openImage(activity.image)"
-                    [attr.aria-label]="'View photo for ' + activity.title.title">
+                    [attr.aria-label]="('tour.viewPhotoFor' | translate:{ title: activity.title.title })">
                     <img [src]="activity.image" alt="" />
                   </button>
                 </div>
@@ -122,8 +128,8 @@
 
     <section class="cover-panel" aria-label="Included and excluded">
       <div class="cover-panel__intro">
-        <p class="cover-panel__eyebrow">Good to know</p>
-        <h3 class="cover-panel__heading">What's covered</h3>
+        <p class="cover-panel__eyebrow">{{ 'tour.goodToKnow' | translate }}</p>
+        <h3 class="cover-panel__heading">{{ 'tour.whatsCovered' | translate }}</h3>
       </div>
 
       <div class="cover-panel__grid">
@@ -133,14 +139,14 @@
               <i class="fas fa-check"></i>
             </span>
             <div>
-              <h4 class="cover-list__title">Included</h4>
-              <p class="cover-list__sub">Already in your tour price</p>
+              <h4 class="cover-list__title">{{ 'tour.included' | translate }}</h4>
+              <p class="cover-list__sub">{{ 'tour.includedSub' | translate }}</p>
             </div>
           </div>
           <ul class="cover-list__items">
             <li *ngFor="let item of tour.includes; let i = index" [style.--i]="i">
               <span class="cover-list__icon" aria-hidden="true"><i class="fas fa-check"></i></span>
-              <span>{{ item }}</span>
+              <span>{{ item | tourI18n:tour.filecode:('includes.' + i) }}</span>
             </li>
           </ul>
         </div>
@@ -151,14 +157,14 @@
               <i class="fas fa-minus"></i>
             </span>
             <div>
-              <h4 class="cover-list__title">Excluded</h4>
-              <p class="cover-list__sub">Pay separately if needed</p>
+              <h4 class="cover-list__title">{{ 'tour.excluded' | translate }}</h4>
+              <p class="cover-list__sub">{{ 'tour.excludedSub' | translate }}</p>
             </div>
           </div>
           <ul class="cover-list__items">
             <li *ngFor="let item of tour.excludes; let i = index" [style.--i]="i">
               <span class="cover-list__icon" aria-hidden="true"><i class="fas fa-minus"></i></span>
-              <span>{{ item }}</span>
+              <span>{{ item | tourI18n:tour.filecode:('excludes.' + i) }}</span>
             </li>
           </ul>
         </div>

@@ -7,11 +7,14 @@ import { TourBookingSidebarComponent } from '../../../../sharedComponents/tour-b
 import { HttpClient } from '@angular/common/http';
 import { CountryService } from '../../../../Services/country.service';
 import toursData from '../../../../databaseJson/tours.json';
+import { TourImageGalleryComponent } from '../../../../sharedComponents/tour-image-gallery/tour-image-gallery';
+
 
 @Component({
   selector: 'app-fourdays-tour-component',
   standalone: true,
   imports: [
+    TourImageGalleryComponent,
     CommonModule,
     RouterModule,
     TourDetailsComponent,
@@ -236,6 +239,7 @@ tour = {
 
   get tourForDetails(): TourDetails {
     return {
+      filecode: this.tour.filecode,
       title: this.tour.title,
       description: this.tour.description,
       duration: this.tour.duration,
