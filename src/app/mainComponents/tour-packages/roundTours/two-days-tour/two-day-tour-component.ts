@@ -29,11 +29,11 @@ import { TourImageGalleryComponent } from '../../../../sharedComponents/tour-ima
 })
 export class TwoDayTourComponent implements OnInit, OnDestroy {
   images: string[] = [
-    'assets/img/5daysTours/36.jpg',
-    'assets/img/5daysTours/42.jpg',
+    'assets/img/clientTours/02.jpg',
+    'assets/img/clientTours/21.jpg',
+    'assets/img/clientTours/45.jpg',
     'assets/img/5daysTours/14.jpg',
-    'assets/img/5daysTours/43.jpg',
-    'assets/img/5daysTours/34.jpg',
+    'assets/img/5daysTours/c8dyxgodivrwf4hxzziq.jpg',
   ];
 
   currentIndex = 0;
@@ -84,7 +84,7 @@ export class TwoDayTourComponent implements OnInit, OnDestroy {
           type: 'Safari',
           title: { title: 'Habarana Elephant Safari (Eco Park)', icon: 'fa-paw', color: '#16a085' },
           description: 'Enjoy a jeep safari to see elephants in their natural habitat.',
-          image: 'assets/img/5daysTours/34.jpg',
+          image: 'assets/img/clientTours/21.jpg',
         },
         {
           type: 'Accommodation',
@@ -133,7 +133,7 @@ export class TwoDayTourComponent implements OnInit, OnDestroy {
           type: 'Wildlife Experience',
           title: { title: 'Elephant Experience', icon: 'fa-paw', color: '#16a085' },
           description: 'Enjoy elephant feeding, bathing, riding and photos.',
-          image: 'assets/img/2daysTours/7.jpg',
+          image: 'assets/img/clientTours/45.jpg',
         },
         {
           type: 'Tea Experience',

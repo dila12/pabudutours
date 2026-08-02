@@ -20,11 +20,12 @@ import { TourImageGalleryComponent } from '../../../../sharedComponents/tour-ima
 })
 export class BentotaTukTukTourComponent implements OnInit, OnDestroy {
   images: string[] = [
-    'assets/img/onedayTour/Galle/2.jpg',
-    'assets/img/onedayTour/Galle/6.jpg',
-    'assets/img/onedayTour/Galle/5.jpg',
-    'assets/img/onedayTour/Galle/1.jpg',
-    'assets/img/onedayTour/Galle/3.jpg',
+    'assets/img/clientTours/76.jpg',
+    'assets/img/clientTours/77.jpg',
+    'assets/img/clientTours/105.jpg',
+    'assets/img/clientTours/100.jpg',
+    'assets/img/clientTours/83.jpg',
+    'assets/img/clientTours/111.jpg',
   ];
 
   currentIndex = 0;
@@ -59,7 +60,7 @@ export class BentotaTukTukTourComponent implements OnInit, OnDestroy {
               color: '#f39c12',
             },
             description: 'Enjoy Bentota’s stunning beach scenery and photo stops.',
-            image: 'assets/img/onedayTour/Galle/2.jpg',
+            image: 'assets/img/clientTours/23.jpg',
           },
           {
             type: 'Wildlife',
@@ -69,7 +70,7 @@ export class BentotaTukTukTourComponent implements OnInit, OnDestroy {
               color: '#2980b9',
             },
             description: 'Visit a turtle hatchery and see baby turtles up close.',
-            image: 'assets/img/onedayTour/Galle/6.jpg',
+            image: 'assets/img/clientTours/04.jpg',
           },
           {
             type: 'Cultural Visit',
@@ -89,7 +90,7 @@ export class BentotaTukTukTourComponent implements OnInit, OnDestroy {
               color: '#16a085',
             },
             description: 'Optional Madu River boat safari available on request.',
-            image: 'assets/img/onedayTour/Galle/3.jpg',
+            image: 'assets/img/clientTours/12.jpg',
           },
           {
             type: 'Shopping',
@@ -99,7 +100,7 @@ export class BentotaTukTukTourComponent implements OnInit, OnDestroy {
               color: '#8e44ad',
             },
             description: 'Stop at local shops for souvenirs and gifts.',
-            image: 'assets/img/onedayTour/Galle/1.jpg',
+            image: 'assets/img/clientTours/08.jpg',
           },
           {
             type: 'Photo',
@@ -109,7 +110,7 @@ export class BentotaTukTukTourComponent implements OnInit, OnDestroy {
               color: '#27ae60',
             },
             description: 'Scenic stops for unforgettable Bentota photos.',
-            image: 'assets/img/5daysTours/31.jpg',
+            image: 'assets/img/clientTours/07.jpg',
           },
         ],
       },

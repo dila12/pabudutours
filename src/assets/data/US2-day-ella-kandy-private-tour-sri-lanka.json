@@ -5,16 +5,18 @@
     "tourType": "Round Tour",
     "overview": "Discover the beauty of Sri Lanka in 2 days with a private tour from Ella to Kandy, including visits to tea plantations, waterfalls, and cultural sites.",
     "images": [
-        "assets/img/2daysTours/1.jpeg",
-        "assets/img/2daysTours/2.jpeg",
-        "assets/img/2daysTours/3.jpeg"
+        "assets/img/clientTours/108.jpg",
+        "assets/img/clientTours/98.jpg",
+        "assets/img/clientTours/116.jpg",
+        "assets/img/clientTours/58.jpg",
+        "assets/img/clientTours/44.jpg"
     ],
     "price": {
-        "1": 420.00,
-        "2": 570.00,
-        "3": 650.00,
-        "4": 750.00,
-        "5": 900.00,
-        "6": 1020.00
+        "1": 420,
+        "2": 570,
+        "3": 650,
+        "4": 750,
+        "5": 900,
+        "6": 1020
     }
 }

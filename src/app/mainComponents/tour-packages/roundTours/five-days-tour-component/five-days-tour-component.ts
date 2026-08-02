@@ -35,11 +35,11 @@ import { TourImageGalleryComponent } from '../../../../sharedComponents/tour-ima
 })
 export class FiveDaysTourComponent implements OnInit, OnDestroy {
   images: string[] = [
-    'assets/img/5daysTours/beqnuxidbmckapjcag2m.jpg',
-    'assets/img/5daysTours/fozjxf01vl9yehvucwn2.jpg',
-    'assets/img/5daysTours/c8dyxgodivrwf4hxzziq.jpg',
-    'assets/img/5daysTours/dp8fjrahvepdlhdudxj0.jpg',
-    'assets/img/5daysTours/slqwoimy5yhfgcicn8ob.jpg',
+    'assets/img/clientTours/108.jpg',
+    'assets/img/clientTours/98.jpg',
+    'assets/img/clientTours/90.jpg',
+    'assets/img/clientTours/92.jpg',
+    'assets/img/clientTours/44.jpg',
   ];
 
   currentIndex = 0;
@@ -192,7 +192,7 @@ Private chauffeur-guided travel from Colombo Airport through the Cultural Triang
             },
             description:
               'Pinnawala Elephant Orphanage or elephant activities (riding, feeding and bathing elephants).',
-            image: 'assets/img/5daysTours/7.jpg',
+            image: 'assets/img/clientTours/02.jpg',
           },
           {
             type: 'Guided tour',
@@ -240,6 +240,7 @@ Private chauffeur-guided travel from Colombo Airport through the Cultural Triang
               color: '#c0392b',
             },
             description: 'Ella famous train ride.',
+            image: 'assets/img/clientTours/44.jpg',
           },
           {
             type: 'Guided tour',
@@ -249,7 +250,7 @@ Private chauffeur-guided travel from Colombo Airport through the Cultural Triang
               color: '#e67e22',
             },
             description: 'Nine Arch Bridge (free tuk tuk included).',
-            image: 'assets/img/5daysTours/5.jpg',
+            image: 'assets/img/clientTours/58.jpg',
           },
           {
             type: 'Guided tour',
@@ -259,7 +260,7 @@ Private chauffeur-guided travel from Colombo Airport through the Cultural Triang
               color: '#3498db',
             },
             description: 'Ravana waterfall.',
-            image: 'assets/img/5daysTours/27.jpg',
+            image: 'assets/img/clientTours/55.jpg',
           },
           {
             type: 'Guided tour',
@@ -279,7 +280,7 @@ Private chauffeur-guided travel from Colombo Airport through the Cultural Triang
               color: '#27ae60',
             },
             description: 'Yala or Udawalawe national safari.',
-            image: 'assets/img/5daysTours/24.jpg',
+            image: 'assets/img/clientTours/21.jpg',
           },
           {
             type: 'Accommodation',
@@ -306,6 +307,7 @@ Private chauffeur-guided travel from Colombo Airport through the Cultural Triang
               color: '#27ae60',
             },
             description: 'Mirissa Coconut Tree Hill.',
+            image: 'assets/img/clientTours/23.jpg',
           },
           {
             type: 'Guided tour',
@@ -315,7 +317,7 @@ Private chauffeur-guided travel from Colombo Airport through the Cultural Triang
               color: '#16a085',
             },
             description: 'Galle Dutch Fort.',
-            image: 'assets/img/5daysTours/32.jpg',
+            image: 'assets/img/onedayTour/Galle/10.jpg',
           },
           {
             type: 'Guided tour',
@@ -343,7 +345,7 @@ Private chauffeur-guided travel from Colombo Airport through the Cultural Triang
               color: '#2980b9',
             },
             description: 'Turtle farm visit.',
-            image: 'assets/img/5daysTours/31.jpg',
+            image: 'assets/img/clientTours/04.jpg',
           },
           {
             type: 'Boat Safari',
@@ -354,7 +356,7 @@ Private chauffeur-guided travel from Colombo Airport through the Cultural Triang
             },
             description:
               '1-hour Madu River safari or Bentota River safari.',
-            image: 'assets/img/5daysTours/32.jpg',
+            image: 'assets/img/clientTours/12.jpg',
           },
           {
             type: 'Departure',

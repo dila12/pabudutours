@@ -7,7 +7,7 @@
       "persons": "1-20 Persons",
       "rating": 5,
       "filecode": "ella-day-tour",
-      "image": "assets/img/onedayTour/ella/7.jpeg",
+      "image": "assets/img/clientTours/58.jpg",
       "routerLink": "/ella-day-tour"
     },
     {
@@ -17,7 +17,7 @@
       "persons": "1-20 Persons",
       "rating": 5,
       "filecode": "galle-day-tour",
-      "image": "assets/img/mainpage/3.jpeg",
+      "image": "assets/img/onedayTour/Galle/10.jpg",
       "routerLink": "/galle-day-tour"
     },
     {
@@ -47,7 +47,7 @@
       "persons": "1-20 Persons",
       "rating": 5,
       "filecode": "udawalawa-day-tour",
-      "image": "assets/img/5daysTours/24.jpg",
+      "image": "assets/img/clientTours/21.jpg",
       "routerLink": "/udawalawa-day-tour"
     },
     {
@@ -71,7 +71,7 @@
       "persons": "Max 3 Persons",
       "rating": 5,
       "filecode": "bentota-tuk-tuk-tour",
-      "image": "assets/img/onedayTour/Galle/2.jpg",
+      "image": "assets/img/clientTours/07.jpg",
       "routerLink": "/bentota-tuk-tuk-tour"
     }
 
@@ -85,7 +85,7 @@
       "persons": "1-20 Persons",
       "rating": 5,
       "filecode": "2-day-ella-kandy-private-tour-sri-lanka",
-      "image": "assets/img/2daysTours/1.jpeg",
+      "image": "assets/img/clientTours/58.jpg",
       "routerLink": "/2-day-ella-kandy-private-tour-sri-lanka"
     },
     {
@@ -95,7 +95,7 @@
       "persons": "1-20 Persons",
       "rating": 5,
       "filecode": "2-day-sigiriya-kandy-private-tour-sri-lanka",
-      "image": "assets/img/mainpage/6.jpeg",
+      "image": "assets/img/clientTours/02.jpg",
       "routerLink": "/2-day-sigiriya-kandy-private-tour-sri-lanka"
     },
     {
@@ -105,7 +105,7 @@
       "persons": "1-20 Persons",
       "rating": 5,
       "filecode": "3-day-sigiriya-kandy-ella-yala-tour",
-      "image": "assets/img/mainpage/2.jpeg",
+      "image": "assets/img/clientTours/21.jpg",
       "routerLink": "/3-day-sigiriya-kandy-ella-yala-tour"
     },
     {
@@ -115,7 +115,7 @@
       "persons": "1-20 Persons",
       "rating": 5,
       "filecode": "5-day-sri-lanka-tour",
-      "image": "assets/img/mainpage/2.jpeg",
+      "image": "assets/img/clientTours/44.jpg",
       "routerLink": "/5-day-sri-lanka-tour"
     },
     {
@@ -125,7 +125,7 @@
       "persons": "1-20 Persons",
       "rating": 5,
       "filecode": "7-day-sri-lanka-tour",
-      "image": "assets/img/mainpage/4.jpeg",
+      "image": "assets/img/clientTours/55.jpg",
       "routerLink": "/7-day-sri-lanka-tour"
     },
     {
@@ -135,7 +135,7 @@
       "persons": "1-20 Persons",
       "rating": 5,
       "filecode": "10-day-sri-lanka-tour",
-      "image": "assets/img/mainpage/6.jpeg",
+      "image": "assets/img/clientTours/57.jpg",
       "routerLink": "/10-day-sri-lanka-tour"
     }
   ]

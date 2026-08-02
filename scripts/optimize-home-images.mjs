@@ -11,7 +11,7 @@ const packageImages = [
   'src/assets/img/mainpage/6.jpeg',
   'src/assets/img/5daysTours/24.jpg',
   'src/assets/img/7daystour/goayffj226ceow8zxhey.jpg',
-  'src/assets/img/onedayTour/Galle/2.jpg',
+  'src/assets/img/onedayTour/Galle/10.jpg',
   'src/assets/img/2daysTours/1.jpeg',
 ];
 

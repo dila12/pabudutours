@@ -29,11 +29,11 @@ import { TourImageGalleryComponent } from '../../../../sharedComponents/tour-ima
 })
 export class TenDaysTourComponent implements OnInit, OnDestroy {
   images: string[] = [
-    'assets/img/7daystour/lzurk0uk82qqjh6soonh.jpg',
-    'assets/img/7daystour/u19dmfbuae46dhzpqctu.jpg',
-    'assets/img/7daystour/p5nnnq3wt124wwoa0rvo.jpg',
-    'assets/img/7daystour/fhlfhn3lx1onsizfpy76.jpg',
-    'assets/img/7daystour/dtebtjzozh7sfof4ci7c.jpg',
+    'assets/img/clientTours/124.jpg',
+    'assets/img/clientTours/90.jpg',
+    'assets/img/clientTours/108.jpg',
+    'assets/img/clientTours/102.jpg',
+    'assets/img/clientTours/77.jpg',
   ];
 
   currentIndex = 0;
@@ -82,7 +82,7 @@ export class TenDaysTourComponent implements OnInit, OnDestroy {
               color: '#8e44ad',
             },
             description: 'Habarana Village Safari or Habarana Eco Park safari.',
-            image: 'assets/img/5daysTours/36.jpg',
+            image: 'assets/img/clientTours/24.jpg',
           },
           {
             type: 'Accommodation',
@@ -227,7 +227,7 @@ export class TenDaysTourComponent implements OnInit, OnDestroy {
             },
             description:
               'Pinnawala Elephant Orphanage or do activities with elephants.',
-            image: 'assets/img/5daysTours/7.jpg',
+            image: 'assets/img/clientTours/02.jpg',
           },
           {
             type: 'Guided tour',
@@ -271,7 +271,7 @@ export class TenDaysTourComponent implements OnInit, OnDestroy {
               color: '#c0392b',
             },
             description: 'Nine Arch Bridge.',
-            image: 'assets/img/5daysTours/5.jpg',
+            image: 'assets/img/clientTours/58.jpg',
           },
           {
             type: 'Guided tour',
@@ -291,6 +291,7 @@ export class TenDaysTourComponent implements OnInit, OnDestroy {
               color: '#e67e22',
             },
             description: 'Ella train ride.',
+            image: 'assets/img/clientTours/44.jpg',
           },
           {
             type: 'Accommodation',
@@ -316,7 +317,7 @@ export class TenDaysTourComponent implements OnInit, OnDestroy {
               color: '#3498db',
             },
             description: 'Ravana waterfall.',
-            image: 'assets/img/5daysTours/27.jpg',
+            image: 'assets/img/clientTours/57.jpg',
           },
           {
             type: 'Wildlife Experience',
@@ -336,7 +337,7 @@ export class TenDaysTourComponent implements OnInit, OnDestroy {
             },
             description:
               'Wild safari at Yala National Park or Udawalawe National Park.',
-            image: 'assets/img/5daysTours/24.jpg',
+            image: 'assets/img/clientTours/21.jpg',
           },
           {
             type: 'Accommodation',
@@ -361,6 +362,7 @@ export class TenDaysTourComponent implements OnInit, OnDestroy {
               color: '#27ae60',
             },
             description: 'Mirissa Coconut Tree Hill.',
+            image: 'assets/img/clientTours/23.jpg',
           },
           {
             type: 'Leisure',
@@ -370,6 +372,7 @@ export class TenDaysTourComponent implements OnInit, OnDestroy {
               color: '#f39c12',
             },
             description: 'Beautiful Mirissa beach.',
+            image: 'assets/img/clientTours/29.jpg',
           },
           {
             type: 'Accommodation',
@@ -394,6 +397,7 @@ export class TenDaysTourComponent implements OnInit, OnDestroy {
               color: '#2980b9',
             },
             description: 'Whale watching at Mirissa.',
+            image: 'assets/img/clientTours/28.jpg',
           },
           {
             type: 'Activity',
@@ -436,7 +440,7 @@ export class TenDaysTourComponent implements OnInit, OnDestroy {
               color: '#16a085',
             },
             description: 'Galle Fort and ancient city.',
-            image: 'assets/img/5daysTours/32.jpg',
+            image: 'assets/img/onedayTour/Galle/10.jpg',
           },
           {
             type: 'Activity',
@@ -464,7 +468,7 @@ export class TenDaysTourComponent implements OnInit, OnDestroy {
               color: '#27ae60',
             },
             description: 'Turtle hatchery.',
-            image: 'assets/img/5daysTours/31.jpg',
+            image: 'assets/img/clientTours/04.jpg',
           },
           {
             type: 'Boat Safari',
@@ -474,6 +478,7 @@ export class TenDaysTourComponent implements OnInit, OnDestroy {
               color: '#3498db',
             },
             description: 'River boat safari.',
+            image: 'assets/img/clientTours/12.jpg',
           },
           {
             type: 'Accommodation',
@@ -526,6 +531,7 @@ export class TenDaysTourComponent implements OnInit, OnDestroy {
               color: '#16a085',
             },
             description: 'Independence Square.',
+            image: 'assets/img/clientTours/06.jpg',
           },
           {
             type: 'Guided tour',

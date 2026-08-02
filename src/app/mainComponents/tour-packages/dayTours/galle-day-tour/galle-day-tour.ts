@@ -20,11 +20,15 @@ import { TourImageGalleryComponent } from '../../../../sharedComponents/tour-ima
 })
 export class GalleDayTour implements OnInit, OnDestroy{
 images: string[] = [
-    'assets/img/onedayTour/Galle/1.jpg',
-    'assets/img/onedayTour/Galle/2.jpg',
-    'assets/img/onedayTour/Galle/3.jpg',
-    'assets/img/onedayTour/Galle/4.jpeg',
-    'assets/img/onedayTour/Galle/5.jpg',
+    'assets/img/onedayTour/Galle/12.jpg',
+    'assets/img/onedayTour/Galle/10.jpg',
+    'assets/img/onedayTour/Galle/17.jpg',
+    'assets/img/onedayTour/Galle/14.jpg',
+    'assets/img/onedayTour/Galle/15.jpg',
+    'assets/img/clientTours/72.jpg',
+    'assets/img/clientTours/96.jpg',
+    'assets/img/clientTours/97.jpg',
+    'assets/img/clientTours/94.jpg',
   ];
 
   currentIndex = 0;
@@ -73,7 +77,7 @@ Ideal for couples, families, and small groups looking for a comfortable and enri
             },
             description:
             'Explore the UNESCO World Heritage site of Galle Dutch Fort, rich in colonial history and stunning ocean views.',
-            image: 'assets/img/onedayTour/Galle/5.jpg',
+            image: 'assets/img/onedayTour/Galle/12.jpg',
           },
           {
             type: 'Activity',

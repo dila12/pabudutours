@@ -3,16 +3,17 @@ import fs from 'fs';
 import path from 'path';
 
 const packageImages = [
-  'src/assets/img/onedayTour/ella/7.jpeg',
-  'src/assets/img/mainpage/3.jpeg',
+  'src/assets/img/clientTours/58.jpg',
+  'src/assets/img/clientTours/02.jpg',
+  'src/assets/img/clientTours/21.jpg',
+  'src/assets/img/clientTours/44.jpg',
+  'src/assets/img/clientTours/55.jpg',
+  'src/assets/img/clientTours/57.jpg',
+  'src/assets/img/clientTours/07.jpg',
+  'src/assets/img/7daystour/goayffj226ceow8zxhey.jpg',
   'src/assets/img/mainpage/4.jpeg',
   'src/assets/img/mainpage/5.jpeg',
-  'src/assets/img/mainpage/2.jpeg',
-  'src/assets/img/mainpage/6.jpeg',
-  'src/assets/img/5daysTours/24.jpg',
-  'src/assets/img/7daystour/goayffj226ceow8zxhey.jpg',
-  'src/assets/img/onedayTour/Galle/2.jpg',
-  'src/assets/img/2daysTours/1.jpeg',
+  'src/assets/img/onedayTour/Galle/10.jpg',
 ];
 
 // Hero carousel webp sources that must stay large

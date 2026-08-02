@@ -35,12 +35,11 @@ import { TourImageGalleryComponent } from '../../../../sharedComponents/tour-ima
 })
 export class TwoDaysTourPlus implements OnInit, OnDestroy {
   images: string[] = [
-    'assets/img/2daysTours/1.jpeg',
-    'assets/img/2daysTours/2.jpeg',
-    'assets/img/2daysTours/3.jpeg',
-    'assets/img/2daysTours/4.jpg',
-    'assets/img/2daysTours/5.jpg',
-    'assets/img/2daysTours/6.jpeg',
+    'assets/img/clientTours/108.jpg',
+    'assets/img/clientTours/98.jpg',
+    'assets/img/clientTours/116.jpg',
+    'assets/img/clientTours/58.jpg',
+    'assets/img/clientTours/44.jpg',
   ];
 
   currentIndex = 0;
@@ -79,7 +78,7 @@ export class TwoDaysTourPlus implements OnInit, OnDestroy {
             },
             description:
               'Experience an exciting morning safari in Yala National Park, home to leopards, elephants, and diverse wildlife.',
-            image: 'assets/img/2daysTours/trpcuc5klgd2n9eugdeg.jpg',
+            image: 'assets/img/clientTours/21.jpg',
           },
           {
             type: 'Waterfall Visit',
@@ -90,7 +89,7 @@ export class TwoDaysTourPlus implements OnInit, OnDestroy {
             },
             description:
               'Visit the famous Ravana Falls, one of the most beautiful waterfalls in Sri Lanka.',
-            image: 'assets/img/2daysTours/13.jpg',
+            image: 'assets/img/clientTours/48.jpg',
           },
           {
             type: 'Train Experience',
@@ -101,7 +100,7 @@ export class TwoDaysTourPlus implements OnInit, OnDestroy {
             },
             description:
               'Enjoy one of the most scenic train journeys in the world through Sri Lanka’s hill country.',
-            image: 'assets/img/2daysTours/6.jpeg',
+            image: 'assets/img/clientTours/44.jpg',
           },
           {
             type: 'Scenic Visit',
@@ -112,7 +111,7 @@ export class TwoDaysTourPlus implements OnInit, OnDestroy {
             },
             description:
               'Visit the iconic Nine Arch Bridge surrounded by lush green tea plantations.',
-            image: 'assets/img/2daysTours/3.jpeg',
+            image: 'assets/img/clientTours/58.jpg',
           },
           {
             type: 'Waterfall Visit',
@@ -195,7 +194,7 @@ export class TwoDaysTourPlus implements OnInit, OnDestroy {
             },
             description:
               'Visit Pinnawala or enjoy elephant activities like feeding, bathing, or riding.',
-            image: 'assets/img/2daysTours/7.jpg',
+            image: 'assets/img/clientTours/51.jpg',
           },
         ],
       },

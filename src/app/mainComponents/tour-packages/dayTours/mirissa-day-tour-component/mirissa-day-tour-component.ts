@@ -20,11 +20,13 @@ import { TourImageGalleryComponent } from '../../../../sharedComponents/tour-ima
 })
 export class MirissaDayTourComponent implements OnInit, OnDestroy {
   images: string[] = [
-    'assets/img/7daystour/goayffj226ceow8zxhey.jpg',
-    'assets/img/7daystour/kolleldbe5pt7keqqls3.jpg',
-    'assets/img/onedayTour/Galle/1.jpg',
-    'assets/img/onedayTour/Galle/3.jpg',
-    'assets/img/7daystour/gf3kppt2kpvcfd5bgmgh.jpg',
+    'assets/img/onedayTour/mirissa/4.jpg',
+    'assets/img/onedayTour/mirissa/5.jpg',
+    'assets/img/onedayTour/mirissa/1.jpg',
+    'assets/img/clientTours/92.jpg',
+    'assets/img/clientTours/97.jpg',
+    'assets/img/clientTours/102.jpg',
+    'assets/img/clientTours/96.jpg',
   ];
 
   currentIndex = 0;
@@ -57,7 +59,7 @@ export class MirissaDayTourComponent implements OnInit, OnDestroy {
               color: '#2980b9',
             },
             description: 'Whale watching at Mirissa (3–5 hours).',
-            image: 'assets/img/onedayTour/Galle/1.jpg',
+            image: 'assets/img/onedayTour/mirissa/1.jpg',
           },
           {
             type: 'Guided tour',
@@ -67,7 +69,7 @@ export class MirissaDayTourComponent implements OnInit, OnDestroy {
               color: '#27ae60',
             },
             description: 'Visit Coconut Tree Hill for panoramic ocean and palm views.',
-            image: 'assets/img/7daystour/kolleldbe5pt7keqqls3.jpg',
+            image: 'assets/img/onedayTour/mirissa/5.jpg',
           },
           {
             type: 'Leisure',
@@ -77,7 +79,7 @@ export class MirissaDayTourComponent implements OnInit, OnDestroy {
               color: '#f39c12',
             },
             description: 'Swim at Mirissa’s beautiful beach.',
-            image: 'assets/img/7daystour/goayffj226ceow8zxhey.jpg',
+            image: 'assets/img/clientTours/92.jpg',
           },
         ],
       },

@@ -5,11 +5,13 @@
     "tourType": "Day Tour",
     "overview": "Private Mirissa day tour with whale watching (3–5 hours), Coconut Tree Hill, and swimming at Mirissa beach.",
     "images": [
-        "assets/img/7daystour/goayffj226ceow8zxhey.jpg",
-        "assets/img/7daystour/kolleldbe5pt7keqqls3.jpg",
-        "assets/img/onedayTour/Galle/1.jpg",
-        "assets/img/onedayTour/Galle/3.jpg",
-        "assets/img/7daystour/gf3kppt2kpvcfd5bgmgh.jpg"
+        "assets/img/onedayTour/mirissa/4.jpg",
+        "assets/img/onedayTour/mirissa/5.jpg",
+        "assets/img/onedayTour/mirissa/1.jpg",
+        "assets/img/clientTours/92.jpg",
+        "assets/img/clientTours/97.jpg",
+        "assets/img/clientTours/102.jpg",
+        "assets/img/clientTours/96.jpg"
     ],
     "price": {
         "1": 240,

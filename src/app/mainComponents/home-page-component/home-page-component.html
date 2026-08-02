@@ -5,29 +5,21 @@
       <div class="carousel-item" [class.active]="heroSlide === 0">
         <picture>
           <source
-            media="(max-width: 480px)"
-            type="image/avif"
-            srcset="assets/img/mainpage/hero-414.avif">
-          <source
-            media="(max-width: 480px)"
-            type="image/webp"
-            srcset="assets/img/mainpage/hero-414.webp">
-          <source
             media="(max-width: 768px)"
             type="image/avif"
-            srcset="assets/img/mainpage/hero-480.avif">
+            srcset="assets/img/mainpage/hero-800.avif">
           <source
             media="(max-width: 768px)"
             type="image/webp"
-            srcset="assets/img/mainpage/hero-480.webp">
+            srcset="assets/img/mainpage/hero-800.webp">
           <source srcset="assets/img/mainpage/hero.avif" type="image/avif">
           <source srcset="assets/img/mainpage/hero.webp" type="image/webp">
           <img
             class="home-hero__img"
-            src="assets/img/mainpage/hero-414.webp"
+            src="assets/img/mainpage/hero.webp"
             alt="Scenic Sri Lanka tour with Pabudu Tours"
-            width="414"
-            height="552"
+            width="1920"
+            height="1080"
             fetchpriority="high"
             decoding="async">
         </picture>
@@ -58,9 +50,8 @@
       </div>
       <div class="carousel-item" [class.active]="heroSlide === 5">
         <picture>
-          <source srcset="assets/img/mainpage/6-800.avif" type="image/avif">
-          <source srcset="assets/img/mainpage/6-800.webp" type="image/webp">
-          <img class="home-hero__img" src="assets/img/mainpage/6.jpeg" alt="Private Sri Lanka holiday with Pabudu Tours" width="900" height="600" loading="lazy" decoding="async">
+          <source srcset="assets/img/mainpage/6.webp" type="image/webp">
+          <img class="home-hero__img" src="assets/img/mainpage/6.jpeg" alt="Private Sri Lanka holiday with Pabudu Tours" width="1400" height="900" loading="lazy" decoding="async">
         </picture>
       </div>
     </div>

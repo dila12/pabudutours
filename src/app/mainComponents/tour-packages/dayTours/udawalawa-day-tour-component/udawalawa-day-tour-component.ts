@@ -20,11 +20,11 @@ import { TourImageGalleryComponent } from '../../../../sharedComponents/tour-ima
 })
 export class UdawalawaDayTourComponent implements OnInit, OnDestroy {
   images: string[] = [
-    'assets/img/5daysTours/24.jpg',
-    'assets/img/5daysTours/7.jpg',
-    'assets/img/5daysTours/30.jpg',
-    'assets/img/5daysTours/beqnuxidbmckapjcag2m.jpg',
-    'assets/img/5daysTours/fozjxf01vl9yehvucwn2.jpg',
+    'assets/img/clientTours/90.jpg',
+    'assets/img/clientTours/91.jpg',
+    'assets/img/clientTours/21.jpg',
+    'assets/img/clientTours/24.jpg',
+    'assets/img/clientTours/19.jpg',
   ];
 
   currentIndex = 0;
@@ -57,7 +57,7 @@ export class UdawalawaDayTourComponent implements OnInit, OnDestroy {
               color: '#27ae60',
             },
             description: '4–5 hour Udawalawa National Park jeep safari to see wild elephants and other wildlife.',
-            image: 'assets/img/5daysTours/24.jpg',
+            image: 'assets/img/clientTours/21.jpg',
           },
           {
             type: 'Wildlife',
@@ -67,7 +67,7 @@ export class UdawalawaDayTourComponent implements OnInit, OnDestroy {
               color: '#e67e22',
             },
             description: 'Visit the Udawalawa baby elephant transit home and watch orphaned calves being cared for before release.',
-            image: 'assets/img/5daysTours/7.jpg',
+            image: 'assets/img/clientTours/02.jpg',
           },
         ],
       },

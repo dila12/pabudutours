@@ -5,11 +5,12 @@
     "tourType": "Tuk Tuk Ride",
     "overview": "Hop on a tuk tuk and discover Bentota beaches, turtle hatchery, Kande Vihara Temple and local photo stops on a short 2–3 hour ride.",
     "images": [
-        "assets/img/onedayTour/Galle/2.jpg",
-        "assets/img/onedayTour/Galle/6.jpg",
-        "assets/img/onedayTour/Galle/5.jpg",
-        "assets/img/onedayTour/Galle/1.jpg",
-        "assets/img/onedayTour/Galle/3.jpg"
+        "assets/img/clientTours/76.jpg",
+        "assets/img/clientTours/77.jpg",
+        "assets/img/clientTours/105.jpg",
+        "assets/img/clientTours/100.jpg",
+        "assets/img/clientTours/83.jpg",
+        "assets/img/clientTours/111.jpg"
     ],
     "price": {
         "1": 70,

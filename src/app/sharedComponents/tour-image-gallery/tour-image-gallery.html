@@ -1,6 +1,8 @@
 <div class="tour-gallery" *ngIf="images?.length">
   <div class="tour-gallery__main">
-    <img [src]="currentImage" class="tour-gallery__image" [alt]="alt" />
+    <div class="tour-gallery__frame">
+      <img [src]="currentImage" class="tour-gallery__image" [alt]="alt" />
+    </div>
 
     <button
       *ngIf="images.length > 1"

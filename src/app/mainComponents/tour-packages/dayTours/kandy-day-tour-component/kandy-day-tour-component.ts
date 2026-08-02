@@ -28,8 +28,8 @@ import { TourImageGalleryComponent } from '../../../../sharedComponents/tour-ima
 })
 export class KandyDayTourComponent implements OnInit, OnDestroy {
   images: string[] = [
-    'assets/img/onedayTour/kandy/1.jpg',
-    'assets/img/onedayTour/kandy/2.jpg',
+    'assets/img/onedayTour/kandy/8.jpg',
+    'assets/img/onedayTour/kandy/9.jpg',
     'assets/img/onedayTour/kandy/3.jpg',
     'assets/img/onedayTour/kandy/4.jpg',
     'assets/img/onedayTour/kandy/5.jpg',
@@ -76,7 +76,7 @@ export class KandyDayTourComponent implements OnInit, OnDestroy {
               color: '#27ae60',
             },
             description: 'National Botanical Garden at Peradeniya.',
-            image: 'assets/img/onedayTour/kandy/2.jpg',
+            image: 'assets/img/onedayTour/kandy/6.jpg',
           },
           {
             type: 'Tea Experience',
@@ -97,7 +97,7 @@ export class KandyDayTourComponent implements OnInit, OnDestroy {
             },
             description:
               'Pinnawala Elephant Orphanage or do activities with elephants in park.',
-            image: 'assets/img/onedayTour/kandy/1.jpg',
+            image: 'assets/img/onedayTour/kandy/9.jpg',
           },
           {
             type: 'Guided tour',

@@ -5,18 +5,18 @@
     "tourType": "Round Tour",
     "overview": "Private 5-day (4-night) excursion covering Sigiriya, Kandy, Nuwara Eliya, Ella, safari and the down south with 4-star half-board hotels and private chauffeur guide.",
     "images": [
-        "assets/img/5daysTours/fozjxf01vl9yehvucwn2.jpg",
-        "assets/img/5daysTours/m5mz7zqwjql44ydc4wyl.jpg",
-        "assets/img/5daysTours/c8dyxgodivrwf4hxzziq.jpg",
-        "assets/img/5daysTours/dp8fjrahvepdlhdudxj0.jpg",
-        "assets/img/5daysTours/slqwoimy5yhfgcicn8ob.jpg"
+        "assets/img/clientTours/108.jpg",
+        "assets/img/clientTours/98.jpg",
+        "assets/img/clientTours/90.jpg",
+        "assets/img/clientTours/92.jpg",
+        "assets/img/clientTours/44.jpg"
     ],
     "price": {
-        "1": 990.00,
-        "2": 1400.00,
-        "3": 1700.00,
-        "4": 2100.00,
-        "5": 2400.00,
-        "6": 2700.00
+        "1": 990,
+        "2": 1400,
+        "3": 1700,
+        "4": 2100,
+        "5": 2400,
+        "6": 2700
     }
 }

@@ -20,11 +20,12 @@ import { TourImageGalleryComponent } from '../../../../sharedComponents/tour-ima
 })
 export class EllaDayTourComponent implements OnInit, OnDestroy {
   images: string[] = [
-    'assets/img/onedayTour/ella/1.jpg',
-    'assets/img/onedayTour/ella/2.jpg',
-    'assets/img/onedayTour/ella/3.jpg',
-    'assets/img/onedayTour/ella/4.jpg',
-    'assets/img/onedayTour/ella/5.jpg',
+    'assets/img/clientTours/108.jpg',
+    'assets/img/clientTours/84.jpg',
+    'assets/img/clientTours/98.jpg',
+    'assets/img/clientTours/116.jpg',
+    'assets/img/clientTours/124.jpg',
+    'assets/img/clientTours/58.jpg',
   ];
 
   currentIndex = 0;
@@ -58,7 +59,7 @@ export class EllaDayTourComponent implements OnInit, OnDestroy {
             },
             description:
               'The majestic Nine Arch Bridge is one of the many reasons for that. The glorious Nine Arch Bridge between Ella and Demodara station is one of the engineering marvels in the early 20th century',
-            image: 'assets/img/onedayTour/ella/1.jpg',
+            image: 'assets/img/clientTours/58.jpg',
           },
           {
             type: 'Guided tour',
@@ -69,7 +70,7 @@ export class EllaDayTourComponent implements OnInit, OnDestroy {
             },
             description:
               'Ella train ride is the most beautiful train ride in Sri Lanka, if not in the world! Board the train and experience breathtaking views of lush green tea plantations, mountains, viaducts, valleys etc.',
-            image: 'assets/img/onedayTour/ella/3.jpg',
+            image: 'assets/img/clientTours/44.jpg',
           },
           {
             type: 'Guided tour',
@@ -91,7 +92,7 @@ export class EllaDayTourComponent implements OnInit, OnDestroy {
             },
             description:
               'Ravana Falls, one of the widest falls in the country.The falls are quite impressive, and you can climb over some of the rocks to get a closer look.',
-            image: 'assets/img/onedayTour/ella/2.jpg',
+            image: 'assets/img/clientTours/48.jpg',
           },
           {
             type: 'Guided tour',
@@ -102,7 +103,7 @@ export class EllaDayTourComponent implements OnInit, OnDestroy {
             },
             description:
               '4th Stop: You are able to observe an animated group of around 20 or 30 juvenile and teenage pachyderms, who are fed four times a day.',
-            image: 'assets/img/onedayTour/ella/7.jpg',
+            image: 'assets/img/clientTours/02.jpg',
           },
         ],
       },

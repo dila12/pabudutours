@@ -29,11 +29,11 @@ import { TourImageGalleryComponent } from '../../../../sharedComponents/tour-ima
 })
 export class ThreeDaysTours {
   images: string[] = [
-    'assets/img/5daysTours/36.jpg',
-    'assets/img/5daysTours/42.jpg',
-    'assets/img/5daysTours/14.jpg',
-    'assets/img/5daysTours/43.jpg',
-    'assets/img/5daysTours/34.jpg',
+    'assets/img/clientTours/108.jpg',
+    'assets/img/clientTours/90.jpg',
+    'assets/img/clientTours/98.jpg',
+    'assets/img/clientTours/02.jpg',
+    'assets/img/clientTours/44.jpg',
   ];
 
   currentIndex = 0;
@@ -172,7 +172,7 @@ export class ThreeDaysTours {
               color: '#16a085',
             },
             description: 'Observe rescued elephants as they are fed and bathed in the river, offering a unique opportunity to see these gentle giants up close.',
-            image: 'assets/img/5daysTours/7.jpg',
+            image: 'assets/img/clientTours/02.jpg',
           },
           {
             type: 'Tea Experience',
@@ -219,7 +219,7 @@ export class ThreeDaysTours {
               color: '#16a085',
             },
             description:'Visit the iconic Nine Arch Bridge, one of Sri Lanka’s most photographed landmarks, set amidst lush green tea plantations.',
-            image: 'assets/img/5daysTours/3.jpeg',
+            image: 'assets/img/clientTours/58.jpg',
           },
           {
             type: 'Train Experience',
@@ -229,7 +229,7 @@ export class ThreeDaysTours {
               color: '#8e44ad',
             },
             description:   'Enjoy one of the most scenic train journeys in the world, passing through misty mountains, tea plantations and breathtaking landscapes.',
-            image: 'assets/img/5daysTours/6.jpeg',
+            image: 'assets/img/clientTours/44.jpg',
           },
           {
             type: 'Waterfall Visit',
@@ -239,7 +239,7 @@ export class ThreeDaysTours {
               color: '#2980b9',
             },
             description:'Stop at the beautiful Ravana Falls, a popular natural attraction where you can relax and enjoy the cascading water surrounded by jungle scenery.',
-            image: 'assets/img/5daysTours/11.jpg',
+            image: 'assets/img/clientTours/55.jpg',
           },
           {
             type: 'Safari',
@@ -250,7 +250,7 @@ export class ThreeDaysTours {
             },
             description:
               'Experience an exciting jeep safari in Yala or Udawalawa National Park, where you can spot elephants, leopards, crocodiles and a wide variety of wildlife in their natural habitat.',
-            image: 'assets/img/5daysTours/37.jpg',
+            image: 'assets/img/clientTours/21.jpg',
           },
         ],
       },
