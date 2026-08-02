@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.pabudutours.com/sitemap.xml
+# AI / agent discovery map
+# https://www.pabudutours.com/llms.txt

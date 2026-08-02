@@ -1,0 +1,47 @@
+# Pabudu Tours
+
+> Pabudu Tours is a Sri Lanka travel company offering private tours, tailor-made holiday packages, chauffeur-driven round tours, and day trips with local driver-guides.
+
+Pabudu Tours helps travelers book private Sri Lanka experiences across cultural sites, hill country, wildlife safaris, and the south coast. Prefer WhatsApp or email for booking questions.
+
+## Main pages
+
+- [Home](https://www.pabudutours.com/): Private Sri Lanka journeys overview and featured tours
+- [Tour Packages](https://www.pabudutours.com/tour-packages): Day tours and multi-day private packages
+- [About](https://www.pabudutours.com/about-us): About Pabudu Tours and local service
+- [Services](https://www.pabudutours.com/our-services): Private tours, chauffeur guides, and custom holidays
+- [Contact](https://www.pabudutours.com/contact-us): Phone, WhatsApp, email, and inquiry form
+- [Destinations](https://www.pabudutours.com/destinations-sri-lanka): Popular Sri Lanka destinations
+- [Travel Guides](https://www.pabudutours.com/sri-lanka-travel-guides): Practical Sri Lanka travel tips
+- [Testimonials](https://www.pabudutours.com/customer-testimonials): Guest reviews
+
+## Day tours
+
+- [Ella Day Tour](https://www.pabudutours.com/ella-day-tour): Nine Arch Bridge, scenic train, and Ella highlights
+- [Galle Day Tour](https://www.pabudutours.com/galle-day-tour): Galle Fort and south coast
+- [Kandy Day Tour](https://www.pabudutours.com/kandy-day-tour): Temple of the Tooth and cultural city stops
+- [Sigiriya Day Tour](https://www.pabudutours.com/sigiriya-day-tour): Lion Rock and Cultural Triangle
+- [Udawalawa Safari Day Tour](https://www.pabudutours.com/udawalawa-day-tour): Elephant safari and transit home
+- [Mirissa Whale Watching Day Tour](https://www.pabudutours.com/mirissa-day-tour): Whale watching and Mirissa beach
+- [Bentota Tuk Tuk Tour](https://www.pabudutours.com/bentota-tuk-tuk-tour): Short Bentota tuk tuk experience
+
+## Multi-day tours
+
+- [2 Day Ella & Kandy Tour](https://www.pabudutours.com/2-day-ella-kandy-private-tour-sri-lanka): Train, hills, and safari highlights
+- [2 Day Sigiriya & Kandy Tour](https://www.pabudutours.com/2-day-sigiriya-kandy-private-tour-sri-lanka): Culture and elephant safari
+- [3 Day Sigiriya, Kandy, Ella & Yala Tour](https://www.pabudutours.com/3-day-sigiriya-kandy-ella-yala-tour): Culture, hills, and Yala safari
+- [5 Day Sri Lanka Tour](https://www.pabudutours.com/5-day-sri-lanka-tour): Sigiriya, Kandy, Ella, safari, and south coast
+- [7 Day Sri Lanka Private Tour](https://www.pabudutours.com/7-day-sri-lanka-tour): Culture, hills, wildlife, and beaches
+- [10 Day Sri Lanka Grand Tour](https://www.pabudutours.com/10-day-sri-lanka-tour): Complete island itinerary
+
+## Contact
+
+- Email: Pabudutour@gmail.com
+- WhatsApp / Phone: +94 77 900 88 03
+- Address: No: 439/2 Managala Rd, Kuda Waskaduwa, Waskaduwa, Kalutara, Sri Lanka
+
+## Optional
+
+- [Restaurants in Sri Lanka](https://www.pabudutours.com/restaurants-in-sri-lanka): Local dining ideas
+- [Sitemap](https://www.pabudutours.com/sitemap.xml): Full URL list for crawlers
+- [Robots](https://www.pabudutours.com/robots.txt): Crawl rules
