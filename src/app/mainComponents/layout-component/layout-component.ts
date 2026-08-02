@@ -87,4 +87,11 @@ export class LayoutComponent implements OnInit, OnDestroy {
     this.langMenuOpen = false;
     this.languageService.use(lang);
   }
+
+  openCookiePreferences() {
+    if (!isPlatformBrowser(this.platformId)) return;
+    const open = (window as Window & { openCookiePreferences?: () => void })
+      .openCookiePreferences;
+    if (typeof open === 'function') open();
+  }
 }

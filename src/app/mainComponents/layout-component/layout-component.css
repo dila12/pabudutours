@@ -497,6 +497,24 @@
   font-weight: 600;
 }
 
+.site-footer__cookies {
+  display: inline-block;
+  margin-top: 0.55rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: rgba(255, 255, 255, 0.75);
+  font: inherit;
+  font-size: 0.82rem;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+
+.site-footer__cookies:hover {
+  color: #b8954a;
+}
+
 @media (max-width: 991.98px) {
   .site-footer__grid {
     grid-template-columns: 1fr 1fr;
