@@ -68,13 +68,30 @@
   opacity: 0;
   visibility: hidden;
   z-index: 0;
-  transition: opacity 0.65s ease;
 }
 
+/* First slide visible immediately (no JS / no fade) so LCP isn't delayed */
+.home-hero__carousel .carousel-item:first-child,
 .home-hero__carousel .carousel-item.active {
   opacity: 1;
   visibility: visible;
   z-index: 1;
+}
+
+.home-hero__carousel.is-rotating .carousel-item {
+  transition: opacity 0.45s ease;
+}
+
+.home-hero__carousel.is-rotating .carousel-item:first-child:not(.active) {
+  opacity: 0;
+  visibility: hidden;
+  z-index: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-hero__carousel.is-rotating .carousel-item {
+    transition: none;
+  }
 }
 
 .home-hero__img {

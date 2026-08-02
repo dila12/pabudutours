@@ -1,6 +1,6 @@
 <!-- Hero carousel sized so next section peeks below -->
 <section class="home-hero" aria-label="Pabudu Tours Sri Lanka">
-  <div id="header-carousel" class="carousel slide home-hero__carousel">
+  <div id="header-carousel" class="carousel slide home-hero__carousel" [class.is-rotating]="heroRotating">
     <div class="carousel-inner">
       <div class="carousel-item" [class.active]="heroSlide === 0">
         <picture>
@@ -29,7 +29,7 @@
             width="414"
             height="552"
             fetchpriority="high"
-            decoding="sync">
+            decoding="async">
         </picture>
       </div>
       <div class="carousel-item" [class.active]="heroSlide === 1">

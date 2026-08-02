@@ -29,6 +29,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
   currentIndex = 0;
   heroSlide = 0;
   readonly heroSlideCount = 6;
+  heroRotating = false;
   interval: ReturnType<typeof setInterval> | null = null;
   heroInterval: ReturnType<typeof setInterval> | null = null;
   userCountry = 'US';
@@ -229,11 +230,13 @@ export class HomePageComponent implements OnInit, OnDestroy {
   }
 
   prevHero() {
+    this.heroRotating = true;
     this.heroSlide =
       (this.heroSlide - 1 + this.heroSlideCount) % this.heroSlideCount;
   }
 
   nextHero() {
+    this.heroRotating = true;
     this.heroSlide = (this.heroSlide + 1) % this.heroSlideCount;
   }
 

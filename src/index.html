@@ -32,17 +32,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link rel="preload" as="image" type="image/avif" href="assets/img/mainpage/hero-414.avif" media="(max-width: 480px)" fetchpriority="high">
   <link rel="preload" as="image" type="image/avif" href="assets/img/mainpage/hero-480.avif" media="(min-width: 481px) and (max-width: 768px)" fetchpriority="high">
   <link rel="preload" as="image" type="image/avif" href="assets/img/mainpage/hero.avif" media="(min-width: 769px)" fetchpriority="high">
+  <!-- System fonts first; Google fonts after paint so they don't compete with LCP -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap"></noscript>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" media="print" onload="this.onload=null;this.media='all';var l=document.createElement('link');l.rel='stylesheet';l.href='assets/css/fa-display-swap.css';document.head.appendChild(l)">
-  <noscript>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/fa-display-swap.css">
-  </noscript>
+  <style>
+    /* Critical hero shell so something paints before Angular CSS */
+    .home-hero{position:relative;width:100%;min-height:400px;background:#012c13;color:#fff}
+    .home-hero__img{width:100%;height:100%;object-fit:cover;display:block}
+  </style>
   <!-- Consent Mode defaults MUST run before any Google tags -->
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -291,27 +291,55 @@
         gtag('config', MEASUREMENT_ID, { send_page_view: true });
       }
 
+      function loadFontAwesome() {
+        if (window.__faLoaded) return;
+        window.__faLoaded = true;
+        var css = document.createElement('link');
+        css.rel = 'stylesheet';
+        css.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css';
+        css.onload = function () {
+          var swap = document.createElement('link');
+          swap.rel = 'stylesheet';
+          swap.href = 'assets/css/fa-display-swap.css';
+          document.head.appendChild(swap);
+        };
+        document.head.appendChild(css);
+      }
+
       function showBannerIfNeeded() {
         var saved = null;
         try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) {}
         if (saved === 'granted' || saved === 'denied') {
           if (banner) banner.hidden = true;
-          return;
+          return saved;
         }
         if (banner) banner.hidden = false;
+        return null;
       }
 
-      if (acceptBtn) acceptBtn.addEventListener('click', function () { applyConsent('granted'); });
-      if (rejectBtn) rejectBtn.addEventListener('click', function () { applyConsent('denied'); });
-
-      showBannerIfNeeded();
-
-      // Load Google tag after defaults (and any restored update) — do not wait for banner.
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(loadAnalytics, { timeout: 4000 });
-      } else {
-        window.addEventListener('load', function () { setTimeout(loadAnalytics, 2000); });
+      if (acceptBtn) {
+        acceptBtn.addEventListener('click', function () {
+          applyConsent('granted');
+          loadAnalytics();
+        });
       }
+      if (rejectBtn) {
+        rejectBtn.addEventListener('click', function () {
+          applyConsent('denied');
+          // Cookieless pings only — after LCP window
+          setTimeout(loadAnalytics, 4000);
+        });
+      }
+
+      var prior = showBannerIfNeeded();
+
+      // Defer non-critical third parties until after first paint / LCP
+      window.addEventListener('load', function () {
+        setTimeout(loadFontAwesome, 1200);
+        if (prior === 'granted' || prior === 'denied') {
+          setTimeout(loadAnalytics, 3000);
+        }
+      });
 
       // Optional: footer / settings can call window.openCookiePreferences()
       window.openCookiePreferences = function () {
@@ -319,6 +347,10 @@
       };
     })();
   </script>
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/fa-display-swap.css">
+  </noscript>
 </body>
 
 </html>
