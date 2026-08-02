@@ -3,7 +3,18 @@
   [routerLink]="routerLink"
   [attr.aria-label]="filecode ? (('tours.' + filecode) | translate) : title">
   <div class="package-image-container">
-    <img [src]="image" alt="" class="package-image" width="400" height="260" loading="lazy" decoding="async" />
+    <picture>
+      <source *ngIf="avifSrc" [srcset]="avifSrc" type="image/avif" />
+      <source *ngIf="webpSrc" [srcset]="webpSrc" type="image/webp" />
+      <img
+        [src]="webpSrc || image"
+        alt=""
+        class="package-image"
+        width="400"
+        height="260"
+        loading="lazy"
+        decoding="async" />
+    </picture>
     <div class="package-image-shade" aria-hidden="true"></div>
     <div class="package-badge">
       <i class="fa fa-star" aria-hidden="true"></i>
