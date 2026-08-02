@@ -134,7 +134,7 @@
             </div>
           </div>
 
-          <button type="submit" class="contact-form__submit" [disabled]="contactForm.invalid">
+          <button type="submit" class="contact-form__submit" [disabled]="contactForm.invalid || isSubmitting">
             {{ 'contact.submit' | translate }}
           </button>
         </form>
