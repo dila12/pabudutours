@@ -1,5 +1,77 @@
 {
   "version": 2,
+  "redirects": [
+    {
+      "source": "/2-day-sri-lanka-tour",
+      "destination": "/2-day-ella-kandy-private-tour-sri-lanka",
+      "permanent": true
+    },
+    {
+      "source": "/2-day-tour",
+      "destination": "/2-day-ella-kandy-private-tour-sri-lanka",
+      "permanent": true
+    },
+    {
+      "source": "/3-day-sri-lanka-tour",
+      "destination": "/3-day-sigiriya-kandy-ella-yala-tour",
+      "permanent": true
+    },
+    {
+      "source": "/3-day-tour",
+      "destination": "/3-day-sigiriya-kandy-ella-yala-tour",
+      "permanent": true
+    },
+    {
+      "source": "/5-day-tour",
+      "destination": "/5-day-sri-lanka-tour",
+      "permanent": true
+    },
+    {
+      "source": "/7-day-tour",
+      "destination": "/7-day-sri-lanka-tour",
+      "permanent": true
+    },
+    {
+      "source": "/10-day-tour",
+      "destination": "/10-day-sri-lanka-tour",
+      "permanent": true
+    },
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "/about-us",
+      "permanent": true
+    },
+    {
+      "source": "/services",
+      "destination": "/our-services",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact-us",
+      "permanent": true
+    },
+    {
+      "source": "/packages",
+      "destination": "/tour-packages",
+      "permanent": true
+    },
+    {
+      "source": "/tours",
+      "destination": "/tour-packages",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/((?!api/).*)",
