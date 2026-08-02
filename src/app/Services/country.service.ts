@@ -19,6 +19,15 @@ export class CountryService {
       return 'US';
     }
 
+    // Only US price files exist — skip geo API on the critical path.
+    if (
+      CountryService.PRICING_COUNTRIES.size === 1 &&
+      CountryService.PRICING_COUNTRIES.has('US')
+    ) {
+      localStorage.setItem('user_country', 'US');
+      return 'US';
+    }
+
     const saved = localStorage.getItem('user_country');
     if (saved) {
       const pricing = this.toPricingCountry(saved);

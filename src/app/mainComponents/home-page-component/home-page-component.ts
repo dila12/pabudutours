@@ -101,12 +101,40 @@ export class HomePageComponent implements OnInit, OnDestroy {
 
     try {
       this.userCountry = await this.countryService.detectCountry();
-      this.dayTours = await this.loadToursWithPrices(toursData.dayTours);
-      this.multiDayTours = await this.loadToursWithPrices(
-        toursData.multiDayTours,
-      );
+      // Paint package cards immediately; fill prices after idle so they stay
+      // off the LCP critical-request chain.
+      this.dayTours = toursData.dayTours.map((t) => ({ ...t, price: 0 }));
+      this.multiDayTours = toursData.multiDayTours.map((t) => ({
+        ...t,
+        price: 0,
+      }));
       this.autoSlide();
       this.startHeroCarousel();
+
+      const fillPrices = async () => {
+        try {
+          const [day, multi] = await Promise.all([
+            this.loadToursWithPrices(toursData.dayTours),
+            this.loadToursWithPrices(toursData.multiDayTours),
+          ]);
+          this.dayTours = day;
+          this.multiDayTours = multi;
+        } catch (err) {
+          console.error('Price load failed:', err);
+        }
+      };
+
+      const w = window as Window & {
+        requestIdleCallback?: (
+          cb: () => void,
+          opts?: { timeout: number },
+        ) => number;
+      };
+      if (typeof w.requestIdleCallback === 'function') {
+        w.requestIdleCallback(() => void fillPrices(), { timeout: 2000 });
+      } else {
+        setTimeout(() => void fillPrices(), 400);
+      }
     } catch (error) {
       console.error('Browser data load failed:', error);
     }
