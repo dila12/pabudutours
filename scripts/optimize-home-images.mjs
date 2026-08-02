@@ -25,7 +25,7 @@ async function report(file) {
   );
 }
 
-/** Cards display ~346×227 on mobile; 400×260 covers ~1.15× CSS + slight DPR headroom. */
+/** Cards display ~346×227 on mobile; 400×260 matches HTML attrs + slight headroom. */
 async function makeCards() {
   for (const src of packageImages) {
     if (!fs.existsSync(src)) {
@@ -53,31 +53,34 @@ async function makeCards() {
 
 /**
  * About block: ~373×280 mobile, ~half-column desktop.
- * 800×600 covers 2× mobile and typical desktop without the 1200px original.
+ * Mobile gets 480w; desktop gets 800w.
  */
 async function makeAbout() {
-  const src = 'src/assets/img/mainpage/about.webp';
-  if (!fs.existsSync(src)) {
-    console.log('MISSING', src);
+  const master = fs.existsSync('src/assets/img/mainpage/2.jpeg')
+    ? 'src/assets/img/mainpage/2.jpeg'
+    : 'src/assets/img/mainpage/about.webp';
+  if (!fs.existsSync(master)) {
+    console.log('MISSING about source');
     return;
   }
 
-  // Keep a decode of the current file, then overwrite both outputs.
-  const input = fs.readFileSync(src);
-  const base = sharp(input).resize(800, 600, { fit: 'cover', position: 'centre' });
+  const variants = [
+    { name: 'about-480', w: 480, h: 360 },
+    { name: 'about', w: 800, h: 600 },
+  ];
 
-  const webpBuf = await base
-    .clone()
-    .webp({ quality: 68, effort: 6 })
-    .toBuffer();
-  fs.writeFileSync(src, webpBuf);
-  await report(src);
-
-  const avifOut = 'src/assets/img/mainpage/about.avif';
-  await sharp(webpBuf)
-    .avif({ quality: 45, effort: 6 })
-    .toFile(avifOut);
-  await report(avifOut);
+  for (const { name, w, h } of variants) {
+    const webpOut = `src/assets/img/mainpage/${name}.webp`;
+    const avifOut = `src/assets/img/mainpage/${name}.avif`;
+    const webpBuf = await sharp(master)
+      .resize(w, h, { fit: 'cover', position: 'centre' })
+      .webp({ quality: 68, effort: 6 })
+      .toBuffer();
+    fs.writeFileSync(webpOut, webpBuf);
+    await sharp(webpBuf).avif({ quality: 45, effort: 6 }).toFile(avifOut);
+    await report(webpOut);
+    await report(avifOut);
+  }
 }
 
 await makeCards();
