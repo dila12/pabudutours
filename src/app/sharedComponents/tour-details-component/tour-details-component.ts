@@ -1,11 +1,11 @@
-import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { CommonModule, DOCUMENT } from '@angular/common';
 import {
+  AfterViewInit,
   Component,
   Inject,
   Input,
   OnChanges,
   OnDestroy,
-  PLATFORM_ID,
   SimpleChanges,
   Type,
 } from '@angular/core';
@@ -56,7 +56,7 @@ export interface TourDetails {
   templateUrl: './tour-details-component.html',
   styleUrl: './tour-details-component.css',
 })
-export class TourDetailsComponent implements OnChanges, OnDestroy {
+export class TourDetailsComponent implements OnChanges, AfterViewInit, OnDestroy {
   @Input() tour!: TourDetails;
   /** Absolute or site-relative tour image used for Product JSON-LD */
   @Input() image = '';
@@ -66,19 +66,21 @@ export class TourDetailsComponent implements OnChanges, OnDestroy {
 
   selectedImage: string | null = null;
   private jsonLdEl: HTMLScriptElement | null = null;
-  private readonly isBrowser: boolean;
   private readonly siteOrigin = 'https://www.pabudutours.com';
 
   constructor(
     private readonly router: Router,
     @Inject(DOCUMENT) private readonly document: Document,
-    @Inject(PLATFORM_ID) platformId: Object,
-  ) {
-    this.isBrowser = isPlatformBrowser(platformId);
-  }
+  ) {}
 
   ngOnChanges(changes: SimpleChanges): void {
     if ((changes['tour'] || changes['image']) && this.tour) {
+      this.upsertTourJsonLd();
+    }
+  }
+
+  ngAfterViewInit(): void {
+    if (this.tour) {
       this.upsertTourJsonLd();
     }
   }
@@ -104,12 +106,12 @@ export class TourDetailsComponent implements OnChanges, OnDestroy {
   }
 
   private upsertTourJsonLd(): void {
-    if (!this.isBrowser || !this.tour?.title) return;
+    if (!this.tour?.title) return;
 
     const path = this.router.url.split('?')[0] || '/';
     const pageUrl = `${this.siteOrigin}${path}`;
     const price = Number(this.tour.price) || 0;
-    const imageUrl = this.resolveImageUrl();
+    const imageUrls = this.collectImageUrls();
 
     const schema: Record<string, unknown> = {
       '@context': 'https://schema.org',
@@ -119,6 +121,7 @@ export class TourDetailsComponent implements OnChanges, OnDestroy {
         this.tour.overview ||
         this.tour.description ||
         `${this.tour.title} with Pabudu Tours Sri Lanka`,
+      image: imageUrls,
       brand: {
         '@type': 'TravelAgency',
         name: 'Pabudu Tours Sri Lanka',
@@ -136,10 +139,6 @@ export class TourDetailsComponent implements OnChanges, OnDestroy {
       },
     };
 
-    if (imageUrl) {
-      schema['image'] = [imageUrl];
-    }
-
     if (!this.jsonLdEl) {
       this.jsonLdEl = this.document.createElement('script');
       this.jsonLdEl.type = 'application/ld+json';
@@ -149,17 +148,33 @@ export class TourDetailsComponent implements OnChanges, OnDestroy {
     this.jsonLdEl.text = JSON.stringify(schema);
   }
 
-  private resolveImageUrl(): string | null {
-    const candidates = [
-      this.image,
-      this.tour?.image,
-      this.tour?.itinerary?.[0]?.activities?.find((a) => !!a.image)?.image,
-    ].filter(Boolean) as string[];
+  private collectImageUrls(): string[] {
+    const urls: string[] = [];
+    const add = (raw?: string) => {
+      const abs = this.toAbsoluteUrl(raw);
+      if (abs && !urls.includes(abs)) {
+        urls.push(abs);
+      }
+    };
 
-    const raw = candidates[0];
-    if (!raw) return null;
+    add(this.image);
+    add(this.tour?.image);
+    for (const day of this.tour?.itinerary || []) {
+      for (const activity of day.activities || []) {
+        add(activity.image);
+      }
+    }
 
-    if (/^https?:\/\//i.test(raw)) return raw;
+    if (!urls.length) {
+      add(`${this.siteOrigin}/assets/img/mainpage/hero.webp`);
+    }
+
+    return urls.slice(0, 8);
+  }
+
+  private toAbsoluteUrl(raw?: string): string | null {
+    if (!raw?.trim()) return null;
+    if (/^https?:\/\//i.test(raw)) return raw.trim();
     const normalized = raw.startsWith('/') ? raw : `/${raw}`;
     return `${this.siteOrigin}${normalized}`;
   }

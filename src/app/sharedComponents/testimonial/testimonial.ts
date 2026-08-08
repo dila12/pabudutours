@@ -1,76 +1,51 @@
-import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { Component, Inject, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
-
-declare const jQuery: any;
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-testimonial',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './testimonial.html',
   styleUrl: './testimonial.css',
 })
-export class Testimonial implements OnInit, OnDestroy {
-  private readonly isBrowser: boolean;
-  private styleEl: HTMLLinkElement | null = null;
+export class Testimonial {
+  readonly tripadvisorUrl =
+    'https://www.tripadvisor.com/Attraction_Review-g304136-d34261425-Reviews-Pabudu_Tours-Kalutara_Western_Province.html';
+  readonly googleUrl = 'https://share.google/ZUplfSNRQT7GHlgMn';
 
-  constructor(@Inject(PLATFORM_ID) platformId: Object) {
-    this.isBrowser = isPlatformBrowser(platformId);
-  }
-
-  ngOnInit(): void {
-    if (!this.isBrowser) return;
-    void this.loadOwlCarousel();
-  }
-
-  ngOnDestroy(): void {
-    if (this.styleEl?.parentNode) {
-      this.styleEl.parentNode.removeChild(this.styleEl);
-    }
-  }
-
-  private async loadOwlCarousel(): Promise<void> {
-    this.styleEl = document.createElement('link');
-    this.styleEl.rel = 'stylesheet';
-    this.styleEl.href = 'assets/lib/owlcarousel/assets/owl.carousel.min.css';
-    document.head.appendChild(this.styleEl);
-
-    await this.loadScript(
-      'https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js',
-    );
-    await this.loadScript('assets/lib/owlcarousel/owl.carousel.min.js');
-
-    const $ = typeof jQuery !== 'undefined' ? jQuery : (window as any).$;
-    if ($?.fn?.owlCarousel && $('.testimonial-carousel').length) {
-      $('.testimonial-carousel').owlCarousel({
-        autoplay: true,
-        smartSpeed: 1500,
-        margin: 30,
-        dots: true,
-        loop: true,
-        center: true,
-        responsive: {
-          0: { items: 1 },
-          576: { items: 1 },
-          768: { items: 2 },
-          992: { items: 3 },
-        },
-      });
-    }
-  }
-
-  private loadScript(src: string): Promise<void> {
-    return new Promise((resolve, reject) => {
-      if (document.querySelector(`script[src="${src}"]`)) {
-        resolve();
-        return;
-      }
-      const script = document.createElement('script');
-      script.src = src;
-      script.async = true;
-      script.onload = () => resolve();
-      script.onerror = () => reject(new Error(`Failed to load ${src}`));
-      document.body.appendChild(script);
-    });
-  }
+  readonly reviews = [
+    {
+      name: 'Sri Lanka With Roshan',
+      author: 'XCOUNTRYTO',
+      date: 'April 28, 2025',
+      comment:
+        'We had a really wonderful time in Sri Lanka. We booked just the car with driver and made our own hotel bookings. The tour was quite flexible and everything was organised smoothly.',
+      photo: 'assets/img/testimonial-1.jpg',
+    },
+    {
+      name: 'Unforgettable Experience!',
+      author: 'JEN2SG',
+      date: 'April 28, 2025',
+      comment:
+        'Excellent trip with amazing and safe driver Roshan! We loved the landscape, the friendly people and the delicious food. Highly recommended for a private Sri Lanka tour.',
+      photo: 'assets/img/testimonial-2.jpg',
+    },
+    {
+      name: 'Wonderful Travel Experience',
+      author: 'MICHELA R',
+      date: 'April 28, 2025',
+      comment:
+        'We are two Italian friends, we spent 10 days exploring Sri Lanka. Our driver, Kumara, was incredibly kind and professional from the Cultural Triangle to the south coast.',
+      photo: 'assets/img/testimonial-3.jpg',
+    },
+    {
+      name: 'Family With Little Ones In Sri Lanka',
+      author: 'JOANA V',
+      date: 'April 27, 2025',
+      comment:
+        'We had Dhana as our driver for days and he was instrumental in us having a lovely holiday! Everything with the company was super easy to arrange with children.',
+      photo: 'assets/img/testimonial-4.jpg',
+    },
+  ];
 }

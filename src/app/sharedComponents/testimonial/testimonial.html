@@ -1,49 +1,50 @@
-
-    <!-- Testimonial Start -->
-    <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="text-center mb-3 pb-3">
-                <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Testimonial</h6>
-                <h1>What Say Our Clients</h1>
-            </div>
-            <div class="owl-carousel testimonial-carousel">
-                <div class="text-center pb-4">
-                    <img class="img-fluid mx-auto" src="assets/img/testimonial-1.jpg" style="width: 100px; height: 100px;" >
-                    <div class="testimonial-text bg-white p-4 mt-n5">
-                        <p class="mt-5">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam
-                        </p>
-                        <h5 class="text-truncate">Client Name</h5>
-                        <span>Profession</span>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <img class="img-fluid mx-auto" src="assets/img/testimonial-2.jpg" style="width: 100px; height: 100px;" >
-                    <div class="testimonial-text bg-white p-4 mt-n5">
-                        <p class="mt-5">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam
-                        </p>
-                        <h5 class="text-truncate">Client Name</h5>
-                        <span>Profession</span>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <img class="img-fluid mx-auto" src="assets/img/testimonial-3.jpg" style="width: 100px; height: 100px;" >
-                    <div class="testimonial-text bg-white p-4 mt-n5">
-                        <p class="mt-5">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam
-                        </p>
-                        <h5 class="text-truncate">Client Name</h5>
-                        <span>Profession</span>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <img class="img-fluid mx-auto" src="assets/img/testimonial-4.jpg" style="width: 100px; height: 100px;" >
-                    <div class="testimonial-text bg-white p-4 mt-n5">
-                        <p class="mt-5">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam
-                        </p>
-                        <h5 class="text-truncate">Client Name</h5>
-                        <span>Profession</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="container-fluid page-header">
+  <div class="container">
+    <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
+      <h1 class="display-4 text-white text-uppercase mb-2">Customer Testimonials</h1>
+      <div class="d-inline-flex text-white align-items-center">
+        <p class="m-0 text-uppercase"><a class="text-white" routerLink="/">Home</a></p>
+        <i class="fa fa-angle-double-right pt-1 px-3" aria-hidden="true"></i>
+        <p class="m-0 text-uppercase">Reviews</p>
+      </div>
     </div>
-    <!-- Testimonial End -->
+  </div>
+</div>
+
+<section class="reviews-page">
+  <div class="container">
+    <header class="reviews-page__intro">
+      <p class="reviews-page__eyebrow">Guest reviews</p>
+      <h2>What travellers say about Pabudu Tours</h2>
+      <p>
+        Independent reviews from TripAdvisor and Google about our private chauffeur-guided Sri Lanka
+        tours. Read more on
+        <a [href]="tripadvisorUrl" target="_blank" rel="noopener noreferrer">TripAdvisor</a>
+        or <a [href]="googleUrl" target="_blank" rel="noopener noreferrer">Google</a>.
+      </p>
+    </header>
+
+    <div class="reviews-page__grid">
+      <article class="review-item" *ngFor="let review of reviews">
+        <img
+          [src]="review.photo"
+          [alt]="review.author + ' review photo'"
+          width="72"
+          height="72"
+          loading="lazy"
+          decoding="async">
+        <div>
+          <h3>{{ review.name }}</h3>
+          <p class="review-item__meta">{{ review.author }} · {{ review.date }}</p>
+          <p>{{ review.comment }}</p>
+        </div>
+      </article>
+    </div>
+
+    <p class="reviews-page__cta">
+      Ready to plan a similar trip?
+      <a routerLink="/tour-packages">Browse tour packages</a>
+      or <a routerLink="/contact-us">request a quote</a>.
+    </p>
+  </div>
+</section>

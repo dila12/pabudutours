@@ -417,6 +417,7 @@ Private chauffeur-guided travel from Colombo Airport through the Cultural Triang
       price: this.price,
       tourType: this.tour.tourType,
       overview: this.tour.overview,
+      image: this.images[0],
       itinerary: this.tour.itinerary,
       includes: this.tour.includes,
       excludes: this.tour.excludes,

@@ -30,8 +30,10 @@ export class LanguageService {
     this.translate.addLangs(this.languages.map((l) => l.code));
     this.translate.setFallbackLang('en');
 
-    const initial = this.readSavedLang() ?? 'en';
-    void this.use(initial, false);
+    const queryLang = this.readQueryLang();
+    const initial = queryLang ?? this.readSavedLang() ?? 'en';
+    void this.use(initial, !!queryLang);
+    this.stripLangQuery();
   }
 
   get currentLang(): AppLang {
@@ -58,12 +60,35 @@ export class LanguageService {
     return !!lang && this.languages.some((l) => l.code === lang);
   }
 
+  private readQueryLang(): AppLang | null {
+    if (!isPlatformBrowser(this.platformId)) {
+      return null;
+    }
+    const lang = new URLSearchParams(this.document.defaultView?.location.search || '').get(
+      'lang',
+    );
+    return this.isSupported(lang) ? lang : null;
+  }
+
+  private stripLangQuery(): void {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+    const url = new URL(this.document.defaultView?.location.href || '');
+    if (!url.searchParams.has('lang')) {
+      return;
+    }
+    url.searchParams.delete('lang');
+    const next = `${url.pathname}${url.search}${url.hash}` || '/';
+    this.document.defaultView?.history.replaceState({}, '', next);
+  }
+
   private readSavedLang(): AppLang | null {
     if (!isPlatformBrowser(this.platformId)) {
       return null;
     }
     const saved = localStorage.getItem(this.storageKey);
     // Drop old Google Translate codes (it, fr, es, pl, zh-CN, etc.)
-    return this.isSupported(saved) ? saved : 'en';
+    return this.isSupported(saved) ? saved : null;
   }
 }

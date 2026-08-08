@@ -42,6 +42,5 @@ Pabudu Tours helps travelers book private Sri Lanka experiences across cultural 
 
 ## Optional
 
-- [Restaurants in Sri Lanka](https://www.pabudutours.com/restaurants-in-sri-lanka): Local dining ideas
 - [Sitemap](https://www.pabudutours.com/sitemap.xml): Full URL list for crawlers
 - [Robots](https://www.pabudutours.com/robots.txt): Crawl rules

@@ -215,6 +215,7 @@ export const routes: Routes = [
           description:
             'Book your private Sri Lanka tour with our customizable packages and expert local guides.',
           keywords: 'Sri Lanka booking, private Sri Lanka tour booking',
+          robots: 'noindex, nofollow',
         },
       },
       {
@@ -228,19 +229,6 @@ export const routes: Routes = [
           description:
             'Get in touch with Pabudu Tours for customized Sri Lanka tour packages and private travel services.',
           keywords: 'contact Sri Lanka tour company',
-        },
-      },
-      {
-        path: 'restaurants-in-sri-lanka',
-        loadComponent: () =>
-          import(
-            './mainComponents/resturant-component/resturant-component'
-          ).then((m) => m.ResturantComponent),
-        data: {
-          title: 'Restaurants in Sri Lanka | Best Local Cuisine',
-          description:
-            'Discover the best restaurants in Sri Lanka offering authentic local cuisine and international dishes.',
-          keywords: 'Sri Lanka restaurants, best restaurants in Sri Lanka',
         },
       },
       {

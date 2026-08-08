@@ -1,6 +1,59 @@
 {
   "version": 2,
+  "trailingSlash": false,
   "redirects": [
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "pabudutours.com" }],
+      "destination": "https://www.pabudutours.com/",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "pabudutours.com" }],
+      "destination": "https://www.pabudutours.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/de",
+      "destination": "/?lang=de",
+      "permanent": true
+    },
+    {
+      "source": "/de/:path*",
+      "destination": "/:path*?lang=de",
+      "permanent": true
+    },
+    {
+      "source": "/ru",
+      "destination": "/?lang=ru",
+      "permanent": true
+    },
+    {
+      "source": "/ru/:path*",
+      "destination": "/:path*?lang=ru",
+      "permanent": true
+    },
+    {
+      "source": "/hi",
+      "destination": "/?lang=hi",
+      "permanent": true
+    },
+    {
+      "source": "/hi/:path*",
+      "destination": "/:path*?lang=hi",
+      "permanent": true
+    },
+    {
+      "source": "/en",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en/:path*",
+      "destination": "/:path*",
+      "permanent": true
+    },
     {
       "source": "/2-day-sri-lanka-tour",
       "destination": "/2-day-ella-kandy-private-tour-sri-lanka",
@@ -70,15 +123,39 @@
       "source": "/tours",
       "destination": "/tour-packages",
       "permanent": true
+    },
+    {
+      "source": "/restaurants-in-sri-lanka",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant-sri-lanka",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/restaurants",
+      "destination": "/",
+      "permanent": true
     }
   ],
   "rewrites": [
     {
-      "source": "/((?!api/).*)",
+      "source": "/booking/:filecode*",
       "destination": "/index.html"
     }
   ],
   "headers": [
+    {
+      "source": "/booking/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
     {
       "source": "/(.*)",
       "headers": [

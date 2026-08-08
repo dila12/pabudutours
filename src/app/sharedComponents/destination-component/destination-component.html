@@ -1,67 +1,70 @@
-
-    <!-- Destination Start -->
-    <div class="container-fluid py-5">
-        <div class="container pt-5 pb-3">
-            <div class="text-center mb-3 pb-3">
-                <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Destination</h6>
-                <h1>Explore Top Destination</h1>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="destination-item position-relative overflow-hidden mb-2">
-                        <img class="img-fluid" src="assets/img/destination-1.jpg" alt="">
-                        <a class="destination-overlay text-white text-decoration-none" href="">
-                            <h5 class="text-white">United States</h5>
-                            <span>100 Cities</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="destination-item position-relative overflow-hidden mb-2">
-                        <img class="img-fluid" src="assets/img/destination-2.jpg" alt="">
-                        <a class="destination-overlay text-white text-decoration-none" href="">
-                            <h5 class="text-white">United Kingdom</h5>
-                            <span>100 Cities</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="destination-item position-relative overflow-hidden mb-2">
-                        <img class="img-fluid" src="assets/img/destination-3.jpg" alt="">
-                        <a class="destination-overlay text-white text-decoration-none" href="">
-                            <h5 class="text-white">Australia</h5>
-                            <span>100 Cities</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="destination-item position-relative overflow-hidden mb-2">
-                        <img class="img-fluid" src="assets/img/destination-4.jpg" alt="">
-                        <a class="destination-overlay text-white text-decoration-none" href="">
-                            <h5 class="text-white">India</h5>
-                            <span>100 Cities</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="destination-item position-relative overflow-hidden mb-2">
-                        <img class="img-fluid" src="assets/img/destination-5.jpg" alt="">
-                        <a class="destination-overlay text-white text-decoration-none" href="">
-                            <h5 class="text-white">South Africa</h5>
-                            <span>100 Cities</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="destination-item position-relative overflow-hidden mb-2">
-                        <img class="img-fluid" src="assets/img/destination-6.jpg" alt="">
-                        <a class="destination-overlay text-white text-decoration-none" href="">
-                            <h5 class="text-white">Indonesia</h5>
-                            <span>100 Cities</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="container-fluid page-header">
+  <div class="container">
+    <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
+      <h1 class="display-4 text-white text-uppercase mb-2">Sri Lanka Destinations</h1>
+      <div class="d-inline-flex text-white align-items-center">
+        <p class="m-0 text-uppercase"><a class="text-white" routerLink="/">Home</a></p>
+        <i class="fa fa-angle-double-right pt-1 px-3" aria-hidden="true"></i>
+        <p class="m-0 text-uppercase">Destinations</p>
+      </div>
     </div>
-    <!-- Destination Start -->
+  </div>
+</div>
+
+<section class="dest-page">
+  <div class="container">
+    <header class="dest-page__intro">
+      <p class="dest-page__eyebrow">Private tours across the island</p>
+      <h2>Explore the best places to visit in Sri Lanka</h2>
+      <p>
+        Pabudu Tours runs private chauffeur-guided journeys covering the Cultural Triangle,
+        Kandy, Ella hill country, wildlife parks and the south coast. Use this guide to choose
+        destinations, then open a ready day tour or multi-day package — or ask us to tailor the
+        route around your dates.
+      </p>
+    </header>
+
+    <div class="dest-page__grid">
+      <article class="dest-card" *ngFor="let dest of destinations">
+        <a class="dest-card__media" [routerLink]="dest.tourPath">
+          <picture>
+            <source [srcset]="dest.imageBase + '.avif'" type="image/avif">
+            <source [srcset]="dest.imageBase + '.webp'" type="image/webp">
+            <img
+              [src]="dest.imageBase + '.webp'"
+              [alt]="dest.imageAlt"
+              width="640"
+              height="420"
+              loading="lazy"
+              decoding="async">
+          </picture>
+        </a>
+        <div class="dest-card__body">
+          <p class="dest-card__region">{{ dest.region }}</p>
+          <h3>{{ dest.name }}</h3>
+          <p>{{ dest.summary }}</p>
+          <ul>
+            <li *ngFor="let item of dest.highlights">{{ item }}</li>
+          </ul>
+          <a class="dest-card__cta" [routerLink]="dest.tourPath">{{ dest.tourLabel }}</a>
+        </div>
+      </article>
+    </div>
+
+    <aside class="dest-page__cta">
+      <h2>Plan a private Sri Lanka itinerary</h2>
+      <p>
+        Popular combinations include
+        <a routerLink="/2-day-sigiriya-kandy-private-tour-sri-lanka">2 days Sigiriya &amp; Kandy</a>,
+        <a routerLink="/3-day-sigiriya-kandy-ella-yala-tour">3 days with Ella &amp; Yala</a>,
+        the <a routerLink="/5-day-sri-lanka-tour">5 day Sri Lanka tour</a>,
+        <a routerLink="/7-day-sri-lanka-tour">7 day private tour</a>
+        and the <a routerLink="/10-day-sri-lanka-tour">10 day grand tour</a>.
+        Add a <a routerLink="/mirissa-day-tour">Mirissa whale watching day</a>
+        or <a routerLink="/bentota-tuk-tuk-tour">Bentota tuk tuk tour</a> on the coast.
+      </p>
+      <a routerLink="/tour-packages" class="dest-card__cta">View all tour packages</a>
+      <a routerLink="/contact-us" class="dest-card__cta dest-card__cta--ghost">Request a custom quote</a>
+    </aside>
+  </div>
+</section>

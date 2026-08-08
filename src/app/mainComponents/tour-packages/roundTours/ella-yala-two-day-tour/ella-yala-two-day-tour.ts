@@ -197,6 +197,7 @@ export class EllaYalaTwoDayTour {
       price: this.price,
       tourType: this.tour.tourType,
       overview: this.tour.overview,
+      image: this.images[0],
       itinerary: this.tour.itinerary,
       includes: this.tour.includes,
       excludes: this.tour.excludes,

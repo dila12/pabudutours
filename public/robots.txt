@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /booking/
 
 Sitemap: https://www.pabudutours.com/sitemap.xml
 # AI / agent discovery map

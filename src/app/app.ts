@@ -1,8 +1,8 @@
-import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { RouterModule, Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { Title, Meta } from '@angular/platform-browser';
 import { filter, map, mergeMap } from 'rxjs/operators';
-import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { DOCUMENT } from '@angular/common';
 import { LanguageService } from './Services/language.service';
 
 const SITE_ORIGIN = 'https://www.pabudutours.com';
@@ -22,7 +22,6 @@ export class AppComponent {
     private titleService: Title,
     private metaService: Meta,
     private languageService: LanguageService,
-    @Inject(PLATFORM_ID) private platformId: Object,
     @Inject(DOCUMENT) private document: Document,
   ) {
     // Ensure preferred language is applied on bootstrap.
@@ -62,17 +61,17 @@ export class AppComponent {
         const url = this.router.url.split('?')[0] || '/';
         const canonicalUrl = `${SITE_ORIGIN}${url === '/' ? '/' : url}`;
 
-        if (isPlatformBrowser(this.platformId)) {
-          let canonical = this.document.querySelector(
-            "link[rel='canonical']",
-          ) as HTMLLinkElement | null;
-          if (!canonical) {
-            canonical = this.document.createElement('link');
-            canonical.setAttribute('rel', 'canonical');
-            this.document.head.appendChild(canonical);
-          }
-          canonical.setAttribute('href', canonicalUrl);
+        // Must run during prerender too. A homepage canonical on every URL
+        // makes Google treat tour pages as duplicates ("Discovered - not indexed").
+        let canonical = this.document.querySelector(
+          "link[rel='canonical']",
+        ) as HTMLLinkElement | null;
+        if (!canonical) {
+          canonical = this.document.createElement('link');
+          canonical.setAttribute('rel', 'canonical');
+          this.document.head.appendChild(canonical);
         }
+        canonical.setAttribute('href', canonicalUrl);
 
         this.metaService.updateTag({ property: 'og:url', content: canonicalUrl });
         this.metaService.updateTag({ property: 'og:title', content: title });

@@ -1,0 +1,57 @@
+.guide-page {
+  --guide-green: #012c13;
+  --guide-gold: #b8954a;
+  --guide-muted: #5c6560;
+  padding: 3.5rem 0 4rem;
+  background: #f7f8f6;
+}
+
+.guide-page__intro {
+  max-width: 44rem;
+  margin: 0 auto 2rem;
+}
+
+.guide-page__eyebrow {
+  margin: 0 0 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--guide-gold);
+}
+
+.guide-page h2 {
+  color: var(--guide-green);
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+}
+
+.guide-page p,
+.guide-page li {
+  color: var(--guide-muted);
+  line-height: 1.7;
+}
+
+.guide-block {
+  max-width: 44rem;
+  margin: 0 auto 1.5rem;
+  padding: 1.35rem 1.4rem;
+  background: #fff;
+  border: 1px solid rgba(1, 44, 19, 0.1);
+  border-radius: 16px;
+}
+
+.guide-block ul {
+  margin: 0;
+  padding-left: 1.15rem;
+}
+
+.guide-page a {
+  color: var(--guide-green);
+  font-weight: 600;
+}
+
+.guide-page__more {
+  max-width: 44rem;
+  margin: 1.5rem auto 0;
+}
