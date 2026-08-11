@@ -55,6 +55,36 @@
       "permanent": true
     },
     {
+      "source": "/:locale(it|fr|es|pl|ja|pt|nl|ar|ko|tr|th|vi|sv|cs|uk|id|zh)",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(it|fr|es|pl|ja|pt|nl|ar|ko|tr|th|vi|sv|cs|uk|id|zh)/:path*",
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/zh-CN",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/zh-CN/:path*",
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/zh-TW",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/zh-TW/:path*",
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
       "source": "/2-day-sri-lanka-tour",
       "destination": "/2-day-ella-kandy-private-tour-sri-lanka",
       "permanent": true
@@ -147,6 +177,15 @@
     }
   ],
   "headers": [
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
+    },
     {
       "source": "/booking/(.*)",
       "headers": [

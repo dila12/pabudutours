@@ -39,11 +39,11 @@ export const routes: Routes = [
             (m) => m.ServiceComponent,
           ),
         data: {
-          title: 'Our Services | Pabudu Tours Sri Lanka',
+          title: 'Our Services | Private Tours & Chauffeur Guides | Pabudu Tours',
           description:
-            'Explore our range of services including private tours, tailor-made holiday packages, chauffeur driven round tours and day trips.',
+            'Private chauffeur-guided Sri Lanka tours, Bandaranaike airport transfers, Yala and Udawalawe safaris, and tailor-made day trips from Pabudu Tours in Kalutara.',
           keywords:
-            'Sri Lanka private tours, Sri Lanka tour packages, tailor made Sri Lanka tours',
+            'Sri Lanka private tours, chauffeur guide Sri Lanka, airport transfer Colombo, Yala safari, tailor made Sri Lanka tours',
         },
       },
       {

@@ -205,7 +205,10 @@
     "safariCta": "See safari day tour",
     "tuktukTitle": "Pabudu Tuk Tuk Tours",
     "tuktukBody": "Explore like a local with fun, comfortable tuk tuk rides through beautiful streets, cultural landmarks and hidden spots across Bentota and beyond.",
-    "tuktukCta": "Book tuk tuk ride"
+    "tuktukCta": "Book tuk tuk ride",
+    "whyTitle": "Why travel with a local chauffeur guide",
+    "whyBody": "Every Pabudu Tours trip is private — no mixed groups and no rushed coach stops. Your driver-guide handles hotels, tickets and timing so you can focus on Sigiriya, Ella, Yala, Kandy and the south coast. Share your dates and we build the route around them from our base in Kalutara.",
+    "popularTitle": "Popular ways to start"
   },
   "tour": {
     "duration": "Duration",
