@@ -55,32 +55,42 @@
       "permanent": true
     },
     {
-      "source": "/:locale(it|fr|es|pl|ja|pt|nl|ar|ko|tr|th|vi|sv|cs|uk|id|zh)",
+      "source": "/it",
       "destination": "/",
       "permanent": true
     },
     {
-      "source": "/:locale(it|fr|es|pl|ja|pt|nl|ar|ko|tr|th|vi|sv|cs|uk|id|zh)/:path*",
+      "source": "/it/:path*",
       "destination": "/:path*",
       "permanent": true
     },
     {
-      "source": "/zh-CN",
+      "source": "/fr",
       "destination": "/",
       "permanent": true
     },
     {
-      "source": "/zh-CN/:path*",
+      "source": "/fr/:path*",
       "destination": "/:path*",
       "permanent": true
     },
     {
-      "source": "/zh-TW",
+      "source": "/es",
       "destination": "/",
       "permanent": true
     },
     {
-      "source": "/zh-TW/:path*",
+      "source": "/es/:path*",
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/pl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/pl/:path*",
       "destination": "/:path*",
       "permanent": true
     },
