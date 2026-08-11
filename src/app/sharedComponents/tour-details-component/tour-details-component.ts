@@ -12,6 +12,10 @@ import {
 import { Router } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
 import { TourI18nPipe } from '../../shared/pipes/tour-i18n.pipe';
+import usPrices from '../../../assets/data/US-prices.json';
+
+/** From-2-travelers catalog used when live price has not loaded (SSR/prerender). */
+const CATALOG_PRICES = usPrices as Record<string, number>;
 
 export interface Activity {
   type: string;
@@ -105,12 +109,23 @@ export class TourDetailsComponent implements OnChanges, AfterViewInit, OnDestroy
     this.selectedImage = null;
   }
 
+  /** Visible + schema price. Catalog fills the prerender gap before HTTP prices load. */
+  get displayPrice(): number {
+    return this.resolveOfferPrice();
+  }
+
   private upsertTourJsonLd(): void {
     if (!this.tour?.title) return;
 
     const path = this.router.url.split('?')[0] || '/';
     const pageUrl = `${this.siteOrigin}${path}`;
-    const price = Number(this.tour.price) || 0;
+    const price = this.resolveOfferPrice();
+    if (price <= 0) {
+      this.removeTourJsonLd();
+      return;
+    }
+
+    const priceText = String(price);
     const imageUrls = this.collectImageUrls();
 
     const schema: Record<string, unknown> = {
@@ -133,8 +148,15 @@ export class TourDetailsComponent implements OnChanges, AfterViewInit, OnDestroy
         '@type': 'Offer',
         url: pageUrl,
         priceCurrency: 'USD',
-        price: price > 0 ? String(price) : undefined,
+        price: priceText,
+        priceValidUntil: '2027-12-31',
         availability: 'https://schema.org/InStock',
+        itemCondition: 'https://schema.org/NewCondition',
+        priceSpecification: {
+          '@type': 'UnitPriceSpecification',
+          price: priceText,
+          priceCurrency: 'USD',
+        },
         category: this.tour.duration || undefined,
       },
     };
@@ -146,6 +168,21 @@ export class TourDetailsComponent implements OnChanges, AfterViewInit, OnDestroy
       this.document.head.appendChild(this.jsonLdEl);
     }
     this.jsonLdEl.text = JSON.stringify(schema);
+  }
+
+  private resolveOfferPrice(): number {
+    const live = Number(this.tour?.price);
+    if (Number.isFinite(live) && live > 0) {
+      return live;
+    }
+
+    const filecode = this.tour?.filecode?.trim();
+    if (!filecode) {
+      return 0;
+    }
+
+    const catalog = CATALOG_PRICES[filecode];
+    return typeof catalog === 'number' && catalog > 0 ? catalog : 0;
   }
 
   private collectImageUrls(): string[] {
